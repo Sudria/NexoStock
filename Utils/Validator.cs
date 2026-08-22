@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market_Club.Utils
+namespace NexoStock.Utils
 {
     internal static class Validator
     {
