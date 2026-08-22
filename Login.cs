@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReaLTaiizor.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,22 @@ namespace NexoStock
             InitializeComponent();
         }
 
+        private void logginButton_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            txtUser.Text = "";
+            txtPassword.Text = "";
+            txtUser.Focus();
+        }
 
-  
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
@@ -36,22 +49,5 @@ namespace NexoStock
         }
 
 
-
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            c.Text = "";
-            txtPassword.Text = "";
-            c.Focus();
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void txtPassword_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

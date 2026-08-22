@@ -35,7 +35,7 @@
             this.clearButton = new ReaLTaiizor.Controls.Button();
             this.exitButton = new ReaLTaiizor.Controls.Button();
             this.logginButton = new ReaLTaiizor.Controls.ParrotButton();
-            this.c = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.txtUser = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.txtPassword = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +44,10 @@
             // 
             this.checkBoxShowPass.AutoSize = true;
             this.checkBoxShowPass.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPass.Location = new System.Drawing.Point(608, 260);
+            this.checkBoxShowPass.Location = new System.Drawing.Point(456, 211);
+            this.checkBoxShowPass.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxShowPass.Name = "checkBoxShowPass";
-            this.checkBoxShowPass.Size = new System.Drawing.Size(146, 20);
+            this.checkBoxShowPass.Size = new System.Drawing.Size(118, 17);
             this.checkBoxShowPass.TabIndex = 3;
             this.checkBoxShowPass.Text = "Mostrar Contraseña";
             this.checkBoxShowPass.UseVisualStyleBackColor = true;
@@ -57,8 +58,9 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(579, 404);
+            this.pictureBox1.Size = new System.Drawing.Size(434, 328);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -68,9 +70,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(704, 9);
+            this.label1.Location = new System.Drawing.Point(528, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "NEXUS STOCK";
             // 
@@ -85,11 +88,12 @@
             this.clearButton.Image = null;
             this.clearButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clearButton.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(84)))), ((int)(((byte)(255)))));
-            this.clearButton.Location = new System.Drawing.Point(608, 357);
+            this.clearButton.Location = new System.Drawing.Point(456, 290);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(2);
             this.clearButton.Name = "clearButton";
             this.clearButton.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.clearButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.clearButton.Size = new System.Drawing.Size(92, 33);
+            this.clearButton.Size = new System.Drawing.Size(69, 27);
             this.clearButton.TabIndex = 10;
             this.clearButton.Text = "Limpiar";
             this.clearButton.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -106,11 +110,12 @@
             this.exitButton.Image = null;
             this.exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exitButton.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(84)))), ((int)(((byte)(255)))));
-            this.exitButton.Location = new System.Drawing.Point(813, 357);
+            this.exitButton.Location = new System.Drawing.Point(610, 290);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2);
             this.exitButton.Name = "exitButton";
             this.exitButton.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.exitButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.exitButton.Size = new System.Drawing.Size(106, 33);
+            this.exitButton.Size = new System.Drawing.Size(80, 27);
             this.exitButton.TabIndex = 11;
             this.exitButton.Text = "Salir";
             this.exitButton.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -131,45 +136,48 @@
             this.logginButton.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(107)))), ((int)(((byte)(203)))));
             this.logginButton.HoverTextColor = System.Drawing.Color.White;
             this.logginButton.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.logginButton.Location = new System.Drawing.Point(610, 286);
+            this.logginButton.Location = new System.Drawing.Point(458, 232);
+            this.logginButton.Margin = new System.Windows.Forms.Padding(2);
             this.logginButton.Name = "logginButton";
-            this.logginButton.Size = new System.Drawing.Size(309, 50);
+            this.logginButton.Size = new System.Drawing.Size(232, 41);
             this.logginButton.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             this.logginButton.TabIndex = 12;
             this.logginButton.TextColor = System.Drawing.Color.White;
             this.logginButton.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.logginButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.logginButton.Click += new System.EventHandler(this.logginButton_Click);
             // 
-            // c
+            // txtUser
             // 
-            this.c.AnimateReadOnly = false;
-            this.c.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.c.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.c.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.c.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.c.Depth = 0;
-            this.c.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.c.HideSelection = true;
-            this.c.Hint = "Usuario";
-            this.c.LeadingIcon = null;
-            this.c.Location = new System.Drawing.Point(608, 69);
-            this.c.MaxLength = 32767;
-            this.c.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.c.Name = "c";
-            this.c.PasswordChar = '\0';
-            this.c.PrefixSuffixText = null;
-            this.c.ReadOnly = false;
-            this.c.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.c.SelectedText = "";
-            this.c.SelectionLength = 0;
-            this.c.SelectionStart = 0;
-            this.c.ShortcutsEnabled = true;
-            this.c.Size = new System.Drawing.Size(311, 60);
-            this.c.TabIndex = 15;
-            this.c.TabStop = false;
-            this.c.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.c.TrailingIcon = null;
-            this.c.UseSystemPasswordChar = false;
+            this.txtUser.AnimateReadOnly = false;
+            this.txtUser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtUser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtUser.Depth = 0;
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.txtUser.HideSelection = true;
+            this.txtUser.Hint = "Usuario";
+            this.txtUser.LeadingIcon = null;
+            this.txtUser.Location = new System.Drawing.Point(456, 56);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUser.MaxLength = 32767;
+            this.txtUser.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PasswordChar = '\0';
+            this.txtUser.PrefixSuffixText = null;
+            this.txtUser.ReadOnly = false;
+            this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtUser.SelectedText = "";
+            this.txtUser.SelectionLength = 0;
+            this.txtUser.SelectionStart = 0;
+            this.txtUser.ShortcutsEnabled = true;
+            this.txtUser.Size = new System.Drawing.Size(233, 48);
+            this.txtUser.TabIndex = 15;
+            this.txtUser.TabStop = false;
+            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUser.TrailingIcon = null;
+            this.txtUser.UseSystemPasswordChar = false;
             // 
             // txtPassword
             // 
@@ -182,8 +190,10 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtPassword.HideSelection = true;
             this.txtPassword.Hint = "Contraseña";
+            this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtPassword.LeadingIcon = null;
-            this.txtPassword.Location = new System.Drawing.Point(608, 150);
+            this.txtPassword.Location = new System.Drawing.Point(456, 122);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.txtPassword.Name = "txtPassword";
@@ -195,7 +205,7 @@
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(297, 60);
+            this.txtPassword.Size = new System.Drawing.Size(223, 48);
             this.txtPassword.TabIndex = 16;
             this.txtPassword.TabStop = false;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -204,12 +214,12 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(945, 402);
+            this.ClientSize = new System.Drawing.Size(709, 327);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.c);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.logginButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
@@ -217,6 +227,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxShowPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nexus STOCK";
@@ -233,7 +244,7 @@
         private ReaLTaiizor.Controls.Button clearButton;
         private ReaLTaiizor.Controls.Button exitButton;
         private ReaLTaiizor.Controls.ParrotButton logginButton;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit c;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtUser;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPassword;
     }
 }
