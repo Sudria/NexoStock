@@ -63,9 +63,39 @@ namespace NexoStock.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap d067c8f3_a7ea_40b2_8cc8_036020df1765 {
+        internal static System.Drawing.Bitmap DashboardBackground {
             get {
-                object obj = ResourceManager.GetObject("d067c8f3-a7ea-40b2-8cc8-036020df1765", resourceCulture);
+                object obj = ResourceManager.GetObject("DashboardBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Font_Awesome_7_Free_Solid_900 {
+            get {
+                object obj = ResourceManager.GetObject("Font Awesome 7 Free-Solid-900", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Home {
+            get {
+                object obj = ResourceManager.GetObject("Home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoginLogo {
+            get {
+                object obj = ResourceManager.GetObject("LoginLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

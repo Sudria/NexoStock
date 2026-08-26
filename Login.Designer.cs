@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.logginButton = new ReaLTaiizor.Controls.ParrotButton();
             this.txtUser = new ReaLTaiizor.Controls.HopeTextBox();
             this.txtPassword = new ReaLTaiizor.Controls.HopeTextBox();
             this.clearButton = new ReaLTaiizor.Controls.ParrotButton();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.SuspendLayout();
             // 
             // checkBoxShowPass
@@ -53,18 +51,6 @@
             this.checkBoxShowPass.Text = "Mostrar Contraseña";
             this.checkBoxShowPass.UseVisualStyleBackColor = true;
             this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(434, 328);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -202,25 +188,44 @@
             this.exitButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // parrotPictureBox1
+            // 
+            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.Empty;
+            this.parrotPictureBox1.ColorRight = System.Drawing.Color.Empty;
+            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox1.FilterAlpha = 0;
+            this.parrotPictureBox1.FilterEnabled = true;
+            this.parrotPictureBox1.Image = global::NexoStock.Properties.Resources.LoginLogo;
+            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox1.IsElipse = false;
+            this.parrotPictureBox1.IsParallax = false;
+            this.parrotPictureBox1.Location = new System.Drawing.Point(0, -4);
+            this.parrotPictureBox1.Name = "parrotPictureBox1";
+            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox1.Size = new System.Drawing.Size(436, 337);
+            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox1.TabIndex = 9;
+            this.parrotPictureBox1.Text = "parrotPictureBox1";
+            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(714, 335);
+            this.Controls.Add(this.parrotPictureBox1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.logginButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxShowPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nexus STOCK";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,13 +233,13 @@
 
         #endregion
         private System.Windows.Forms.CheckBox checkBoxShowPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.ParrotButton logginButton;
         private ReaLTaiizor.Controls.HopeTextBox txtUser;
         private ReaLTaiizor.Controls.HopeTextBox txtPassword;
         private ReaLTaiizor.Controls.ParrotButton clearButton;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;
     }
 }
 
