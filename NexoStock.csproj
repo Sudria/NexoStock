@@ -87,6 +87,12 @@
     <Compile Include="Forms\Seller\SellerDashboard.Designer.cs">
       <DependentUpon>SellerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseDashboard.Designer.cs">
+      <DependentUpon>WarehouseDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <EmbeddedResource Include="Forms\Seller\SellerDashboard.resx">
       <DependentUpon>SellerDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseDashboard.resx">
+      <DependentUpon>WarehouseDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +149,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Warehouse\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\LoginLogo.png" />
   </ItemGroup>
