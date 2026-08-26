@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.HomeButton = new ReaLTaiizor.Controls.CyberButton();
             this.userButton = new ReaLTaiizor.Controls.CyberButton();
             this.productButton = new ReaLTaiizor.Controls.CyberButton();
