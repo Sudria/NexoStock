@@ -43,10 +43,10 @@
             this.checkBoxShowPass.AutoSize = true;
             this.checkBoxShowPass.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.checkBoxShowPass.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPass.Location = new System.Drawing.Point(456, 158);
+            this.checkBoxShowPass.Location = new System.Drawing.Point(456, 161);
             this.checkBoxShowPass.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxShowPass.Name = "checkBoxShowPass";
-            this.checkBoxShowPass.Size = new System.Drawing.Size(151, 23);
+            this.checkBoxShowPass.Size = new System.Drawing.Size(183, 27);
             this.checkBoxShowPass.TabIndex = 3;
             this.checkBoxShowPass.Text = "Mostrar Contraseña";
             this.checkBoxShowPass.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             this.label1.Location = new System.Drawing.Point(528, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "NEXUS STOCK";
             // 
@@ -108,7 +108,7 @@
             this.txtUser.SelectedText = "";
             this.txtUser.SelectionLength = 0;
             this.txtUser.SelectionStart = 0;
-            this.txtUser.Size = new System.Drawing.Size(234, 38);
+            this.txtUser.Size = new System.Drawing.Size(234, 43);
             this.txtUser.TabIndex = 1;
             this.txtUser.TabStop = false;
             this.txtUser.UseSystemPasswordChar = false;
@@ -131,7 +131,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
-            this.txtPassword.Size = new System.Drawing.Size(234, 38);
+            this.txtPassword.Size = new System.Drawing.Size(234, 43);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TabStop = false;
             this.txtPassword.UseSystemPasswordChar = false;

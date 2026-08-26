@@ -61,6 +61,6 @@
 
         #endregion
 
-        private Admin.AdminDashboard adminDashboard1;
+        private Admin.ManagerDashboard adminDashboard1;
     }
 }
