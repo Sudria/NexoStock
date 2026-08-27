@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.adminDashboard1 = new NexoStock.Forms.Admin.AdminDashboard();
-            this.adminHomePanel1 = new NexoStock.Forms.Admin.AdminHomePanel();
+            this.newUserPanel1 = new NexoStock.Forms.Admin.NewUserPanel();
             this.SuspendLayout();
             // 
             // adminDashboard1
@@ -44,14 +44,14 @@
             this.adminDashboard1.Size = new System.Drawing.Size(326, 662);
             this.adminDashboard1.TabIndex = 0;
             // 
-            // adminHomePanel1
+            // newUserPanel1
             // 
-            this.adminHomePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.adminHomePanel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.adminHomePanel1.Location = new System.Drawing.Point(322, 0);
-            this.adminHomePanel1.Name = "adminHomePanel1";
-            this.adminHomePanel1.Size = new System.Drawing.Size(1120, 662);
-            this.adminHomePanel1.TabIndex = 1;
+            this.newUserPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.newUserPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.newUserPanel1.Location = new System.Drawing.Point(322, 0);
+            this.newUserPanel1.Name = "newUserPanel1";
+            this.newUserPanel1.Size = new System.Drawing.Size(1120, 662);
+            this.newUserPanel1.TabIndex = 1;
             // 
             // Dashboard
             // 
@@ -60,7 +60,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1444, 662);
             this.ControlBox = false;
-            this.Controls.Add(this.adminHomePanel1);
+            this.Controls.Add(this.newUserPanel1);
             this.Controls.Add(this.adminDashboard1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -73,6 +73,6 @@
         #endregion
 
         private Admin.AdminDashboard adminDashboard1;
-        private Admin.AdminHomePanel adminHomePanel1;
+        private Admin.NewUserPanel newUserPanel1;
     }
 }
