@@ -68,13 +68,12 @@
             this.HomeButton.Lighting = true;
             this.HomeButton.LinearGradient_Background = true;
             this.HomeButton.LinearGradientPen = true;
-            this.HomeButton.Location = new System.Drawing.Point(65, 244);
-            this.HomeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HomeButton.Location = new System.Drawing.Point(50, 88);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.PenWidth = 15;
             this.HomeButton.Rounding = true;
             this.HomeButton.RoundingInt = 25;
-            this.HomeButton.Size = new System.Drawing.Size(313, 62);
+            this.HomeButton.Size = new System.Drawing.Size(235, 50);
             this.HomeButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.HomeButton.TabIndex = 2;
             this.HomeButton.Tag = "Cyber";
@@ -112,13 +111,12 @@
             this.userButton.Lighting = false;
             this.userButton.LinearGradient_Background = false;
             this.userButton.LinearGradientPen = true;
-            this.userButton.Location = new System.Drawing.Point(65, 314);
-            this.userButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userButton.Location = new System.Drawing.Point(50, 145);
             this.userButton.Name = "userButton";
             this.userButton.PenWidth = 15;
             this.userButton.Rounding = true;
             this.userButton.RoundingInt = 25;
-            this.userButton.Size = new System.Drawing.Size(313, 62);
+            this.userButton.Size = new System.Drawing.Size(235, 50);
             this.userButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.userButton.TabIndex = 3;
             this.userButton.Tag = "Cyber";
@@ -156,13 +154,12 @@
             this.productButton.Lighting = false;
             this.productButton.LinearGradient_Background = false;
             this.productButton.LinearGradientPen = true;
-            this.productButton.Location = new System.Drawing.Point(65, 384);
-            this.productButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productButton.Location = new System.Drawing.Point(50, 202);
             this.productButton.Name = "productButton";
             this.productButton.PenWidth = 15;
             this.productButton.Rounding = true;
             this.productButton.RoundingInt = 25;
-            this.productButton.Size = new System.Drawing.Size(313, 62);
+            this.productButton.Size = new System.Drawing.Size(235, 50);
             this.productButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.productButton.TabIndex = 4;
             this.productButton.Tag = "Cyber";
@@ -200,13 +197,12 @@
             this.categoryButton.Lighting = false;
             this.categoryButton.LinearGradient_Background = false;
             this.categoryButton.LinearGradientPen = true;
-            this.categoryButton.Location = new System.Drawing.Point(62, 454);
-            this.categoryButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.categoryButton.Location = new System.Drawing.Point(47, 259);
             this.categoryButton.Name = "categoryButton";
             this.categoryButton.PenWidth = 15;
             this.categoryButton.Rounding = true;
             this.categoryButton.RoundingInt = 25;
-            this.categoryButton.Size = new System.Drawing.Size(313, 62);
+            this.categoryButton.Size = new System.Drawing.Size(235, 50);
             this.categoryButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.categoryButton.TabIndex = 5;
             this.categoryButton.Tag = "Cyber";
@@ -244,13 +240,12 @@
             this.providerButton.Lighting = false;
             this.providerButton.LinearGradient_Background = false;
             this.providerButton.LinearGradientPen = true;
-            this.providerButton.Location = new System.Drawing.Point(65, 524);
-            this.providerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.providerButton.Location = new System.Drawing.Point(50, 316);
             this.providerButton.Name = "providerButton";
             this.providerButton.PenWidth = 15;
             this.providerButton.Rounding = true;
             this.providerButton.RoundingInt = 25;
-            this.providerButton.Size = new System.Drawing.Size(313, 62);
+            this.providerButton.Size = new System.Drawing.Size(235, 50);
             this.providerButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.providerButton.TabIndex = 6;
             this.providerButton.Tag = "Cyber";
@@ -265,11 +260,10 @@
             this.hopePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.hopePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.hopePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hopePictureBox1.Image")));
-            this.hopePictureBox1.Location = new System.Drawing.Point(-1, 886);
-            this.hopePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hopePictureBox1.Location = new System.Drawing.Point(0, 544);
             this.hopePictureBox1.Name = "hopePictureBox1";
             this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.hopePictureBox1.Size = new System.Drawing.Size(435, 146);
+            this.hopePictureBox1.Size = new System.Drawing.Size(326, 119);
             this.hopePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.hopePictureBox1.TabIndex = 9;
@@ -304,13 +298,12 @@
             this.operationButton.Lighting = false;
             this.operationButton.LinearGradient_Background = false;
             this.operationButton.LinearGradientPen = true;
-            this.operationButton.Location = new System.Drawing.Point(62, 594);
-            this.operationButton.Margin = new System.Windows.Forms.Padding(4);
+            this.operationButton.Location = new System.Drawing.Point(47, 373);
             this.operationButton.Name = "operationButton";
             this.operationButton.PenWidth = 15;
             this.operationButton.Rounding = true;
             this.operationButton.RoundingInt = 25;
-            this.operationButton.Size = new System.Drawing.Size(313, 62);
+            this.operationButton.Size = new System.Drawing.Size(235, 50);
             this.operationButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.operationButton.TabIndex = 10;
             this.operationButton.Tag = "Cyber";
@@ -347,13 +340,12 @@
             this.moveButton.Lighting = false;
             this.moveButton.LinearGradient_Background = false;
             this.moveButton.LinearGradientPen = true;
-            this.moveButton.Location = new System.Drawing.Point(65, 664);
-            this.moveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.moveButton.Location = new System.Drawing.Point(50, 430);
             this.moveButton.Name = "moveButton";
             this.moveButton.PenWidth = 15;
             this.moveButton.Rounding = true;
             this.moveButton.RoundingInt = 25;
-            this.moveButton.Size = new System.Drawing.Size(313, 62);
+            this.moveButton.Size = new System.Drawing.Size(235, 50);
             this.moveButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.moveButton.TabIndex = 11;
             this.moveButton.Tag = "Cyber";
@@ -364,7 +356,7 @@
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.BackgroundImage = global::NexoStock.Properties.Resources.DashboardBackground;
@@ -378,9 +370,8 @@
             this.Controls.Add(this.userButton);
             this.Controls.Add(this.HomeButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminDashboard";
-            this.Size = new System.Drawing.Size(435, 1033);
+            this.Size = new System.Drawing.Size(326, 662);
             ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -38,9 +38,9 @@
             this.adminDashboard1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adminDashboard1.BackgroundImage")));
             this.adminDashboard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.adminDashboard1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.adminDashboard1.Location = new System.Drawing.Point(1, 1);
+            this.adminDashboard1.Location = new System.Drawing.Point(0, 0);
             this.adminDashboard1.Name = "adminDashboard1";
-            this.adminDashboard1.Size = new System.Drawing.Size(326, 839);
+            this.adminDashboard1.Size = new System.Drawing.Size(326, 662);
             this.adminDashboard1.TabIndex = 0;
             // 
             // Dashboard
@@ -48,7 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1614, 839);
+            this.ClientSize = new System.Drawing.Size(1444, 662);
             this.ControlBox = false;
             this.Controls.Add(this.adminDashboard1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

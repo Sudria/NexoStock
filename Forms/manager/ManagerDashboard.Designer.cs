@@ -67,13 +67,12 @@
             this.HomeButton.Lighting = true;
             this.HomeButton.LinearGradient_Background = true;
             this.HomeButton.LinearGradientPen = true;
-            this.HomeButton.Location = new System.Drawing.Point(64, 310);
-            this.HomeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HomeButton.Location = new System.Drawing.Point(57, 111);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.PenWidth = 15;
             this.HomeButton.Rounding = true;
             this.HomeButton.RoundingInt = 25;
-            this.HomeButton.Size = new System.Drawing.Size(313, 62);
+            this.HomeButton.Size = new System.Drawing.Size(235, 50);
             this.HomeButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.HomeButton.TabIndex = 2;
             this.HomeButton.Tag = "Cyber";
@@ -111,13 +110,12 @@
             this.cyberButton1.Lighting = false;
             this.cyberButton1.LinearGradient_Background = false;
             this.cyberButton1.LinearGradientPen = true;
-            this.cyberButton1.Location = new System.Drawing.Point(64, 406);
-            this.cyberButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cyberButton1.Location = new System.Drawing.Point(57, 189);
             this.cyberButton1.Name = "cyberButton1";
             this.cyberButton1.PenWidth = 15;
             this.cyberButton1.Rounding = true;
             this.cyberButton1.RoundingInt = 25;
-            this.cyberButton1.Size = new System.Drawing.Size(313, 62);
+            this.cyberButton1.Size = new System.Drawing.Size(235, 50);
             this.cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton1.TabIndex = 3;
             this.cyberButton1.Tag = "Cyber";
@@ -155,13 +153,12 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = true;
-            this.cyberButton3.Location = new System.Drawing.Point(61, 489);
-            this.cyberButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cyberButton3.Location = new System.Drawing.Point(55, 256);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
             this.cyberButton3.RoundingInt = 25;
-            this.cyberButton3.Size = new System.Drawing.Size(313, 62);
+            this.cyberButton3.Size = new System.Drawing.Size(235, 50);
             this.cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton3.TabIndex = 4;
             this.cyberButton3.Tag = "Cyber";
@@ -199,13 +196,12 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = true;
-            this.cyberButton4.Location = new System.Drawing.Point(64, 578);
-            this.cyberButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cyberButton4.Location = new System.Drawing.Point(57, 329);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
             this.cyberButton4.RoundingInt = 25;
-            this.cyberButton4.Size = new System.Drawing.Size(313, 62);
+            this.cyberButton4.Size = new System.Drawing.Size(235, 50);
             this.cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton4.TabIndex = 5;
             this.cyberButton4.Tag = "Cyber";
@@ -220,11 +216,10 @@
             this.hopePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.hopePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.hopePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hopePictureBox1.Image")));
-            this.hopePictureBox1.Location = new System.Drawing.Point(-1, 886);
-            this.hopePictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hopePictureBox1.Location = new System.Drawing.Point(0, 543);
             this.hopePictureBox1.Name = "hopePictureBox1";
             this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.hopePictureBox1.Size = new System.Drawing.Size(435, 146);
+            this.hopePictureBox1.Size = new System.Drawing.Size(326, 119);
             this.hopePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.hopePictureBox1.TabIndex = 9;
@@ -259,13 +254,12 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = true;
-            this.cyberButton5.Location = new System.Drawing.Point(61, 661);
-            this.cyberButton5.Margin = new System.Windows.Forms.Padding(4);
+            this.cyberButton5.Location = new System.Drawing.Point(55, 396);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
             this.cyberButton5.RoundingInt = 25;
-            this.cyberButton5.Size = new System.Drawing.Size(313, 62);
+            this.cyberButton5.Size = new System.Drawing.Size(235, 50);
             this.cyberButton5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton5.TabIndex = 6;
             this.cyberButton5.Tag = "Cyber";
@@ -303,13 +297,12 @@
             this.cyberButton2.Lighting = false;
             this.cyberButton2.LinearGradient_Background = false;
             this.cyberButton2.LinearGradientPen = true;
-            this.cyberButton2.Location = new System.Drawing.Point(64, 731);
-            this.cyberButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.cyberButton2.Location = new System.Drawing.Point(57, 453);
             this.cyberButton2.Name = "cyberButton2";
             this.cyberButton2.PenWidth = 15;
             this.cyberButton2.Rounding = true;
             this.cyberButton2.RoundingInt = 25;
-            this.cyberButton2.Size = new System.Drawing.Size(313, 62);
+            this.cyberButton2.Size = new System.Drawing.Size(235, 50);
             this.cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton2.TabIndex = 10;
             this.cyberButton2.Tag = "Cyber";
@@ -320,7 +313,7 @@
             // 
             // ManagerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.BackgroundImage = global::NexoStock.Properties.Resources.DashboardBackground;
@@ -333,9 +326,8 @@
             this.Controls.Add(this.cyberButton1);
             this.Controls.Add(this.HomeButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManagerDashboard";
-            this.Size = new System.Drawing.Size(435, 1033);
+            this.Size = new System.Drawing.Size(326, 662);
             ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
