@@ -65,7 +65,7 @@
             this.HomeButton.Lighting = true;
             this.HomeButton.LinearGradient_Background = true;
             this.HomeButton.LinearGradientPen = true;
-            this.HomeButton.Location = new System.Drawing.Point(44, 112);
+            this.HomeButton.Location = new System.Drawing.Point(50, 88);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.PenWidth = 15;
             this.HomeButton.Rounding = true;
@@ -108,7 +108,7 @@
             this.productButton.Lighting = false;
             this.productButton.LinearGradient_Background = false;
             this.productButton.LinearGradientPen = true;
-            this.productButton.Location = new System.Drawing.Point(44, 190);
+            this.productButton.Location = new System.Drawing.Point(50, 156);
             this.productButton.Name = "productButton";
             this.productButton.PenWidth = 15;
             this.productButton.Rounding = true;
@@ -151,7 +151,7 @@
             this.providerButton.Lighting = false;
             this.providerButton.LinearGradient_Background = false;
             this.providerButton.LinearGradientPen = true;
-            this.providerButton.Location = new System.Drawing.Point(42, 257);
+            this.providerButton.Location = new System.Drawing.Point(50, 224);
             this.providerButton.Name = "providerButton";
             this.providerButton.PenWidth = 15;
             this.providerButton.Rounding = true;
@@ -194,7 +194,7 @@
             this.moveButton.Lighting = false;
             this.moveButton.LinearGradient_Background = false;
             this.moveButton.LinearGradientPen = true;
-            this.moveButton.Location = new System.Drawing.Point(44, 330);
+            this.moveButton.Location = new System.Drawing.Point(50, 292);
             this.moveButton.Name = "moveButton";
             this.moveButton.PenWidth = 15;
             this.moveButton.Rounding = true;

@@ -67,7 +67,7 @@
             this.HomeButton.Lighting = true;
             this.HomeButton.LinearGradient_Background = true;
             this.HomeButton.LinearGradientPen = true;
-            this.HomeButton.Location = new System.Drawing.Point(57, 111);
+            this.HomeButton.Location = new System.Drawing.Point(50, 88);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.PenWidth = 15;
             this.HomeButton.Rounding = true;
@@ -110,7 +110,7 @@
             this.cyberButton1.Lighting = false;
             this.cyberButton1.LinearGradient_Background = false;
             this.cyberButton1.LinearGradientPen = true;
-            this.cyberButton1.Location = new System.Drawing.Point(57, 189);
+            this.cyberButton1.Location = new System.Drawing.Point(50, 154);
             this.cyberButton1.Name = "cyberButton1";
             this.cyberButton1.PenWidth = 15;
             this.cyberButton1.Rounding = true;
@@ -153,7 +153,7 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = true;
-            this.cyberButton3.Location = new System.Drawing.Point(55, 256);
+            this.cyberButton3.Location = new System.Drawing.Point(50, 220);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
@@ -196,7 +196,7 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = true;
-            this.cyberButton4.Location = new System.Drawing.Point(57, 329);
+            this.cyberButton4.Location = new System.Drawing.Point(50, 286);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
@@ -254,7 +254,7 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = true;
-            this.cyberButton5.Location = new System.Drawing.Point(55, 396);
+            this.cyberButton5.Location = new System.Drawing.Point(50, 352);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
@@ -297,7 +297,7 @@
             this.cyberButton2.Lighting = false;
             this.cyberButton2.LinearGradient_Background = false;
             this.cyberButton2.LinearGradientPen = true;
-            this.cyberButton2.Location = new System.Drawing.Point(57, 453);
+            this.cyberButton2.Location = new System.Drawing.Point(50, 418);
             this.cyberButton2.Name = "cyberButton2";
             this.cyberButton2.PenWidth = 15;
             this.cyberButton2.Rounding = true;
