@@ -20,6 +20,9 @@ namespace NexoStock.Forms.Admin
         public AdminForm()
         {
             InitializeComponent();
+            activedButton = buttonHome;
+            activeButton(activedButton);
+            LoadHomeControler();
         }
 
 
