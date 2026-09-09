@@ -119,5 +119,15 @@ namespace NexoStock.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nexus_stock_logo_3 {
+            get {
+                object obj = ResourceManager.GetObject("Nexus-stock-logo-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

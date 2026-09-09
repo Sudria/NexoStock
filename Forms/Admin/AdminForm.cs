@@ -43,7 +43,13 @@ namespace NexoStock.Forms.Admin
             activeButton(activedButton);
             LoadUserControler();
         }
-
+        private void buttonProduct_Click(object sender, EventArgs e)
+        {
+            innactiveButton(activedButton);
+            activedButton = buttonProduct;
+            activeButton(activedButton);
+            LoadProductControler();
+        }
 
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -79,6 +85,11 @@ namespace NexoStock.Forms.Admin
             panelContent.Controls.Add(new AdminUserPanel());
         }
 
+        public void LoadProductControler()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminProductPanel());
+        }
 
 
         //COMPORTAMIENTO DE BOTONES
@@ -94,15 +105,6 @@ namespace NexoStock.Forms.Admin
             e.Lighting = false;
             e.LinearGradient_Background = false;
         }
-
-
-
-  
-
-
-
-
-
 
 
     }

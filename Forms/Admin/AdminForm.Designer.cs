@@ -159,7 +159,7 @@
             // 
             this.hopePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.hopePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.hopePictureBox1.Image = global::NexoStock.Properties.Resources.Nexus_stock_logo_2;
+            this.hopePictureBox1.Image = global::NexoStock.Properties.Resources.Nexus_stock_logo_3;
             this.hopePictureBox1.Location = new System.Drawing.Point(0, 0);
             this.hopePictureBox1.Name = "hopePictureBox1";
             this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
@@ -379,6 +379,7 @@
             this.buttonProduct.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonProduct.Timer_Effect_1 = 1;
             this.buttonProduct.Timer_RGB = 1;
+            this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
             // 
             // buttonUser
             // 
