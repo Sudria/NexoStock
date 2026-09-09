@@ -31,25 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomePanel));
             this.label1 = new System.Windows.Forms.Label();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lostBorderPanel4 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lostBorderPanel5 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.parrotLineGraph1 = new ReaLTaiizor.Controls.ParrotLineGraph();
             this.label3 = new System.Windows.Forms.Label();
             this.lostBorderPanel6 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.parrotPieGraph1 = new ReaLTaiizor.Controls.ParrotPieGraph();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -58,28 +56,30 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lostBorderPanel8 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lostBorderPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.lostBorderPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.lostBorderPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.lostBorderPanel5.SuspendLayout();
             this.lostBorderPanel6.SuspendLayout();
             this.lostBorderPanel7.SuspendLayout();
             this.lostBorderPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,26 +102,12 @@
             this.lostBorderPanel1.Controls.Add(this.label2);
             this.lostBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel1.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel1.Location = new System.Drawing.Point(53, 65);
+            this.lostBorderPanel1.Location = new System.Drawing.Point(36, 65);
             this.lostBorderPanel1.Name = "lostBorderPanel1";
             this.lostBorderPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel1.ShowText = true;
             this.lostBorderPanel1.Size = new System.Drawing.Size(261, 113);
             this.lostBorderPanel1.TabIndex = 12;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 60;
-            this.iconPictureBox1.Location = new System.Drawing.Point(12, 39);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(68, 60);
-            this.iconPictureBox1.TabIndex = 2;
-            this.iconPictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -154,26 +140,12 @@
             this.lostBorderPanel2.Controls.Add(this.label9);
             this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel2.Location = new System.Drawing.Point(320, 65);
+            this.lostBorderPanel2.Location = new System.Drawing.Point(303, 65);
             this.lostBorderPanel2.Name = "lostBorderPanel2";
             this.lostBorderPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel2.ShowText = true;
             this.lostBorderPanel2.Size = new System.Drawing.Size(261, 113);
             this.lostBorderPanel2.TabIndex = 13;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Box;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 60;
-            this.iconPictureBox2.Location = new System.Drawing.Point(12, 39);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(68, 60);
-            this.iconPictureBox2.TabIndex = 2;
-            this.iconPictureBox2.TabStop = false;
             // 
             // label8
             // 
@@ -206,26 +178,12 @@
             this.lostBorderPanel3.Controls.Add(this.label11);
             this.lostBorderPanel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel3.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel3.Location = new System.Drawing.Point(587, 65);
+            this.lostBorderPanel3.Location = new System.Drawing.Point(570, 65);
             this.lostBorderPanel3.Name = "lostBorderPanel3";
             this.lostBorderPanel3.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel3.ShowText = true;
             this.lostBorderPanel3.Size = new System.Drawing.Size(261, 113);
             this.lostBorderPanel3.TabIndex = 14;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox3.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
-            this.iconPictureBox3.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 60;
-            this.iconPictureBox3.Location = new System.Drawing.Point(12, 39);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(68, 60);
-            this.iconPictureBox3.TabIndex = 2;
-            this.iconPictureBox3.TabStop = false;
             // 
             // label10
             // 
@@ -258,26 +216,12 @@
             this.lostBorderPanel4.Controls.Add(this.label13);
             this.lostBorderPanel4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel4.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel4.Location = new System.Drawing.Point(854, 65);
+            this.lostBorderPanel4.Location = new System.Drawing.Point(837, 65);
             this.lostBorderPanel4.Name = "lostBorderPanel4";
             this.lostBorderPanel4.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel4.ShowText = true;
             this.lostBorderPanel4.Size = new System.Drawing.Size(261, 113);
             this.lostBorderPanel4.TabIndex = 15;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 60;
-            this.iconPictureBox4.Location = new System.Drawing.Point(12, 39);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(68, 60);
-            this.iconPictureBox4.TabIndex = 2;
-            this.iconPictureBox4.TabStop = false;
             // 
             // label12
             // 
@@ -309,7 +253,7 @@
             this.lostBorderPanel5.Controls.Add(this.label3);
             this.lostBorderPanel5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel5.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel5.Location = new System.Drawing.Point(53, 202);
+            this.lostBorderPanel5.Location = new System.Drawing.Point(36, 202);
             this.lostBorderPanel5.Name = "lostBorderPanel5";
             this.lostBorderPanel5.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel5.ShowText = true;
@@ -369,12 +313,34 @@
             this.lostBorderPanel6.Controls.Add(this.label4);
             this.lostBorderPanel6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel6.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel6.Location = new System.Drawing.Point(678, 202);
+            this.lostBorderPanel6.Location = new System.Drawing.Point(661, 202);
             this.lostBorderPanel6.Name = "lostBorderPanel6";
             this.lostBorderPanel6.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel6.ShowText = true;
             this.lostBorderPanel6.Size = new System.Drawing.Size(437, 240);
             this.lostBorderPanel6.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(291, 114);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 25);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "CATEGORIA 4";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(291, 89);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(132, 25);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "CATEGORIA 3";
             // 
             // parrotPieGraph1
             // 
@@ -428,7 +394,7 @@
             this.lostBorderPanel7.Controls.Add(this.label6);
             this.lostBorderPanel7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel7.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel7.Location = new System.Drawing.Point(53, 471);
+            this.lostBorderPanel7.Location = new System.Drawing.Point(36, 471);
             this.lostBorderPanel7.Name = "lostBorderPanel7";
             this.lostBorderPanel7.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel7.ShowText = true;
@@ -453,7 +419,7 @@
             this.lostBorderPanel8.Controls.Add(this.label5);
             this.lostBorderPanel8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel8.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel8.Location = new System.Drawing.Point(587, 471);
+            this.lostBorderPanel8.Location = new System.Drawing.Point(570, 471);
             this.lostBorderPanel8.Name = "lostBorderPanel8";
             this.lostBorderPanel8.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel8.ShowText = true;
@@ -471,55 +437,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "TOP PRODUCTOS MAS VENDIDOS";
             // 
-            // label16
+            // iconPictureBox8
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(291, 89);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 25);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "CATEGORIA 3";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(291, 114);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 25);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "CATEGORIA 4";
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 25;
-            this.iconPictureBox5.Location = new System.Drawing.Point(255, 39);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox5.TabIndex = 3;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox6
-            // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox6.IconSize = 25;
-            this.iconPictureBox6.Location = new System.Drawing.Point(255, 64);
-            this.iconPictureBox6.Name = "iconPictureBox6";
-            this.iconPictureBox6.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox6.TabIndex = 7;
-            this.iconPictureBox6.TabStop = false;
+            this.iconPictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
+            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.Certificate;
+            this.iconPictureBox8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
+            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox8.IconSize = 25;
+            this.iconPictureBox8.Location = new System.Drawing.Point(255, 114);
+            this.iconPictureBox8.Name = "iconPictureBox8";
+            this.iconPictureBox8.Size = new System.Drawing.Size(30, 25);
+            this.iconPictureBox8.TabIndex = 9;
+            this.iconPictureBox8.TabStop = false;
             // 
             // iconPictureBox7
             // 
@@ -535,19 +465,89 @@
             this.iconPictureBox7.TabIndex = 8;
             this.iconPictureBox7.TabStop = false;
             // 
-            // iconPictureBox8
+            // iconPictureBox6
             // 
-            this.iconPictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
-            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
-            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox8.IconSize = 25;
-            this.iconPictureBox8.Location = new System.Drawing.Point(255, 114);
-            this.iconPictureBox8.Name = "iconPictureBox8";
-            this.iconPictureBox8.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox8.TabIndex = 9;
-            this.iconPictureBox8.TabStop = false;
+            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Certificate;
+            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 25;
+            this.iconPictureBox6.Location = new System.Drawing.Point(255, 64);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(30, 25);
+            this.iconPictureBox6.TabIndex = 7;
+            this.iconPictureBox6.TabStop = false;
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Certificate;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 25;
+            this.iconPictureBox5.Location = new System.Drawing.Point(255, 39);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(30, 25);
+            this.iconPictureBox5.TabIndex = 3;
+            this.iconPictureBox5.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 60;
+            this.iconPictureBox4.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox4.TabIndex = 2;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.ContactBook;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 60;
+            this.iconPictureBox3.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox3.TabIndex = 2;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Box;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 60;
+            this.iconPictureBox2.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox2.TabIndex = 2;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 60;
+            this.iconPictureBox1.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox1.TabIndex = 2;
+            this.iconPictureBox1.TabStop = false;
             // 
             // AdminHomePanel
             // 
@@ -568,16 +568,12 @@
             this.Size = new System.Drawing.Size(1120, 662);
             this.lostBorderPanel1.ResumeLayout(false);
             this.lostBorderPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.lostBorderPanel2.ResumeLayout(false);
             this.lostBorderPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.lostBorderPanel3.ResumeLayout(false);
             this.lostBorderPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.lostBorderPanel4.ResumeLayout(false);
             this.lostBorderPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.lostBorderPanel5.ResumeLayout(false);
             this.lostBorderPanel5.PerformLayout();
             this.lostBorderPanel6.ResumeLayout(false);
@@ -586,10 +582,14 @@
             this.lostBorderPanel7.PerformLayout();
             this.lostBorderPanel8.ResumeLayout(false);
             this.lostBorderPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

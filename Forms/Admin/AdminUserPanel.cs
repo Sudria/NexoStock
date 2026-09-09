@@ -19,6 +19,12 @@ namespace NexoStock.Forms.Admin
 
         private void newUserButton_Click(object sender, EventArgs e)
         {
+            AdminForm dashboard = this.ParentForm as AdminForm;
+            dashboard.LoadNewUserControler();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
 
         }
     }

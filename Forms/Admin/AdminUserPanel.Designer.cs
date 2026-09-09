@@ -41,7 +41,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            this.lostBorderPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.lostBorderPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.lostBorderPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,12 +116,12 @@
             this.newUserButton.Lighting = true;
             this.newUserButton.LinearGradient_Background = true;
             this.newUserButton.LinearGradientPen = true;
-            this.newUserButton.Location = new System.Drawing.Point(606, 12);
+            this.newUserButton.Location = new System.Drawing.Point(890, 25);
             this.newUserButton.Name = "newUserButton";
             this.newUserButton.PenWidth = 15;
             this.newUserButton.Rounding = true;
             this.newUserButton.RoundingInt = 25;
-            this.newUserButton.Size = new System.Drawing.Size(235, 50);
+            this.newUserButton.Size = new System.Drawing.Size(190, 50);
             this.newUserButton.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.newUserButton.TabIndex = 3;
             this.newUserButton.Tag = "Cyber";
@@ -238,11 +260,250 @@
             this.poisonDataGridView1.Size = new System.Drawing.Size(1015, 292);
             this.poisonDataGridView1.TabIndex = 12;
             // 
+            // lostBorderPanel2
+            // 
+            this.lostBorderPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.lostBorderPanel2.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel2.Controls.Add(this.label9);
+            this.lostBorderPanel2.Controls.Add(this.label13);
+            this.lostBorderPanel2.Controls.Add(this.iconPictureBox2);
+            this.lostBorderPanel2.Controls.Add(this.label8);
+            this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
+            this.lostBorderPanel2.Location = new System.Drawing.Point(53, 100);
+            this.lostBorderPanel2.Name = "lostBorderPanel2";
+            this.lostBorderPanel2.Padding = new System.Windows.Forms.Padding(5);
+            this.lostBorderPanel2.ShowText = true;
+            this.lostBorderPanel2.Size = new System.Drawing.Size(221, 113);
+            this.lostBorderPanel2.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(111, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 25);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "TOTALES";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(7, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 25);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "USUARIOS";
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 60;
+            this.iconPictureBox2.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox2.TabIndex = 2;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(110, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 36);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "0";
+            // 
+            // lostBorderPanel1
+            // 
+            this.lostBorderPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.lostBorderPanel1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.lostBorderPanel1.Controls.Add(this.label5);
+            this.lostBorderPanel1.Controls.Add(this.label12);
+            this.lostBorderPanel1.Controls.Add(this.iconPictureBox1);
+            this.lostBorderPanel1.Controls.Add(this.label7);
+            this.lostBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lostBorderPanel1.ForeColor = System.Drawing.Color.White;
+            this.lostBorderPanel1.Location = new System.Drawing.Point(329, 100);
+            this.lostBorderPanel1.Name = "lostBorderPanel1";
+            this.lostBorderPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.lostBorderPanel1.ShowText = true;
+            this.lostBorderPanel1.Size = new System.Drawing.Size(221, 113);
+            this.lostBorderPanel1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(110, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 36);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(111, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 25);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "ACTIVOS";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 60;
+            this.iconPictureBox1.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox1.TabIndex = 2;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(7, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "USUARIOS";
+            // 
+            // lostBorderPanel3
+            // 
+            this.lostBorderPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.lostBorderPanel3.BorderColor = System.Drawing.Color.Crimson;
+            this.lostBorderPanel3.Controls.Add(this.label10);
+            this.lostBorderPanel3.Controls.Add(this.label14);
+            this.lostBorderPanel3.Controls.Add(this.label15);
+            this.lostBorderPanel3.Controls.Add(this.iconPictureBox3);
+            this.lostBorderPanel3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lostBorderPanel3.ForeColor = System.Drawing.Color.White;
+            this.lostBorderPanel3.Location = new System.Drawing.Point(596, 100);
+            this.lostBorderPanel3.Name = "lostBorderPanel3";
+            this.lostBorderPanel3.Padding = new System.Windows.Forms.Padding(5);
+            this.lostBorderPanel3.ShowText = true;
+            this.lostBorderPanel3.Size = new System.Drawing.Size(221, 113);
+            this.lostBorderPanel3.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(108, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 36);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(109, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 25);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "INACTIVOS";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(9, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(103, 25);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "USUARIOS";
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.Crimson;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 60;
+            this.iconPictureBox3.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox3.TabIndex = 2;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Alpha = 30;
+            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.Background = true;
+            this.buttonEdit.Background_WidthPen = 2F;
+            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonEdit.BackgroundPen = true;
+            this.buttonEdit.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonEdit.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.buttonEdit.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonEdit.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonEdit.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonEdit.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonEdit.ColorPen_2 = System.Drawing.Color.Violet;
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEdit.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonEdit.Effect_1 = true;
+            this.buttonEdit.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonEdit.Effect_1_Transparency = 25;
+            this.buttonEdit.Effect_2 = false;
+            this.buttonEdit.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonEdit.Effect_2_Transparency = 20;
+            this.buttonEdit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonEdit.Lighting = true;
+            this.buttonEdit.LinearGradient_Background = true;
+            this.buttonEdit.LinearGradientPen = true;
+            this.buttonEdit.Location = new System.Drawing.Point(956, 272);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.PenWidth = 15;
+            this.buttonEdit.Rounding = true;
+            this.buttonEdit.RoundingInt = 25;
+            this.buttonEdit.Size = new System.Drawing.Size(112, 38);
+            this.buttonEdit.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonEdit.TabIndex = 17;
+            this.buttonEdit.Tag = "Cyber";
+            this.buttonEdit.TextButton = "EDITAR";
+            this.buttonEdit.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonEdit.Timer_Effect_1 = 1;
+            this.buttonEdit.Timer_RGB = 1;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
             // AdminUserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.lostBorderPanel3);
+            this.Controls.Add(this.lostBorderPanel1);
+            this.Controls.Add(this.lostBorderPanel2);
             this.Controls.Add(this.poisonDataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -257,6 +518,15 @@
             this.Name = "AdminUserPanel";
             this.Size = new System.Drawing.Size(1120, 662);
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            this.lostBorderPanel2.ResumeLayout(false);
+            this.lostBorderPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            this.lostBorderPanel1.ResumeLayout(false);
+            this.lostBorderPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.lostBorderPanel3.ResumeLayout(false);
+            this.lostBorderPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +544,21 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label label8;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel1;
+        private System.Windows.Forms.Label label12;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label7;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private ReaLTaiizor.Controls.CyberButton buttonEdit;
     }
 }

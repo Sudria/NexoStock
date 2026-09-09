@@ -30,16 +30,20 @@ namespace NexoStock.Utils
         }
 
         // Validación de número
-        public static bool isValidNum(string text, string fieldCamp)
+        public static bool isValidNum(string text, string fieldCamp, int lenght)
         {
             if (string.IsNullOrWhiteSpace(text))
             {
                 MessageBox.Show($"El campo {fieldCamp} no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (!int.TryParse(text, out int num))
+            else if (!text.All(char.IsDigit))
             {
                 MessageBox.Show($"El campo {fieldCamp} debe contener un número válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }else if (text.Length != lenght)
+            {
+                MessageBox.Show($"El campo {fieldCamp} debe tener exactamente {lenght} dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -70,5 +74,26 @@ namespace NexoStock.Utils
             }
             return true;
         }
+
+        public static bool isValidPassword(string password, string repeatPassword)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("El campo Contraseña no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (password.Length < 6)
+            {
+                MessageBox.Show("El campo Contraseña debe tener al menos 6 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (password != repeatPassword)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        
     }
 }
