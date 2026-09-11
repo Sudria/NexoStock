@@ -79,6 +79,12 @@ namespace NexoStock.Forms.Admin
             panelContent.Controls.Add(new AdminNewUserPanel());
         }
 
+        public void LoadNewProductControler()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminNewProductPanel());
+        }
+
         public void LoadUserControler()
         {
             panelContent.Controls.Clear();

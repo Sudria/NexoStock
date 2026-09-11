@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.buttonNewProduct = new ReaLTaiizor.Controls.CyberButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
@@ -120,6 +120,17 @@
             this.lostBorderPanel3.ShowText = true;
             this.lostBorderPanel3.Size = new System.Drawing.Size(221, 113);
             this.lostBorderPanel3.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(32, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(159, 25);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "FUERA DE STOCK";
             // 
             // label10
             // 
@@ -378,6 +389,7 @@
             this.buttonNewProduct.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonNewProduct.Timer_Effect_1 = 1;
             this.buttonNewProduct.Timer_RGB = 1;
+            this.buttonNewProduct.Click += new System.EventHandler(this.buttonNewProduct_Click);
             // 
             // label2
             // 
@@ -400,17 +412,6 @@
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 18;
             this.label1.Text = "PRODUCTOS";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(32, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 25);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "FUERA DE STOCK";
             // 
             // iconPictureBox3
             // 

@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace NexoStock.Forms.Admin
 {
-    public partial class AdminProductPanel : UserControl
+    public partial class NewCategoryForm : Form
     {
-        public AdminProductPanel()
+        public NewCategoryForm()
         {
             InitializeComponent();
         }
 
-        private void buttonNewProduct_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            AdminForm dashboard = this.ParentForm as AdminForm;
-            dashboard.LoadNewProductControler();
+            this.Close();
         }
     }
 }

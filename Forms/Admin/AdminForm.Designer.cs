@@ -32,7 +32,6 @@
             this.panelDashboard = new System.Windows.Forms.Panel();
             this.buttonExit = new ReaLTaiizor.Controls.CyberButton();
             this.buttonCloseSession = new ReaLTaiizor.Controls.CyberButton();
-            this.hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
             this.buttonMovements = new ReaLTaiizor.Controls.CyberButton();
             this.buttonOperation = new ReaLTaiizor.Controls.CyberButton();
             this.buttonProvider = new ReaLTaiizor.Controls.CyberButton();
@@ -41,7 +40,6 @@
             this.buttonUser = new ReaLTaiizor.Controls.CyberButton();
             this.buttonHome = new ReaLTaiizor.Controls.CyberButton();
             this.panelDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContent
@@ -53,10 +51,10 @@
             // 
             // panelDashboard
             // 
-            this.panelDashboard.BackgroundImage = global::NexoStock.Properties.Resources.DashboardBackground;
+            this.panelDashboard.BackgroundImage = global::NexoStock.Properties.Resources.dashboard_2;
+            this.panelDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDashboard.Controls.Add(this.buttonExit);
             this.panelDashboard.Controls.Add(this.buttonCloseSession);
-            this.panelDashboard.Controls.Add(this.hopePictureBox1);
             this.panelDashboard.Controls.Add(this.buttonMovements);
             this.panelDashboard.Controls.Add(this.buttonOperation);
             this.panelDashboard.Controls.Add(this.buttonProvider);
@@ -154,21 +152,6 @@
             this.buttonCloseSession.Timer_Effect_1 = 1;
             this.buttonCloseSession.Timer_RGB = 1;
             this.buttonCloseSession.Click += new System.EventHandler(this.buttonCloseSession_Click);
-            // 
-            // hopePictureBox1
-            // 
-            this.hopePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.hopePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.hopePictureBox1.Image = global::NexoStock.Properties.Resources.Nexus_stock_logo_3;
-            this.hopePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.hopePictureBox1.Name = "hopePictureBox1";
-            this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.hopePictureBox1.Size = new System.Drawing.Size(333, 123);
-            this.hopePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.hopePictureBox1.TabIndex = 17;
-            this.hopePictureBox1.TabStop = false;
-            this.hopePictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // buttonMovements
             // 
@@ -481,7 +464,6 @@
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelDashboard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,7 +473,6 @@
         private System.Windows.Forms.Panel panelDashboard;
         private ReaLTaiizor.Controls.CyberButton buttonMovements;
         private ReaLTaiizor.Controls.CyberButton buttonOperation;
-        private ReaLTaiizor.Controls.HopePictureBox hopePictureBox1;
         private ReaLTaiizor.Controls.CyberButton buttonProvider;
         private ReaLTaiizor.Controls.CyberButton buttonCategory;
         private ReaLTaiizor.Controls.CyberButton buttonProduct;
