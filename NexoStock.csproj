@@ -140,11 +140,23 @@
     <Compile Include="Forms\Admin\AdminNewProductPanel.Designer.cs">
       <DependentUpon>AdminNewProductPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\AdminNewProviderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminNewProviderPanel.Designer.cs">
+      <DependentUpon>AdminNewProviderPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\AdminNewUserPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin\AdminNewUserPanel.Designer.cs">
       <DependentUpon>AdminNewUserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminProviderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminProviderPanel.Designer.cs">
+      <DependentUpon>AdminProviderPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\AdminProductPanel.cs">
       <SubType>UserControl</SubType>
@@ -210,8 +222,14 @@
     <EmbeddedResource Include="Forms\Admin\AdminNewProductPanel.resx">
       <DependentUpon>AdminNewProductPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminNewProviderPanel.resx">
+      <DependentUpon>AdminNewProviderPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminNewUserPanel.resx">
       <DependentUpon>AdminNewUserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminProviderPanel.resx">
+      <DependentUpon>AdminProviderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminProductPanel.resx">
       <DependentUpon>AdminProductPanel.cs</DependentUpon>

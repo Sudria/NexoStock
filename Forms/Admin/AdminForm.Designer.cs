@@ -35,7 +35,6 @@
             this.buttonMovements = new ReaLTaiizor.Controls.CyberButton();
             this.buttonOperation = new ReaLTaiizor.Controls.CyberButton();
             this.buttonProvider = new ReaLTaiizor.Controls.CyberButton();
-            this.buttonCategory = new ReaLTaiizor.Controls.CyberButton();
             this.buttonProduct = new ReaLTaiizor.Controls.CyberButton();
             this.buttonUser = new ReaLTaiizor.Controls.CyberButton();
             this.buttonHome = new ReaLTaiizor.Controls.CyberButton();
@@ -58,7 +57,6 @@
             this.panelDashboard.Controls.Add(this.buttonMovements);
             this.panelDashboard.Controls.Add(this.buttonOperation);
             this.panelDashboard.Controls.Add(this.buttonProvider);
-            this.panelDashboard.Controls.Add(this.buttonCategory);
             this.panelDashboard.Controls.Add(this.buttonProduct);
             this.panelDashboard.Controls.Add(this.buttonUser);
             this.panelDashboard.Controls.Add(this.buttonHome);
@@ -181,7 +179,7 @@
             this.buttonMovements.Lighting = false;
             this.buttonMovements.LinearGradient_Background = false;
             this.buttonMovements.LinearGradientPen = true;
-            this.buttonMovements.Location = new System.Drawing.Point(48, 527);
+            this.buttonMovements.Location = new System.Drawing.Point(48, 460);
             this.buttonMovements.Name = "buttonMovements";
             this.buttonMovements.PenWidth = 15;
             this.buttonMovements.Rounding = true;
@@ -223,7 +221,7 @@
             this.buttonOperation.Lighting = false;
             this.buttonOperation.LinearGradient_Background = false;
             this.buttonOperation.LinearGradientPen = true;
-            this.buttonOperation.Location = new System.Drawing.Point(48, 470);
+            this.buttonOperation.Location = new System.Drawing.Point(48, 405);
             this.buttonOperation.Name = "buttonOperation";
             this.buttonOperation.PenWidth = 15;
             this.buttonOperation.Rounding = true;
@@ -265,7 +263,7 @@
             this.buttonProvider.Lighting = false;
             this.buttonProvider.LinearGradient_Background = false;
             this.buttonProvider.LinearGradientPen = true;
-            this.buttonProvider.Location = new System.Drawing.Point(48, 413);
+            this.buttonProvider.Location = new System.Drawing.Point(48, 350);
             this.buttonProvider.Name = "buttonProvider";
             this.buttonProvider.PenWidth = 15;
             this.buttonProvider.Rounding = true;
@@ -278,48 +276,7 @@
             this.buttonProvider.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonProvider.Timer_Effect_1 = 1;
             this.buttonProvider.Timer_RGB = 1;
-            // 
-            // buttonCategory
-            // 
-            this.buttonCategory.Alpha = 30;
-            this.buttonCategory.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCategory.Background = true;
-            this.buttonCategory.Background_WidthPen = 2F;
-            this.buttonCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonCategory.BackgroundPen = true;
-            this.buttonCategory.ColorBackground = System.Drawing.Color.Empty;
-            this.buttonCategory.ColorBackground_1 = System.Drawing.Color.Fuchsia;
-            this.buttonCategory.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
-            this.buttonCategory.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.buttonCategory.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
-            this.buttonCategory.ColorPen_1 = System.Drawing.Color.Transparent;
-            this.buttonCategory.ColorPen_2 = System.Drawing.Color.Transparent;
-            this.buttonCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCategory.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.buttonCategory.Effect_1 = true;
-            this.buttonCategory.Effect_1_ColorBackground = System.Drawing.Color.Violet;
-            this.buttonCategory.Effect_1_Transparency = 25;
-            this.buttonCategory.Effect_2 = false;
-            this.buttonCategory.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
-            this.buttonCategory.Effect_2_Transparency = 20;
-            this.buttonCategory.Font = new System.Drawing.Font("Arial", 11F);
-            this.buttonCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.buttonCategory.Lighting = false;
-            this.buttonCategory.LinearGradient_Background = false;
-            this.buttonCategory.LinearGradientPen = true;
-            this.buttonCategory.Location = new System.Drawing.Point(48, 356);
-            this.buttonCategory.Name = "buttonCategory";
-            this.buttonCategory.PenWidth = 15;
-            this.buttonCategory.Rounding = true;
-            this.buttonCategory.RoundingInt = 25;
-            this.buttonCategory.Size = new System.Drawing.Size(235, 50);
-            this.buttonCategory.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.buttonCategory.TabIndex = 15;
-            this.buttonCategory.Tag = "Cyber";
-            this.buttonCategory.TextButton = "CATEGORIAS";
-            this.buttonCategory.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.buttonCategory.Timer_Effect_1 = 1;
-            this.buttonCategory.Timer_RGB = 1;
+            this.buttonProvider.Click += new System.EventHandler(this.buttonProvider_Click);
             // 
             // buttonProduct
             // 
@@ -349,7 +306,7 @@
             this.buttonProduct.Lighting = false;
             this.buttonProduct.LinearGradient_Background = false;
             this.buttonProduct.LinearGradientPen = true;
-            this.buttonProduct.Location = new System.Drawing.Point(48, 299);
+            this.buttonProduct.Location = new System.Drawing.Point(48, 295);
             this.buttonProduct.Name = "buttonProduct";
             this.buttonProduct.PenWidth = 15;
             this.buttonProduct.Rounding = true;
@@ -392,7 +349,7 @@
             this.buttonUser.Lighting = false;
             this.buttonUser.LinearGradient_Background = false;
             this.buttonUser.LinearGradientPen = true;
-            this.buttonUser.Location = new System.Drawing.Point(48, 242);
+            this.buttonUser.Location = new System.Drawing.Point(48, 240);
             this.buttonUser.Name = "buttonUser";
             this.buttonUser.PenWidth = 15;
             this.buttonUser.Rounding = true;
@@ -474,7 +431,6 @@
         private ReaLTaiizor.Controls.CyberButton buttonMovements;
         private ReaLTaiizor.Controls.CyberButton buttonOperation;
         private ReaLTaiizor.Controls.CyberButton buttonProvider;
-        private ReaLTaiizor.Controls.CyberButton buttonCategory;
         private ReaLTaiizor.Controls.CyberButton buttonProduct;
         private ReaLTaiizor.Controls.CyberButton buttonUser;
         private ReaLTaiizor.Controls.CyberButton buttonHome;
