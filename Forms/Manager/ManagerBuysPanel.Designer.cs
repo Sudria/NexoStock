@@ -1,6 +1,6 @@
 ﻿namespace NexoStock.Forms.Manager
 {
-    partial class ManagerBuyPanel
+    partial class ManagerBuysPanel
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

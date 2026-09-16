@@ -191,23 +191,35 @@
     <Compile Include="Forms\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\NewBrandForm.cs">
+    <Compile Include="Forms\NewBrandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\NewBrandForm.Designer.cs">
+    <Compile Include="Forms\NewBrandForm.Designer.cs">
       <DependentUpon>NewBrandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\NewCategoryForm.cs">
+    <Compile Include="Forms\NewCategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\NewCategoryForm.Designer.cs">
+    <Compile Include="Forms\NewCategoryForm.Designer.cs">
       <DependentUpon>NewCategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Manager\ManagerBuyPanel.cs">
+    <Compile Include="Forms\Manager\ManagerNewProductPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Manager\ManagerBuyPanel.Designer.cs">
-      <DependentUpon>ManagerBuyPanel.cs</DependentUpon>
+    <Compile Include="Forms\Manager\ManagerNewProductPanel.Designer.cs">
+      <DependentUpon>ManagerNewProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerProductPanel.Designer.cs">
+      <DependentUpon>ManagerProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerBuysPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerBuysPanel.Designer.cs">
+      <DependentUpon>ManagerBuysPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Manager\ManagerSalesPanel.cs">
       <SubType>UserControl</SubType>
@@ -285,14 +297,20 @@
     <EmbeddedResource Include="Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\NewBrandForm.resx">
+    <EmbeddedResource Include="Forms\NewBrandForm.resx">
       <DependentUpon>NewBrandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\NewCategoryForm.resx">
+    <EmbeddedResource Include="Forms\NewCategoryForm.resx">
       <DependentUpon>NewCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Manager\ManagerBuyPanel.resx">
-      <DependentUpon>ManagerBuyPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Manager\ManagerNewProductPanel.resx">
+      <DependentUpon>ManagerNewProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerProductPanel.resx">
+      <DependentUpon>ManagerProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerBuysPanel.resx">
+      <DependentUpon>ManagerBuysPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Manager\ManagerSalesPanel.resx">
       <DependentUpon>ManagerSalesPanel.cs</DependentUpon>

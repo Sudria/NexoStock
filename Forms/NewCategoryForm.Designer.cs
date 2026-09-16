@@ -1,4 +1,4 @@
-﻿namespace NexoStock.Forms.Admin
+﻿namespace NexoStock.Forms
 {
     partial class NewCategoryForm
     {

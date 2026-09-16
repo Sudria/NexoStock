@@ -22,7 +22,7 @@ namespace NexoStock.Forms.Manager
             InitializeComponent();
             activedButton = buttonHome;
             activeButton(activedButton);
-            LoadHomeControler();
+            LoadHomeController();
         }
 
 
@@ -33,47 +33,34 @@ namespace NexoStock.Forms.Manager
             innactiveButton(activedButton);
             activedButton = buttonHome;
             activeButton(activedButton);
-            LoadHomeControler();
+            LoadHomeController();
         }
 
-        private void buttonUser_Click(object sender, EventArgs e)
+        private void buttonSales_Click(object sender, EventArgs e)
         {
             innactiveButton(activedButton);
-            activedButton = buttonUser;
+            activedButton = buttonSales;
             activeButton(activedButton);
-            LoadUserControler();
+            LoadSalesController();
         }
+
+
         private void buttonProduct_Click(object sender, EventArgs e)
         {
             innactiveButton(activedButton);
             activedButton = buttonProduct;
             activeButton(activedButton);
-            LoadProductControler();
+            LoadProductController();
         }
-
-        private void buttonProvider_Click(object sender, EventArgs e)
+        private void buttonBuys_Click(object sender, EventArgs e)
         {
             innactiveButton(activedButton);
-            activedButton = buttonProvider;
+            activedButton = buttonBuys;
             activeButton(activedButton);
-            LoadProviderControler();
+            LoadBuysController();
         }
 
-        private void buttonMovements_Click(object sender, EventArgs e)
-        {
-            innactiveButton(activedButton);
-            activedButton = buttonMovements;
-            activeButton(activedButton);
-            LoadMovementsControler();
-        }
 
-        private void buttonCategoryAndBrand_Click(object sender, EventArgs e)
-        {
-            innactiveButton(activedButton);
-            activedButton = buttonCategoryAndBrand;
-            activeButton(activedButton);
-            LoadCategoryAndBrandControler();
-        }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -89,60 +76,42 @@ namespace NexoStock.Forms.Manager
 
         //CONTROLADORES
 
-        public void LoadHomeControler()
+        public void LoadHomeController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminHomePanel());
+            panelContent.Controls.Add(new ManagerHomePanel());
         }
 
 
-        public void LoadNewUserControler()
+        public void LoadSalesController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminNewUserPanel());
+            panelContent.Controls.Add(new ManagerSalesPanel());
         }
 
-        public void LoadNewProductControler()
+        public void LoadNewProductController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminNewProductPanel());
+            panelContent.Controls.Add(new ManagerNewProductPanel());
         }
 
-        public void LoadUserControler()
+
+
+        public void LoadProductController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminUserPanel());
+            panelContent.Controls.Add(new ManagerProductPanel());
         }
 
-        public void LoadProductControler()
+        public void LoadBuysController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminProductPanel());
+            panelContent.Controls.Add(new ManagerBuysPanel());
         }
 
-        public void LoadProviderControler()
-        {
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminProviderPanel());
-        }
 
-        public void LoadNewProviderControler()
-        {
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminNewProviderPanel());
-        }
 
-        public void LoadMovementsControler()
-        {
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminMovementsPanel());
-        }
 
-        public void LoadCategoryAndBrandControler()
-        {
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(new AdminCategoryAndBrandPanel());
-        }
 
         //COMPORTAMIENTO DE BOTONES
 
@@ -158,7 +127,7 @@ namespace NexoStock.Forms.Manager
             e.LinearGradient_Background = false;
         }
 
-     
+
     }
 
 

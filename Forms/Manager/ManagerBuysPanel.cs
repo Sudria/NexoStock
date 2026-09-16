@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NexoStock.Forms.Manager
 {
-    public partial class ManagerBuyPanel : UserControl
+    public partial class ManagerBuysPanel : UserControl
     {
-        public ManagerBuyPanel()
+        public ManagerBuysPanel()
         {
             InitializeComponent();
         }

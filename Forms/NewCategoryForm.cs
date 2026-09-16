@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NexoStock.Forms.Admin
+namespace NexoStock.Forms
 {
     public partial class NewCategoryForm : Form
     {
