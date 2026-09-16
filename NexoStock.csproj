@@ -203,11 +203,29 @@
     <Compile Include="Forms\Admin\NewCategoryForm.Designer.cs">
       <DependentUpon>NewCategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Manager\ManagerDashboard.cs">
+    <Compile Include="Forms\Manager\ManagerBuyPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Manager\ManagerDashboard.Designer.cs">
-      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    <Compile Include="Forms\Manager\ManagerBuyPanel.Designer.cs">
+      <DependentUpon>ManagerBuyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerSalesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerSalesPanel.Designer.cs">
+      <DependentUpon>ManagerSalesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerHomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerHomePanel.Designer.cs">
+      <DependentUpon>ManagerHomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Seller\SellerDashboard.cs">
       <SubType>UserControl</SubType>
@@ -273,8 +291,17 @@
     <EmbeddedResource Include="Forms\Admin\NewCategoryForm.resx">
       <DependentUpon>NewCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Manager\ManagerDashboard.resx">
-      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Manager\ManagerBuyPanel.resx">
+      <DependentUpon>ManagerBuyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerSalesPanel.resx">
+      <DependentUpon>ManagerSalesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerHomePanel.resx">
+      <DependentUpon>ManagerHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seller\SellerDashboard.resx">
       <DependentUpon>SellerDashboard.cs</DependentUpon>

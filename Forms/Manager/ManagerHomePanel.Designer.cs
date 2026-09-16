@@ -1,6 +1,6 @@
-﻿namespace NexoStock.Forms.Admin
+﻿namespace NexoStock.Forms.Manager
 {
-    partial class AdminHomePanel
+    partial class ManagerHomePanel
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomePanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerHomePanel));
             this.label1 = new System.Windows.Forms.Label();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -269,7 +269,7 @@
             // 
             this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox4.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
             this.iconPictureBox4.IconColor = System.Drawing.Color.Fuchsia;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 60;
@@ -297,9 +297,9 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(86, 26);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(107, 25);
+            this.label13.Size = new System.Drawing.Size(124, 25);
             this.label13.TabIndex = 0;
-            this.label13.Text = "USUARIOS";
+            this.label13.Text = "GANANCIAS";
             // 
             // lostBorderPanel5
             // 
@@ -549,7 +549,7 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "TOP PRODUCTOS MAS VENDIDOS";
             // 
-            // AdminHomePanel
+            // ManagerHomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -564,7 +564,7 @@
             this.Controls.Add(this.lostBorderPanel1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "AdminHomePanel";
+            this.Name = "ManagerHomePanel";
             this.Size = new System.Drawing.Size(1120, 662);
             this.lostBorderPanel1.ResumeLayout(false);
             this.lostBorderPanel1.PerformLayout();
