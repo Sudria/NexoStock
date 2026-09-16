@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace NexoStock.Forms.Admin
 {
-    public partial class NewCategoryForm : Form
+    public partial class NewBrandForm : Form
     {
-        public NewCategoryForm()
+        public NewBrandForm()
         {
             InitializeComponent();
         }
@@ -25,8 +25,8 @@ namespace NexoStock.Forms.Admin
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Utils.Validator.isValidText(textBoxCategoryName.Text, "Nombre de Categoría");
-            textBoxCategoryName.Focus();
+            Utils.Validator.isValidText(textBoxBrandName.Text, "Nombre de la Marca");
+            textBoxBrandName.Focus();
         }
     }
 }

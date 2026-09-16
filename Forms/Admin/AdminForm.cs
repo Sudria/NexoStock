@@ -59,6 +59,21 @@ namespace NexoStock.Forms.Admin
             LoadProviderControler();
         }
 
+        private void buttonMovements_Click(object sender, EventArgs e)
+        {
+            innactiveButton(activedButton);
+            activedButton = buttonMovements;
+            activeButton(activedButton);
+            LoadMovementsControler();
+        }
+
+        private void buttonCategoryAndBrand_Click(object sender, EventArgs e)
+        {
+            innactiveButton(activedButton);
+            activedButton = buttonCategoryAndBrand;
+            activeButton(activedButton);
+            LoadCategoryAndBrandControler();
+        }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -117,6 +132,18 @@ namespace NexoStock.Forms.Admin
             panelContent.Controls.Add(new AdminNewProviderPanel());
         }
 
+        public void LoadMovementsControler()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminMovementsPanel());
+        }
+
+        public void LoadCategoryAndBrandControler()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminCategoryAndBrandPanel());
+        }
+
         //COMPORTAMIENTO DE BOTONES
 
         private void activeButton(CyberButton e)
@@ -131,7 +158,7 @@ namespace NexoStock.Forms.Admin
             e.LinearGradient_Background = false;
         }
 
-
+     
     }
 
 

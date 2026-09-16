@@ -42,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDescription = new ReaLTaiizor.Controls.HopeTextBox();
-            this.textBoxBrand = new ReaLTaiizor.Controls.HopeTextBox();
             this.textBoxCod = new ReaLTaiizor.Controls.HopeTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,12 +50,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new ReaLTaiizor.Controls.HopeComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxStockMin = new ReaLTaiizor.Controls.HopeTextBox();
             this.buttonAddCategory = new ReaLTaiizor.Controls.CyberButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
+            this.comboBoxBrand = new ReaLTaiizor.Controls.HopeComboBox();
+            this.buttonAddBrand = new ReaLTaiizor.Controls.CyberButton();
             this.SuspendLayout();
             // 
             // label15
@@ -152,7 +153,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(23, 420);
+            this.label11.Location = new System.Drawing.Point(734, 349);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 21);
             this.label11.TabIndex = 57;
@@ -167,7 +168,7 @@
             this.textBoxStock.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxStock.ForeColor = System.Drawing.Color.White;
             this.textBoxStock.Hint = "Stock actual";
-            this.textBoxStock.Location = new System.Drawing.Point(27, 444);
+            this.textBoxStock.Location = new System.Drawing.Point(738, 373);
             this.textBoxStock.MaxLength = 32767;
             this.textBoxStock.Multiline = false;
             this.textBoxStock.Name = "textBoxStock";
@@ -293,29 +294,6 @@
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.UseSystemPasswordChar = false;
             // 
-            // textBoxBrand
-            // 
-            this.textBoxBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxBrand.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxBrand.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxBrand.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxBrand.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxBrand.ForeColor = System.Drawing.Color.White;
-            this.textBoxBrand.Hint = "Ingrese marca";
-            this.textBoxBrand.Location = new System.Drawing.Point(26, 243);
-            this.textBoxBrand.MaxLength = 32767;
-            this.textBoxBrand.Multiline = false;
-            this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.PasswordChar = '\0';
-            this.textBoxBrand.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxBrand.SelectedText = "";
-            this.textBoxBrand.SelectionLength = 0;
-            this.textBoxBrand.SelectionStart = 0;
-            this.textBoxBrand.Size = new System.Drawing.Size(324, 38);
-            this.textBoxBrand.TabIndex = 44;
-            this.textBoxBrand.TabStop = false;
-            this.textBoxBrand.UseSystemPasswordChar = false;
-            // 
             // textBoxCod
             // 
             this.textBoxCod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
@@ -355,7 +333,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 17);
+            this.label1.Location = new System.Drawing.Point(179, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 32);
             this.label1.TabIndex = 40;
@@ -402,9 +380,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(22, 23);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 25);
+            this.label8.Size = new System.Drawing.Size(151, 25);
             this.label8.TabIndex = 69;
-            this.label8.Text = "USUARIOS ->";
+            this.label8.Text = "PRODUCTOS ->";
             // 
             // comboBoxCategory
             // 
@@ -434,40 +412,12 @@
             this.label5.TabIndex = 70;
             this.label5.Text = "Categoria";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(387, 349);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 21);
-            this.label12.TabIndex = 72;
-            this.label12.Text = "Proveedor";
-            // 
-            // comboBoxProvider
-            // 
-            this.comboBoxProvider.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
-            this.comboBoxProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.comboBoxProvider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxProvider.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxProvider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBoxProvider.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBoxProvider.ForeColor = System.Drawing.Color.White;
-            this.comboBoxProvider.FormattingEnabled = true;
-            this.comboBoxProvider.ItemHeight = 21;
-            this.comboBoxProvider.Location = new System.Drawing.Point(391, 373);
-            this.comboBoxProvider.Name = "comboBoxProvider";
-            this.comboBoxProvider.Size = new System.Drawing.Size(324, 27);
-            this.comboBoxProvider.TabIndex = 73;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(23, 503);
+            this.label13.Location = new System.Drawing.Point(18, 503);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(186, 21);
             this.label13.TabIndex = 74;
@@ -478,7 +428,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(387, 420);
+            this.label14.Location = new System.Drawing.Point(734, 421);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 21);
             this.label14.TabIndex = 76;
@@ -493,7 +443,7 @@
             this.textBoxStockMin.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxStockMin.ForeColor = System.Drawing.Color.White;
             this.textBoxStockMin.Hint = "Ingresar stock min";
-            this.textBoxStockMin.Location = new System.Drawing.Point(391, 444);
+            this.textBoxStockMin.Location = new System.Drawing.Point(738, 445);
             this.textBoxStockMin.MaxLength = 32767;
             this.textBoxStockMin.Multiline = false;
             this.textBoxStockMin.Name = "textBoxStockMin";
@@ -517,7 +467,7 @@
             this.buttonAddCategory.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
             this.buttonAddCategory.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.buttonAddCategory.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.buttonAddCategory.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonAddCategory.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.buttonAddCategory.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.buttonAddCategory.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.buttonAddCategory.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
@@ -549,11 +499,100 @@
             this.buttonAddCategory.Timer_RGB = 300;
             this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(387, 358);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 21);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Proveedor";
+            // 
+            // comboBoxProvider
+            // 
+            this.comboBoxProvider.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxProvider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxProvider.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProvider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxProvider.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxProvider.ForeColor = System.Drawing.Color.White;
+            this.comboBoxProvider.FormattingEnabled = true;
+            this.comboBoxProvider.ItemHeight = 21;
+            this.comboBoxProvider.Location = new System.Drawing.Point(391, 382);
+            this.comboBoxProvider.Name = "comboBoxProvider";
+            this.comboBoxProvider.Size = new System.Drawing.Size(324, 27);
+            this.comboBoxProvider.TabIndex = 73;
+            // 
+            // comboBoxBrand
+            // 
+            this.comboBoxBrand.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxBrand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxBrand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxBrand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBrand.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxBrand.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxBrand.ForeColor = System.Drawing.Color.White;
+            this.comboBoxBrand.FormattingEnabled = true;
+            this.comboBoxBrand.ItemHeight = 21;
+            this.comboBoxBrand.Location = new System.Drawing.Point(27, 250);
+            this.comboBoxBrand.Name = "comboBoxBrand";
+            this.comboBoxBrand.Size = new System.Drawing.Size(274, 27);
+            this.comboBoxBrand.TabIndex = 78;
+            // 
+            // buttonAddBrand
+            // 
+            this.buttonAddBrand.Alpha = 20;
+            this.buttonAddBrand.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAddBrand.Background = true;
+            this.buttonAddBrand.Background_WidthPen = 5F;
+            this.buttonAddBrand.BackgroundPen = false;
+            this.buttonAddBrand.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.buttonAddBrand.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.buttonAddBrand.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.buttonAddBrand.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonAddBrand.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonAddBrand.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.buttonAddBrand.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.buttonAddBrand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddBrand.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonAddBrand.Effect_1 = true;
+            this.buttonAddBrand.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonAddBrand.Effect_1_Transparency = 25;
+            this.buttonAddBrand.Effect_2 = true;
+            this.buttonAddBrand.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.buttonAddBrand.Effect_2_Transparency = 20;
+            this.buttonAddBrand.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
+            this.buttonAddBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonAddBrand.Lighting = false;
+            this.buttonAddBrand.LinearGradient_Background = false;
+            this.buttonAddBrand.LinearGradientPen = false;
+            this.buttonAddBrand.Location = new System.Drawing.Point(316, 246);
+            this.buttonAddBrand.Name = "buttonAddBrand";
+            this.buttonAddBrand.PenWidth = 15;
+            this.buttonAddBrand.Rounding = true;
+            this.buttonAddBrand.RoundingInt = 30;
+            this.buttonAddBrand.Size = new System.Drawing.Size(46, 31);
+            this.buttonAddBrand.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonAddBrand.TabIndex = 79;
+            this.buttonAddBrand.Tag = "Cyber";
+            this.buttonAddBrand.TextButton = "+";
+            this.buttonAddBrand.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.buttonAddBrand.Timer_Effect_1 = 5;
+            this.buttonAddBrand.Timer_RGB = 300;
+            this.buttonAddBrand.Click += new System.EventHandler(this.buttonAddBrand_Click);
+            // 
             // AdminNewProductPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.buttonAddBrand);
+            this.Controls.Add(this.comboBoxBrand);
             this.Controls.Add(this.buttonAddCategory);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBoxStockMin);
@@ -578,7 +617,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.textBoxBrand);
             this.Controls.Add(this.textBoxCod);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -607,7 +645,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private ReaLTaiizor.Controls.HopeTextBox textBoxDescription;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxBrand;
         private ReaLTaiizor.Controls.HopeTextBox textBoxCod;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -616,11 +653,13 @@
         private System.Windows.Forms.Label label8;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxCategory;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
-        private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private ReaLTaiizor.Controls.HopeTextBox textBoxStockMin;
         private ReaLTaiizor.Controls.CyberButton buttonAddCategory;
+        private System.Windows.Forms.Label label12;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxBrand;
+        private ReaLTaiizor.Controls.CyberButton buttonAddBrand;
     }
 }

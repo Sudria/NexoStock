@@ -52,10 +52,10 @@ namespace NexoStock.Forms.Admin
 
         private void formatTel(object sender, KeyPressEventArgs e)
         {
-            if (telTextBox.Text.Length == 4)
+            if (textBoxTel.Text.Length == 4)
             {
-                telTextBox.Text += " ";
-                telTextBox.SelectionStart = telTextBox.Text.Length;
+                textBoxTel.Text += " ";
+                textBoxTel.SelectionStart = textBoxTel.Text.Length;
             }
         }
 

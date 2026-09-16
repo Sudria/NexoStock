@@ -50,93 +50,92 @@ namespace NexoStock.Forms.Admin
         {
             UserClass newUser = new UserClass
             {
-                Name = nameTextBox.Text,
-                Surname = surnameTextBox.Text,
-                DNI = dniTextBox.Text,
-                Email = emailTextBox.Text,
-                Tel = telTextBox.Text,
-                CreatedDate = DateTime.Now,
-                Username = usernameTextBox.Text,
-                Password = passwordTextBox.Text,
-                Rol = RolComboBox.Text,
-                Activo = activeCheckBox.Checked
+                Name = textBoxName.Text,
+                Surname = textBoxSurname.Text,
+                DNI = textBoxDni.Text,
+                Email = textBoxEmail.Text,
+                Tel = textBoxTel.Text,
+                Username = textBoxUsername.Text,
+                Password = textBoxPassword.Text,
+                Rol = comboBoxRol.Text,
+                State = activeCheckBox.Checked
             };
 
             if (!Utils.Validator.isValidText(newUser.Name, "Nombre"))
             {
-                nameTextBox.Focus();
+                textBoxName.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidText(newUser.Surname, "Apellido"))
             {
-                surnameTextBox.Focus();
+                textBoxSurname.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidNum(newUser.DNI, "DNI", 8))
             {
-                dniTextBox.Focus();
+                textBoxDni.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidEmail(newUser.Email))
             {
-                emailTextBox.Focus();
+                textBoxEmail.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidNum(newUser.Tel.Replace(" ", ""), "Teléfono", 13))
             {
-                telTextBox.Focus();
+                textBoxTel.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidText(newUser.Username, "Nombre de Usuario"))
             {
-                usernameTextBox.Focus();
+                textBoxUsername.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidPassword(newUser.Password, repeatPasswordTextBox.Text))
+            if (!Utils.Validator.isValidPassword(newUser.Password, textBoxRepeatPassword.Text))
             {
-                passwordTextBox.Focus();
+                textBoxPassword.Focus();
                 return;
             }
 
-            if (RolComboBox.Text == "")
+            if (comboBoxRol.Text == "")
             {
                 MessageBox.Show($"Debe seleccionar una opcion en el campo rol.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                RolComboBox.Focus();
+                comboBoxRol.Focus();
                 return;
             }
         }
 
         private void formatTel(object sender, KeyPressEventArgs e)
         {
-            if (telTextBox.Text.Length == 4)
+            if (textBoxTel.Text.Length == 4)
             {
-                telTextBox.Text += " ";
-                telTextBox.SelectionStart = telTextBox.Text.Length;
+                textBoxTel.Text += " ";
+                textBoxTel.SelectionStart = textBoxTel.Text.Length;
             }
         }
 
         private void Initialize()
         {
-            RolComboBox.SelectedIndex = 0;
+            comboBoxRol.SelectedIndex = 0;
         }
 
         private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPass.Checked)
             {
-                passwordTextBox.PasswordChar = '\0';
-                repeatPasswordTextBox.PasswordChar = '\0';
+                textBoxPassword.PasswordChar = '\0';
+                textBoxRepeatPassword.PasswordChar = '\0';
             }
             else
             {
-                passwordTextBox.PasswordChar = '*';
-                repeatPasswordTextBox.PasswordChar = '*';
+                textBoxPassword.PasswordChar = '*';
+                textBoxRepeatPassword.PasswordChar = '*';
             }
         }
     }

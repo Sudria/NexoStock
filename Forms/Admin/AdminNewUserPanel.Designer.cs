@@ -32,28 +32,28 @@
             this.saveButton = new ReaLTaiizor.Controls.ParrotButton();
             this.activeCheckBox = new ReaLTaiizor.Controls.FoxCheckBox();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
-            this.RolComboBox = new ReaLTaiizor.Controls.HopeComboBox();
+            this.comboBoxRol = new ReaLTaiizor.Controls.HopeComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.repeatPasswordTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxRepeatPassword = new ReaLTaiizor.Controls.HopeTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.passwordTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxPassword = new ReaLTaiizor.Controls.HopeTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.usernameTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxUsername = new ReaLTaiizor.Controls.HopeTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.telTextBox = new ReaLTaiizor.Controls.HopeTextBox();
-            this.emailTextBox = new ReaLTaiizor.Controls.HopeTextBox();
-            this.dniTextBox = new ReaLTaiizor.Controls.HopeTextBox();
-            this.surnameTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxTel = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxEmail = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxDni = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxSurname = new ReaLTaiizor.Controls.HopeTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
             this.stateLabel = new System.Windows.Forms.Label();
             this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -147,27 +147,27 @@
             this.exitButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // RolComboBox
+            // comboBoxRol
             // 
-            this.RolComboBox.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
-            this.RolComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.RolComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RolComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.RolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RolComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.RolComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RolComboBox.ForeColor = System.Drawing.Color.White;
-            this.RolComboBox.FormattingEnabled = true;
-            this.RolComboBox.ItemHeight = 26;
-            this.RolComboBox.Items.AddRange(new object[] {
+            this.comboBoxRol.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxRol.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxRol.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxRol.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxRol.ForeColor = System.Drawing.Color.White;
+            this.comboBoxRol.FormattingEnabled = true;
+            this.comboBoxRol.ItemHeight = 26;
+            this.comboBoxRol.Items.AddRange(new object[] {
             "Administrador",
             "Vendedor",
             "Repositor",
             "Encargado"});
-            this.RolComboBox.Location = new System.Drawing.Point(26, 589);
-            this.RolComboBox.Name = "RolComboBox";
-            this.RolComboBox.Size = new System.Drawing.Size(257, 32);
-            this.RolComboBox.TabIndex = 62;
+            this.comboBoxRol.Location = new System.Drawing.Point(26, 589);
+            this.comboBoxRol.Name = "comboBoxRol";
+            this.comboBoxRol.Size = new System.Drawing.Size(257, 32);
+            this.comboBoxRol.TabIndex = 62;
             // 
             // label14
             // 
@@ -202,28 +202,28 @@
             this.label12.TabIndex = 59;
             this.label12.Text = "Confirmar contraseña";
             // 
-            // repeatPasswordTextBox
+            // textBoxRepeatPassword
             // 
-            this.repeatPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.repeatPasswordTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.repeatPasswordTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.repeatPasswordTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.repeatPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.repeatPasswordTextBox.ForeColor = System.Drawing.Color.White;
-            this.repeatPasswordTextBox.Hint = "Repite la contraseña";
-            this.repeatPasswordTextBox.Location = new System.Drawing.Point(724, 431);
-            this.repeatPasswordTextBox.MaxLength = 32767;
-            this.repeatPasswordTextBox.Multiline = false;
-            this.repeatPasswordTextBox.Name = "repeatPasswordTextBox";
-            this.repeatPasswordTextBox.PasswordChar = '\0';
-            this.repeatPasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.repeatPasswordTextBox.SelectedText = "";
-            this.repeatPasswordTextBox.SelectionLength = 0;
-            this.repeatPasswordTextBox.SelectionStart = 0;
-            this.repeatPasswordTextBox.Size = new System.Drawing.Size(324, 38);
-            this.repeatPasswordTextBox.TabIndex = 58;
-            this.repeatPasswordTextBox.TabStop = false;
-            this.repeatPasswordTextBox.UseSystemPasswordChar = false;
+            this.textBoxRepeatPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxRepeatPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxRepeatPassword.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxRepeatPassword.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxRepeatPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxRepeatPassword.ForeColor = System.Drawing.Color.White;
+            this.textBoxRepeatPassword.Hint = "Repite la contraseña";
+            this.textBoxRepeatPassword.Location = new System.Drawing.Point(724, 431);
+            this.textBoxRepeatPassword.MaxLength = 32767;
+            this.textBoxRepeatPassword.Multiline = false;
+            this.textBoxRepeatPassword.Name = "textBoxRepeatPassword";
+            this.textBoxRepeatPassword.PasswordChar = '\0';
+            this.textBoxRepeatPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxRepeatPassword.SelectedText = "";
+            this.textBoxRepeatPassword.SelectionLength = 0;
+            this.textBoxRepeatPassword.SelectionStart = 0;
+            this.textBoxRepeatPassword.Size = new System.Drawing.Size(324, 38);
+            this.textBoxRepeatPassword.TabIndex = 58;
+            this.textBoxRepeatPassword.TabStop = false;
+            this.textBoxRepeatPassword.UseSystemPasswordChar = false;
             // 
             // label11
             // 
@@ -236,28 +236,28 @@
             this.label11.TabIndex = 57;
             this.label11.Text = "Contraseña";
             // 
-            // passwordTextBox
+            // textBoxPassword
             // 
-            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.passwordTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.passwordTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.passwordTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.passwordTextBox.ForeColor = System.Drawing.Color.White;
-            this.passwordTextBox.Hint = "Ingresar contraseña";
-            this.passwordTextBox.Location = new System.Drawing.Point(375, 431);
-            this.passwordTextBox.MaxLength = 32767;
-            this.passwordTextBox.Multiline = false;
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '\0';
-            this.passwordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.passwordTextBox.SelectedText = "";
-            this.passwordTextBox.SelectionLength = 0;
-            this.passwordTextBox.SelectionStart = 0;
-            this.passwordTextBox.Size = new System.Drawing.Size(324, 38);
-            this.passwordTextBox.TabIndex = 56;
-            this.passwordTextBox.TabStop = false;
-            this.passwordTextBox.UseSystemPasswordChar = false;
+            this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxPassword.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxPassword.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxPassword.ForeColor = System.Drawing.Color.White;
+            this.textBoxPassword.Hint = "Ingresar contraseña";
+            this.textBoxPassword.Location = new System.Drawing.Point(375, 431);
+            this.textBoxPassword.MaxLength = 32767;
+            this.textBoxPassword.Multiline = false;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '\0';
+            this.textBoxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxPassword.SelectedText = "";
+            this.textBoxPassword.SelectionLength = 0;
+            this.textBoxPassword.SelectionStart = 0;
+            this.textBoxPassword.Size = new System.Drawing.Size(324, 38);
+            this.textBoxPassword.TabIndex = 56;
+            this.textBoxPassword.TabStop = false;
+            this.textBoxPassword.UseSystemPasswordChar = false;
             // 
             // label10
             // 
@@ -270,28 +270,28 @@
             this.label10.TabIndex = 55;
             this.label10.Text = "Nombre de usuario";
             // 
-            // usernameTextBox
+            // textBoxUsername
             // 
-            this.usernameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.usernameTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.usernameTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.usernameTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.usernameTextBox.ForeColor = System.Drawing.Color.White;
-            this.usernameTextBox.Hint = "Ingresar el nombre de usuario";
-            this.usernameTextBox.Location = new System.Drawing.Point(26, 431);
-            this.usernameTextBox.MaxLength = 32767;
-            this.usernameTextBox.Multiline = false;
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.PasswordChar = '\0';
-            this.usernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.usernameTextBox.SelectedText = "";
-            this.usernameTextBox.SelectionLength = 0;
-            this.usernameTextBox.SelectionStart = 0;
-            this.usernameTextBox.Size = new System.Drawing.Size(324, 38);
-            this.usernameTextBox.TabIndex = 54;
-            this.usernameTextBox.TabStop = false;
-            this.usernameTextBox.UseSystemPasswordChar = false;
+            this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxUsername.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxUsername.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxUsername.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxUsername.ForeColor = System.Drawing.Color.White;
+            this.textBoxUsername.Hint = "Ingresar el nombre de usuario";
+            this.textBoxUsername.Location = new System.Drawing.Point(26, 431);
+            this.textBoxUsername.MaxLength = 32767;
+            this.textBoxUsername.Multiline = false;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.PasswordChar = '\0';
+            this.textBoxUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxUsername.SelectedText = "";
+            this.textBoxUsername.SelectionLength = 0;
+            this.textBoxUsername.SelectionStart = 0;
+            this.textBoxUsername.Size = new System.Drawing.Size(324, 38);
+            this.textBoxUsername.TabIndex = 54;
+            this.textBoxUsername.TabStop = false;
+            this.textBoxUsername.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -359,99 +359,99 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Nombre";
             // 
-            // telTextBox
+            // textBoxTel
             // 
-            this.telTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.telTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.telTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.telTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.telTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.telTextBox.ForeColor = System.Drawing.Color.White;
-            this.telTextBox.Hint = "";
-            this.telTextBox.Location = new System.Drawing.Point(375, 243);
-            this.telTextBox.MaxLength = 32767;
-            this.telTextBox.Multiline = false;
-            this.telTextBox.Name = "telTextBox";
-            this.telTextBox.PasswordChar = '\0';
-            this.telTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.telTextBox.SelectedText = "";
-            this.telTextBox.SelectionLength = 0;
-            this.telTextBox.SelectionStart = 0;
-            this.telTextBox.Size = new System.Drawing.Size(324, 38);
-            this.telTextBox.TabIndex = 45;
-            this.telTextBox.TabStop = false;
-            this.telTextBox.Text = "54 9 ";
-            this.telTextBox.UseSystemPasswordChar = false;
-            this.telTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
+            this.textBoxTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxTel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxTel.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxTel.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxTel.ForeColor = System.Drawing.Color.White;
+            this.textBoxTel.Hint = "";
+            this.textBoxTel.Location = new System.Drawing.Point(375, 243);
+            this.textBoxTel.MaxLength = 32767;
+            this.textBoxTel.Multiline = false;
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.PasswordChar = '\0';
+            this.textBoxTel.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxTel.SelectedText = "";
+            this.textBoxTel.SelectionLength = 0;
+            this.textBoxTel.SelectionStart = 0;
+            this.textBoxTel.Size = new System.Drawing.Size(324, 38);
+            this.textBoxTel.TabIndex = 45;
+            this.textBoxTel.TabStop = false;
+            this.textBoxTel.Text = "54 9 ";
+            this.textBoxTel.UseSystemPasswordChar = false;
+            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
             // 
-            // emailTextBox
+            // textBoxEmail
             // 
-            this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.emailTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.emailTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.emailTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.emailTextBox.ForeColor = System.Drawing.Color.White;
-            this.emailTextBox.Hint = "usuario@ejemplo.com";
-            this.emailTextBox.Location = new System.Drawing.Point(26, 243);
-            this.emailTextBox.MaxLength = 32767;
-            this.emailTextBox.Multiline = false;
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.PasswordChar = '\0';
-            this.emailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.emailTextBox.SelectedText = "";
-            this.emailTextBox.SelectionLength = 0;
-            this.emailTextBox.SelectionStart = 0;
-            this.emailTextBox.Size = new System.Drawing.Size(324, 38);
-            this.emailTextBox.TabIndex = 44;
-            this.emailTextBox.TabStop = false;
-            this.emailTextBox.UseSystemPasswordChar = false;
+            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxEmail.ForeColor = System.Drawing.Color.White;
+            this.textBoxEmail.Hint = "usuario@ejemplo.com";
+            this.textBoxEmail.Location = new System.Drawing.Point(26, 243);
+            this.textBoxEmail.MaxLength = 32767;
+            this.textBoxEmail.Multiline = false;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PasswordChar = '\0';
+            this.textBoxEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxEmail.SelectedText = "";
+            this.textBoxEmail.SelectionLength = 0;
+            this.textBoxEmail.SelectionStart = 0;
+            this.textBoxEmail.Size = new System.Drawing.Size(324, 38);
+            this.textBoxEmail.TabIndex = 44;
+            this.textBoxEmail.TabStop = false;
+            this.textBoxEmail.UseSystemPasswordChar = false;
             // 
-            // dniTextBox
+            // textBoxDni
             // 
-            this.dniTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.dniTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.dniTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.dniTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.dniTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dniTextBox.ForeColor = System.Drawing.Color.White;
-            this.dniTextBox.Hint = "Ingresa el DNI";
-            this.dniTextBox.Location = new System.Drawing.Point(724, 155);
-            this.dniTextBox.MaxLength = 32767;
-            this.dniTextBox.Multiline = false;
-            this.dniTextBox.Name = "dniTextBox";
-            this.dniTextBox.PasswordChar = '\0';
-            this.dniTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dniTextBox.SelectedText = "";
-            this.dniTextBox.SelectionLength = 0;
-            this.dniTextBox.SelectionStart = 0;
-            this.dniTextBox.Size = new System.Drawing.Size(324, 38);
-            this.dniTextBox.TabIndex = 43;
-            this.dniTextBox.TabStop = false;
-            this.dniTextBox.UseSystemPasswordChar = false;
+            this.textBoxDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxDni.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxDni.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxDni.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxDni.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxDni.ForeColor = System.Drawing.Color.White;
+            this.textBoxDni.Hint = "Ingresa el DNI";
+            this.textBoxDni.Location = new System.Drawing.Point(724, 155);
+            this.textBoxDni.MaxLength = 32767;
+            this.textBoxDni.Multiline = false;
+            this.textBoxDni.Name = "textBoxDni";
+            this.textBoxDni.PasswordChar = '\0';
+            this.textBoxDni.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxDni.SelectedText = "";
+            this.textBoxDni.SelectionLength = 0;
+            this.textBoxDni.SelectionStart = 0;
+            this.textBoxDni.Size = new System.Drawing.Size(324, 38);
+            this.textBoxDni.TabIndex = 43;
+            this.textBoxDni.TabStop = false;
+            this.textBoxDni.UseSystemPasswordChar = false;
             // 
-            // surnameTextBox
+            // textBoxSurname
             // 
-            this.surnameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.surnameTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.surnameTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.surnameTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.surnameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.surnameTextBox.ForeColor = System.Drawing.Color.White;
-            this.surnameTextBox.Hint = "Ingresa el apellido";
-            this.surnameTextBox.Location = new System.Drawing.Point(375, 155);
-            this.surnameTextBox.MaxLength = 32767;
-            this.surnameTextBox.Multiline = false;
-            this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.PasswordChar = '\0';
-            this.surnameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.surnameTextBox.SelectedText = "";
-            this.surnameTextBox.SelectionLength = 0;
-            this.surnameTextBox.SelectionStart = 0;
-            this.surnameTextBox.Size = new System.Drawing.Size(324, 38);
-            this.surnameTextBox.TabIndex = 42;
-            this.surnameTextBox.TabStop = false;
-            this.surnameTextBox.UseSystemPasswordChar = false;
+            this.textBoxSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxSurname.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxSurname.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxSurname.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxSurname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxSurname.Hint = "Ingresa el apellido";
+            this.textBoxSurname.Location = new System.Drawing.Point(375, 155);
+            this.textBoxSurname.MaxLength = 32767;
+            this.textBoxSurname.Multiline = false;
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.PasswordChar = '\0';
+            this.textBoxSurname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxSurname.SelectedText = "";
+            this.textBoxSurname.SelectionLength = 0;
+            this.textBoxSurname.SelectionStart = 0;
+            this.textBoxSurname.Size = new System.Drawing.Size(324, 38);
+            this.textBoxSurname.TabIndex = 42;
+            this.textBoxSurname.TabStop = false;
+            this.textBoxSurname.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -475,28 +475,28 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "CREAR USUARIO";
             // 
-            // nameTextBox
+            // textBoxName
             // 
-            this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.nameTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.nameTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.nameTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.nameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.nameTextBox.ForeColor = System.Drawing.Color.White;
-            this.nameTextBox.Hint = "Ingresa el nombre";
-            this.nameTextBox.Location = new System.Drawing.Point(26, 155);
-            this.nameTextBox.MaxLength = 32767;
-            this.nameTextBox.Multiline = false;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.PasswordChar = '\0';
-            this.nameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.nameTextBox.SelectedText = "";
-            this.nameTextBox.SelectionLength = 0;
-            this.nameTextBox.SelectionStart = 0;
-            this.nameTextBox.Size = new System.Drawing.Size(324, 38);
-            this.nameTextBox.TabIndex = 39;
-            this.nameTextBox.TabStop = false;
-            this.nameTextBox.UseSystemPasswordChar = false;
+            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxName.ForeColor = System.Drawing.Color.White;
+            this.textBoxName.Hint = "Ingresa el nombre";
+            this.textBoxName.Location = new System.Drawing.Point(26, 155);
+            this.textBoxName.MaxLength = 32767;
+            this.textBoxName.Multiline = false;
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PasswordChar = '\0';
+            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxName.SelectedText = "";
+            this.textBoxName.SelectionLength = 0;
+            this.textBoxName.SelectionStart = 0;
+            this.textBoxName.Size = new System.Drawing.Size(324, 38);
+            this.textBoxName.TabIndex = 39;
+            this.textBoxName.TabStop = false;
+            this.textBoxName.UseSystemPasswordChar = false;
             // 
             // stateLabel
             // 
@@ -548,28 +548,28 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.activeCheckBox);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.RolComboBox);
+            this.Controls.Add(this.comboBoxRol);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.repeatPasswordTextBox);
+            this.Controls.Add(this.textBoxRepeatPassword);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.telTextBox);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.dniTextBox);
-            this.Controls.Add(this.surnameTextBox);
+            this.Controls.Add(this.textBoxTel);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxDni);
+            this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.textBoxName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AdminNewUserPanel";
             this.Size = new System.Drawing.Size(1120, 662);
@@ -584,28 +584,28 @@
         private ReaLTaiizor.Controls.ParrotButton saveButton;
         private ReaLTaiizor.Controls.FoxCheckBox activeCheckBox;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
-        private ReaLTaiizor.Controls.HopeComboBox RolComboBox;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxRol;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private ReaLTaiizor.Controls.HopeTextBox repeatPasswordTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxRepeatPassword;
         private System.Windows.Forms.Label label11;
-        private ReaLTaiizor.Controls.HopeTextBox passwordTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxPassword;
         private System.Windows.Forms.Label label10;
-        private ReaLTaiizor.Controls.HopeTextBox usernameTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxUsername;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.Controls.HopeTextBox telTextBox;
-        private ReaLTaiizor.Controls.HopeTextBox emailTextBox;
-        private ReaLTaiizor.Controls.HopeTextBox dniTextBox;
-        private ReaLTaiizor.Controls.HopeTextBox surnameTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxTel;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxEmail;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxDni;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxSurname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private ReaLTaiizor.Controls.HopeTextBox nameTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
         private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.CheckBox checkBoxShowPass;
         private System.Windows.Forms.Label label8;

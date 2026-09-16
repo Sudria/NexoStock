@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NexoStock.Controllers
+namespace NexoStock.Class
 {
-    internal class Class1
+    internal class BrandClass
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

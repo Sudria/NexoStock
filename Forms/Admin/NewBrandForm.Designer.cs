@@ -1,6 +1,6 @@
 ﻿namespace NexoStock.Forms.Admin
 {
-    partial class NewCategoryForm
+    partial class NewBrandForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxCategoryName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxBrandName = new ReaLTaiizor.Controls.HopeTextBox();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.lostBorderPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -96,9 +96,9 @@
             this.label9.ForeColor = System.Drawing.Color.Fuchsia;
             this.label9.Location = new System.Drawing.Point(20, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(379, 32);
+            this.label9.Size = new System.Drawing.Size(334, 32);
             this.label9.TabIndex = 68;
-            this.label9.Text = "CREAR UNA NUEVA CATEGORIA";
+            this.label9.Text = "CREAR UNA NUEVA MARCA";
             // 
             // label10
             // 
@@ -107,38 +107,38 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(20, 114);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(221, 25);
+            this.label10.Size = new System.Drawing.Size(192, 25);
             this.label10.TabIndex = 70;
-            this.label10.Text = "Nombre de la categoria";
+            this.label10.Text = "Nombre de la marca";
             // 
-            // textBoxCategoryName
+            // textBoxBrandName
             // 
-            this.textBoxCategoryName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxCategoryName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxCategoryName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxCategoryName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxCategoryName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxCategoryName.ForeColor = System.Drawing.Color.White;
-            this.textBoxCategoryName.Hint = "Ingresar el nombre de la categoria (Hardaware, Ropa)...";
-            this.textBoxCategoryName.Location = new System.Drawing.Point(19, 149);
-            this.textBoxCategoryName.MaxLength = 32767;
-            this.textBoxCategoryName.Multiline = false;
-            this.textBoxCategoryName.Name = "textBoxCategoryName";
-            this.textBoxCategoryName.PasswordChar = '\0';
-            this.textBoxCategoryName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxCategoryName.SelectedText = "";
-            this.textBoxCategoryName.SelectionLength = 0;
-            this.textBoxCategoryName.SelectionStart = 0;
-            this.textBoxCategoryName.Size = new System.Drawing.Size(381, 38);
-            this.textBoxCategoryName.TabIndex = 69;
-            this.textBoxCategoryName.TabStop = false;
-            this.textBoxCategoryName.UseSystemPasswordChar = false;
+            this.textBoxBrandName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxBrandName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxBrandName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxBrandName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxBrandName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxBrandName.ForeColor = System.Drawing.Color.White;
+            this.textBoxBrandName.Hint = "Ingresar el nombre de la marca";
+            this.textBoxBrandName.Location = new System.Drawing.Point(19, 149);
+            this.textBoxBrandName.MaxLength = 32767;
+            this.textBoxBrandName.Multiline = false;
+            this.textBoxBrandName.Name = "textBoxBrandName";
+            this.textBoxBrandName.PasswordChar = '\0';
+            this.textBoxBrandName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxBrandName.SelectedText = "";
+            this.textBoxBrandName.SelectionLength = 0;
+            this.textBoxBrandName.SelectionStart = 0;
+            this.textBoxBrandName.Size = new System.Drawing.Size(381, 38);
+            this.textBoxBrandName.TabIndex = 69;
+            this.textBoxBrandName.TabStop = false;
+            this.textBoxBrandName.UseSystemPasswordChar = false;
             // 
             // lostBorderPanel2
             // 
             this.lostBorderPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel2.BorderColor = System.Drawing.Color.Fuchsia;
-            this.lostBorderPanel2.Controls.Add(this.textBoxCategoryName);
+            this.lostBorderPanel2.Controls.Add(this.textBoxBrandName);
             this.lostBorderPanel2.Controls.Add(this.label10);
             this.lostBorderPanel2.Controls.Add(this.saveButton);
             this.lostBorderPanel2.Controls.Add(this.exitButton);
@@ -152,7 +152,7 @@
             this.lostBorderPanel2.Size = new System.Drawing.Size(413, 329);
             this.lostBorderPanel2.TabIndex = 71;
             // 
-            // NewCategoryForm
+            // NewBrandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.lostBorderPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NewCategoryForm";
+            this.Name = "NewBrandForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewCategoryForm";
             this.lostBorderPanel2.ResumeLayout(false);
@@ -176,7 +176,7 @@
         private ReaLTaiizor.Controls.ParrotButton exitButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxCategoryName;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxBrandName;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
     }
 }

@@ -37,13 +37,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.telTextBox = new ReaLTaiizor.Controls.HopeTextBox();
-            this.emailTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxTel = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxEmail = new ReaLTaiizor.Controls.HopeTextBox();
             this.textBoxCuit = new ReaLTaiizor.Controls.HopeTextBox();
-            this.surnameTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxSurname = new ReaLTaiizor.Controls.HopeTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameTextBox = new ReaLTaiizor.Controls.HopeTextBox();
+            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
             this.stateLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -191,53 +191,53 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Nombre";
             // 
-            // telTextBox
+            // textBoxTel
             // 
-            this.telTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.telTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.telTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.telTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.telTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.telTextBox.ForeColor = System.Drawing.Color.White;
-            this.telTextBox.Hint = "";
-            this.telTextBox.Location = new System.Drawing.Point(375, 243);
-            this.telTextBox.MaxLength = 32767;
-            this.telTextBox.Multiline = false;
-            this.telTextBox.Name = "telTextBox";
-            this.telTextBox.PasswordChar = '\0';
-            this.telTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.telTextBox.SelectedText = "";
-            this.telTextBox.SelectionLength = 0;
-            this.telTextBox.SelectionStart = 0;
-            this.telTextBox.Size = new System.Drawing.Size(324, 38);
-            this.telTextBox.TabIndex = 45;
-            this.telTextBox.TabStop = false;
-            this.telTextBox.Text = "54 9 ";
-            this.telTextBox.UseSystemPasswordChar = false;
-            this.telTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
+            this.textBoxTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxTel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxTel.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxTel.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxTel.ForeColor = System.Drawing.Color.White;
+            this.textBoxTel.Hint = "";
+            this.textBoxTel.Location = new System.Drawing.Point(375, 243);
+            this.textBoxTel.MaxLength = 32767;
+            this.textBoxTel.Multiline = false;
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.PasswordChar = '\0';
+            this.textBoxTel.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxTel.SelectedText = "";
+            this.textBoxTel.SelectionLength = 0;
+            this.textBoxTel.SelectionStart = 0;
+            this.textBoxTel.Size = new System.Drawing.Size(324, 38);
+            this.textBoxTel.TabIndex = 45;
+            this.textBoxTel.TabStop = false;
+            this.textBoxTel.Text = "54 9 ";
+            this.textBoxTel.UseSystemPasswordChar = false;
+            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
             // 
-            // emailTextBox
+            // textBoxEmail
             // 
-            this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.emailTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.emailTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.emailTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.emailTextBox.ForeColor = System.Drawing.Color.White;
-            this.emailTextBox.Hint = "usuario@ejemplo.com";
-            this.emailTextBox.Location = new System.Drawing.Point(26, 243);
-            this.emailTextBox.MaxLength = 32767;
-            this.emailTextBox.Multiline = false;
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.PasswordChar = '\0';
-            this.emailTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.emailTextBox.SelectedText = "";
-            this.emailTextBox.SelectionLength = 0;
-            this.emailTextBox.SelectionStart = 0;
-            this.emailTextBox.Size = new System.Drawing.Size(324, 38);
-            this.emailTextBox.TabIndex = 44;
-            this.emailTextBox.TabStop = false;
-            this.emailTextBox.UseSystemPasswordChar = false;
+            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxEmail.ForeColor = System.Drawing.Color.White;
+            this.textBoxEmail.Hint = "usuario@ejemplo.com";
+            this.textBoxEmail.Location = new System.Drawing.Point(26, 243);
+            this.textBoxEmail.MaxLength = 32767;
+            this.textBoxEmail.Multiline = false;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PasswordChar = '\0';
+            this.textBoxEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxEmail.SelectedText = "";
+            this.textBoxEmail.SelectionLength = 0;
+            this.textBoxEmail.SelectionStart = 0;
+            this.textBoxEmail.Size = new System.Drawing.Size(324, 38);
+            this.textBoxEmail.TabIndex = 44;
+            this.textBoxEmail.TabStop = false;
+            this.textBoxEmail.UseSystemPasswordChar = false;
             // 
             // textBoxCuit
             // 
@@ -262,28 +262,28 @@
             this.textBoxCuit.TabStop = false;
             this.textBoxCuit.UseSystemPasswordChar = false;
             // 
-            // surnameTextBox
+            // textBoxSurname
             // 
-            this.surnameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.surnameTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.surnameTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.surnameTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.surnameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.surnameTextBox.ForeColor = System.Drawing.Color.White;
-            this.surnameTextBox.Hint = "Ingresa el apellido";
-            this.surnameTextBox.Location = new System.Drawing.Point(375, 155);
-            this.surnameTextBox.MaxLength = 32767;
-            this.surnameTextBox.Multiline = false;
-            this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.PasswordChar = '\0';
-            this.surnameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.surnameTextBox.SelectedText = "";
-            this.surnameTextBox.SelectionLength = 0;
-            this.surnameTextBox.SelectionStart = 0;
-            this.surnameTextBox.Size = new System.Drawing.Size(324, 38);
-            this.surnameTextBox.TabIndex = 42;
-            this.surnameTextBox.TabStop = false;
-            this.surnameTextBox.UseSystemPasswordChar = false;
+            this.textBoxSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxSurname.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxSurname.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxSurname.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxSurname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxSurname.Hint = "Ingresa el apellido";
+            this.textBoxSurname.Location = new System.Drawing.Point(375, 155);
+            this.textBoxSurname.MaxLength = 32767;
+            this.textBoxSurname.Multiline = false;
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.PasswordChar = '\0';
+            this.textBoxSurname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxSurname.SelectedText = "";
+            this.textBoxSurname.SelectionLength = 0;
+            this.textBoxSurname.SelectionStart = 0;
+            this.textBoxSurname.Size = new System.Drawing.Size(324, 38);
+            this.textBoxSurname.TabIndex = 42;
+            this.textBoxSurname.TabStop = false;
+            this.textBoxSurname.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -307,28 +307,28 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "CREAR PROVEEDOR";
             // 
-            // nameTextBox
+            // textBoxName
             // 
-            this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.nameTextBox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.nameTextBox.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.nameTextBox.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.nameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.nameTextBox.ForeColor = System.Drawing.Color.White;
-            this.nameTextBox.Hint = "Ingresa el nombre";
-            this.nameTextBox.Location = new System.Drawing.Point(26, 155);
-            this.nameTextBox.MaxLength = 32767;
-            this.nameTextBox.Multiline = false;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.PasswordChar = '\0';
-            this.nameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.nameTextBox.SelectedText = "";
-            this.nameTextBox.SelectionLength = 0;
-            this.nameTextBox.SelectionStart = 0;
-            this.nameTextBox.Size = new System.Drawing.Size(324, 38);
-            this.nameTextBox.TabIndex = 39;
-            this.nameTextBox.TabStop = false;
-            this.nameTextBox.UseSystemPasswordChar = false;
+            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxName.ForeColor = System.Drawing.Color.White;
+            this.textBoxName.Hint = "Ingresa el nombre";
+            this.textBoxName.Location = new System.Drawing.Point(26, 155);
+            this.textBoxName.MaxLength = 32767;
+            this.textBoxName.Multiline = false;
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PasswordChar = '\0';
+            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxName.SelectedText = "";
+            this.textBoxName.SelectionLength = 0;
+            this.textBoxName.SelectionStart = 0;
+            this.textBoxName.Size = new System.Drawing.Size(324, 38);
+            this.textBoxName.TabIndex = 39;
+            this.textBoxName.TabStop = false;
+            this.textBoxName.UseSystemPasswordChar = false;
             // 
             // stateLabel
             // 
@@ -368,13 +368,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.telTextBox);
-            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.textBoxTel);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxCuit);
-            this.Controls.Add(this.surnameTextBox);
+            this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.textBoxName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AdminNewProviderPanel";
             this.Size = new System.Drawing.Size(1120, 662);
@@ -394,13 +394,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.Controls.HopeTextBox telTextBox;
-        private ReaLTaiizor.Controls.HopeTextBox emailTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxTel;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxEmail;
         private ReaLTaiizor.Controls.HopeTextBox textBoxCuit;
-        private ReaLTaiizor.Controls.HopeTextBox surnameTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxSurname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private ReaLTaiizor.Controls.HopeTextBox nameTextBox;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
         private System.Windows.Forms.Label stateLabel;
         private System.Windows.Forms.Label label8;
     }
