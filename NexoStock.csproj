@@ -191,6 +191,18 @@
     <Compile Include="Forms\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Manager\ManagerInformsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerInformsPanel.Designer.cs">
+      <DependentUpon>ManagerInformsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerSellersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerSellersPanel.Designer.cs">
+      <DependentUpon>ManagerSellersPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewBrandForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +308,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerInformsPanel.resx">
+      <DependentUpon>ManagerInformsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerSellersPanel.resx">
+      <DependentUpon>ManagerSellersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewBrandForm.resx">
       <DependentUpon>NewBrandForm.cs</DependentUpon>

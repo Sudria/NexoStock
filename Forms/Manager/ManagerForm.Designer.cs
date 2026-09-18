@@ -43,10 +43,9 @@
             // 
             // panelContent
             // 
-            this.panelContent.Location = new System.Drawing.Point(440, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
+            this.panelContent.Location = new System.Drawing.Point(330, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1484, 815);
+            this.panelContent.Size = new System.Drawing.Size(1113, 662);
             this.panelContent.TabIndex = 1;
             // 
             // panelDashboard
@@ -62,9 +61,8 @@
             this.panelDashboard.Controls.Add(this.buttonSales);
             this.panelDashboard.Controls.Add(this.buttonHome);
             this.panelDashboard.Location = new System.Drawing.Point(1, 0);
-            this.panelDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.panelDashboard.Name = "panelDashboard";
-            this.panelDashboard.Size = new System.Drawing.Size(444, 815);
+            this.panelDashboard.Size = new System.Drawing.Size(333, 662);
             this.panelDashboard.TabIndex = 2;
             // 
             // buttonInforms
@@ -95,13 +93,12 @@
             this.buttonInforms.Lighting = false;
             this.buttonInforms.LinearGradient_Background = false;
             this.buttonInforms.LinearGradientPen = true;
-            this.buttonInforms.Location = new System.Drawing.Point(64, 566);
-            this.buttonInforms.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInforms.Location = new System.Drawing.Point(48, 460);
             this.buttonInforms.Name = "buttonInforms";
             this.buttonInforms.PenWidth = 15;
             this.buttonInforms.Rounding = true;
             this.buttonInforms.RoundingInt = 25;
-            this.buttonInforms.Size = new System.Drawing.Size(313, 62);
+            this.buttonInforms.Size = new System.Drawing.Size(235, 50);
             this.buttonInforms.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonInforms.TabIndex = 22;
             this.buttonInforms.Tag = "Cyber";
@@ -109,6 +106,7 @@
             this.buttonInforms.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonInforms.Timer_Effect_1 = 1;
             this.buttonInforms.Timer_RGB = 1;
+            this.buttonInforms.Click += new System.EventHandler(this.buttonInforms_Click);
             // 
             // buttonExit
             // 
@@ -138,13 +136,12 @@
             this.buttonExit.Lighting = true;
             this.buttonExit.LinearGradient_Background = true;
             this.buttonExit.LinearGradientPen = true;
-            this.buttonExit.Location = new System.Drawing.Point(4, 758);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExit.Location = new System.Drawing.Point(3, 616);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.PenWidth = 15;
             this.buttonExit.Rounding = true;
             this.buttonExit.RoundingInt = 25;
-            this.buttonExit.Size = new System.Drawing.Size(168, 42);
+            this.buttonExit.Size = new System.Drawing.Size(126, 34);
             this.buttonExit.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonExit.TabIndex = 21;
             this.buttonExit.Tag = "Cyber";
@@ -182,13 +179,12 @@
             this.buttonCloseSession.Lighting = true;
             this.buttonCloseSession.LinearGradient_Background = true;
             this.buttonCloseSession.LinearGradientPen = true;
-            this.buttonCloseSession.Location = new System.Drawing.Point(263, 758);
-            this.buttonCloseSession.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCloseSession.Location = new System.Drawing.Point(197, 616);
             this.buttonCloseSession.Name = "buttonCloseSession";
             this.buttonCloseSession.PenWidth = 15;
             this.buttonCloseSession.Rounding = true;
             this.buttonCloseSession.RoundingInt = 25;
-            this.buttonCloseSession.Size = new System.Drawing.Size(168, 42);
+            this.buttonCloseSession.Size = new System.Drawing.Size(126, 34);
             this.buttonCloseSession.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonCloseSession.TabIndex = 20;
             this.buttonCloseSession.Tag = "Cyber";
@@ -226,13 +222,12 @@
             this.buttonSellers.Lighting = false;
             this.buttonSellers.LinearGradient_Background = false;
             this.buttonSellers.LinearGradientPen = true;
-            this.buttonSellers.Location = new System.Drawing.Point(64, 498);
-            this.buttonSellers.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSellers.Location = new System.Drawing.Point(48, 405);
             this.buttonSellers.Name = "buttonSellers";
             this.buttonSellers.PenWidth = 15;
             this.buttonSellers.Rounding = true;
             this.buttonSellers.RoundingInt = 25;
-            this.buttonSellers.Size = new System.Drawing.Size(313, 62);
+            this.buttonSellers.Size = new System.Drawing.Size(235, 50);
             this.buttonSellers.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonSellers.TabIndex = 19;
             this.buttonSellers.Tag = "Cyber";
@@ -240,6 +235,7 @@
             this.buttonSellers.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonSellers.Timer_Effect_1 = 1;
             this.buttonSellers.Timer_RGB = 1;
+            this.buttonSellers.Click += new System.EventHandler(this.buttonSellers_Click);
             // 
             // buttonBuys
             // 
@@ -269,13 +265,12 @@
             this.buttonBuys.Lighting = false;
             this.buttonBuys.LinearGradient_Background = false;
             this.buttonBuys.LinearGradientPen = true;
-            this.buttonBuys.Location = new System.Drawing.Point(64, 431);
-            this.buttonBuys.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBuys.Location = new System.Drawing.Point(48, 350);
             this.buttonBuys.Name = "buttonBuys";
             this.buttonBuys.PenWidth = 15;
             this.buttonBuys.Rounding = true;
             this.buttonBuys.RoundingInt = 25;
-            this.buttonBuys.Size = new System.Drawing.Size(313, 62);
+            this.buttonBuys.Size = new System.Drawing.Size(235, 50);
             this.buttonBuys.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonBuys.TabIndex = 16;
             this.buttonBuys.Tag = "Cyber";
@@ -313,13 +308,12 @@
             this.buttonProduct.Lighting = false;
             this.buttonProduct.LinearGradient_Background = false;
             this.buttonProduct.LinearGradientPen = true;
-            this.buttonProduct.Location = new System.Drawing.Point(64, 363);
-            this.buttonProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonProduct.Location = new System.Drawing.Point(48, 295);
             this.buttonProduct.Name = "buttonProduct";
             this.buttonProduct.PenWidth = 15;
             this.buttonProduct.Rounding = true;
             this.buttonProduct.RoundingInt = 25;
-            this.buttonProduct.Size = new System.Drawing.Size(313, 62);
+            this.buttonProduct.Size = new System.Drawing.Size(235, 50);
             this.buttonProduct.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonProduct.TabIndex = 14;
             this.buttonProduct.Tag = "Cyber";
@@ -357,13 +351,12 @@
             this.buttonSales.Lighting = false;
             this.buttonSales.LinearGradient_Background = false;
             this.buttonSales.LinearGradientPen = true;
-            this.buttonSales.Location = new System.Drawing.Point(64, 295);
-            this.buttonSales.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSales.Location = new System.Drawing.Point(48, 240);
             this.buttonSales.Name = "buttonSales";
             this.buttonSales.PenWidth = 15;
             this.buttonSales.Rounding = true;
             this.buttonSales.RoundingInt = 25;
-            this.buttonSales.Size = new System.Drawing.Size(313, 62);
+            this.buttonSales.Size = new System.Drawing.Size(235, 50);
             this.buttonSales.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonSales.TabIndex = 13;
             this.buttonSales.Tag = "Cyber";
@@ -401,13 +394,12 @@
             this.buttonHome.Lighting = false;
             this.buttonHome.LinearGradient_Background = false;
             this.buttonHome.LinearGradientPen = true;
-            this.buttonHome.Location = new System.Drawing.Point(64, 228);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonHome.Location = new System.Drawing.Point(48, 185);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.PenWidth = 15;
             this.buttonHome.Rounding = true;
             this.buttonHome.RoundingInt = 25;
-            this.buttonHome.Size = new System.Drawing.Size(313, 62);
+            this.buttonHome.Size = new System.Drawing.Size(235, 50);
             this.buttonHome.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.buttonHome.TabIndex = 12;
             this.buttonHome.Tag = "Cyber";
@@ -419,16 +411,15 @@
             // 
             // ManagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1925, 815);
+            this.ClientSize = new System.Drawing.Size(1444, 662);
             this.ControlBox = false;
             this.Controls.Add(this.panelDashboard);
             this.Controls.Add(this.panelContent);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelDashboard.ResumeLayout(false);

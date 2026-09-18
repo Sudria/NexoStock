@@ -60,6 +60,21 @@ namespace NexoStock.Forms.Manager
             LoadBuysController();
         }
 
+        private void buttonSellers_Click(object sender, EventArgs e)
+        {
+            innactiveButton(activedButton);
+            activedButton = buttonSellers;
+            activeButton(activedButton);
+            LoadSellersController();
+        }
+
+        private void buttonInforms_Click(object sender, EventArgs e)
+        {
+            innactiveButton(activedButton);
+            activedButton = buttonInforms;
+            activeButton(activedButton);
+            LoadInformsController();
+        }
 
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -95,8 +110,6 @@ namespace NexoStock.Forms.Manager
             panelContent.Controls.Add(new ManagerNewProductPanel());
         }
 
-
-
         public void LoadProductController()
         {
             panelContent.Controls.Clear();
@@ -109,8 +122,17 @@ namespace NexoStock.Forms.Manager
             panelContent.Controls.Add(new ManagerBuysPanel());
         }
 
+        public void LoadSellersController()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new ManagerSellersPanel());
+        }
 
-
+        public void LoadInformsController()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new ManagerInformsPanel());
+        }
 
 
         //COMPORTAMIENTO DE BOTONES
