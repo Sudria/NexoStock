@@ -251,11 +251,47 @@
     <Compile Include="Forms\Manager\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Seller\SellerDashboard.cs">
+    <Compile Include="Forms\Seller\SellerHomePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Seller\SellerDashboard.Designer.cs">
-      <DependentUpon>SellerDashboard.cs</DependentUpon>
+    <Compile Include="Forms\Seller\SellerHomePanel.Designer.cs">
+      <DependentUpon>SellerHomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerNewClientPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerNewClientPanel.Designer.cs">
+      <DependentUpon>SellerNewClientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerClientPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerClientPanel.Designer.cs">
+      <DependentUpon>SellerClientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerNewSellPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerNewSellPanel.Designer.cs">
+      <DependentUpon>SellerNewSellPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerSalesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerSalesPanel.Designer.cs">
+      <DependentUpon>SellerSalesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerProductPanel.Designer.cs">
+      <DependentUpon>SellerProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerForm.Designer.cs">
+      <DependentUpon>SellerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Warehouse\WarehouseDashboard.cs">
       <SubType>UserControl</SubType>
@@ -339,8 +375,26 @@
     <EmbeddedResource Include="Forms\Manager\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Seller\SellerDashboard.resx">
-      <DependentUpon>SellerDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Seller\SellerHomePanel.resx">
+      <DependentUpon>SellerHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerNewClientPanel.resx">
+      <DependentUpon>SellerNewClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerClientPanel.resx">
+      <DependentUpon>SellerClientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerNewSellPanel.resx">
+      <DependentUpon>SellerNewSellPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerSalesPanel.resx">
+      <DependentUpon>SellerSalesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerProductPanel.resx">
+      <DependentUpon>SellerProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerForm.resx">
+      <DependentUpon>SellerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse\WarehouseDashboard.resx">
       <DependentUpon>WarehouseDashboard.cs</DependentUpon>
