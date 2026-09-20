@@ -293,11 +293,53 @@
     <Compile Include="Forms\Seller\SellerForm.Designer.cs">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Warehouse\WarehouseDashboard.cs">
+    <Compile Include="Forms\Warehouse\WarehouseCategoryAndBrandPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Warehouse\WarehouseDashboard.Designer.cs">
-      <DependentUpon>WarehouseDashboard.cs</DependentUpon>
+    <Compile Include="Forms\Warehouse\WarehouseCategoryAndBrandPanel.Designer.cs">
+      <DependentUpon>WarehouseCategoryAndBrandPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseBuysPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseBuysPanel.Designer.cs">
+      <DependentUpon>WarehouseBuysPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewProviderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewProviderPanel.Designer.cs">
+      <DependentUpon>WarehouseNewProviderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseProviderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseProviderPanel.Designer.cs">
+      <DependentUpon>WarehouseProviderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewProductPanel.Designer.cs">
+      <DependentUpon>WarehouseNewProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseProductPanel.Designer.cs">
+      <DependentUpon>WarehouseProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseHomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseHomePanel.Designer.cs">
+      <DependentUpon>WarehouseHomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseForm.Designer.cs">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -396,8 +438,29 @@
     <EmbeddedResource Include="Forms\Seller\SellerForm.resx">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Warehouse\WarehouseDashboard.resx">
-      <DependentUpon>WarehouseDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseCategoryAndBrandPanel.resx">
+      <DependentUpon>WarehouseCategoryAndBrandPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseBuysPanel.resx">
+      <DependentUpon>WarehouseBuysPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseNewProviderPanel.resx">
+      <DependentUpon>WarehouseNewProviderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseProviderPanel.resx">
+      <DependentUpon>WarehouseProviderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseNewProductPanel.resx">
+      <DependentUpon>WarehouseNewProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseProductPanel.resx">
+      <DependentUpon>WarehouseProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseHomePanel.resx">
+      <DependentUpon>WarehouseHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseForm.resx">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
