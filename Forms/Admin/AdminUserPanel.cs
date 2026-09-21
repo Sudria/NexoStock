@@ -15,6 +15,8 @@ namespace NexoStock.Forms.Admin
         public AdminUserPanel()
         {
             InitializeComponent();
+            comboBoxRol.SelectedIndex = 0;
+            comboBoxState.SelectedIndex = 0;
         }
 
         private void newUserButton_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace NexoStock.Forms.Admin
         private void exitButton_Click(object sender, EventArgs e)
         {
             AdminForm dashboard = this.ParentForm as AdminForm;
-            dashboard.LoadUserControler();
+            dashboard.LoadProviderControler();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
