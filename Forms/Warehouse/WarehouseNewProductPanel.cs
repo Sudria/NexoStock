@@ -39,7 +39,7 @@ namespace NexoStock.Forms.Warehouse
                 Stock = int.Parse(textBoxStock.Text),
                 StockMin = int.Parse(textBoxStockMin.Text),
                 State = activeCheckBox.Checked,
-                Imagenes = new List<string>()
+                //Imagenes = new List<string>()
             };
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NexoStock.Class
 {
-    internal class ProductClass
+    public class ProductClass
     {
         //Atributes
         public string Name { get; set; }
@@ -31,6 +31,6 @@ namespace NexoStock.Class
         public int  ProviderId { get; set; }
 
         //List of images
-        public List<string> Imagenes { get; set; } = new List<string>();
+       // public List<string> Images { get; set; } = new List<string>();
     }
 }

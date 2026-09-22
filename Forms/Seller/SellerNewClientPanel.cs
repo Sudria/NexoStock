@@ -39,7 +39,7 @@ namespace NexoStock.Forms.Seller
             {
                 Name = textBoxName.Text,
                 Surname = textBoxSurname.Text,
-                DNI = textBoxDni.Text,
+                Dni = textBoxDni.Text,
                 Email = textBoxEmail.Text,
                 Tel = textBoxTel.Text,
             };
@@ -56,7 +56,7 @@ namespace NexoStock.Forms.Seller
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(newUser.DNI, "DNI", 8))
+            if (!Utils.Validator.isValidNum(newUser.Dni, "DNI", 8))
             {
                 textBoxDni.Focus();
                 return;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NexoStock.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace NexoStock
         static void Main()
         {
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Admin.AdminForm());
+            //Application.Run(new Forms.Admin.AdminForm());
+            Application.Run(new Tests());
         }
     }
 }

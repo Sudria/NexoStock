@@ -12,6 +12,6 @@ namespace NexoStock.Class
 
         public string Name { get; set; }
 
-        public bool State{ get; set; } = true;
+        public bool State{ get; set; }
     }
 }
