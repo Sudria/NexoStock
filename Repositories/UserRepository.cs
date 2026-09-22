@@ -22,9 +22,9 @@ namespace NexoStock.Services
             {
                 string query = @"
                 INSERT INTO users 
-                    (name, surname, dni, email, tel, password, rol, state, created_date)
+                    (Name, Surname, Dni, Email, Tel,Username , Password, Rol, State, CreatedDate)
                 VALUES 
-                    (@name, @surname, @dni, @email, @tel, @password, @rol, @state, @createdDate);
+                    (@name, @surname, @dni, @email, @tel, @username, @password, @rol, @state, @createdDate);
             ";
 
                 int rowsAffected = connectionDB.ExecuteNonQuery(
@@ -34,6 +34,7 @@ namespace NexoStock.Services
                     new MySqlParameter("@dni", user.Dni),
                     new MySqlParameter("@email", user.Email),
                     new MySqlParameter("@tel", user.Tel),
+                    new MySqlParameter("@username", user.Username),
                     new MySqlParameter("@password", user.Password),
                     new MySqlParameter("@rol", user.Rol),
                     new MySqlParameter("@state", user.State),
@@ -41,7 +42,34 @@ namespace NexoStock.Services
                 );
 
                 return rowsAffected > 0;
-            
             }
+
+        public List<UserClass> GetAllUsers()
+        {
+            List<UserClass> users = new List<UserClass>();
+            string query = "SELECT * FROM users";
+            using (var reader = connectionDB.ExecuteReader(query))
+            {
+                while (reader.Read())
+                {
+                    UserClass user = new UserClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Surname = reader.GetString("Surname"),
+                        Dni = reader.GetString("Dni"),
+                        Email = reader.GetString("Email"),
+                        Tel = reader.GetString("Tel"),
+                        Username = reader.GetString("Username"),
+                        Password = reader.GetString("Password"),
+                        Rol = reader.GetString("Rol"),
+                        State = reader.GetBoolean("State"),
+                        CreatedDate = reader.GetDateTime("CreatedDate")
+                    };
+                    users.Add(user);
+                }
+            }
+            return users;
+        }
     }
 }

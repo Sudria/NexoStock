@@ -1,4 +1,5 @@
 ﻿using NexoStock.Class;
+using NexoStock.Services;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
@@ -108,6 +109,19 @@ namespace NexoStock.Forms.Admin
                 MessageBox.Show($"Debe seleccionar una opcion en el campo rol.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxRol.Focus();
                 return;
+            }
+
+            UserRepository userRepository = new UserRepository();
+
+            if (userRepository.CreateUser(newUser))
+            {
+                MessageBox.Show($"Usuario {newUser.Name} {newUser.Surname} creado correctamente.", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AdminForm dashboard = this.ParentForm as AdminForm;
+                dashboard.LoadUserControler();
+            }
+            else
+            {
+                MessageBox.Show($"Error al crear el usuario {newUser.Name} {newUser.Surname}.", "Error al Crear Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
