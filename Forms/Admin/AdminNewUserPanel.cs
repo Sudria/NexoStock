@@ -61,42 +61,50 @@ namespace NexoStock.Forms.Admin
             if (!Utils.Validator.isValidText(newUser.Name, "Nombre"))
             {
                 textBoxName.Focus();
+                textBoxName.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidText(newUser.Surname, "Apellido"))
             {
                 textBoxSurname.Focus();
+                textBoxSurname.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidNum(newUser.Dni, "DNI", 8))
             {
                 textBoxDni.Focus();
+                textBoxDni.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidEmail(newUser.Email))
             {
                 textBoxEmail.Focus();
+                textBoxEmail.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidNum(newUser.Tel.Replace(" ", ""), "Teléfono", 13))
             {
                 textBoxTel.Focus();
+                textBoxTel.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidText(newUser.Username, "Nombre de Usuario"))
             {
                 textBoxUsername.Focus();
+                textBoxUsername.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidPassword(newUser.Password, textBoxRepeatPassword.Text))
             {
                 textBoxPassword.Focus();
+                textBoxPassword.BorderColorA = Color.Red;
+                textBoxRepeatPassword.BorderColorA = Color.Red;
                 return;
             }
 
@@ -115,11 +123,7 @@ namespace NexoStock.Forms.Admin
                 AdminForm dashboard = this.ParentForm as AdminForm;
                 dashboard.LoadUserControler();
             }
-         /*   else
-            {
-                MessageBox.Show($"Error al crear el usuario {newUser.Name} {newUser.Surname}.", "Error al Crear Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-         */
+
         }
 
         private void formatTel(object sender, KeyPressEventArgs e)

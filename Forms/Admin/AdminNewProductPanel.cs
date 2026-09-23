@@ -32,31 +32,36 @@ namespace NexoStock.Forms.Admin
             ProductClass productClass = new ProductClass
             {
                 Name = textBoxProductName.Text,
+                Cod = textBoxCod.Text,
                 Description = textBoxDescription.Text,
-                CategoryId = int.Parse(comboBoxCategory.SelectedValue.ToString()),
-                BrandId = int.Parse(comboBoxBrand.SelectedValue.ToString()),
-                SalePrice = decimal.Parse(textBoxPrice.Text),
-                Stock = int.Parse(numericStock.Text),
-                StockMin = int.Parse(numericStockMin.Text),
                 State = activeCheckBox.Checked,
-           //     Imagenes = new List<string>()
+                SalePrice = !string.IsNullOrEmpty(textBoxPrice.Text) ? decimal.Parse(textBoxPrice.Text) : 0,
+                Stock = (int)numericStock.ValueNumber,
+                StockMin = (int)numericStockMin.ValueNumber,
+                CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
+                BrandId =  1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
+                ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
+                Images = new List<string>()
             };
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
             {
                 textBoxProductName.Focus();
+                textBoxProductName.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidText(productClass.Description, "Descripción del producto"))
             {
                 textBoxDescription.Focus();
+                textBoxDescription.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidNum(productClass.SalePrice.ToString(), "Precio de venta",10))
             {
                 textBoxPrice.Focus();
+                textBoxPrice.BorderColorA = Color.Red;
                 return;
             }
 
