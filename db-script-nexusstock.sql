@@ -1,6 +1,6 @@
- -- CREATE DATABASE nexusstock;
- -- USE nexusstock;
-/* 
+ CREATE DATABASE nexusstock;
+USE nexusstock;
+
 CREATE TABLE `users` (
   `Id`     INT NOT NULL AUTO_INCREMENT,
   `Surname`    VARCHAR(50) DEFAULT NULL,
@@ -20,11 +20,11 @@ CREATE TABLE `users` (
   UNIQUE KEY `Tel` (`Tel`),
   UNIQUE KEY `Username` (`Username`)
 );
-*/
+
 
 
 -- Usuarios de prueba randoms
-/*
+
 INSERT INTO users (Surname, Name, Dni, Email, Tel, Username, Password, Rol, State, CreatedDate)
 VALUES
 -- Roles de Administrador
@@ -54,15 +54,14 @@ VALUES
 ('Silva', 'Tomas', '90123456', 'tomas.silva@mail.com', '9012345678', 'tsilva', 'repositor3', 'Repositor', 1, NOW()),
 ('Rios', 'Camila', '01234567', 'camila.rios@mail.com', '0123456789', 'crios', 'repositor4', 'Repositor', 1, NOW()),
 ('Acosta', 'Martin', '11224455', 'martin.acosta@mail.com', '1122445566', 'macosta', 'repositor5', 'Repositor', 1, NOW());
-*/
+
 
 -- Usuarios con username y contraseña igual
-/*
+
 INSERT INTO users (Surname, Name, Dni, Email, Tel, Username, Password, Rol, State, CreatedDate)
 VALUES
 ('Ortega', 'Mariano', '38472910', 'mariano.ortega@mail.com', '1155998822', 'administrador', 'administrador', 'Administrador', 1, NOW()),
 ('Mendoza', 'Beatriz', '29481039', 'beatriz.mendoza@mail.com', '3414887766', 'encargado', 'encargado', 'Encargado', 1, NOW()),
 ('Peralta', 'Ezequiel', '41029384', 'ezequiel.peralta@mail.com', '2613994455', 'vendedor', 'vendedor', 'Vendedor', 1, NOW()),
 ('Vega', 'Natalia', '35920194', 'natalia.vega@mail.com', '3516223344', 'repositor', 'repositor', 'Repositor', 1, NOW());
-*/
 
