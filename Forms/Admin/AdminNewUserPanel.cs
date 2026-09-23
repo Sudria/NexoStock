@@ -115,10 +115,11 @@ namespace NexoStock.Forms.Admin
                 AdminForm dashboard = this.ParentForm as AdminForm;
                 dashboard.LoadUserControler();
             }
-            else
+         /*   else
             {
                 MessageBox.Show($"Error al crear el usuario {newUser.Name} {newUser.Surname}.", "Error al Crear Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+         */
         }
 
         private void formatTel(object sender, KeyPressEventArgs e)

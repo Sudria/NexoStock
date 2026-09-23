@@ -6,27 +6,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NexoStock.Services
 {
     public class UserRepository
     {
-            private readonly ConnectionDB connectionDB;
+        private readonly ConnectionDB connectionDB;
 
-            public UserRepository()
+        public UserRepository()
+        {
+            connectionDB = new ConnectionDB();
+        }
+
+        public bool CreateUser(UserClass user)
+        {
+            string query = @"
+        INSERT INTO users 
+            (Name, Surname, Dni, Email, Tel, Username, Password, Rol, State, CreatedDate)
+        VALUES 
+            (@name, @surname, @dni, @email, @tel, @username, @password, @rol, @state, @createdDate); ";
+
+            try
             {
-                connectionDB = new ConnectionDB();
-            }
-
-            public bool CreateUser(UserClass user)
-            {
-                string query = @"
-                INSERT INTO users 
-                    (Name, Surname, Dni, Email, Tel,Username , Password, Rol, State, CreatedDate)
-                VALUES 
-                    (@name, @surname, @dni, @email, @tel, @username, @password, @rol, @state, @createdDate);
-            ";
-
                 int rowsAffected = connectionDB.ExecuteNonQuery(
                     query,
                     new MySqlParameter("@name", user.Name),
@@ -43,6 +45,39 @@ namespace NexoStock.Services
 
                 return rowsAffected > 0;
             }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                string mensajeError = "No se pudo registrar el usuario porque un dato ya existe.";
+                string mensajeMySQL = ex.Message.ToLower();
+
+                if (mensajeMySQL.Contains("dni"))
+                {
+                    mensajeError = $"El DNI '{user.Dni}' ya está registrado en el sistema.";
+                }
+                else if (mensajeMySQL.Contains("email"))
+                {
+                    mensajeError = $"El correo electrónico '{user.Email}' ya está siendo usado por otra cuenta.";
+                }
+                else if (mensajeMySQL.Contains("username") )
+                {
+                    mensajeError = $"El nombre de usuario '{user.Username}' ya no está disponible.";
+                }
+                else if (mensajeMySQL.Contains("tel"))
+                {
+                    mensajeError = $"El teléfono '{user.Tel}' ya se encuentra en uso.";
+                }
+
+                MessageBox.Show(mensajeError, "Datos Duplicados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error de Base de Datos: {ex.Message}", "Error Técnico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
 
         public List<UserClass> GetAllUsers()
         {
