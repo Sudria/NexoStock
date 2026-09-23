@@ -48,20 +48,7 @@ namespace NexoStock.Forms.Manager
                 Images = new List<string>()
             };
 
-            ProductClass productClass = new ProductClass
-            {
-                Name = textBoxProductName.Text,
-                Cod = textBoxCod.Text,
-                Description = textBoxDescription.Text,
-                State = activeCheckBox.Checked,
-                SalePrice = !string.IsNullOrEmpty(textBoxPrice.Text) ? decimal.Parse(textBoxPrice.Text) : 0,
-                Stock = (int)numericStock.ValueNumber,
-                StockMin = (int)numericStockMin.ValueNumber,
-                CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
-                BrandId = 1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
-                ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
-                Images = new List<string>()
-            };
+        
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
             {
