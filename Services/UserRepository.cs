@@ -71,5 +71,43 @@ namespace NexoStock.Services
             }
             return users;
         }
+
+        public bool UpdateUser(UserClass user)
+        {
+            string query = @"
+                UPDATE users 
+                SET Name = @name, Surname = @surname, Dni = @dni, Email = @email, Tel = @tel, Username = @username, Password = @password, Rol = @rol, State = @state
+                WHERE Id = @id;
+            ";
+            int rowsAffected = connectionDB.ExecuteNonQuery(
+                query,
+                new MySqlParameter("@name", user.Name),
+                new MySqlParameter("@surname", user.Surname),
+                new MySqlParameter("@dni", user.Dni),
+                new MySqlParameter("@email", user.Email),
+                new MySqlParameter("@tel", user.Tel),
+                new MySqlParameter("@username", user.Username),
+                new MySqlParameter("@password", user.Password),
+                new MySqlParameter("@rol", user.Rol),
+                new MySqlParameter("@state", user.State),
+                new MySqlParameter("@id", user.Id)
+            );
+            return rowsAffected > 0;
+        }
+
+        public bool DeleteUser(int userId)
+        {
+            string query = "UPDATE users SET State = 0 WHERE Id = @id";
+            int rowsAffected = connectionDB.ExecuteNonQuery(query, new MySqlParameter("@id", userId));
+            return rowsAffected > 0;
+        }
+
+        public bool RestoreUser(int userId)
+        {
+            string query = "UPDATE users SET State = 1 WHERE Id = @id";
+            int rowsAffected = connectionDB.ExecuteNonQuery(query, new MySqlParameter("@id", userId));
+            return rowsAffected > 0;
+        }
+
     }
 }

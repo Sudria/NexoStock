@@ -9,7 +9,7 @@
     <RootNamespace>NexoStock</RootNamespace>
     <AssemblyName>NexoStock</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-	 <LangVersion>8.0</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -384,7 +384,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\UserRepository.cs" />
     <Compile Include="Utils\ConnectionDB.cs" />
     <Compile Include="Tests.cs">
       <SubType>Form</SubType>
