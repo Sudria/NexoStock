@@ -40,7 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.buttonDetails = new ReaLTaiizor.Controls.CyberButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.buttonDelete = new ReaLTaiizor.Controls.CyberButton();
+            this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
+            this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,16 +114,22 @@
             // dateTimePickerFrom
             // 
             this.dateTimePickerFrom.Location = new System.Drawing.Point(720, 132);
+            this.dateTimePickerFrom.MaxDate = new System.DateTime(2026, 9, 23, 0, 0, 0, 0);
+            this.dateTimePickerFrom.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(160, 20);
             this.dateTimePickerFrom.TabIndex = 32;
+            this.dateTimePickerFrom.Value = new System.DateTime(2026, 9, 23, 0, 0, 0, 0);
             // 
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Location = new System.Drawing.Point(886, 132);
+            this.dateTimePickerTo.MaxDate = new System.DateTime(2026, 9, 23, 0, 0, 0, 0);
+            this.dateTimePickerTo.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(160, 20);
             this.dateTimePickerTo.TabIndex = 33;
+            this.dateTimePickerTo.Value = new System.DateTime(2026, 9, 23, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -198,34 +206,114 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Nombre del proveedor ";
             // 
-            // textBoxName
+            // buttonDelete
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxName.ForeColor = System.Drawing.Color.White;
-            this.textBoxName.Hint = "Buscar por Nombre del proveedor o n° de factura";
-            this.textBoxName.Location = new System.Drawing.Point(71, 114);
-            this.textBoxName.MaxLength = 32767;
-            this.textBoxName.Multiline = false;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PasswordChar = '\0';
-            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.SelectedText = "";
-            this.textBoxName.SelectionLength = 0;
-            this.textBoxName.SelectionStart = 0;
-            this.textBoxName.Size = new System.Drawing.Size(420, 38);
-            this.textBoxName.TabIndex = 21;
-            this.textBoxName.TabStop = false;
-            this.textBoxName.UseSystemPasswordChar = false;
+            this.buttonDelete.Alpha = 30;
+            this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDelete.Background = true;
+            this.buttonDelete.Background_WidthPen = 2F;
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonDelete.BackgroundPen = true;
+            this.buttonDelete.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonDelete.ColorBackground_1 = System.Drawing.Color.Lime;
+            this.buttonDelete.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonDelete.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonDelete.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonDelete.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonDelete.ColorPen_2 = System.Drawing.Color.Violet;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonDelete.Effect_1 = true;
+            this.buttonDelete.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonDelete.Effect_1_Transparency = 25;
+            this.buttonDelete.Effect_2 = false;
+            this.buttonDelete.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonDelete.Effect_2_Transparency = 20;
+            this.buttonDelete.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonDelete.Lighting = true;
+            this.buttonDelete.LinearGradient_Background = true;
+            this.buttonDelete.LinearGradientPen = true;
+            this.buttonDelete.Location = new System.Drawing.Point(886, 3);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.PenWidth = 15;
+            this.buttonDelete.Rounding = true;
+            this.buttonDelete.RoundingInt = 25;
+            this.buttonDelete.Size = new System.Drawing.Size(197, 38);
+            this.buttonDelete.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonDelete.TabIndex = 41;
+            this.buttonDelete.Tag = "Cyber";
+            this.buttonDelete.TextButton = "CONFIRMAR COMPRA";
+            this.buttonDelete.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonDelete.Timer_Effect_1 = 1;
+            this.buttonDelete.Timer_RGB = 1;
             // 
-            // ManagerBuyPanel
+            // cyberButton2
+            // 
+            this.cyberButton2.Alpha = 30;
+            this.cyberButton2.BackColor = System.Drawing.Color.Transparent;
+            this.cyberButton2.Background = true;
+            this.cyberButton2.Background_WidthPen = 2F;
+            this.cyberButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cyberButton2.BackgroundPen = true;
+            this.cyberButton2.ColorBackground = System.Drawing.Color.Empty;
+            this.cyberButton2.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.cyberButton2.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.cyberButton2.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberButton2.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.cyberButton2.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.cyberButton2.ColorPen_2 = System.Drawing.Color.Violet;
+            this.cyberButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cyberButton2.Effect_1 = true;
+            this.cyberButton2.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.cyberButton2.Effect_1_Transparency = 25;
+            this.cyberButton2.Effect_2 = false;
+            this.cyberButton2.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.cyberButton2.Effect_2_Transparency = 20;
+            this.cyberButton2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cyberButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cyberButton2.Lighting = true;
+            this.cyberButton2.LinearGradient_Background = true;
+            this.cyberButton2.LinearGradientPen = true;
+            this.cyberButton2.Location = new System.Drawing.Point(643, 3);
+            this.cyberButton2.Name = "cyberButton2";
+            this.cyberButton2.PenWidth = 15;
+            this.cyberButton2.Rounding = true;
+            this.cyberButton2.RoundingInt = 25;
+            this.cyberButton2.Size = new System.Drawing.Size(237, 38);
+            this.cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cyberButton2.TabIndex = 43;
+            this.cyberButton2.Tag = "Cyber";
+            this.cyberButton2.TextButton = "+ NUEVA COMPRA";
+            this.cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.cyberButton2.Timer_Effect_1 = 1;
+            this.cyberButton2.Timer_RGB = 1;
+            // 
+            // comboBoxProvider
+            // 
+            this.comboBoxProvider.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxProvider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxProvider.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxProvider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxProvider.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxProvider.ForeColor = System.Drawing.Color.White;
+            this.comboBoxProvider.FormattingEnabled = true;
+            this.comboBoxProvider.ItemHeight = 26;
+            this.comboBoxProvider.Location = new System.Drawing.Point(71, 114);
+            this.comboBoxProvider.Name = "comboBoxProvider";
+            this.comboBoxProvider.Size = new System.Drawing.Size(420, 32);
+            this.comboBoxProvider.TabIndex = 74;
+            // 
+            // WarehouseBuysPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.comboBoxProvider);
+            this.Controls.Add(this.cyberButton2);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonDetails);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -233,10 +321,9 @@
             this.Controls.Add(this.dateTimePickerFrom);
             this.Controls.Add(this.poisonDataGridView1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ManagerBuyPanel";
+            this.Name = "WarehouseBuysPanel";
             this.Size = new System.Drawing.Size(1120, 662);
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -254,6 +341,8 @@
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.CyberButton buttonDetails;
         private System.Windows.Forms.Label label6;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
+        private ReaLTaiizor.Controls.CyberButton buttonDelete;
+        private ReaLTaiizor.Controls.CyberButton cyberButton2;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
     }
 }
