@@ -32,43 +32,48 @@ namespace NexoStock.Forms.Warehouse
             ProductClass productClass = new ProductClass
             {
                 Name = textBoxProductName.Text,
+                Cod = textBoxCod.Text,
                 Description = textBoxDescription.Text,
-                CategoryId = int.Parse(comboBoxCategory.SelectedValue.ToString()),
-                BrandId = int.Parse(comboBoxBrand.SelectedValue.ToString()),
-                SalePrice = decimal.Parse(textBoxPrice.Text),
-                Stock = int.Parse(textBoxStock.Text),
-                StockMin = int.Parse(textBoxStockMin.Text),
                 State = activeCheckBox.Checked,
-                //Imagenes = new List<string>()
+                SalePrice = !string.IsNullOrEmpty(textBoxPrice.Text) ? decimal.Parse(textBoxPrice.Text) : 0,
+                Stock = (int)numericStock.ValueNumber,
+                StockMin = (int)numericStockMin.ValueNumber,
+                CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
+                BrandId = 1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
+                ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
+                Images = new List<string>()
             };
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
             {
                 textBoxProductName.Focus();
+                textBoxProductName.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidText(productClass.Description, "Descripción del producto"))
             {
                 textBoxDescription.Focus();
+                textBoxDescription.BorderColorA = Color.Red;
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(productClass.SalePrice.ToString(), "Precio de venta",10))
+            if (!Utils.Validator.isValidNum(productClass.SalePrice.ToString(), "Precio de venta", 10))
             {
                 textBoxPrice.Focus();
+                textBoxPrice.BorderColorA = Color.Red;
                 return;
             }
 
             if (!Utils.Validator.isValidNum(productClass.Stock.ToString(), "Stock", 10))
             {
-                textBoxStock.Focus();
+                numericStock.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidNum(productClass.StockMin.ToString(), "Stock Mínimo", 10))
             {
-                textBoxStockMin.Focus();
+                numericStockMin.Focus();
                 return;
             }
 
@@ -86,7 +91,7 @@ namespace NexoStock.Forms.Warehouse
                 return;
             }
 
-            if(comboBoxProvider.SelectedIndex == -1)
+            if (comboBoxProvider.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxProvider.Focus();
@@ -126,6 +131,33 @@ namespace NexoStock.Forms.Warehouse
             {
                 stateLabel.Text = "INACTIVO";
                 stateLabel.ForeColor = Color.FromArgb(90, 80, 255);
+            }
+        }
+
+        private void pictureBoxImage1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void pictureBoxImage2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage2.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void pictureBoxImage3_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage3.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
     }
