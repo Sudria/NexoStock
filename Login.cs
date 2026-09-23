@@ -1,4 +1,9 @@
 ﻿
+using NexoStock.Forms.Admin;
+using NexoStock.Forms.Manager;
+using NexoStock.Forms.Seller;
+using NexoStock.Forms.Warehouse;
+using NexoStock.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +26,32 @@ namespace NexoStock
 
         private void logginButton_Click(object sender, EventArgs e)
         {
-
+            UserRepository userRepository = new UserRepository();
+            string userRole = userRepository.Login(txtUser.Text, txtPassword.Text);
+            if (userRole == "Administrador")
+            {
+                this.Hide();
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
+            }
+            else if (userRole == "Vendedor")
+            {
+                this.Hide();
+                SellerForm sellerForm = new SellerForm();
+                sellerForm.Show();
+            }
+            else if (userRole == "Repositor")
+            {
+                this.Hide();
+                WarehouseForm warehouseForm = new WarehouseForm();
+                warehouseForm.Show();
+            }
+            else if (userRole == "Encargado")
+            {
+                this.Hide();
+                ManagerForm managerForm = new ManagerForm();
+                managerForm.Show();
+            }
         }
         private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {

@@ -144,5 +144,24 @@ namespace NexoStock.Services
             return rowsAffected > 0;
         }
 
+        public String Login(string username, string password)
+        {
+            string query = "SELECT * FROM users WHERE Username = @username AND Password = @password AND State = 1";
+            using (var reader = connectionDB.ExecuteReader(query,
+                new MySqlParameter("@username", username),
+                new MySqlParameter("@password", password)))
+            {
+                if (reader.Read())
+                {
+                    MessageBox.Show($"Bienvenido {reader.GetString("Name")} {reader.GetString("Surname")}", "Login Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return reader.GetString("Rol");
+                }
+                else
+                { 
+                    MessageBox.Show("Usuario o contraseña incorrectos, o el usuario está inactivo.", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+        }
     }
 }

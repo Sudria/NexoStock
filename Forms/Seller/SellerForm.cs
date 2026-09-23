@@ -68,7 +68,9 @@ namespace NexoStock.Forms.Seller
 
         private void buttonCloseSession_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
 
 
