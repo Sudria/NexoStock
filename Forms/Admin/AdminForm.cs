@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using NexoStock.Class;
 
 namespace NexoStock.Forms.Admin
 {
@@ -144,6 +145,11 @@ namespace NexoStock.Forms.Admin
             panelContent.Controls.Add(new AdminCategoryAndBrandPanel());
         }
 
+        public void LoadUpdateUserControler(UserClass user)
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminUpdateUserPanel(user));
+        }
         //COMPORTAMIENTO DE BOTONES
 
         private void activeButton(CyberButton e)

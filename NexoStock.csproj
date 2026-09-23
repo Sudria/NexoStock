@@ -179,6 +179,12 @@
     <Compile Include="Forms\Admin\AdminNewProviderPanel.Designer.cs">
       <DependentUpon>AdminNewProviderPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\AdminUpdateUserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminUpdateUserPanel.Designer.cs">
+      <DependentUpon>AdminUpdateUserPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\AdminNewUserPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminNewProviderPanel.resx">
       <DependentUpon>AdminNewProviderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminUpdateUserPanel.resx">
+      <DependentUpon>AdminUpdateUserPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminNewUserPanel.resx">
       <DependentUpon>AdminNewUserPanel.cs</DependentUpon>

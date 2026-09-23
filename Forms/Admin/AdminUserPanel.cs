@@ -1,4 +1,5 @@
-﻿using NexoStock.Services;
+﻿using NexoStock.Class;
+using NexoStock.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +36,10 @@ namespace NexoStock.Forms.Admin
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-
+            AdminForm dashboard = this.ParentForm as AdminForm;
+            users = userRepository.GetAllUsers();
+            UserClass userSelected = users.FirstOrDefault(u => u.Id == Convert.ToInt32(dataGridViewUsers.SelectedRows[0].Cells[0].Value));
+            dashboard.LoadUpdateUserControler(userSelected);
         }
 
         private void initilizeDatagridView()
@@ -192,29 +196,26 @@ namespace NexoStock.Forms.Admin
 
         private void buttonStyles()
         {
-            if (buttonDelete.TextButton == "Eliminar")
+
+            var userState = dataGridViewUsers.SelectedRows[0].Cells[7].Value.ToString();
+
+            if (userState == "Activo")
             {
+                buttonDelete.TextButton = "Eliminar";
                 buttonDelete.ColorBackground_1 = Color.Crimson;
             }
-            else if (buttonDelete.TextButton == "Restaurar")
+            else
             {
+                buttonDelete.TextButton = "Restaurar";
                 buttonDelete.ColorBackground_1 = Color.LimeGreen;
             }
         }
 
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var userState = dataGridViewUsers.SelectedRows[0].Cells[7].Value.ToString();
-
-            if (userState == "Activo")
-            {
-                buttonDelete.TextButton = "Eliminar";
-                buttonStyles();
-            } else
-            {
-                buttonDelete.TextButton = "Restaurar";
-                buttonStyles();
-            }
+            buttonStyles();
         }
+
+
     }
 }

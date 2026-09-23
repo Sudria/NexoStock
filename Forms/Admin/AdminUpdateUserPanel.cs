@@ -1,6 +1,7 @@
 ﻿using NexoStock.Class;
 using NexoStock.Services;
 using NexoStock.Utils;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,16 @@ using System.Windows.Forms;
 
 namespace NexoStock.Forms.Admin
 {
-    public partial class AdminNewUserPanel : UserControl
+    public partial class AdminUpdateUserPanel : UserControl
     {
-        public AdminNewUserPanel()
+        private int userId;
+        public AdminUpdateUserPanel(UserClass user)
         {
             InitializeComponent();
-            Initialize();
+            Initialize(user);
+            userId = user.Id;
         }
+
 
 
         private void activeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -43,58 +47,75 @@ namespace NexoStock.Forms.Admin
             dashboard.LoadUserControler();
         }
 
+
+        private void Initialize(UserClass user)
+        {
+            comboBoxRol.SelectedIndex = 0;
+            textBoxName.Text = user.Name;
+            textBoxSurname.Text = user.Surname;
+            textBoxDni.Text = user.Dni;
+            textBoxEmail.Text = user.Email;
+            textBoxTel.Text = String.Concat("54 9 ", user.Tel);
+            textBoxUsername.Text = user.Username;
+            textBoxPassword.Text = user.Password;
+            textBoxRepeatPassword.Text = user.Password;
+            comboBoxRol.Text = user.Rol;
+            activeCheckBox.Checked = user.State;
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
-            UserClass newUser = new UserClass
+            UserClass user = new UserClass
             {
+                Id = userId,
                 Name = textBoxName.Text,
                 Surname = textBoxSurname.Text,
                 Dni = textBoxDni.Text,
                 Email = textBoxEmail.Text,
-                Tel = textBoxTel.Text,
+                Tel = textBoxTel.Text.Replace(" ", ""),
                 Username = textBoxUsername.Text,
                 Password = textBoxPassword.Text,
                 Rol = comboBoxRol.Text,
                 State = activeCheckBox.Checked
             };
 
-            if (!Utils.Validator.isValidText(newUser.Name, "Nombre"))
+            if (!Utils.Validator.isValidText(user.Name, "Nombre"))
             {
                 textBoxName.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidText(newUser.Surname, "Apellido"))
+            if (!Utils.Validator.isValidText(user.Surname, "Apellido"))
             {
                 textBoxSurname.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(newUser.Dni, "DNI", 8))
+            if (!Utils.Validator.isValidNum(user.Dni, "DNI", 8))
             {
                 textBoxDni.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidEmail(newUser.Email))
+            if (!Utils.Validator.isValidEmail(user.Email))
             {
                 textBoxEmail.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(newUser.Tel.Replace(" ", ""), "Teléfono", 13))
+            if (!Utils.Validator.isValidNum(user.Tel, "Teléfono", 13))
             {
                 textBoxTel.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidText(newUser.Username, "Nombre de Usuario"))
+            if (!Utils.Validator.isValidText(user.Username, "Nombre de Usuario"))
             {
                 textBoxUsername.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidPassword(newUser.Password, textBoxRepeatPassword.Text))
+            if (!Utils.Validator.isValidPassword(user.Password, textBoxRepeatPassword.Text))
             {
                 textBoxPassword.Focus();
                 return;
@@ -109,31 +130,28 @@ namespace NexoStock.Forms.Admin
 
             UserRepository userRepository = new UserRepository();
 
-            if (userRepository.CreateUser(newUser))
+            if (userRepository.UpdateUser(user))
             {
-                MessageBox.Show($"Usuario {newUser.Name} {newUser.Surname} creado correctamente.", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Usuario {user.Name} {user.Surname} actualizado correctamente.", "Usuario Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AdminForm dashboard = this.ParentForm as AdminForm;
                 dashboard.LoadUserControler();
             }
             else
             {
-                MessageBox.Show($"Error al crear el usuario {newUser.Name} {newUser.Surname}.", "Error al Crear Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al actualizar el usuario {user.Name} {user.Surname}.", "Error al Actualizar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void formatTel(object sender, KeyPressEventArgs e)
         {
-            if (textBoxTel.Text.Length == 4)
+            if (textBoxTel.Text.Length == 5)
             {
                 textBoxTel.Text += " ";
                 textBoxTel.SelectionStart = textBoxTel.Text.Length;
             }
         }
 
-        private void Initialize()
-        {
-            comboBoxRol.SelectedIndex = 0;
-        }
+
 
         private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
