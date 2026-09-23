@@ -36,8 +36,8 @@ namespace NexoStock.Forms.Admin
                 CategoryId = int.Parse(comboBoxCategory.SelectedValue.ToString()),
                 BrandId = int.Parse(comboBoxBrand.SelectedValue.ToString()),
                 SalePrice = decimal.Parse(textBoxPrice.Text),
-                Stock = int.Parse(textBoxStock.Text),
-                StockMin = int.Parse(textBoxStockMin.Text),
+                Stock = int.Parse(numericStock.Text),
+                StockMin = int.Parse(numericStockMin.Text),
                 State = activeCheckBox.Checked,
            //     Imagenes = new List<string>()
             };
@@ -62,13 +62,13 @@ namespace NexoStock.Forms.Admin
 
             if (!Utils.Validator.isValidNum(productClass.Stock.ToString(), "Stock", 10))
             {
-                textBoxStock.Focus();
+                numericStock.Focus();
                 return;
             }
 
             if (!Utils.Validator.isValidNum(productClass.StockMin.ToString(), "Stock Mínimo", 10))
             {
-                textBoxStockMin.Focus();
+                numericStockMin.Focus();
                 return;
             }
 
@@ -126,6 +126,33 @@ namespace NexoStock.Forms.Admin
             {
                 stateLabel.Text = "INACTIVO";
                 stateLabel.ForeColor = Color.FromArgb(90, 80, 255);
+            }
+        }
+
+        private void pictureBoxImage1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void pictureBoxImage2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage2.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void pictureBoxImage3_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxImage3.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
     }
