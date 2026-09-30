@@ -35,13 +35,9 @@ namespace NexoStock.Forms.Admin
                 Cod = textBoxCod.Text,
                 Description = textBoxDescription.Text,
                 State = activeCheckBox.Checked,
-                SalePrice = !string.IsNullOrEmpty(textBoxPrice.Text) ? decimal.Parse(textBoxPrice.Text) : 0,
-                Stock = (int)numericStock.ValueNumber,
-                StockMin = (int)numericStockMin.ValueNumber,
                 CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
                 BrandId =  1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
                 ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
-                Images = new List<string>()
             };
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
@@ -58,24 +54,7 @@ namespace NexoStock.Forms.Admin
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(productClass.SalePrice.ToString(), "Precio de venta",10))
-            {
-                textBoxPrice.Focus();
-                textBoxPrice.BorderColorA = Color.Red;
-                return;
-            }
 
-            if (!Utils.Validator.isValidNum(productClass.Stock.ToString(), "Stock", 10))
-            {
-                numericStock.Focus();
-                return;
-            }
-
-            if (!Utils.Validator.isValidNum(productClass.StockMin.ToString(), "Stock Mínimo", 10))
-            {
-                numericStockMin.Focus();
-                return;
-            }
 
             if (comboBoxCategory.SelectedIndex == -1)
             {

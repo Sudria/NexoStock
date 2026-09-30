@@ -59,8 +59,22 @@ namespace NexoStock.Forms.Admin
             }
         }
 
+        private void AdminNewProviderPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (textBoxCuit.Text.Length == 2 || textBoxCuit.Text.Length == 11)
+            {
+                textBoxCuit.Text += "-";
+                textBoxCuit.SelectionStart = textBoxCuit.Text.Length;
+            }
 
-
-       
+            if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
+            {
+                if (textBoxCuit.Text.Length == 3 || textBoxCuit.Text.Length == 12)
+                {
+                    textBoxCuit.Text = textBoxCuit.Text.Substring(0, textBoxCuit.Text.Length - 1);
+                    textBoxCuit.SelectionStart = textBoxCuit.Text.Length;
+                }
+            }
+        }
     }
 }
