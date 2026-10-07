@@ -378,7 +378,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AdminNewProviderPanel";
             this.Size = new System.Drawing.Size(1120, 662);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminNewProviderPanel_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

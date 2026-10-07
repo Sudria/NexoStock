@@ -3,25 +3,78 @@ USE nexusstock;
 
 CREATE TABLE `users` (
   `Id`     INT NOT NULL AUTO_INCREMENT,
-  `Surname`    VARCHAR(50) DEFAULT NULL,
-  `Name`  VARCHAR(50) DEFAULT NULL,
-  `Dni`        VARCHAR(8) DEFAULT NULL,
-  `Email`      VARCHAR(100) DEFAULT NULL,
-  `Tel`        VARCHAR(13) DEFAULT NULL,
-  `Username`   VARCHAR(50) DEFAULT NULL,
-  `Password`       VARCHAR(50) DEFAULT NULL,
-  `Rol`        VARCHAR(50) DEFAULT NULL,
-  `State`      TINYINT(1) DEFAULT NULL,
-  `CreatedDate` DATETIME DEFAULT NULL,
+  `Surname`    VARCHAR(50)  ,
+  `Name`  VARCHAR(50)  ,
+  `Dni`        VARCHAR(8)  ,
+  `Email`      VARCHAR(100)  ,
+  `Tel`        VARCHAR(13)  ,
+  `Username`   VARCHAR(50)  ,
+  `Password`       VARCHAR(50)  ,
+  `Rol`        VARCHAR(50)  ,
+  `State`      TINYINT(1)  ,
+  `CreatedDate` DATETIME DEFAULT NOW(),
   
-  PRIMARY KEY (`UserId`),
+  PRIMARY KEY (`Id`),
   UNIQUE KEY `Dni` (`Dni`),
   UNIQUE KEY `Email` (`Email`),
   UNIQUE KEY `Tel` (`Tel`),
   UNIQUE KEY `Username` (`Username`)
 );
 
+CREATE TABLE `products` (
+  `Id`     INT NOT NULL AUTO_INCREMENT,
+  `Name`  VARCHAR(50) DEFAULT NULL,
+  `Cod`        VARCHAR(20) DEFAULT NULL,
+  `Description`      VARCHAR(255) DEFAULT NULL,
+  `SalePrice`        DECIMAL(13,2) DEFAULT 0,
+  `Stock`   		INT(7) DEFAULT 0,
+  `StockMin`        INT(7) DEFAULT 0,
+  `State`      TINYINT(1) DEFAULT TRUE,
+  `BrandId` INT DEFAULT 0,
+  `CategoryId` INT DEFAULT 0,
+  `ProviderId` INT DEFAULT 0,
 
+
+  CONSTRAINT fk_brands
+  FOREIGN KEY (BrandId)
+  REFERENCES brands(Id),
+
+  CONSTRAINT fk_providers
+  FOREIGN KEY (ProviderId)
+  REFERENCES providers(Id),
+  
+  CONSTRAINT fk_categorys
+  FOREIGN KEY (CategoryId)
+  REFERENCES categorys(Id),
+
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Cod` (`Cod`)
+);
+
+
+CREATE TABLE providers(
+`Id` INT NOT NULL AUTO_INCREMENT,
+`Name` VARCHAR(50) NOT NULL,
+
+PRIMARY KEY (`Id`),
+UNIQUE KEY `Name` (`Name`)
+);
+
+CREATE TABLE brands(
+`Id` INT NOT NULL AUTO_INCREMENT,
+`Name` VARCHAR(50) NOT NULL,
+
+PRIMARY KEY (`Id`),
+UNIQUE KEY `Name` (`Name`)
+);
+
+CREATE TABLE categorys(
+`Id` INT NOT NULL AUTO_INCREMENT,
+`Name` VARCHAR(50) NOT NULL,
+
+PRIMARY KEY (`Id`),
+UNIQUE KEY `Name` (`Name`)
+);
 
 -- Usuarios de prueba randoms
 
@@ -64,4 +117,71 @@ VALUES
 ('Mendoza', 'Beatriz', '29481039', 'beatriz.mendoza@mail.com', '3414887766', 'encargado', 'encargado', 'Encargado', 1, NOW()),
 ('Peralta', 'Ezequiel', '41029384', 'ezequiel.peralta@mail.com', '2613994455', 'vendedor', 'vendedor', 'Vendedor', 1, NOW()),
 ('Vega', 'Natalia', '35920194', 'natalia.vega@mail.com', '3516223344', 'repositor', 'repositor', 'Repositor', 1, NOW());
+
+-- Proveedores de prueba
+INSERT INTO providers (`Name`) VALUES
+('Maximus Hardware'),
+('TechSupply Argentina'),
+('CompuMarket'),
+('Digital World'),
+('Importadora Delta'),
+('HardTech'),
+('PC Store Mayorista'),
+('Global Components'),
+('MegaTech Distribuciones'),
+('Byte Solutions');
+
+
+-- Marcas de prueba
+INSERT INTO brands (`Name`) VALUES
+('AMD'),
+('Intel'),
+('NVIDIA'),
+('ASUS'),
+('MSI'),
+('Gigabyte'),
+('ASRock'),
+('Corsair'),
+('Kingston'),
+('G.Skill'),
+('Crucial'),
+('Western Digital'),
+('Seagate'),
+('Samsung'),
+('Cooler Master'),
+('Thermaltake'),
+('Logitech'),
+('Razer'),
+('HyperX'),
+('Redragon');
+
+-- Categorias de prueba
+
+INSERT INTO categorys (`Name`) VALUES
+('Procesadores'),
+('Placas de Video'),
+('Motherboards'),
+('Memorias RAM'),
+('Discos HDD'),
+('Discos SSD'),
+('Fuentes'),
+('Gabinetes'),
+('Coolers'),
+('Monitores'),
+('Teclados'),
+('Mouse'),
+('Auriculares'),
+('Parlantes'),
+('Micrófonos'),
+('Webcams'),
+('Placas de Red'),
+('Routers'),
+('Cables'),
+('Accesorios');
+
+SELECT * FROM providers;
+
+
+
+
 

@@ -9,6 +9,7 @@ namespace NexoStock.Class
     public class ProductClass
     {
         //Atributes
+        public int Id { get; set; }
         public string Name { get; set; } = null;
 
         public string Cod { get; set; } = null;
@@ -19,7 +20,7 @@ namespace NexoStock.Class
 
         public decimal SalePrice { get; set; } = 0;
 
-        public int Stock { get; set; } = 0;
+        public int Stock { get; set; } = 1;
 
         public int StockMin { get; set; } = 1;
 
