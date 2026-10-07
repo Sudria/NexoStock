@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NexoStock.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -25,8 +26,20 @@ namespace NexoStock.Forms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Utils.Validator.isValidText(textBoxBrandName.Text, "Nombre de la Marca");
-            textBoxBrandName.Focus();
+            if (!Utils.Validator.isValidText(textBoxBrandName.Text, "Nombre de la Marca"))
+            {
+                textBoxBrandName.Focus();
+                return;
+            }
+
+            BrandClass brand = new BrandClass
+            {
+                Name = textBoxBrandName.Text
+            };
+
+            Services.BrandRepository brandRepository = new Services.BrandRepository();
+            brandRepository.CreateBrand(brand);
+            MessageBox.Show($"Marca '{brand.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

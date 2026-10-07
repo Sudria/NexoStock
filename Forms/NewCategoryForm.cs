@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NexoStock.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -25,8 +26,21 @@ namespace NexoStock.Forms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Utils.Validator.isValidText(textBoxCategoryName.Text, "Nombre de Categoría");
-            textBoxCategoryName.Focus();
+            if (!Utils.Validator.isValidText(textBoxCategoryName.Text, "Nombre de Categoría"))
+            {
+                textBoxCategoryName.Focus();
+                return;
+            }
+
+            CategoryClass category = new CategoryClass
+            {
+                Name = textBoxCategoryName.Text
+            };
+
+            Services.CategoryRepository categoryRepository = new Services.CategoryRepository();
+            categoryRepository.CreateCategory(category);
+            MessageBox.Show($"Categoría '{category.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
