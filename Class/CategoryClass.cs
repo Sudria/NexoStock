@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NexoStock.Class
 {
-    internal class CategoryClass
+    public class CategoryClass
     {
         public int Id { get; set; }
 

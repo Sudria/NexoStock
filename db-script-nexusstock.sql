@@ -55,14 +55,24 @@ CREATE TABLE `products` (
 CREATE TABLE providers(
 `Id` INT NOT NULL AUTO_INCREMENT,
 `Name` VARCHAR(50) NOT NULL,
+`Surname`    VARCHAR(50)  NOT NULL,
+  `Cuit`        VARCHAR(15)  NOT NULL,
+  `Email`      VARCHAR(100)  NOT NULL,
+    `Tel`        VARCHAR(13)  NOT NULL,
+  `State`      TINYINT(1) DEFAULT TRUE ,
+  `CreatedDate` DATETIME DEFAULT NOW(),
+
 
 PRIMARY KEY (`Id`),
-UNIQUE KEY `Name` (`Name`)
+UNIQUE KEY `Cuit` (`Cuit`),
+UNIQUE KEY `Email` (`Email`)
 );
 
 CREATE TABLE brands(
 `Id` INT NOT NULL AUTO_INCREMENT,
 `Name` VARCHAR(50) NOT NULL,
+  `State`      TINYINT(1) DEFAULT TRUE ,
+
 
 PRIMARY KEY (`Id`),
 UNIQUE KEY `Name` (`Name`)
@@ -71,6 +81,8 @@ UNIQUE KEY `Name` (`Name`)
 CREATE TABLE categorys(
 `Id` INT NOT NULL AUTO_INCREMENT,
 `Name` VARCHAR(50) NOT NULL,
+  `State`      TINYINT(1) DEFAULT TRUE ,
+
 
 PRIMARY KEY (`Id`),
 UNIQUE KEY `Name` (`Name`)
@@ -119,67 +131,77 @@ VALUES
 ('Vega', 'Natalia', '35920194', 'natalia.vega@mail.com', '3516223344', 'repositor', 'repositor', 'Repositor', 1, NOW());
 
 -- Proveedores de prueba
-INSERT INTO providers (`Name`) VALUES
-('Maximus Hardware'),
-('TechSupply Argentina'),
-('CompuMarket'),
-('Digital World'),
-('Importadora Delta'),
-('HardTech'),
-('PC Store Mayorista'),
-('Global Components'),
-('MegaTech Distribuciones'),
-('Byte Solutions');
-
+INSERT INTO providers
+(`Name`, `Surname`, `Cuit`, `Email`, `Tel`, `State`)
+VALUES
+('Juan', 'Gomez', '30-71234567-1', 'juan.gomez@techsupply.com', '3624123456', TRUE),
+('Martin', 'Lopez', '30-72345678-2', 'martin.lopez@hardware.com', '3624234567', TRUE),
+('Lucas', 'Fernandez', '30-73456789-3', 'lucas.fernandez@compumarket.com', '3624345678', TRUE),
+('Nicolas', 'Martinez', '30-74567890-4', 'nicolas.martinez@digitalworld.com', '3624456789', TRUE),
+('Diego', 'Rodriguez', '30-75678901-5', 'diego.rodriguez@megatech.com', '3624567890', TRUE),
+('Santiago', 'Gonzalez', '30-76789012-6', 'santiago.gonzalez@hardtech.com', '3624678901', TRUE),
+('Federico', 'Diaz', '30-77890123-7', 'federico.diaz@pcstore.com', '3624789012', TRUE),
+('Agustin', 'Sanchez', '30-78901234-8', 'agustin.sanchez@globalcomponents.com', '3624890123', TRUE),
+('Pablo', 'Romero', '30-79012345-9', 'pablo.romero@byteSolutions.com', '3624901234', TRUE),
+('Matias', 'Torres', '30-70123456-0', 'matias.torres@importadoradelta.com', '3624012345', FALSE);
 
 -- Marcas de prueba
-INSERT INTO brands (`Name`) VALUES
-('AMD'),
-('Intel'),
-('NVIDIA'),
-('ASUS'),
-('MSI'),
-('Gigabyte'),
-('ASRock'),
-('Corsair'),
-('Kingston'),
-('G.Skill'),
-('Crucial'),
-('Western Digital'),
-('Seagate'),
-('Samsung'),
-('Cooler Master'),
-('Thermaltake'),
-('Logitech'),
-('Razer'),
-('HyperX'),
-('Redragon');
+INSERT INTO brands
+(`Name`, `State`)
+VALUES
+('AMD', TRUE),
+('Intel', TRUE),
+('NVIDIA', TRUE),
+('ASUS', TRUE),
+('MSI', TRUE),
+('Gigabyte', TRUE),
+('ASRock', TRUE),
+('Corsair', TRUE),
+('Kingston', TRUE),
+('Logitech', FALSE);
 
 -- Categorias de prueba
+INSERT INTO categorys
+(`Name`, `State`)
+VALUES
+('Procesadores', TRUE),
+('Placas de Video', TRUE),
+('Motherboards', TRUE),
+('Memorias RAM', TRUE),
+('Discos HDD', TRUE),
+('Discos SSD', TRUE),
+('Fuentes', TRUE),
+('Gabinetes', TRUE),
+('Coolers', TRUE),
+('Monitores', FALSE);
 
-INSERT INTO categorys (`Name`) VALUES
-('Procesadores'),
-('Placas de Video'),
-('Motherboards'),
-('Memorias RAM'),
-('Discos HDD'),
-('Discos SSD'),
-('Fuentes'),
-('Gabinetes'),
-('Coolers'),
-('Monitores'),
-('Teclados'),
-('Mouse'),
-('Auriculares'),
-('Parlantes'),
-('Micrófonos'),
-('Webcams'),
-('Placas de Red'),
-('Routers'),
-('Cables'),
-('Accesorios');
+-- Productos de prueba
+INSERT INTO products
+(`Name`, `Cod`, `Description`, `SalePrice`, `Stock`, `StockMin`, `State`, `BrandId`, `CategoryId`, `ProviderId`)
+VALUES
+('Ryzen 5 5600', 'CPUAMD5600', 'Procesador AMD Ryzen 5 5600 de 6 nucleos y 12 hilos', 159999.99, 15, 5, TRUE, 1, 1, 1),
 
-SELECT * FROM providers;
+('Core i5 12400F', 'CPUINT12400F', 'Procesador Intel Core i5 12400F de 6 nucleos y 12 hilos', 179999.99, 10, 3, TRUE, 2, 1, 2),
+
+('RTX 4060 8GB', 'GPU-N4060-8', 'Placa de video NVIDIA GeForce RTX 4060 de 8GB', 449999.99, 8, 2, TRUE, 3, 2, 3),
+
+('B550M Gaming', 'MBMSIB550M', 'Motherboard MSI B550M compatible con procesadores AMD Ryzen', 139999.99, 12, 4, TRUE, 5, 3, 4),
+
+('Kingston Fury 16GB', 'RAMKF16DDR4', 'Memoria RAM Kingston Fury de 16GB DDR4 3200MHz', 59999.99, 20, 5, TRUE, 9, 4, 5);
+
+SELECT * FROM products;
+
+SELECT 
+    p.Name AS Producto,
+    b.Name AS Marca,
+    c.Name AS Categoria,
+    pr.Name AS Proveedor,
+    p.SalePrice AS Precio,
+    p.Stock
+FROM products p
+JOIN brands b ON p.BrandId = b.Id
+JOIN categorys c ON p.CategoryId = c.Id
+JOIN providers pr ON p.ProviderId = pr.Id;
 
 
 

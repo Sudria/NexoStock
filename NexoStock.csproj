@@ -390,6 +390,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\BrandRepository.cs" />
+    <Compile Include="Services\CategoryRepository.cs" />
+    <Compile Include="Services\ProviderRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />
     <Compile Include="Utils\ConnectionDB.cs" />
     <Compile Include="Tests.cs">

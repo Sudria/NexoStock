@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NexoStock.Class
 {
-    internal class ProviderClass
+    public class ProviderClass
     {
 
         public int Id { get; set; }
@@ -21,7 +21,8 @@ namespace NexoStock.Class
         
         public string Tel { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool State { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
     }
 }

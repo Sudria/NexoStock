@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace NexoStock.Class
 {
-    internal class BrandClass
+    public class BrandClass
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
         public bool State { get; set; }
     }
 }
