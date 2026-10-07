@@ -21,36 +21,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `Username` (`Username`)
 );
 
-CREATE TABLE `products` (
-  `Id`     INT NOT NULL AUTO_INCREMENT,
-  `Name`  VARCHAR(50) DEFAULT NULL,
-  `Cod`        VARCHAR(20) DEFAULT NULL,
-  `Description`      VARCHAR(255) DEFAULT NULL,
-  `SalePrice`        DECIMAL(13,2) DEFAULT 0,
-  `Stock`   		INT(7) DEFAULT 0,
-  `StockMin`        INT(7) DEFAULT 0,
-  `State`      TINYINT(1) DEFAULT TRUE,
-  `BrandId` INT DEFAULT 0,
-  `CategoryId` INT DEFAULT 0,
-  `ProviderId` INT DEFAULT 0,
-
-
-  CONSTRAINT fk_brands
-  FOREIGN KEY (BrandId)
-  REFERENCES brands(Id),
-
-  CONSTRAINT fk_providers
-  FOREIGN KEY (ProviderId)
-  REFERENCES providers(Id),
-  
-  CONSTRAINT fk_categorys
-  FOREIGN KEY (CategoryId)
-  REFERENCES categorys(Id),
-
-  PRIMARY KEY (`Id`),
-  UNIQUE KEY `Cod` (`Cod`)
-);
-
 
 CREATE TABLE providers(
 `Id` INT NOT NULL AUTO_INCREMENT,
@@ -87,6 +57,38 @@ CREATE TABLE categorys(
 PRIMARY KEY (`Id`),
 UNIQUE KEY `Name` (`Name`)
 );
+
+
+CREATE TABLE `products` (
+  `Id`     INT NOT NULL AUTO_INCREMENT,
+  `Name`  VARCHAR(50) DEFAULT NULL,
+  `Cod`        VARCHAR(20) DEFAULT NULL,
+  `Description`      VARCHAR(255) DEFAULT NULL,
+  `SalePrice`        DECIMAL(13,2) DEFAULT 0,
+  `Stock`   		INT(7) DEFAULT 0,
+  `StockMin`        INT(7) DEFAULT 0,
+  `State`      TINYINT(1) DEFAULT TRUE,
+  `BrandId` INT DEFAULT 0,
+  `CategoryId` INT DEFAULT 0,
+  `ProviderId` INT DEFAULT 0,
+
+
+  CONSTRAINT fk_brands
+  FOREIGN KEY (BrandId)
+  REFERENCES brands(Id),
+
+  CONSTRAINT fk_providers
+  FOREIGN KEY (ProviderId)
+  REFERENCES providers(Id),
+  
+  CONSTRAINT fk_categorys
+  FOREIGN KEY (CategoryId)
+  REFERENCES categorys(Id),
+
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Cod` (`Cod`)
+);
+
 
 -- Usuarios de prueba randoms
 
