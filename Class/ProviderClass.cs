@@ -24,5 +24,11 @@ namespace NexoStock.Class
         public bool State { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
+
+        public String FullName
+        {
+            get { return $"{Name} {Surname} - {Cuit}"; }
+        }
+
     }
 }

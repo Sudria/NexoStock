@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using NexoStock.Class;
+using NexoStock.Services;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,12 @@ namespace NexoStock.Forms.Admin
 {
     public partial class AdminNewProductPanel : UserControl
     {
+
+
         public AdminNewProductPanel()
         {
             InitializeComponent();
+            LoadComboBoxs();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -35,8 +39,6 @@ namespace NexoStock.Forms.Admin
                 Cod = textBoxCod.Text,
                 Description = textBoxDescription.Text,
                 State = activeCheckBox.Checked,
-                SalePrice = !string.IsNullOrEmpty(textBoxPrice.Text) ? decimal.Parse(textBoxPrice.Text) : 0,
-                Stock = (int)numericStock.ValueNumber,
                 StockMin = (int)numericStockMin.ValueNumber,
                 CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
                 BrandId =  1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
@@ -58,18 +60,6 @@ namespace NexoStock.Forms.Admin
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(productClass.SalePrice.ToString(), "Precio de venta",10))
-            {
-                textBoxPrice.Focus();
-                textBoxPrice.BorderColorA = Color.Red;
-                return;
-            }
-
-            if (!Utils.Validator.isValidNum(productClass.Stock.ToString(), "Stock", 10))
-            {
-                numericStock.Focus();
-                return;
-            }
 
             if (!Utils.Validator.isValidNum(productClass.StockMin.ToString(), "Stock Mínimo", 10))
             {
@@ -159,6 +149,29 @@ namespace NexoStock.Forms.Admin
             {
                 pictureBoxImage3.Image = Image.FromFile(openFileDialog1.FileName);
             }
+        }
+
+        private void LoadComboBoxs()
+        {
+            List<CategoryClass> categories = new List<CategoryClass>();
+            List<BrandClass> brands = new List<BrandClass>();
+            List<ProviderClass> providers = new List<ProviderClass>();
+            CategoryRepository CategoryClass = new CategoryRepository();
+            BrandRepository brandRepository = new BrandRepository();
+            ProviderRepository providerRepository = new ProviderRepository();
+
+            categories = CategoryClass.GetAllCategories();
+            brands = brandRepository.GetAllBrands();
+            providers = providerRepository.GetAllProviders();
+            comboBoxCategory.DataSource = categories;
+            comboBoxCategory.DisplayMember = "Name";
+            comboBoxCategory.ValueMember = "Id";
+            comboBoxBrand.DataSource = brands;
+            comboBoxBrand.DisplayMember = "Name";
+            comboBoxBrand.ValueMember = "Id";
+            comboBoxProvider.DataSource = providers;
+            comboBoxProvider.DisplayMember = "FullName";
+            comboBoxProvider.ValueMember = "Id";
         }
     }
 }
