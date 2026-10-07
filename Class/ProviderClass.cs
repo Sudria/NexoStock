@@ -16,18 +16,23 @@ namespace NexoStock.Class
         public string Surname { get; set; }
 
         public string Cuit { get; set; }
-        
+
         public string Email { get; set; }
-        
+
         public string Tel { get; set; }
 
         public bool State { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
 
-        public String FullName
+        public String FullNameAndCuit
         {
             get { return $"{Name} {Surname} - {Cuit}"; }
+        }
+
+        public String FullName
+        {
+            get { return $"{Name} {Surname}"; }
         }
 
     }

@@ -170,8 +170,10 @@ namespace NexoStock.Forms.Admin
             comboBoxBrand.DisplayMember = "Name";
             comboBoxBrand.ValueMember = "Id";
             comboBoxProvider.DataSource = providers;
-            comboBoxProvider.DisplayMember = "FullName";
+            comboBoxProvider.DisplayMember = "FullNameAndCuit";
             comboBoxProvider.ValueMember = "Id";
         }
+
+
     }
 }

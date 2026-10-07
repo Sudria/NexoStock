@@ -33,5 +33,11 @@ namespace NexoStock.Class
 
         //List of images
         public List<string> Images { get; set; } = new List<string>();
+
+        // Internal use
+        public string Brand { get; set; }
+        public string Category { get; set; }
+        public string Provider { get; set; }
+        public string StateText => State ? "Activo" : "Inactivo";
     }
 }
