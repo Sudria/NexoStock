@@ -356,6 +356,7 @@
             this.comboBoxProvider.Name = "comboBoxProvider";
             this.comboBoxProvider.Size = new System.Drawing.Size(383, 27);
             this.comboBoxProvider.TabIndex = 23;
+            this.comboBoxProvider.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // comboBoxCategory
             // 
@@ -372,6 +373,7 @@
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(200, 27);
             this.comboBoxCategory.TabIndex = 22;
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // txtUser
             // 

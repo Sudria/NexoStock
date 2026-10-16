@@ -21,8 +21,9 @@ namespace NexoStock.Forms.Admin
         {
             InitializeComponent();
             LoadDataGridView();
-            LoadComboBoxs();
             initializeCountsPanels();
+            LoadComboBoxs();
+
         }
 
         private void buttonNewProduct_Click(object sender, EventArgs e)
@@ -43,12 +44,19 @@ namespace NexoStock.Forms.Admin
 
             categories = categoryRepository.GetAllCategories();
             providers = providerRepository.GetAllProviders();
+
+            categories.Insert(0, new CategoryClass { Id = 0, Name = "TODOS" });
+
+            providers.Insert(0, new ProviderClass { Id = 0, Name = "TODOS" });
+
             comboBoxCategory.DataSource = categories;
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "Id";
+
             comboBoxProvider.DataSource = providers;
             comboBoxProvider.DisplayMember = "FullName";
             comboBoxProvider.ValueMember = "Id";
+
         }
 
         private void LoadDataGridView()
@@ -149,6 +157,29 @@ namespace NexoStock.Forms.Admin
             labelCountProducts.Text = products.Count.ToString();
             labelActiveProducts.Text = activeProducts.ToString();
             labelInactiveProducts.Text = inactiveProducts.ToString();
+        }
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataFilter();
+        }
+
+        private void DataFilter()
+        {
+            var categoriaSeleccionada = comboBoxCategory.SelectedItem as CategoryClass;
+            var proveedorSeleccionado = comboBoxProvider.SelectedItem as ProviderClass;
+
+            if (categoriaSeleccionada == null || proveedorSeleccionado == null) return;
+
+            int idCategorySelected = categoriaSeleccionada.Id;
+            int idProviderSelected = proveedorSeleccionado.Id;
+
+            var datosFiltrados = products.Where(p =>
+                (idCategorySelected == 0 || p.CategoryId == idCategorySelected) &&
+                (idProviderSelected == 0 || p.ProviderId == idProviderSelected)
+            ).ToList();
+
+            dataGridViewProducts.DataSource = datosFiltrados;
         }
     }
 }
