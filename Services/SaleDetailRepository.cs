@@ -1,0 +1,136 @@
+﻿
+using MySql.Data.MySqlClient;
+using NexoStock.Class;
+using NexoStock.Utils;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace NexoStock.Services
+{
+    public class SaleDetailRepository
+    {
+        private readonly ConnectionDB connectionDB;
+
+        public SaleDetailRepository()
+        {
+            connectionDB = new ConnectionDB();
+        }
+
+        // CREAR DETALLE DE VENTA
+        public bool CreateSaleDetail(SaleDetail detail)
+        {
+            string query = @"
+                INSERT INTO sale_details
+                    (SaleId, ProductId, Quantity, UnitPrice)
+                VALUES
+                    (@saleId, @productId, @quantity, @unitPrice);
+            ";
+
+            try
+            {
+                int rowsAffected = connectionDB.ExecuteNonQuery(
+                    query,
+                    new MySqlParameter("@saleId", detail.SaleId),
+                    new MySqlParameter("@productId", detail.ProductId),
+                    new MySqlParameter("@quantity", detail.Quantity),
+                    new MySqlParameter("@unitPrice", detail.UnitPrice)
+                );
+
+                return rowsAffected > 0;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al registrar el detalle de venta: {ex.Message}",
+                    "Error de Base de Datos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                return false;
+            }
+        }
+
+        // OBTENER TODOS LOS DETALLES DE UNA VENTA
+        public List<SaleDetail> GetDetailsBySaleId(int saleId)
+        {
+            List<SaleDetail> details = new List<SaleDetail>();
+
+            string query = @"
+                SELECT
+                    Id,
+                    SaleId,
+                    ProductId,
+                    Quantity,
+                    UnitPrice
+                FROM sale_details
+                WHERE SaleId = @saleId
+                ORDER BY Id;
+            ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@saleId", saleId)))
+                {
+                    while (reader.Read())
+                    {
+                        SaleDetail detail = new SaleDetail
+                        {
+                            Id = reader.GetInt32("Id"),
+                            SaleId = reader.GetInt32("SaleId"),
+                            ProductId = reader.GetInt32("ProductId"),
+                            Quantity = reader.GetInt32("Quantity"),
+                            UnitPrice = reader.GetDecimal("UnitPrice")
+                        };
+
+                        details.Add(detail);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al obtener los detalles de la venta: {ex.Message}",
+                    "Error de Base de Datos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return details;
+        }
+
+        // ELIMINAR DETALLE DE VENTA
+        public bool DeleteSaleDetail(int detailId)
+        {
+            string query = @"
+                DELETE FROM sale_details
+                WHERE Id = @id;
+            ";
+
+            try
+            {
+                int rowsAffected = connectionDB.ExecuteNonQuery(
+                    query,
+                    new MySqlParameter("@id", detailId)
+                );
+
+                return rowsAffected > 0;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al eliminar el detalle: {ex.Message}",
+                    "Error de Base de Datos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                return false;
+            }
+        }
+    }
+}

@@ -160,6 +160,8 @@
     <Compile Include="Class\CategoryClass.cs" />
     <Compile Include="Class\ProductClass.cs" />
     <Compile Include="Class\ProviderClass.cs" />
+    <Compile Include="Class\Sale.cs" />
+    <Compile Include="Class\SaleDetail.cs" />
     <Compile Include="Class\UserClass.cs" />
     <Compile Include="Forms\Admin\AdminHomePanel.cs">
       <SubType>UserControl</SubType>
@@ -394,6 +396,8 @@
     <Compile Include="Services\CategoryRepository.cs" />
     <Compile Include="Services\ProductRepository.cs" />
     <Compile Include="Services\ProviderRepository.cs" />
+    <Compile Include="Services\SaleDetailRepository.cs" />
+    <Compile Include="Services\SaleRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />
     <Compile Include="Utils\ConnectionDB.cs" />
     <Compile Include="Tests.cs">
