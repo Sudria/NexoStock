@@ -89,6 +89,147 @@ CREATE TABLE `products` (
   UNIQUE KEY `Cod` (`Cod`)
 );
 
+CREATE TABLE sales (
+    Id INT NOT NULL AUTO_INCREMENT,
+    UserId INT NOT NULL,
+    SaleDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Total DECIMAL(13,2) NOT NULL DEFAULT 0,
+    State TINYINT(1) NOT NULL DEFAULT 1,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_sales_users
+        FOREIGN KEY (UserId)
+        REFERENCES users(Id)
+);
+
+
+CREATE TABLE sale_details (
+    Id INT NOT NULL AUTO_INCREMENT,
+    SaleId INT NOT NULL,
+    ProductId INT NOT NULL,
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(13,2) NOT NULL,
+    Subtotal DECIMAL(13,2)
+        GENERATED ALWAYS AS (Quantity * UnitPrice) STORED,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_sale_details_sales
+        FOREIGN KEY (SaleId)
+        REFERENCES sales(Id),
+
+    CONSTRAINT fk_sale_details_products
+        FOREIGN KEY (ProductId)
+        REFERENCES products(Id),
+
+    CONSTRAINT chk_sale_quantity
+        CHECK (Quantity > 0),
+
+    CONSTRAINT chk_sale_price
+        CHECK (UnitPrice >= 0)
+);
+
+
+CREATE TABLE purchases (
+    Id INT NOT NULL AUTO_INCREMENT,
+    ProviderId INT NOT NULL,
+    UserId INT NOT NULL,
+    PurchaseDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Total DECIMAL(13,2) NOT NULL DEFAULT 0,
+    State TINYINT(1) NOT NULL DEFAULT 1,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_purchases_providers
+        FOREIGN KEY (ProviderId)
+        REFERENCES providers(Id),
+
+    CONSTRAINT fk_purchases_users
+        FOREIGN KEY (UserId)
+        REFERENCES users(Id),
+
+    CONSTRAINT chk_purchases_total
+        CHECK (Total >= 0)
+);
+
+
+CREATE TABLE purchase_details (
+    Id INT NOT NULL AUTO_INCREMENT,
+    PurchaseId INT NOT NULL,
+    ProductId INT NOT NULL,
+    Quantity INT NOT NULL,
+    UnitCost DECIMAL(13,2) NOT NULL,
+
+    Subtotal DECIMAL(13,2)
+        GENERATED ALWAYS AS (Quantity * UnitCost) STORED,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_purchase_details_purchases
+        FOREIGN KEY (PurchaseId)
+        REFERENCES purchases(Id),
+
+    CONSTRAINT fk_purchase_details_products
+        FOREIGN KEY (ProductId)
+        REFERENCES products(Id),
+
+    CONSTRAINT chk_purchase_quantity
+        CHECK (Quantity > 0),
+
+    CONSTRAINT chk_purchase_cost
+        CHECK (UnitCost >= 0)
+);
+
+CREATE TABLE product_movements (
+    Id INT NOT NULL AUTO_INCREMENT,
+    UserId INT NOT NULL,
+    Type VARCHAR(20) NOT NULL,
+    ReferenceId INT NOT NULL,
+    MovementDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_product_movements_users
+        FOREIGN KEY (UserId)
+        REFERENCES users(Id),
+
+    CONSTRAINT chk_product_movements_type
+        CHECK (Type IN ('Venta', 'Compra', 'Ajuste'))
+);
+
+
+
+
+
+
+-- Triggers
+DELIMITER //
+
+CREATE TRIGGER Actualizar_Stock_Compra
+AFTER UPDATE ON purchases
+FOR EACH ROW
+BEGIN
+    -- Solo ejecutar cuando la compra cambia de inactiva a activa
+    IF OLD.State = 0 AND NEW.State = 1 THEN
+
+        UPDATE products p
+        INNER JOIN purchase_details pd
+            ON p.Id = pd.ProductId
+        SET p.Stock = p.Stock + pd.Quantity
+        WHERE pd.PurchaseId = NEW.Id;
+
+    END IF;
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
 
 -- Usuarios de prueba randoms
 
@@ -191,7 +332,7 @@ VALUES
 
 ('Kingston Fury 16GB', 'RAMKF16DDR4', 'Memoria RAM Kingston Fury de 16GB DDR4 3200MHz', 59999.99, 20, 5, TRUE, 9, 4, 5);
 
-SELECT * FROM products;
+SELECT * FROM providers;
 
 SELECT 
     p.Name AS Producto,

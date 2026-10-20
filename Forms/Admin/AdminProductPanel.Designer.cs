@@ -50,7 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
             this.comboBoxCategory = new ReaLTaiizor.Controls.HopeComboBox();
-            this.txtUser = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtProduct = new ReaLTaiizor.Controls.HopeTextBox();
             this.buttonNewProduct = new ReaLTaiizor.Controls.CyberButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -375,28 +375,29 @@
             this.comboBoxCategory.TabIndex = 22;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
-            // txtUser
+            // txtProduct
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.txtUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtUser.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.txtUser.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Hint = "Buscar por Nombre o Código";
-            this.txtUser.Location = new System.Drawing.Point(71, 291);
-            this.txtUser.MaxLength = 32767;
-            this.txtUser.Multiline = false;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUser.SelectedText = "";
-            this.txtUser.SelectionLength = 0;
-            this.txtUser.SelectionStart = 0;
-            this.txtUser.Size = new System.Drawing.Size(420, 38);
-            this.txtUser.TabIndex = 21;
-            this.txtUser.TabStop = false;
-            this.txtUser.UseSystemPasswordChar = false;
+            this.txtProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtProduct.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtProduct.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtProduct.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtProduct.ForeColor = System.Drawing.Color.White;
+            this.txtProduct.Hint = "Buscar por Nombre o Código";
+            this.txtProduct.Location = new System.Drawing.Point(71, 291);
+            this.txtProduct.MaxLength = 32767;
+            this.txtProduct.Multiline = false;
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.PasswordChar = '\0';
+            this.txtProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtProduct.SelectedText = "";
+            this.txtProduct.SelectionLength = 0;
+            this.txtProduct.SelectionStart = 0;
+            this.txtProduct.Size = new System.Drawing.Size(420, 38);
+            this.txtProduct.TabIndex = 21;
+            this.txtProduct.TabStop = false;
+            this.txtProduct.UseSystemPasswordChar = false;
+            this.txtProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductName_KeyDown);
             // 
             // buttonNewProduct
             // 
@@ -522,7 +523,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxProvider);
             this.Controls.Add(this.comboBoxCategory);
-            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtProduct);
             this.Controls.Add(this.buttonNewProduct);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -563,7 +564,7 @@
         private System.Windows.Forms.Label label3;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxCategory;
-        private ReaLTaiizor.Controls.HopeTextBox txtUser;
+        private ReaLTaiizor.Controls.HopeTextBox txtProduct;
         private ReaLTaiizor.Controls.CyberButton buttonNewProduct;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
