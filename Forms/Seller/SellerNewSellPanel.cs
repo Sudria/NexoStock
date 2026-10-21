@@ -226,6 +226,12 @@ namespace NexoStock.Forms.Seller
 
             DataGridViewRow fila = dataGridSell.SelectedRows[0];
 
+            if (fila.IsNewRow)
+            {
+                MessageBox.Show("Seleccioná un producto válido del carrito.");
+                return;
+            }
+
             int productId = Convert.ToInt32(fila.Cells["ProductId"].Value);
             int cantidad = Convert.ToInt32(fila.Cells["Quantity"].Value);
 

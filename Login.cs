@@ -81,5 +81,13 @@ namespace NexoStock
         {
             Application.Exit();
         }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                logginButton.PerformClick();
+            }
+        }
     }
 }
