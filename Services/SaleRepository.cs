@@ -249,10 +249,131 @@ namespace NexoStock.Services
         }
 
 
+        public DataTable GetSalesByCategoryAndUser(int userId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            c.Name AS Categoria,
+            SUM(sd.Quantity) AS CantidadVendida
+        FROM sales s
+        INNER JOIN sale_details sd ON sd.SaleId = s.Id
+        INNER JOIN products p ON p.Id = sd.ProductId
+        INNER JOIN categorys c ON c.Id = p.CategoryId
+        WHERE s.UserId = @UserId
+        GROUP BY c.Id, c.Name
+        ORDER BY CantidadVendida DESC;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener las categorías más vendidas: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
+
+        public DataTable GetSalesByDayAndUser(int userId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        WITH RECURSIVE calendario AS
+        (
+            SELECT DATE_FORMAT(CURDATE(), '%Y-%m-01') AS Fecha
+
+            UNION ALL
+
+            SELECT DATE_ADD(Fecha, INTERVAL 1 DAY)
+            FROM calendario
+            WHERE Fecha < LAST_DAY(CURDATE())
+        )
+        SELECT
+            calendario.Fecha,
+            COALESCE(SUM(s.Total), 0) AS TotalVendido
+        FROM calendario
+        LEFT JOIN sales s
+            ON DATE(s.SaleDate) = calendario.Fecha
+            AND s.UserId = @UserId
+        GROUP BY calendario.Fecha
+        ORDER BY calendario.Fecha;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener las ventas por día: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
 
 
+        public DataTable GetLast5SalesByUserId(int userId)
+        {
+            DataTable table = new DataTable();
 
+            string query = @"
+        SELECT
+            s.Id AS 'N° Venta',
+            CONCAT(c.Name, ' ', c.Surname) AS 'Cliente',
+            s.Total AS 'Importe'
+        FROM sales s
+        INNER JOIN clients c ON c.Id = s.ClientId
+        WHERE s.UserId = @UserId
+        ORDER BY s.SaleDate DESC, s.Id DESC
+        LIMIT 5;
+    ";
 
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener las últimas ventas: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
 
 
 

@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SellerHomePanel));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -43,23 +54,15 @@
             this.labelCountClient = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lostBorderPanel5 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.parrotLineGraph1 = new ReaLTaiizor.Controls.ParrotLineGraph();
-            this.label3 = new System.Windows.Forms.Label();
             this.lostBorderPanel6 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.parrotPieGraph1 = new ReaLTaiizor.Controls.ParrotPieGraph();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lostBorderPanel7 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.lostBorderPanel8 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.chartCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSalesByDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dataGridLastSales = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.dataGridTopProducts = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lostBorderPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
@@ -68,12 +71,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.lostBorderPanel5.SuspendLayout();
             this.lostBorderPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.lostBorderPanel7.SuspendLayout();
             this.lostBorderPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesByDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLastSales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTopProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -247,8 +250,7 @@
             // 
             this.lostBorderPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel5.BorderColor = System.Drawing.Color.Fuchsia;
-            this.lostBorderPanel5.Controls.Add(this.parrotLineGraph1);
-            this.lostBorderPanel5.Controls.Add(this.label3);
+            this.lostBorderPanel5.Controls.Add(this.chartSalesByDay);
             this.lostBorderPanel5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel5.ForeColor = System.Drawing.Color.White;
             this.lostBorderPanel5.Location = new System.Drawing.Point(36, 202);
@@ -258,57 +260,11 @@
             this.lostBorderPanel5.Size = new System.Drawing.Size(614, 240);
             this.lostBorderPanel5.TabIndex = 13;
             // 
-            // parrotLineGraph1
-            // 
-            this.parrotLineGraph1.BackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(217)))), ((int)(((byte)(174)))));
-            this.parrotLineGraph1.BelowLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(142)))));
-            this.parrotLineGraph1.BorderColor = System.Drawing.Color.White;
-            this.parrotLineGraph1.GraphStyle = ReaLTaiizor.Controls.ParrotLineGraph.Style.Material;
-            this.parrotLineGraph1.GraphTitle = "Parrot Line Graph";
-            this.parrotLineGraph1.GraphTitleColor = System.Drawing.Color.Gray;
-            this.parrotLineGraph1.Items = ((System.Collections.Generic.List<int>)(resources.GetObject("parrotLineGraph1.Items")));
-            this.parrotLineGraph1.LineColor = System.Drawing.Color.White;
-            this.parrotLineGraph1.Location = new System.Drawing.Point(37, 39);
-            this.parrotLineGraph1.Name = "parrotLineGraph1";
-            this.parrotLineGraph1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotLineGraph1.PointSize = 7;
-            this.parrotLineGraph1.ShowBorder = false;
-            this.parrotLineGraph1.ShowPoints = true;
-            this.parrotLineGraph1.ShowTitle = false;
-            this.parrotLineGraph1.ShowVerticalLines = false;
-            this.parrotLineGraph1.Size = new System.Drawing.Size(561, 157);
-            this.parrotLineGraph1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotLineGraph1.TabIndex = 5;
-            this.parrotLineGraph1.Text = "parrotLineGraph1";
-            this.parrotLineGraph1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotLineGraph1.TitleAlignment = System.Drawing.StringAlignment.Near;
-            this.parrotLineGraph1.VerticalLineColor = System.Drawing.Color.DimGray;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "VENTAS";
-            // 
             // lostBorderPanel6
             // 
             this.lostBorderPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel6.BorderColor = System.Drawing.Color.Fuchsia;
-            this.lostBorderPanel6.Controls.Add(this.iconPictureBox8);
-            this.lostBorderPanel6.Controls.Add(this.iconPictureBox7);
-            this.lostBorderPanel6.Controls.Add(this.iconPictureBox6);
-            this.lostBorderPanel6.Controls.Add(this.iconPictureBox5);
-            this.lostBorderPanel6.Controls.Add(this.label17);
-            this.lostBorderPanel6.Controls.Add(this.label16);
-            this.lostBorderPanel6.Controls.Add(this.parrotPieGraph1);
-            this.lostBorderPanel6.Controls.Add(this.label15);
-            this.lostBorderPanel6.Controls.Add(this.label14);
-            this.lostBorderPanel6.Controls.Add(this.label4);
+            this.lostBorderPanel6.Controls.Add(this.chartCategories);
             this.lostBorderPanel6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel6.ForeColor = System.Drawing.Color.White;
             this.lostBorderPanel6.Location = new System.Drawing.Point(661, 202);
@@ -318,133 +274,11 @@
             this.lostBorderPanel6.Size = new System.Drawing.Size(437, 240);
             this.lostBorderPanel6.TabIndex = 14;
             // 
-            // iconPictureBox8
-            // 
-            this.iconPictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
-            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox8.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(66)))), ((int)(((byte)(186)))));
-            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox8.IconSize = 25;
-            this.iconPictureBox8.Location = new System.Drawing.Point(255, 114);
-            this.iconPictureBox8.Name = "iconPictureBox8";
-            this.iconPictureBox8.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox8.TabIndex = 9;
-            this.iconPictureBox8.TabStop = false;
-            // 
-            // iconPictureBox7
-            // 
-            this.iconPictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(212)))));
-            this.iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox7.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(212)))));
-            this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox7.IconSize = 25;
-            this.iconPictureBox7.Location = new System.Drawing.Point(255, 89);
-            this.iconPictureBox7.Name = "iconPictureBox7";
-            this.iconPictureBox7.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox7.TabIndex = 8;
-            this.iconPictureBox7.TabStop = false;
-            // 
-            // iconPictureBox6
-            // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox6.IconSize = 25;
-            this.iconPictureBox6.Location = new System.Drawing.Point(255, 64);
-            this.iconPictureBox6.Name = "iconPictureBox6";
-            this.iconPictureBox6.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox6.TabIndex = 7;
-            this.iconPictureBox6.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Certificate;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 25;
-            this.iconPictureBox5.Location = new System.Drawing.Point(255, 39);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(30, 25);
-            this.iconPictureBox5.TabIndex = 3;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(291, 114);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 25);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "CATEGORIA 4";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(291, 89);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 25);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "CATEGORIA 3";
-            // 
-            // parrotPieGraph1
-            // 
-            this.parrotPieGraph1.BackColor = System.Drawing.Color.Transparent;
-            this.parrotPieGraph1.Colors = ((System.Collections.Generic.List<System.Drawing.Color>)(resources.GetObject("parrotPieGraph1.Colors")));
-            this.parrotPieGraph1.Location = new System.Drawing.Point(22, 39);
-            this.parrotPieGraph1.Name = "parrotPieGraph1";
-            this.parrotPieGraph1.Numbers = ((System.Collections.Generic.List<int>)(resources.GetObject("parrotPieGraph1.Numbers")));
-            this.parrotPieGraph1.Size = new System.Drawing.Size(214, 173);
-            this.parrotPieGraph1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPieGraph1.TabIndex = 4;
-            this.parrotPieGraph1.Text = "parrotPieGraph1";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(291, 64);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(132, 25);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "CATEGORIA 2";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(291, 39);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(132, 25);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "CATEGORIA 1";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(352, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "TOP CATEGORIAS MAS IMPORTANTES";
-            // 
             // lostBorderPanel7
             // 
             this.lostBorderPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel7.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel7.Controls.Add(this.dataGridLastSales);
             this.lostBorderPanel7.Controls.Add(this.label6);
             this.lostBorderPanel7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel7.ForeColor = System.Drawing.Color.White;
@@ -470,6 +304,7 @@
             // 
             this.lostBorderPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel8.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel8.Controls.Add(this.dataGridTopProducts);
             this.lostBorderPanel8.Controls.Add(this.label5);
             this.lostBorderPanel8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel8.ForeColor = System.Drawing.Color.White;
@@ -490,6 +325,129 @@
             this.label5.Size = new System.Drawing.Size(315, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "TOP PRODUCTOS MAS VENDIDOS";
+            // 
+            // chartCategories
+            // 
+            this.chartCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            chartArea2.Name = "ChartArea1";
+            this.chartCategories.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartCategories.Legends.Add(legend2);
+            this.chartCategories.Location = new System.Drawing.Point(3, 3);
+            this.chartCategories.Name = "chartCategories";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartCategories.Series.Add(series2);
+            this.chartCategories.Size = new System.Drawing.Size(431, 234);
+            this.chartCategories.TabIndex = 16;
+            this.chartCategories.Text = "chart1";
+            // 
+            // chartSalesByDay
+            // 
+            this.chartSalesByDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartSalesByDay.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSalesByDay.Legends.Add(legend1);
+            this.chartSalesByDay.Location = new System.Drawing.Point(3, 3);
+            this.chartSalesByDay.Name = "chartSalesByDay";
+            this.chartSalesByDay.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSalesByDay.Series.Add(series1);
+            this.chartSalesByDay.Size = new System.Drawing.Size(608, 234);
+            this.chartSalesByDay.TabIndex = 6;
+            this.chartSalesByDay.Text = "chart1";
+            // 
+            // dataGridLastSales
+            // 
+            this.dataGridLastSales.AllowUserToResizeRows = false;
+            this.dataGridLastSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridLastSales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridLastSales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridLastSales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridLastSales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLastSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridLastSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridLastSales.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridLastSales.EnableHeadersVisualStyles = false;
+            this.dataGridLastSales.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridLastSales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridLastSales.Location = new System.Drawing.Point(8, 28);
+            this.dataGridLastSales.Name = "dataGridLastSales";
+            this.dataGridLastSales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLastSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridLastSales.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridLastSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridLastSales.Size = new System.Drawing.Size(513, 142);
+            this.dataGridLastSales.TabIndex = 68;
+            // 
+            // dataGridTopProducts
+            // 
+            this.dataGridTopProducts.AllowUserToResizeRows = false;
+            this.dataGridTopProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridTopProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridTopProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridTopProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridTopProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTopProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridTopProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTopProducts.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridTopProducts.EnableHeadersVisualStyles = false;
+            this.dataGridTopProducts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridTopProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridTopProducts.Location = new System.Drawing.Point(8, 28);
+            this.dataGridTopProducts.Name = "dataGridTopProducts";
+            this.dataGridTopProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTopProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridTopProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridTopProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridTopProducts.Size = new System.Drawing.Size(513, 142);
+            this.dataGridTopProducts.TabIndex = 69;
             // 
             // SellerHomePanel
             // 
@@ -517,17 +475,15 @@
             this.lostBorderPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.lostBorderPanel5.ResumeLayout(false);
-            this.lostBorderPanel5.PerformLayout();
             this.lostBorderPanel6.ResumeLayout(false);
-            this.lostBorderPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.lostBorderPanel7.ResumeLayout(false);
             this.lostBorderPanel7.PerformLayout();
             this.lostBorderPanel8.ResumeLayout(false);
             this.lostBorderPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesByDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLastSales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTopProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,21 +506,13 @@
         private System.Windows.Forms.Label label11;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel5;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel6;
-        private System.Windows.Forms.Label label4;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel7;
         private System.Windows.Forms.Label label6;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private ReaLTaiizor.Controls.ParrotLineGraph parrotLineGraph1;
-        private ReaLTaiizor.Controls.ParrotPieGraph parrotPieGraph1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCategories;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSalesByDay;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridLastSales;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridTopProducts;
     }
 }

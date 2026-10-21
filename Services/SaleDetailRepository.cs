@@ -53,6 +53,47 @@ namespace NexoStock.Services
             }
         }
 
+
+
+        public DataTable GetTopSellingProductsByUser(int userId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            p.Name AS 'Producto',
+            SUM(sd.Quantity) AS 'Unidades vendidas'
+        FROM sales s
+        INNER JOIN sale_details sd ON sd.SaleId = s.Id
+        INNER JOIN products p ON p.Id = sd.ProductId
+        WHERE s.UserId = @UserId
+        GROUP BY p.Id, p.Name
+        ORDER BY SUM(sd.Quantity) DESC
+        LIMIT 5;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener los productos más vendidos: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
+
         // OBTENER TODOS LOS DETALLES DE UNA VENTA
         public List<SaleDetail> GetDetailsBySaleId(int saleId)
         {
