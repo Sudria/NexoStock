@@ -220,7 +220,33 @@ namespace NexoStock.Services
         }
 
 
+        public int GetTotalSalesByUserId(int userId)
+        {
+            string query = @"
+        SELECT COUNT(*)
+        FROM sales
+        WHERE UserId = @UserId;
+    ";
 
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al contar las ventas: " + ex.Message);
+            }
+
+            return 0;
+        }
 
 
 

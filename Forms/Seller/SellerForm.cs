@@ -84,7 +84,7 @@ namespace NexoStock.Forms.Seller
         public void LoadHomeControler()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new SellerHomePanel());
+            panelContent.Controls.Add(new SellerHomePanel(user));
         }
 
 

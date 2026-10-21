@@ -17,11 +17,13 @@ namespace NexoStock.Forms.Seller
     public partial class SellerClientPanel : UserControl
     {
         List<ClientClass> clients = new List<ClientClass>();
+        ClientRepository clientRepository = new ClientRepository();
 
         public SellerClientPanel()
         {
             InitializeComponent();
             LoadDataGridClients();
+            labelCountClient.Text = clientRepository.GetTotalClients().ToString();
         }
 
 

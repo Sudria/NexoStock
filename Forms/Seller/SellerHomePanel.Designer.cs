@@ -32,15 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelSaleCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelCountProduct = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelCountClient = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lostBorderPanel5 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.parrotLineGraph1 = new ReaLTaiizor.Controls.ParrotLineGraph();
@@ -92,7 +92,7 @@
             this.lostBorderPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel1.BorderColor = System.Drawing.Color.Fuchsia;
             this.lostBorderPanel1.Controls.Add(this.iconPictureBox1);
-            this.lostBorderPanel1.Controls.Add(this.label7);
+            this.lostBorderPanel1.Controls.Add(this.labelSaleCount);
             this.lostBorderPanel1.Controls.Add(this.label2);
             this.lostBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel1.ForeColor = System.Drawing.Color.White;
@@ -117,16 +117,16 @@
             this.iconPictureBox1.TabIndex = 2;
             this.iconPictureBox1.TabStop = false;
             // 
-            // label7
+            // labelSaleCount
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(144, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 36);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "0.000";
+            this.labelSaleCount.AutoSize = true;
+            this.labelSaleCount.BackColor = System.Drawing.Color.Transparent;
+            this.labelSaleCount.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelSaleCount.Location = new System.Drawing.Point(144, 51);
+            this.labelSaleCount.Name = "labelSaleCount";
+            this.labelSaleCount.Size = new System.Drawing.Size(82, 36);
+            this.labelSaleCount.TabIndex = 1;
+            this.labelSaleCount.Text = "0.000";
             // 
             // label2
             // 
@@ -144,7 +144,7 @@
             this.lostBorderPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel2.BorderColor = System.Drawing.Color.Fuchsia;
             this.lostBorderPanel2.Controls.Add(this.iconPictureBox2);
-            this.lostBorderPanel2.Controls.Add(this.label8);
+            this.lostBorderPanel2.Controls.Add(this.labelCountProduct);
             this.lostBorderPanel2.Controls.Add(this.label9);
             this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
@@ -169,16 +169,16 @@
             this.iconPictureBox2.TabIndex = 2;
             this.iconPictureBox2.TabStop = false;
             // 
-            // label8
+            // labelCountProduct
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(144, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 36);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "0.000";
+            this.labelCountProduct.AutoSize = true;
+            this.labelCountProduct.BackColor = System.Drawing.Color.Transparent;
+            this.labelCountProduct.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelCountProduct.Location = new System.Drawing.Point(144, 51);
+            this.labelCountProduct.Name = "labelCountProduct";
+            this.labelCountProduct.Size = new System.Drawing.Size(82, 36);
+            this.labelCountProduct.TabIndex = 1;
+            this.labelCountProduct.Text = "0.000";
             // 
             // label9
             // 
@@ -196,7 +196,7 @@
             this.lostBorderPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel3.BorderColor = System.Drawing.Color.Fuchsia;
             this.lostBorderPanel3.Controls.Add(this.iconPictureBox3);
-            this.lostBorderPanel3.Controls.Add(this.label10);
+            this.lostBorderPanel3.Controls.Add(this.labelCountClient);
             this.lostBorderPanel3.Controls.Add(this.label11);
             this.lostBorderPanel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel3.ForeColor = System.Drawing.Color.White;
@@ -221,16 +221,16 @@
             this.iconPictureBox3.TabIndex = 2;
             this.iconPictureBox3.TabStop = false;
             // 
-            // label10
+            // labelCountClient
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(144, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 36);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "0";
+            this.labelCountClient.AutoSize = true;
+            this.labelCountClient.BackColor = System.Drawing.Color.Transparent;
+            this.labelCountClient.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelCountClient.Location = new System.Drawing.Point(144, 51);
+            this.labelCountClient.Name = "labelCountClient";
+            this.labelCountClient.Size = new System.Drawing.Size(30, 36);
+            this.labelCountClient.TabIndex = 1;
+            this.labelCountClient.Text = "0";
             // 
             // label11
             // 
@@ -539,14 +539,14 @@
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel1;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelSaleCount;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelCountProduct;
         private System.Windows.Forms.Label label9;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelCountClient;
         private System.Windows.Forms.Label label11;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel5;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel6;

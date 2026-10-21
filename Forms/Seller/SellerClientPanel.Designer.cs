@@ -39,9 +39,9 @@
             this.dataGridClients = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.labelCountClient = new System.Windows.Forms.Label();
+            this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -196,7 +196,7 @@
             this.lostBorderPanel2.BorderColor = System.Drawing.Color.Fuchsia;
             this.lostBorderPanel2.Controls.Add(this.label13);
             this.lostBorderPanel2.Controls.Add(this.iconPictureBox2);
-            this.lostBorderPanel2.Controls.Add(this.label8);
+            this.lostBorderPanel2.Controls.Add(this.labelCountClient);
             this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
             this.lostBorderPanel2.Location = new System.Drawing.Point(71, 119);
@@ -217,16 +217,30 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "CLIENTES TOTALES";
             // 
-            // label8
+            // iconPictureBox2
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(110, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 36);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "0";
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Fuchsia;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 60;
+            this.iconPictureBox2.Location = new System.Drawing.Point(12, 39);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(68, 60);
+            this.iconPictureBox2.TabIndex = 2;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // labelCountClient
+            // 
+            this.labelCountClient.AutoSize = true;
+            this.labelCountClient.BackColor = System.Drawing.Color.Transparent;
+            this.labelCountClient.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelCountClient.Location = new System.Drawing.Point(110, 51);
+            this.labelCountClient.Name = "labelCountClient";
+            this.labelCountClient.Size = new System.Drawing.Size(30, 36);
+            this.labelCountClient.TabIndex = 1;
+            this.labelCountClient.Text = "0";
             // 
             // buttonEdit
             // 
@@ -271,20 +285,6 @@
             this.buttonEdit.Timer_RGB = 1;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Fuchsia;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 60;
-            this.iconPictureBox2.Location = new System.Drawing.Point(12, 39);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(68, 60);
-            this.iconPictureBox2.TabIndex = 2;
-            this.iconPictureBox2.TabStop = false;
-            // 
             // SellerClientPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +320,7 @@
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridClients;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelCountClient;
         private System.Windows.Forms.Label label13;
         private ReaLTaiizor.Controls.CyberButton buttonEdit;
     }

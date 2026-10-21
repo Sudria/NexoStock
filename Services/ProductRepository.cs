@@ -259,5 +259,27 @@ namespace NexoStock.Services
 
             return products;
         }
+
+        public int GetTotalProducts()
+        {
+            string query = "SELECT COUNT(*) FROM products;";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(query))
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al contar productos: " + ex.Message);
+            }
+
+            return 0;
+        }
     }
 }

@@ -272,5 +272,27 @@ namespace NexoStock.Services
 
             return clients;
         }
+
+        public int GetTotalClients()
+        {
+            string query = "SELECT COUNT(*) FROM clients;";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(query))
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al contar clientes: " + ex.Message);
+            }
+
+            return 0;
+        }
     }
 }
