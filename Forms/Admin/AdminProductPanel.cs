@@ -16,13 +16,15 @@ namespace NexoStock.Forms.Admin
     public partial class AdminProductPanel : UserControl
     {
         ProductRepository productRepository = new ProductRepository();
-        List<ProductClass> products;
+        List<ProductClass> products = new List<ProductClass>();
         public AdminProductPanel()
         {
             InitializeComponent();
             LoadDataGridView();
             initializeCountsPanels();
             LoadComboBoxs();
+
+
 
         }
 
@@ -59,19 +61,52 @@ namespace NexoStock.Forms.Admin
 
         }
 
+
+
+
+
         private void LoadDataGridView()
         {
-            ProductRepository productRepository = new ProductRepository();
-            List<ProductClass> products = productRepository.GetAllProducts();
-            dataGridViewProducts.DataSource = products;
-            dataGridViewProducts.Columns["Id"].Visible = false;
-            dataGridViewProducts.Columns["BrandId"].Visible = false;
-            dataGridViewProducts.Columns["CategoryId"].Visible = false;
-            dataGridViewProducts.Columns["ProviderId"].Visible = false;
-            dataGridViewProducts.Columns["State"].Visible = false;
-            dataGridViewProducts.Columns["StateText"].HeaderText = "Estado";
+            try
+            {
+                products = productRepository.GetAllProducts();
 
+                dataGridViewProducts.DataSource = null;
+                dataGridViewProducts.AutoGenerateColumns = true;
+                dataGridViewProducts.DataSource = products;
+
+                string[] hiddenColumns =
+                {
+            "Id",
+            "BrandId",
+            "CategoryId",
+            "ProviderId",
+            "State"
+        };
+
+                foreach (string column in hiddenColumns)
+                {
+                    if (dataGridViewProducts.Columns.Contains(column))
+                        dataGridViewProducts.Columns[column].Visible = false;
+                }
+
+                if (dataGridViewProducts.Columns.Contains("StateText"))
+                    dataGridViewProducts.Columns["StateText"].HeaderText = "Estado";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error al cargar los productos:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
+
+
+
+
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -144,17 +179,11 @@ namespace NexoStock.Forms.Admin
 
         private void initializeCountsPanels()
         {
-            if (products == null)
-            {
-                products = productRepository.GetAllProducts();
-            }
-
             int totalProducts = products.Count;
             int activeProducts = products.Count(p => p.State);
             int inactiveProducts = products.Count(p => !p.State);
 
-
-            labelCountProducts.Text = products.Count.ToString();
+            labelCountProducts.Text = totalProducts.ToString();
             labelActiveProducts.Text = activeProducts.ToString();
             labelInactiveProducts.Text = inactiveProducts.ToString();
         }

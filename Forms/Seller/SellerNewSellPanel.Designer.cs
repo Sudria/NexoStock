@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridSell = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,65 +40,70 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxTel = new ReaLTaiizor.Controls.HopeTextBox();
-            this.textBoxEmail = new ReaLTaiizor.Controls.HopeTextBox();
-            this.textBoxSurname = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtTel = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtEmail = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtSurname = new ReaLTaiizor.Controls.HopeTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtName = new ReaLTaiizor.Controls.HopeTextBox();
             this.comboBoxDni = new ReaLTaiizor.Controls.HopeComboBox();
             this.saveButton = new ReaLTaiizor.Controls.ParrotButton();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
             this.buttonAddProduct = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
-            this.hopeNumeric1 = new ReaLTaiizor.Controls.HopeNumeric();
-            this.hopeComboBox1 = new ReaLTaiizor.Controls.HopeComboBox();
+            this.numericCount = new ReaLTaiizor.Controls.HopeNumeric();
+            this.comboBoxProduct = new ReaLTaiizor.Controls.HopeComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            this.txtStockDisp = new ReaLTaiizor.Controls.HopeTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtTotal = new ReaLTaiizor.Controls.HopeTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSell)).BeginInit();
             this.SuspendLayout();
             // 
-            // poisonDataGridView1
+            // dataGridSell
             // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(46, 384);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1049, 200);
-            this.poisonDataGridView1.TabIndex = 27;
+            this.dataGridSell.AllowUserToResizeRows = false;
+            this.dataGridSell.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridSell.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridSell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridSell.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridSell.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSell.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridSell.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridSell.EnableHeadersVisualStyles = false;
+            this.dataGridSell.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridSell.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridSell.Location = new System.Drawing.Point(46, 384);
+            this.dataGridSell.Name = "dataGridSell";
+            this.dataGridSell.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSell.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridSell.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridSell.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridSell.Size = new System.Drawing.Size(1049, 200);
+            this.dataGridSell.TabIndex = 27;
             // 
             // label2
             // 
@@ -188,77 +193,77 @@
             this.label8.TabIndex = 57;
             this.label8.Text = "Nombre";
             // 
-            // textBoxTel
+            // txtTel
             // 
-            this.textBoxTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxTel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxTel.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxTel.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxTel.Enabled = false;
-            this.textBoxTel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxTel.ForeColor = System.Drawing.Color.White;
-            this.textBoxTel.Hint = "";
-            this.textBoxTel.Location = new System.Drawing.Point(770, 169);
-            this.textBoxTel.MaxLength = 32767;
-            this.textBoxTel.Multiline = false;
-            this.textBoxTel.Name = "textBoxTel";
-            this.textBoxTel.PasswordChar = '\0';
-            this.textBoxTel.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxTel.SelectedText = "";
-            this.textBoxTel.SelectionLength = 0;
-            this.textBoxTel.SelectionStart = 0;
-            this.textBoxTel.Size = new System.Drawing.Size(324, 38);
-            this.textBoxTel.TabIndex = 56;
-            this.textBoxTel.TabStop = false;
-            this.textBoxTel.UseSystemPasswordChar = false;
+            this.txtTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtTel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtTel.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtTel.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtTel.Enabled = false;
+            this.txtTel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTel.ForeColor = System.Drawing.Color.White;
+            this.txtTel.Hint = "";
+            this.txtTel.Location = new System.Drawing.Point(770, 169);
+            this.txtTel.MaxLength = 32767;
+            this.txtTel.Multiline = false;
+            this.txtTel.Name = "txtTel";
+            this.txtTel.PasswordChar = '\0';
+            this.txtTel.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTel.SelectedText = "";
+            this.txtTel.SelectionLength = 0;
+            this.txtTel.SelectionStart = 0;
+            this.txtTel.Size = new System.Drawing.Size(324, 38);
+            this.txtTel.TabIndex = 56;
+            this.txtTel.TabStop = false;
+            this.txtTel.UseSystemPasswordChar = false;
             // 
-            // textBoxEmail
+            // txtEmail
             // 
-            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxEmail.Enabled = false;
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxEmail.ForeColor = System.Drawing.Color.White;
-            this.textBoxEmail.Hint = "";
-            this.textBoxEmail.Location = new System.Drawing.Point(771, 87);
-            this.textBoxEmail.MaxLength = 32767;
-            this.textBoxEmail.Multiline = false;
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.PasswordChar = '\0';
-            this.textBoxEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxEmail.SelectedText = "";
-            this.textBoxEmail.SelectionLength = 0;
-            this.textBoxEmail.SelectionStart = 0;
-            this.textBoxEmail.Size = new System.Drawing.Size(324, 38);
-            this.textBoxEmail.TabIndex = 55;
-            this.textBoxEmail.TabStop = false;
-            this.textBoxEmail.UseSystemPasswordChar = false;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtEmail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtEmail.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtEmail.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(771, 87);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(324, 38);
+            this.txtEmail.TabIndex = 55;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
             // 
-            // textBoxSurname
+            // txtSurname
             // 
-            this.textBoxSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxSurname.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxSurname.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxSurname.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxSurname.Enabled = false;
-            this.textBoxSurname.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxSurname.ForeColor = System.Drawing.Color.White;
-            this.textBoxSurname.Hint = "";
-            this.textBoxSurname.Location = new System.Drawing.Point(408, 169);
-            this.textBoxSurname.MaxLength = 32767;
-            this.textBoxSurname.Multiline = false;
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.PasswordChar = '\0';
-            this.textBoxSurname.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxSurname.SelectedText = "";
-            this.textBoxSurname.SelectionLength = 0;
-            this.textBoxSurname.SelectionStart = 0;
-            this.textBoxSurname.Size = new System.Drawing.Size(324, 38);
-            this.textBoxSurname.TabIndex = 53;
-            this.textBoxSurname.TabStop = false;
-            this.textBoxSurname.UseSystemPasswordChar = false;
+            this.txtSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtSurname.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtSurname.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtSurname.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtSurname.Enabled = false;
+            this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSurname.ForeColor = System.Drawing.Color.White;
+            this.txtSurname.Hint = "";
+            this.txtSurname.Location = new System.Drawing.Point(408, 169);
+            this.txtSurname.MaxLength = 32767;
+            this.txtSurname.Multiline = false;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.PasswordChar = '\0';
+            this.txtSurname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSurname.SelectedText = "";
+            this.txtSurname.SelectionLength = 0;
+            this.txtSurname.SelectionStart = 0;
+            this.txtSurname.Size = new System.Drawing.Size(324, 38);
+            this.txtSurname.TabIndex = 53;
+            this.txtSurname.TabStop = false;
+            this.txtSurname.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -271,37 +276,38 @@
             this.label9.TabIndex = 52;
             this.label9.Text = "INFORMACIÓN PERSONAL";
             // 
-            // textBoxName
+            // txtName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxName.Enabled = false;
-            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxName.ForeColor = System.Drawing.Color.White;
-            this.textBoxName.Hint = "";
-            this.textBoxName.Location = new System.Drawing.Point(46, 169);
-            this.textBoxName.MaxLength = 32767;
-            this.textBoxName.Multiline = false;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PasswordChar = '\0';
-            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.SelectedText = "";
-            this.textBoxName.SelectionLength = 0;
-            this.textBoxName.SelectionStart = 0;
-            this.textBoxName.Size = new System.Drawing.Size(324, 38);
-            this.textBoxName.TabIndex = 51;
-            this.textBoxName.TabStop = false;
-            this.textBoxName.UseSystemPasswordChar = false;
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtName.Enabled = false;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.Hint = "";
+            this.txtName.Location = new System.Drawing.Point(46, 169);
+            this.txtName.MaxLength = 32767;
+            this.txtName.Multiline = false;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtName.SelectedText = "";
+            this.txtName.SelectionLength = 0;
+            this.txtName.SelectionStart = 0;
+            this.txtName.Size = new System.Drawing.Size(324, 38);
+            this.txtName.TabIndex = 51;
+            this.txtName.TabStop = false;
+            this.txtName.UseSystemPasswordChar = false;
             // 
             // comboBoxDni
             // 
             this.comboBoxDni.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxDni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxDni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
             this.comboBoxDni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxDni.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxDni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxDni.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.comboBoxDni.ForeColor = System.Drawing.Color.White;
@@ -311,6 +317,7 @@
             this.comboBoxDni.Name = "comboBoxDni";
             this.comboBoxDni.Size = new System.Drawing.Size(325, 36);
             this.comboBoxDni.TabIndex = 79;
+            this.comboBoxDni.SelectedIndexChanged += new System.EventHandler(this.comboBoxDni_SelectedIndexChanged);
             // 
             // saveButton
             // 
@@ -387,6 +394,7 @@
             this.buttonAddProduct.TextColor = System.Drawing.Color.White;
             this.buttonAddProduct.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.buttonAddProduct.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
             // parrotButton1
             // 
@@ -413,56 +421,57 @@
             this.parrotButton1.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.parrotButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
-            // hopeNumeric1
+            // numericCount
             // 
-            this.hopeNumeric1.BackColor = System.Drawing.Color.White;
-            this.hopeNumeric1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeNumeric1.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
-            this.hopeNumeric1.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
-            this.hopeNumeric1.BorderHoverColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeNumeric1.ButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.hopeNumeric1.ButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.hopeNumeric1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeNumeric1.EnterKey = true;
-            this.hopeNumeric1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeNumeric1.ForeColor = System.Drawing.Color.Black;
-            this.hopeNumeric1.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeNumeric1.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeNumeric1.Location = new System.Drawing.Point(582, 342);
-            this.hopeNumeric1.MaxNum = 10F;
-            this.hopeNumeric1.MinNum = 1F;
-            this.hopeNumeric1.Name = "hopeNumeric1";
-            this.hopeNumeric1.Precision = 0;
-            this.hopeNumeric1.Size = new System.Drawing.Size(120, 32);
-            this.hopeNumeric1.Step = 1F;
-            this.hopeNumeric1.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
-            this.hopeNumeric1.TabIndex = 88;
-            this.hopeNumeric1.Text = "numCant";
-            this.hopeNumeric1.ValueNumber = 0F;
+            this.numericCount.BackColor = System.Drawing.Color.White;
+            this.numericCount.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.numericCount.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericCount.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericCount.BorderHoverColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericCount.ButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericCount.ButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericCount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.numericCount.EnterKey = true;
+            this.numericCount.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.numericCount.ForeColor = System.Drawing.Color.Black;
+            this.numericCount.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericCount.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericCount.Location = new System.Drawing.Point(700, 333);
+            this.numericCount.MaxNum = 10F;
+            this.numericCount.MinNum = 1F;
+            this.numericCount.Name = "numericCount";
+            this.numericCount.Precision = 0;
+            this.numericCount.Size = new System.Drawing.Size(120, 32);
+            this.numericCount.Step = 1F;
+            this.numericCount.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
+            this.numericCount.TabIndex = 88;
+            this.numericCount.Text = "numCant";
+            this.numericCount.ValueNumber = 1F;
             // 
-            // hopeComboBox1
+            // comboBoxProduct
             // 
-            this.hopeComboBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
-            this.hopeComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.hopeComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.hopeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hopeComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.hopeComboBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeComboBox1.ForeColor = System.Drawing.Color.White;
-            this.hopeComboBox1.FormattingEnabled = true;
-            this.hopeComboBox1.ItemHeight = 26;
-            this.hopeComboBox1.Location = new System.Drawing.Point(46, 342);
-            this.hopeComboBox1.Name = "hopeComboBox1";
-            this.hopeComboBox1.Size = new System.Drawing.Size(530, 32);
-            this.hopeComboBox1.TabIndex = 89;
+            this.comboBoxProduct.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxProduct.ForeColor = System.Drawing.Color.White;
+            this.comboBoxProduct.FormattingEnabled = true;
+            this.comboBoxProduct.ItemHeight = 26;
+            this.comboBoxProduct.Location = new System.Drawing.Point(46, 333);
+            this.comboBoxProduct.Name = "comboBoxProduct";
+            this.comboBoxProduct.Size = new System.Drawing.Size(534, 32);
+            this.comboBoxProduct.TabIndex = 89;
+            this.comboBoxProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxProduct_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(42, 318);
+            this.label10.Location = new System.Drawing.Point(42, 309);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(299, 21);
             this.label10.TabIndex = 90;
@@ -473,21 +482,95 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(578, 318);
+            this.label11.Location = new System.Drawing.Point(696, 309);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 21);
             this.label11.TabIndex = 91;
             this.label11.Text = "Cantidad";
+            // 
+            // txtStockDisp
+            // 
+            this.txtStockDisp.BackColor = System.Drawing.Color.White;
+            this.txtStockDisp.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtStockDisp.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtStockDisp.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtStockDisp.Enabled = false;
+            this.txtStockDisp.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtStockDisp.ForeColor = System.Drawing.Color.Black;
+            this.txtStockDisp.Hint = "";
+            this.txtStockDisp.Location = new System.Drawing.Point(586, 331);
+            this.txtStockDisp.MaxLength = 32767;
+            this.txtStockDisp.Multiline = false;
+            this.txtStockDisp.Name = "txtStockDisp";
+            this.txtStockDisp.PasswordChar = '\0';
+            this.txtStockDisp.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtStockDisp.SelectedText = "";
+            this.txtStockDisp.SelectionLength = 0;
+            this.txtStockDisp.SelectionStart = 0;
+            this.txtStockDisp.Size = new System.Drawing.Size(108, 34);
+            this.txtStockDisp.TabIndex = 92;
+            this.txtStockDisp.TabStop = false;
+            this.txtStockDisp.UseSystemPasswordChar = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(582, 307);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 21);
+            this.label12.TabIndex = 93;
+            this.label12.Text = "Stock Disp";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(41, 605);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 30);
+            this.label13.TabIndex = 95;
+            this.label13.Text = "TOTAL";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtTotal.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtTotal.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.Black;
+            this.txtTotal.Hint = "";
+            this.txtTotal.Location = new System.Drawing.Point(125, 605);
+            this.txtTotal.MaxLength = 32767;
+            this.txtTotal.Multiline = false;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionLength = 0;
+            this.txtTotal.SelectionStart = 0;
+            this.txtTotal.Size = new System.Drawing.Size(174, 38);
+            this.txtTotal.TabIndex = 94;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.UseSystemPasswordChar = false;
             // 
             // SellerNewSellPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtStockDisp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.hopeComboBox1);
-            this.Controls.Add(this.hopeNumeric1);
+            this.Controls.Add(this.comboBoxProduct);
+            this.Controls.Add(this.numericCount);
             this.Controls.Add(this.parrotButton1);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.saveButton);
@@ -498,25 +581,25 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxTel);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.poisonDataGridView1);
+            this.Controls.Add(this.dataGridSell);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SellerNewSellPanel";
             this.Size = new System.Drawing.Size(1120, 662);
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSell)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridSell;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -525,19 +608,23 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxTel;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxEmail;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxSurname;
+        private ReaLTaiizor.Controls.HopeTextBox txtTel;
+        private ReaLTaiizor.Controls.HopeTextBox txtEmail;
+        private ReaLTaiizor.Controls.HopeTextBox txtSurname;
         private System.Windows.Forms.Label label9;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
+        private ReaLTaiizor.Controls.HopeTextBox txtName;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxDni;
         private ReaLTaiizor.Controls.ParrotButton saveButton;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
         private ReaLTaiizor.Controls.ParrotButton buttonAddProduct;
         private ReaLTaiizor.Controls.ParrotButton parrotButton1;
-        private ReaLTaiizor.Controls.HopeNumeric hopeNumeric1;
-        private ReaLTaiizor.Controls.HopeComboBox hopeComboBox1;
+        private ReaLTaiizor.Controls.HopeNumeric numericCount;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxProduct;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private ReaLTaiizor.Controls.HopeTextBox txtStockDisp;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private ReaLTaiizor.Controls.HopeTextBox txtTotal;
     }
 }

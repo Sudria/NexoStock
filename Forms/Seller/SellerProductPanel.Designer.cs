@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.hopeComboBox1 = new ReaLTaiizor.Controls.HopeComboBox();
-            this.RolComboBox = new ReaLTaiizor.Controls.HopeComboBox();
-            this.txtUser = new ReaLTaiizor.Controls.HopeTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtProduct = new ReaLTaiizor.Controls.HopeTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
+            this.comboBoxCategory = new ReaLTaiizor.Controls.HopeComboBox();
+            this.labelCountProducts = new System.Windows.Forms.Label();
+            this.labelActiveProducts = new System.Windows.Forms.Label();
+            this.labelInactiveProducts = new System.Windows.Forms.Label();
+            this.dataGridViewProducts = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lostBorderPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.lostBorderPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // lostBorderPanel3
             // 
             this.lostBorderPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel3.BorderColor = System.Drawing.Color.Crimson;
+            this.lostBorderPanel3.Controls.Add(this.labelInactiveProducts);
             this.lostBorderPanel3.Controls.Add(this.label11);
-            this.lostBorderPanel3.Controls.Add(this.label10);
             this.lostBorderPanel3.Controls.Add(this.iconPictureBox3);
             this.lostBorderPanel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel3.ForeColor = System.Drawing.Color.White;
@@ -88,17 +88,6 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "FUERA DE STOCK";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(108, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 36);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "0";
-            // 
             // iconPictureBox3
             // 
             this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -117,7 +106,7 @@
             // 
             this.lostBorderPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.lostBorderPanel1.Controls.Add(this.label5);
+            this.lostBorderPanel1.Controls.Add(this.labelActiveProducts);
             this.lostBorderPanel1.Controls.Add(this.iconPictureBox1);
             this.lostBorderPanel1.Controls.Add(this.label7);
             this.lostBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -128,17 +117,6 @@
             this.lostBorderPanel1.ShowText = true;
             this.lostBorderPanel1.Size = new System.Drawing.Size(221, 113);
             this.lostBorderPanel1.TabIndex = 29;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(110, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 36);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "0";
             // 
             // iconPictureBox1
             // 
@@ -169,9 +147,9 @@
             // 
             this.lostBorderPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.lostBorderPanel2.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel2.Controls.Add(this.labelCountProducts);
             this.lostBorderPanel2.Controls.Add(this.label13);
             this.lostBorderPanel2.Controls.Add(this.iconPictureBox2);
-            this.lostBorderPanel2.Controls.Add(this.label8);
             this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
             this.lostBorderPanel2.Location = new System.Drawing.Point(71, 119);
@@ -206,60 +184,6 @@
             this.iconPictureBox2.TabIndex = 2;
             this.iconPictureBox2.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(110, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 36);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "0";
-            // 
-            // poisonDataGridView1
-            // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(71, 347);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1015, 292);
-            this.poisonDataGridView1.TabIndex = 27;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -270,81 +194,6 @@
             this.label6.Size = new System.Drawing.Size(133, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "Nombre o Código";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(699, 277);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Proveedor";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(493, 277);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Categoria";
-            // 
-            // hopeComboBox1
-            // 
-            this.hopeComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.hopeComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.hopeComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hopeComboBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeComboBox1.ForeColor = System.Drawing.Color.White;
-            this.hopeComboBox1.FormattingEnabled = true;
-            this.hopeComboBox1.ItemHeight = 21;
-            this.hopeComboBox1.Location = new System.Drawing.Point(703, 300);
-            this.hopeComboBox1.Name = "hopeComboBox1";
-            this.hopeComboBox1.Size = new System.Drawing.Size(200, 27);
-            this.hopeComboBox1.TabIndex = 23;
-            // 
-            // RolComboBox
-            // 
-            this.RolComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.RolComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RolComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.RolComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RolComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RolComboBox.ForeColor = System.Drawing.Color.White;
-            this.RolComboBox.FormattingEnabled = true;
-            this.RolComboBox.ItemHeight = 21;
-            this.RolComboBox.Location = new System.Drawing.Point(497, 300);
-            this.RolComboBox.Name = "RolComboBox";
-            this.RolComboBox.Size = new System.Drawing.Size(200, 27);
-            this.RolComboBox.TabIndex = 22;
-            // 
-            // txtUser
-            // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.txtUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtUser.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.txtUser.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Hint = "Buscar por Nombre o Código";
-            this.txtUser.Location = new System.Drawing.Point(71, 291);
-            this.txtUser.MaxLength = 32767;
-            this.txtUser.Multiline = false;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUser.SelectedText = "";
-            this.txtUser.SelectionLength = 0;
-            this.txtUser.SelectionStart = 0;
-            this.txtUser.Size = new System.Drawing.Size(420, 38);
-            this.txtUser.TabIndex = 21;
-            this.txtUser.TabStop = false;
-            this.txtUser.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -368,21 +217,179 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "PRODUCTOS";
             // 
+            // txtProduct
+            // 
+            this.txtProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtProduct.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtProduct.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtProduct.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtProduct.ForeColor = System.Drawing.Color.White;
+            this.txtProduct.Hint = "Buscar por Nombre o Código";
+            this.txtProduct.Location = new System.Drawing.Point(71, 289);
+            this.txtProduct.MaxLength = 32767;
+            this.txtProduct.Multiline = false;
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.PasswordChar = '\0';
+            this.txtProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtProduct.SelectedText = "";
+            this.txtProduct.SelectionLength = 0;
+            this.txtProduct.SelectionStart = 0;
+            this.txtProduct.Size = new System.Drawing.Size(420, 38);
+            this.txtProduct.TabIndex = 31;
+            this.txtProduct.TabStop = false;
+            this.txtProduct.UseSystemPasswordChar = false;
+            this.txtProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductName_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(699, 277);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Proveedor";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(493, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Categoria";
+            // 
+            // comboBoxProvider
+            // 
+            this.comboBoxProvider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxProvider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxProvider.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxProvider.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProvider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxProvider.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxProvider.ForeColor = System.Drawing.Color.White;
+            this.comboBoxProvider.FormattingEnabled = true;
+            this.comboBoxProvider.ItemHeight = 21;
+            this.comboBoxProvider.Location = new System.Drawing.Point(703, 300);
+            this.comboBoxProvider.Name = "comboBoxProvider";
+            this.comboBoxProvider.Size = new System.Drawing.Size(383, 27);
+            this.comboBoxProvider.TabIndex = 33;
+            this.comboBoxProvider.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.ItemHeight = 21;
+            this.comboBoxCategory.Location = new System.Drawing.Point(497, 300);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxCategory.TabIndex = 32;
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
+            // 
+            // labelCountProducts
+            // 
+            this.labelCountProducts.AutoSize = true;
+            this.labelCountProducts.BackColor = System.Drawing.Color.Transparent;
+            this.labelCountProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelCountProducts.Location = new System.Drawing.Point(86, 51);
+            this.labelCountProducts.Name = "labelCountProducts";
+            this.labelCountProducts.Size = new System.Drawing.Size(30, 36);
+            this.labelCountProducts.TabIndex = 5;
+            this.labelCountProducts.Text = "0";
+            // 
+            // labelActiveProducts
+            // 
+            this.labelActiveProducts.AutoSize = true;
+            this.labelActiveProducts.BackColor = System.Drawing.Color.Transparent;
+            this.labelActiveProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelActiveProducts.Location = new System.Drawing.Point(86, 51);
+            this.labelActiveProducts.Name = "labelActiveProducts";
+            this.labelActiveProducts.Size = new System.Drawing.Size(30, 36);
+            this.labelActiveProducts.TabIndex = 5;
+            this.labelActiveProducts.Text = "0";
+            // 
+            // labelInactiveProducts
+            // 
+            this.labelInactiveProducts.AutoSize = true;
+            this.labelInactiveProducts.BackColor = System.Drawing.Color.Transparent;
+            this.labelInactiveProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
+            this.labelInactiveProducts.Location = new System.Drawing.Point(86, 51);
+            this.labelInactiveProducts.Name = "labelInactiveProducts";
+            this.labelInactiveProducts.Size = new System.Drawing.Size(30, 36);
+            this.labelInactiveProducts.TabIndex = 7;
+            this.labelInactiveProducts.Text = "0";
+            // 
+            // dataGridViewProducts
+            // 
+            this.dataGridViewProducts.AllowUserToResizeRows = false;
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridViewProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProducts.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewProducts.EnableHeadersVisualStyles = false;
+            this.dataGridViewProducts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridViewProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridViewProducts.Location = new System.Drawing.Point(71, 345);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
+            this.dataGridViewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(1015, 292);
+            this.dataGridViewProducts.TabIndex = 36;
+            // 
             // SellerProductPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.dataGridViewProducts);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxProvider);
+            this.Controls.Add(this.comboBoxCategory);
+            this.Controls.Add(this.txtProduct);
             this.Controls.Add(this.lostBorderPanel3);
             this.Controls.Add(this.lostBorderPanel1);
             this.Controls.Add(this.lostBorderPanel2);
-            this.Controls.Add(this.poisonDataGridView1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.hopeComboBox1);
-            this.Controls.Add(this.RolComboBox);
-            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SellerProductPanel";
@@ -396,7 +403,7 @@
             this.lostBorderPanel2.ResumeLayout(false);
             this.lostBorderPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,25 +411,25 @@
 
         #endregion
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel3;
-        private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel1;
-        private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label7;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
         private System.Windows.Forms.Label label13;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.Label label8;
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.Controls.HopeComboBox hopeComboBox1;
-        private ReaLTaiizor.Controls.HopeComboBox RolComboBox;
-        private ReaLTaiizor.Controls.HopeTextBox txtUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
+        private ReaLTaiizor.Controls.HopeTextBox txtProduct;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxCategory;
+        private System.Windows.Forms.Label labelCountProducts;
+        private System.Windows.Forms.Label labelActiveProducts;
+        private System.Windows.Forms.Label labelInactiveProducts;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridViewProducts;
     }
 }

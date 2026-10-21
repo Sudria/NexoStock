@@ -1,4 +1,6 @@
 ﻿using NexoStock.Class;
+using NexoStock.Forms.Admin;
+using NexoStock.Services;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
@@ -35,7 +37,7 @@ namespace NexoStock.Forms.Seller
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            UserClass newUser = new UserClass
+            ClientClass newClient= new ClientClass
             {
                 Name = textBoxName.Text,
                 Surname = textBoxSurname.Text,
@@ -44,34 +46,43 @@ namespace NexoStock.Forms.Seller
                 Tel = textBoxTel.Text,
             };
 
-            if (!Utils.Validator.isValidText(newUser.Name, "Nombre"))
+            if (!Utils.Validator.isValidText(newClient.Name, "Nombre"))
             {
                 textBoxName.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidText(newUser.Surname, "Apellido"))
+            if (!Utils.Validator.isValidText(newClient.Surname, "Apellido"))
             {
                 textBoxSurname.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(newUser.Dni, "DNI", 8))
+            if (!Utils.Validator.isValidNum(newClient.Dni, "DNI", 8))
             {
                 textBoxDni.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidEmail(newUser.Email))
+            if (!Utils.Validator.isValidEmail(newClient.Email))
             {
                 textBoxEmail.Focus();
                 return;
             }
 
-            if (!Utils.Validator.isValidNum(newUser.Tel.Replace(" ", ""), "Teléfono", 13))
+            if (!Utils.Validator.isValidNum(newClient.Tel.Replace(" ", ""), "Teléfono", 13))
             {
                 textBoxTel.Focus();
                 return;
+            }
+
+            ClientRepository clientRepository = new ClientRepository();
+
+            if (clientRepository.CreateClient(newClient))
+            {
+                MessageBox.Show($"Cliente {newClient.Name} {newClient.Surname} creado correctamente.", "Cliente Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SellerForm dashboard = this.ParentForm as SellerForm;
+                dashboard.LoadClientController();
             }
 
 

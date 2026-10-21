@@ -138,7 +138,7 @@
             this.labelInactiveProducts.AutoSize = true;
             this.labelInactiveProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelInactiveProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelInactiveProducts.Location = new System.Drawing.Point(108, 51);
+            this.labelInactiveProducts.Location = new System.Drawing.Point(86, 51);
             this.labelInactiveProducts.Name = "labelInactiveProducts";
             this.labelInactiveProducts.Size = new System.Drawing.Size(30, 36);
             this.labelInactiveProducts.TabIndex = 6;
@@ -179,7 +179,7 @@
             this.labelActiveProducts.AutoSize = true;
             this.labelActiveProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelActiveProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelActiveProducts.Location = new System.Drawing.Point(110, 51);
+            this.labelActiveProducts.Location = new System.Drawing.Point(86, 51);
             this.labelActiveProducts.Name = "labelActiveProducts";
             this.labelActiveProducts.Size = new System.Drawing.Size(30, 36);
             this.labelActiveProducts.TabIndex = 4;
@@ -256,7 +256,7 @@
             this.labelCountProducts.AutoSize = true;
             this.labelCountProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelCountProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelCountProducts.Location = new System.Drawing.Point(110, 51);
+            this.labelCountProducts.Location = new System.Drawing.Point(86, 51);
             this.labelCountProducts.Name = "labelCountProducts";
             this.labelCountProducts.Size = new System.Drawing.Size(30, 36);
             this.labelCountProducts.TabIndex = 1;
@@ -290,7 +290,7 @@
             this.dataGridViewProducts.EnableHeadersVisualStyles = false;
             this.dataGridViewProducts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridViewProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridViewProducts.Location = new System.Drawing.Point(71, 347);
+            this.dataGridViewProducts.Location = new System.Drawing.Point(71, 346);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.ReadOnly = true;
             this.dataGridViewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -558,7 +558,6 @@
         private System.Windows.Forms.Label label13;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label labelCountProducts;
-        private ReaLTaiizor.Controls.PoisonDataGridView dataGridViewProducts;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -570,5 +569,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private ReaLTaiizor.Controls.CyberButton buttonDelete;
+        public ReaLTaiizor.Controls.PoisonDataGridView dataGridViewProducts;
     }
 }

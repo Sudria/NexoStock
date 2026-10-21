@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NexoStock.Class
+{
+    public class ClientClass
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        public string Dni { get; set; }
+
+        public string Email { get; set; }
+
+        public string Tel { get; set; }
+
+        public bool State { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+
+
+        public String FullNameAndDni
+        {
+            get { return $"{Name} {Surname} - {Dni}"; }
+        }
+
+        public String FullName
+        {
+            get { return $"{Name} {Surname}"; }
+        }
+    }
+}

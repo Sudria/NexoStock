@@ -158,6 +158,7 @@
   <ItemGroup>
     <Compile Include="Class\BrandClass.cs" />
     <Compile Include="Class\CategoryClass.cs" />
+    <Compile Include="Class\ClientClass.cs" />
     <Compile Include="Class\ProductClass.cs" />
     <Compile Include="Class\ProductMovementClass.cs" />
     <Compile Include="Class\ProviderClass.cs" />
@@ -395,6 +396,7 @@
     </Compile>
     <Compile Include="Services\BrandRepository.cs" />
     <Compile Include="Services\CategoryRepository.cs" />
+    <Compile Include="Services\ClientRepository.cs" />
     <Compile Include="Services\ProductMovementRepository.cs" />
     <Compile Include="Services\ProductRepository.cs" />
     <Compile Include="Services\ProviderRepository.cs" />
