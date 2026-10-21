@@ -33,5 +33,10 @@ namespace NexoStock.Class
         {
             get { return $"{Name} {Surname}"; }
         }
+
+        public String StateText
+        {
+            get { return State ? "Activo" : "Inactivo"; }
+        }
     }
 }

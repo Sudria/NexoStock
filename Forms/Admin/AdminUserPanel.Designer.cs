@@ -154,7 +154,7 @@
             this.txtUser.TabIndex = 4;
             this.txtUser.TabStop = false;
             this.txtUser.UseSystemPasswordChar = false;
-            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // comboBoxRol
             // 

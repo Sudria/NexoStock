@@ -44,6 +44,7 @@ namespace NexoStock.Forms.Seller
                 Dni = textBoxDni.Text,
                 Email = textBoxEmail.Text,
                 Tel = textBoxTel.Text,
+                State = activeCheckBox.Checked
             };
 
             if (!Utils.Validator.isValidText(newClient.Name, "Nombre"))

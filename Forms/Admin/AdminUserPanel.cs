@@ -149,20 +149,7 @@ namespace NexoStock.Forms.Admin
             }
         }
 
-        private void txtUser_KeyDown(object sender, KeyEventArgs e)
-        {
-            dataGridViewUsers.Rows.Clear();
-            foreach (var user in users.Where(u => u.Username.ToLower().Contains(txtUser.Text.ToLower()) ||
-            u.Name.ToLower().Contains(txtUser.Text.ToLower()) ||
-            u.Surname.ToLower().Contains(txtUser.Text.ToLower()) ||
-            u.Email.ToLower().Contains(txtUser.Text.ToLower()) ||
-            u.Dni.Contains(txtUser.Text)
-            ))
 
-            {
-                dataGridViewUsers.Rows.Add(user.Id, user.Dni, user.Username, user.Name, user.Surname, user.Email, user.Rol, user.State ? "Activo" : "Inactivo", user.Password, user.CreatedDate);
-            }
-        }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -216,6 +203,19 @@ namespace NexoStock.Forms.Admin
             buttonStyles();
         }
 
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewUsers.Rows.Clear();
+            foreach (var user in users.Where(u => u.Username.ToLower().Contains(txtUser.Text.ToLower()) ||
+            u.Name.ToLower().Contains(txtUser.Text.ToLower()) ||
+            u.Surname.ToLower().Contains(txtUser.Text.ToLower()) ||
+            u.Email.ToLower().Contains(txtUser.Text.ToLower()) ||
+            u.Dni.Contains(txtUser.Text)
+            ))
 
+            {
+                dataGridViewUsers.Rows.Add(user.Id, user.Dni, user.Username, user.Name, user.Surname, user.Email, user.Rol, user.State ? "Activo" : "Inactivo", user.Password, user.CreatedDate);
+            }
+        }
     }
 }

@@ -113,6 +113,11 @@ namespace NexoStock.Forms.Seller
             panelContent.Controls.Add(new SellerNewClientPanel());
         }
 
+        public void LoadUpdateClientControler(ClientClass client)
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new SellerUpdateClientPanel(client));
+        }
         public void LoadNewSaleControler()
         {
             panelContent.Controls.Clear();

@@ -211,13 +211,19 @@ namespace NexoStock.Forms.Admin
             dataGridViewProducts.DataSource = datosFiltrados;
         }
 
-        private void txtProductName_KeyDown(object sender, KeyEventArgs e)
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProduct_TextChanged(object sender, EventArgs e)
         {
             var filteredProducts = products.Where(p =>
-     p.Name.ToLower().Contains(txtProduct.Text.ToLower()) ||
-     p.Cod.ToLower().Contains(txtProduct.Text.ToLower()) ||
-     p.Description.ToLower().Contains(txtProduct.Text.ToLower())
- ).ToList();
+            p.Name.ToLower().Contains(txtProduct.Text.ToLower()) ||
+            p.Cod.ToLower().Contains(txtProduct.Text.ToLower()) ||
+            p.Description.ToLower().Contains(txtProduct.Text.ToLower())
+            ).ToList();
 
             dataGridViewProducts.DataSource = filteredProducts;
         }

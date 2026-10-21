@@ -143,7 +143,8 @@ namespace NexoStock.Services
                     Surname = @Surname,
                     Dni = @Dni,
                     Email = @Email,
-                    Tel = @Tel
+                    Tel = @Tel,
+                    State = @State
                 WHERE Id = @Id;";
 
             try
@@ -155,7 +156,8 @@ namespace NexoStock.Services
                     new MySqlParameter("@Dni", client.Dni),
                     new MySqlParameter("@Email", client.Email),
                     new MySqlParameter("@Tel", client.Tel),
-                    new MySqlParameter("@Id", client.Id)
+                    new MySqlParameter("@Id", client.Id),
+                    new MySqlParameter("@State", client.State)
                 );
 
                 return rowsAffected > 0;

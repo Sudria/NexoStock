@@ -297,6 +297,12 @@
     <Compile Include="Forms\Seller\SellerHomePanel.Designer.cs">
       <DependentUpon>SellerHomePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Seller\SellerUpdateClientPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerUpdateClientPanel.Designer.cs">
+      <DependentUpon>SellerUpdateClientPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Seller\SellerNewClientPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seller\SellerHomePanel.resx">
       <DependentUpon>SellerHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerUpdateClientPanel.resx">
+      <DependentUpon>SellerUpdateClientPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seller\SellerNewClientPanel.resx">
       <DependentUpon>SellerNewClientPanel.cs</DependentUpon>

@@ -34,15 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonNewClient = new ReaLTaiizor.Controls.CyberButton();
-            this.txtUser = new ReaLTaiizor.Controls.HopeTextBox();
+            this.txtClient = new ReaLTaiizor.Controls.HopeTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.dataGridClients = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -112,28 +112,29 @@
             this.buttonNewClient.Timer_RGB = 1;
             this.buttonNewClient.Click += new System.EventHandler(this.buttonNewClient_Click);
             // 
-            // txtUser
+            // txtClient
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.txtUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.txtUser.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.txtUser.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Hint = "Buscar por nombre o email";
-            this.txtUser.Location = new System.Drawing.Point(71, 291);
-            this.txtUser.MaxLength = 32767;
-            this.txtUser.Multiline = false;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.PasswordChar = '\0';
-            this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUser.SelectedText = "";
-            this.txtUser.SelectionLength = 0;
-            this.txtUser.SelectionStart = 0;
-            this.txtUser.Size = new System.Drawing.Size(560, 38);
-            this.txtUser.TabIndex = 4;
-            this.txtUser.TabStop = false;
-            this.txtUser.UseSystemPasswordChar = false;
+            this.txtClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.txtClient.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtClient.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.txtClient.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.txtClient.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtClient.ForeColor = System.Drawing.Color.White;
+            this.txtClient.Hint = "Buscar por nombre o email";
+            this.txtClient.Location = new System.Drawing.Point(71, 291);
+            this.txtClient.MaxLength = 32767;
+            this.txtClient.Multiline = false;
+            this.txtClient.Name = "txtClient";
+            this.txtClient.PasswordChar = '\0';
+            this.txtClient.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtClient.SelectedText = "";
+            this.txtClient.SelectionLength = 0;
+            this.txtClient.SelectionStart = 0;
+            this.txtClient.Size = new System.Drawing.Size(560, 38);
+            this.txtClient.TabIndex = 4;
+            this.txtClient.TabStop = false;
+            this.txtClient.UseSystemPasswordChar = false;
+            this.txtClient.TextChanged += new System.EventHandler(this.txtSearchClient_TextChanged);
             // 
             // label6
             // 
@@ -146,13 +147,13 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Clientes";
             // 
-            // poisonDataGridView1
+            // dataGridClients
             // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridClients.AllowUserToResizeRows = false;
+            this.dataGridClients.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridClients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridClients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -160,8 +161,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -169,13 +170,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(71, 347);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridClients.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridClients.EnableHeadersVisualStyles = false;
+            this.dataGridClients.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridClients.Location = new System.Drawing.Point(71, 347);
+            this.dataGridClients.Name = "dataGridClients";
+            this.dataGridClients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -183,11 +184,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1015, 292);
-            this.poisonDataGridView1.TabIndex = 12;
+            this.dataGridClients.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridClients.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridClients.Size = new System.Drawing.Size(1015, 292);
+            this.dataGridClients.TabIndex = 12;
             // 
             // lostBorderPanel2
             // 
@@ -291,16 +292,16 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.lostBorderPanel2);
-            this.Controls.Add(this.poisonDataGridView1);
+            this.Controls.Add(this.dataGridClients);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtClient);
             this.Controls.Add(this.buttonNewClient);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "SellerClientPanel";
             this.Size = new System.Drawing.Size(1120, 662);
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
             this.lostBorderPanel2.ResumeLayout(false);
             this.lostBorderPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
@@ -314,9 +315,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private ReaLTaiizor.Controls.CyberButton buttonNewClient;
-        private ReaLTaiizor.Controls.HopeTextBox txtUser;
+        private ReaLTaiizor.Controls.HopeTextBox txtClient;
         private System.Windows.Forms.Label label6;
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridClients;
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label8;

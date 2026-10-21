@@ -43,6 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.activeCheckBox = new ReaLTaiizor.Controls.FoxCheckBox();
             this.SuspendLayout();
             // 
             // saveButton
@@ -302,11 +305,60 @@
             this.label8.TabIndex = 69;
             this.label8.Text = "CLIENTE ->";
             // 
+            // stateLabel
+            // 
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.stateLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.stateLabel.Location = new System.Drawing.Point(796, 256);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(68, 21);
+            this.stateLabel.TabIndex = 72;
+            this.stateLabel.Text = "ACTIVO";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(721, 229);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 21);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Estado";
+            // 
+            // activeCheckBox
+            // 
+            this.activeCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.activeCheckBox.Checked = true;
+            this.activeCheckBox.CheckedBorderColorA = System.Drawing.Color.Fuchsia;
+            this.activeCheckBox.CheckedBorderColorB = System.Drawing.Color.Fuchsia;
+            this.activeCheckBox.CheckedColor = System.Drawing.Color.Fuchsia;
+            this.activeCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.activeCheckBox.DisabledCheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.activeCheckBox.DisabledCheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.DisabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.DisabledUncheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.activeCheckBox.DisabledUncheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.DisabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.EnabledCalc = true;
+            this.activeCheckBox.Location = new System.Drawing.Point(725, 253);
+            this.activeCheckBox.Name = "activeCheckBox";
+            this.activeCheckBox.Size = new System.Drawing.Size(55, 28);
+            this.activeCheckBox.TabIndex = 70;
+            this.activeCheckBox.Text = "foxCheckBox1";
+            this.activeCheckBox.UncheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.UncheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.activeCheckBox.UncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            // 
             // SellerNewClientPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.stateLabel);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.activeCheckBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.exitButton);
@@ -346,5 +398,8 @@
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.HopeTextBox textBoxName;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.Label label15;
+        private ReaLTaiizor.Controls.FoxCheckBox activeCheckBox;
     }
 }
