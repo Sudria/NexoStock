@@ -1,4 +1,5 @@
 ﻿
+using NexoStock.Class;
 using NexoStock.Forms.Admin;
 using NexoStock.Forms.Manager;
 using NexoStock.Forms.Seller;
@@ -27,32 +28,36 @@ namespace NexoStock
         private void logginButton_Click(object sender, EventArgs e)
         {
             UserRepository userRepository = new UserRepository();
-            string userRole = userRepository.Login(txtUser.Text, txtPassword.Text);
-            if (userRole == "Administrador")
+            UserClass user = userRepository.Login(txtUser.Text, txtPassword.Text);
+
+
+            if (user.Rol == "Administrador")
             {
                 this.Hide();
                 AdminForm adminForm = new AdminForm();
                 adminForm.Show();
             }
-            else if (userRole == "Vendedor")
+            else if (user.Rol == "Vendedor")
             {
                 this.Hide();
-                SellerForm sellerForm = new SellerForm();
+                SellerForm sellerForm = new SellerForm(user);
                 sellerForm.Show();
             }
-            else if (userRole == "Repositor")
+            else if (user.Rol == "Repositor")
             {
                 this.Hide();
                 WarehouseForm warehouseForm = new WarehouseForm();
                 warehouseForm.Show();
             }
-            else if (userRole == "Encargado")
+            else if (user.Rol == "Encargado")
             {
                 this.Hide();
                 ManagerForm managerForm = new ManagerForm();
                 managerForm.Show();
             }
         }
+
+
         private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPass.Checked)

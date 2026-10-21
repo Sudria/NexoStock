@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NexoStock.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace NexoStock.Forms.Seller
 {
     public partial class SellerSalesPanel : UserControl
     {
-        public SellerSalesPanel()
+        UserClass user;
+        public SellerSalesPanel(UserClass user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void buttonNewSale_Click(object sender, EventArgs e)

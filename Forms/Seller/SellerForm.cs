@@ -1,4 +1,6 @@
-﻿using NexoStock.Forms.Admin;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using NexoStock.Class;
+using NexoStock.Forms.Admin;
 using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,12 @@ namespace NexoStock.Forms.Seller
     public partial class SellerForm : Form
     {
         CyberButton activedButton = new CyberButton();
+        UserClass user;
 
-        public SellerForm()
+        public SellerForm(UserClass user)
         {
             InitializeComponent();
+            this.user = user;
             activedButton = buttonHome;
             activeButton(activedButton);
             LoadHomeControler();
@@ -49,7 +53,7 @@ namespace NexoStock.Forms.Seller
             innactiveButton(activedButton);
             activedButton = buttonSells;
             activeButton(activedButton);
-            LoadSalesControler();
+            LoadSalesControler(this.user);
         }
 
         private void buttonClients_Click(object sender, EventArgs e)
@@ -90,10 +94,10 @@ namespace NexoStock.Forms.Seller
             panelContent.Controls.Add(new SellerProductPanel());
         }
 
-        public void LoadSalesControler()
+        public void LoadSalesControler(UserClass user)
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new SellerSalesPanel());
+            panelContent.Controls.Add(new SellerSalesPanel(user));
         }
 
         public void LoadClientController()
@@ -112,7 +116,7 @@ namespace NexoStock.Forms.Seller
         public void LoadNewSaleControler()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new SellerNewSellPanel());
+            panelContent.Controls.Add(new SellerNewSellPanel(this.user));
         }
         //COMPORTAMIENTO DE BOTONES
 

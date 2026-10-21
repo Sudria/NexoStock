@@ -17,7 +17,7 @@ namespace NexoStock
         static void Main()
         {
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Seller.SellerForm());
+            Application.Run(new Login());
         }
     }
 }

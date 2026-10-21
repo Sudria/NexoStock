@@ -1,4 +1,5 @@
-﻿using NexoStock.Class;
+﻿using MySqlX.XDevAPI;
+using NexoStock.Class;
 using NexoStock.Services;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,17 @@ using System.Xml.Linq;
 
 namespace NexoStock.Forms.Seller
 {
+   
     public partial class SellerNewSellPanel : UserControl
     {
+
+        UserClass user = new UserClass();
         private List<ClientClass> clients = new List<ClientClass>();
         private List<ProductClass> products = new List<ProductClass>();
-        public SellerNewSellPanel()
+        public SellerNewSellPanel(UserClass user)
         {
             InitializeComponent();
+            this.user = user;
             LoadClients();
             LoadProducts();
             InitializeGridSell();
@@ -28,12 +33,13 @@ namespace NexoStock.Forms.Seller
         private void exitButton_Click(object sender, EventArgs e)
         {
             SellerForm dashboard = this.ParentForm as SellerForm;
-            dashboard.LoadSalesControler();
+            dashboard.LoadSalesControler(this.user);
         }
 
         private void LoadClients()
         {
             ClientRepository clientRepository = new ClientRepository();
+
             clients = clientRepository.GetAllClients();
 
             comboBoxDni.DataSource = null;
@@ -41,9 +47,11 @@ namespace NexoStock.Forms.Seller
             comboBoxDni.ValueMember = "Id";
             comboBoxDni.DataSource = clients;
 
-            comboBoxDni.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxDni.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBoxDni.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxDni.SelectedIndex = -1; // No seleccionar ningún cliente al inicio
+            txtName.Text = "";
+            txtSurname.Text = "";
+            txtEmail.Text = "";
+            txtTel.Text = "";
         }
 
         private void comboBoxDni_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace NexoStock.Forms.Seller
             ProductRepository productRepository = new ProductRepository();
 
             products = productRepository.GetAllProducts()
-                .Where(p => p.Stock > 1 && p.State == true)
+                .Where(p => p.Stock > 0 && p.State == true)
                 .ToList();
 
             comboBoxProduct.DataSource = null;
@@ -207,6 +215,56 @@ namespace NexoStock.Forms.Seller
         }
 
 
+
+        private void buttonRemoveProduct_Click(object sender, EventArgs e)
+        {
+            if (dataGridSell.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccioná un producto del carrito.");
+                return;
+            }
+
+            DataGridViewRow fila = dataGridSell.SelectedRows[0];
+
+            int productId = Convert.ToInt32(fila.Cells["ProductId"].Value);
+            int cantidad = Convert.ToInt32(fila.Cells["Quantity"].Value);
+
+            // Buscar el producto original en la lista cargada
+            ProductClass product = products.FirstOrDefault(p => p.Id == productId);
+
+            if (product != null)
+            {
+                // Devolver la cantidad al stock temporal
+                product.Stock += cantidad;
+            }
+
+            // Eliminar el producto del carrito
+            dataGridSell.Rows.Remove(fila);
+
+            // Actualizar el total
+            CalcularTotal();
+
+            // Actualizar el ComboBox y el stock disponible
+            comboBoxProduct.Refresh();
+
+            if (product != null)
+            {
+                comboBoxProduct.SelectedItem = product;
+
+                numericCount.Enabled = true;
+                numericCount.MinNum = 1;
+                numericCount.MaxNum = product.Stock;
+                numericCount.ValueNumber = 1;
+
+                txtStockDisp.Text = product.Stock.ToString();
+            }
+        }
+
+
+
+
+
+
+
     }
-    
 }
