@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySqlX.XDevAPI;
 using NexoStock.Class;
 using NexoStock.Services;
 using System;
@@ -14,7 +15,7 @@ using System.Xml.Linq;
 
 namespace NexoStock.Forms.Seller
 {
-   
+
     public partial class SellerNewSellPanel : UserControl
     {
 
@@ -40,7 +41,7 @@ namespace NexoStock.Forms.Seller
         {
             ClientRepository clientRepository = new ClientRepository();
 
-            clients = clientRepository.GetAllClients();
+            clients = clientRepository.GetActiveClients();
 
             comboBoxDni.DataSource = null;
             comboBoxDni.DisplayMember = "Dni";
@@ -78,9 +79,7 @@ namespace NexoStock.Forms.Seller
             comboBoxProduct.ValueMember = "Id";
             comboBoxProduct.DataSource = products;
 
-            comboBoxProduct.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxProduct.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBoxProduct.AutoCompleteSource = AutoCompleteSource.ListItems;
+     
         }
 
         private void comboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -266,11 +265,91 @@ namespace NexoStock.Forms.Seller
             }
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (user == null)
+            {
+                MessageBox.Show("No se pudo identificar al usuario.");
+                return;
+            }
 
+            // Validar cliente seleccionado
+            ClientClass client = comboBoxDni.SelectedItem as ClientClass;
 
+            if (client == null)
+            {
+                MessageBox.Show("Seleccioná un cliente.");
+                return;
+            }
 
+            // Validar que haya productos
+            List<SaleDetail> details = new List<SaleDetail>();
+            decimal total = 0;
 
+            foreach (DataGridViewRow row in dataGridSell.Rows)
+            {
+                if (row.IsNewRow)
+                    continue;
 
+                int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                decimal unitPrice = Convert.ToDecimal(row.Cells["Price"].Value);
 
+                if (quantity <= 0 || unitPrice < 0)
+                {
+                    MessageBox.Show("Hay productos con cantidades o precios inválidos.");
+                    return;
+                }
+
+                SaleDetail detail = new SaleDetail
+                {
+                    ProductId = productId,
+                    Quantity = quantity,
+                    UnitPrice = unitPrice
+                };
+
+                details.Add(detail);
+                total += quantity * unitPrice;
+            }
+
+            if (details.Count == 0)
+            {
+                MessageBox.Show("Agregá al menos un producto a la venta.");
+                return;
+            }
+
+            // Crear la venta
+            Sale sale = new Sale
+            {
+                UserId = user.Id,
+                ClientId = client.Id,
+                Total = total
+            };
+
+            // Registrar la venta
+            SaleRepository saleRepository = new SaleRepository();
+            int saleId;
+
+            bool success = saleRepository.CreateCompleteSale(
+                sale,
+                details,
+                out saleId
+            );
+
+            if (success)
+            {
+                MessageBox.Show(
+                    "Venta registrada correctamente. Número de venta: " + saleId,
+                    "Venta exitosa",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                dataGridSell.Rows.Clear();
+                txtTotal.Text = 0m.ToString("C2");
+
+                LoadProducts();
+            }
+        }
     }
 }

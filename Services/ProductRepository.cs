@@ -221,5 +221,43 @@ namespace NexoStock.Services
 
             return rowsAffected > 0;
         }
+
+        public List<ProductClass> GetActiveProducts()
+        {
+            List<ProductClass> products = new List<ProductClass>();
+
+            string query = @"
+        SELECT Id, Name, Cod, SalePrice, Stock, State
+        FROM products
+        WHERE State = 1
+          AND Stock > 0
+        ORDER BY Name;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(query))
+                {
+                    while (reader.Read())
+                    {
+                        products.Add(new ProductClass
+                        {
+                            Id = reader.GetInt32("Id"),
+                            Name = reader.GetString("Name"),
+                            Cod = reader.GetString("Cod"),
+                            SalePrice = reader.GetDecimal("SalePrice"),
+                            Stock = reader.GetInt32("Stock"),
+                            State = reader.GetBoolean("State")
+                        });
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al cargar productos: " + ex.Message);
+            }
+
+            return products;
+        }
     }
 }

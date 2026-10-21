@@ -291,6 +291,12 @@
     <Compile Include="Forms\Manager\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Seller\SellerSellDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Seller\SellerSellDetail.Designer.cs">
+      <DependentUpon>SellerSellDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Seller\SellerHomePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -479,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Manager\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Seller\SellerSellDetail.resx">
+      <DependentUpon>SellerSellDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seller\SellerHomePanel.resx">
       <DependentUpon>SellerHomePanel.cs</DependentUpon>

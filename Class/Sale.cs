@@ -15,6 +15,7 @@ namespace NexoStock.Class
 
         public DateTime SaleDate { get; set; }
 
+        public int ClientId { get; set; }
         public decimal Total { get; set; }
 
         public bool State { get; set; } = true;

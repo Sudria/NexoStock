@@ -4,6 +4,7 @@ using NexoStock.Class;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace NexoStock.Services
@@ -131,6 +132,45 @@ namespace NexoStock.Services
 
                 return false;
             }
+        }
+
+
+        public DataTable GetSaleDetailsTable(int saleId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            p.Name AS 'Producto',
+            sd.Quantity AS 'Cantidad',
+            sd.UnitPrice AS 'Precio unitario',
+            sd.Subtotal AS 'Subtotal'
+        FROM sale_details sd
+        INNER JOIN products p ON sd.ProductId = p.Id
+        WHERE sd.SaleId = @SaleId
+        ORDER BY sd.Id;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@SaleId", saleId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar los detalles: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
         }
     }
 }

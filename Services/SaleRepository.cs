@@ -4,6 +4,7 @@ using NexoStock.Class;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace NexoStock.Services
@@ -172,6 +173,168 @@ namespace NexoStock.Services
                 );
 
                 return false;
+            }
+        }
+
+
+
+        public DataTable GetSalesByUserId(int userId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+    SELECT
+        s.Id AS 'N° Venta',
+        s.SaleDate AS 'Fecha',
+        c.Name AS 'Nombre',
+        c.Surname AS 'Apellido',
+        c.Dni AS 'DNI Cliente',
+        s.Total AS 'Total',
+        s.ClientId AS ClientId
+    FROM sales s
+    INNER JOIN clients c ON s.ClientId = c.Id
+    WHERE s.UserId = @UserId
+    ORDER BY s.SaleDate DESC;
+";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@UserId", userId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar las ventas: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        public bool CreateCompleteSale(Sale sale, List<SaleDetail> details, out int saleId)
+        {
+            saleId = 0;
+
+            if (sale == null || details == null || details.Count == 0)
+            {
+                MessageBox.Show("La venta debe tener al menos un producto.");
+                return false;
+            }
+
+            using (MySqlConnection connection = connectionDB.GetConnection())
+            using (MySqlTransaction transaction = connection.BeginTransaction())
+            {
+                try
+                {
+                    // 1. Registrar la venta
+                    string saleQuery = @"
+                INSERT INTO sales (UserId, ClientId, Total)
+                VALUES (@UserId, @ClientId, @Total);
+            ";
+
+                    using (MySqlCommand command =
+                        new MySqlCommand(saleQuery, connection, transaction))
+                    {
+                        command.Parameters.AddWithValue("@UserId", sale.UserId);
+                        command.Parameters.AddWithValue("@ClientId", sale.ClientId);
+                        command.Parameters.AddWithValue("@Total", sale.Total);
+
+                        command.ExecuteNonQuery();
+                        saleId = Convert.ToInt32(command.LastInsertedId);
+                    }
+
+                    // 2. Registrar cada producto y descontar el stock
+                    foreach (SaleDetail detail in details)
+                    {
+                        if (detail.Quantity <= 0 || detail.UnitPrice < 0)
+                        {
+                            throw new Exception("La cantidad o el precio no son válidos.");
+                        }
+
+                        string stockQuery = @"
+                    UPDATE products
+                    SET Stock = Stock - @Quantity
+                    WHERE Id = @ProductId
+                      AND Stock >= @Quantity
+                      AND State = 1;
+                ";
+
+                        using (MySqlCommand command =
+                            new MySqlCommand(stockQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@Quantity", detail.Quantity);
+                            command.Parameters.AddWithValue("@ProductId", detail.ProductId);
+
+                            if (command.ExecuteNonQuery() != 1)
+                            {
+                                throw new Exception(
+                                    "Stock insuficiente o producto inactivo. ID: "
+                                    + detail.ProductId);
+                            }
+                        }
+
+                        string detailQuery = @"
+                    INSERT INTO sale_details
+                        (SaleId, ProductId, Quantity, UnitPrice)
+                    VALUES
+                        (@SaleId, @ProductId, @Quantity, @UnitPrice);
+                ";
+
+                        using (MySqlCommand command =
+                            new MySqlCommand(detailQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@SaleId", saleId);
+                            command.Parameters.AddWithValue("@ProductId", detail.ProductId);
+                            command.Parameters.AddWithValue("@Quantity", detail.Quantity);
+                            command.Parameters.AddWithValue("@UnitPrice", detail.UnitPrice);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    transaction.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+                        // La transacción pudo haberse cerrado por un error de conexión.
+                    }
+
+                    saleId = 0;
+
+                    MessageBox.Show(
+                        "No se pudo registrar la venta: " + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+                    return false;
+                }
             }
         }
     }

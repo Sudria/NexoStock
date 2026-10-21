@@ -234,5 +234,43 @@ namespace NexoStock.Services
                 return false;
             }
         }
+
+        public List<ClientClass> GetActiveClients()
+        {
+            List<ClientClass> clients = new List<ClientClass>();
+
+            string query = @"
+        SELECT Id, Name, Surname, Dni, Email, Tel, State
+        FROM clients
+        WHERE State = 1
+        ORDER BY Surname, Name;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(query))
+                {
+                    while (reader.Read())
+                    {
+                        clients.Add(new ClientClass
+                        {
+                            Id = reader.GetInt32("Id"),
+                            Name = reader.GetString("Name"),
+                            Surname = reader.GetString("Surname"),
+                            Dni = reader.GetString("Dni"),
+                            Email = reader.GetString("Email"),
+                            Tel = reader.GetString("Tel"),
+                            State = reader.GetBoolean("State")
+                        });
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al cargar clientes: " + ex.Message);
+            }
+
+            return clients;
+        }
     }
 }
