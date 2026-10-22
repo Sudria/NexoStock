@@ -92,15 +92,19 @@ CREATE TABLE `products` (
 CREATE TABLE sales (
     Id INT NOT NULL AUTO_INCREMENT,
     UserId INT NOT NULL,
+    ClientId INT NOT NULL,
     SaleDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Total DECIMAL(13,2) NOT NULL DEFAULT 0,
-    State TINYINT(1) NOT NULL DEFAULT 1,
 
     PRIMARY KEY (Id),
 
     CONSTRAINT fk_sales_users
         FOREIGN KEY (UserId)
-        REFERENCES users(Id)
+        REFERENCES users(Id),
+
+    CONSTRAINT fk_sales_clients
+        FOREIGN KEY (ClientId)
+        REFERENCES clients(Id)
 );
 
 
@@ -198,6 +202,21 @@ CREATE TABLE product_movements (
         CHECK (Type IN ('Venta', 'Compra', 'Ajuste'))
 );
 
+CREATE TABLE clients (
+	`Id` INT NOT NULL AUTO_INCREMENT,
+	`Name` VARCHAR(50) NOT NULL,
+	`Surname`    VARCHAR(50)  NOT NULL,
+	`Dni`        VARCHAR(15)  NOT NULL,
+	`Email`      VARCHAR(100)  NOT NULL,
+    `Tel`        VARCHAR(13)  NOT NULL,
+	`State`      TINYINT(1) DEFAULT TRUE ,
+	`CreatedDate` DATETIME DEFAULT NOW(),
+
+
+PRIMARY KEY (`Id`),
+UNIQUE KEY `Dni` (`Dni`),
+UNIQUE KEY `Email` (`Email`)
+);
 
 
 
@@ -332,7 +351,23 @@ VALUES
 
 ('Kingston Fury 16GB', 'RAMKF16DDR4', 'Memoria RAM Kingston Fury de 16GB DDR4 3200MHz', 59999.99, 20, 5, TRUE, 9, 4, 5);
 
-SELECT * FROM providers;
+
+INSERT INTO clients
+    (`Name`, `Surname`, `Dni`, `Email`, `Tel`, `State`, `CreatedDate`)
+VALUES
+    ('Juan', 'Perez', '30123456', 'juan.perez@example.com', '3794001001', 1, '2026-01-15 10:30:00'),
+    ('Maria', 'Gomez', '32456789', 'maria.gomez@example.com', '3794001002', 1, '2026-02-10 11:15:00'),
+    ('Carlos', 'Rodriguez', '28765432', 'carlos.rodriguez@example.com', '3794001003', 1, '2026-03-05 09:00:00'),
+    ('Lucia', 'Fernandez', '35678901', 'lucia.fernandez@example.com', '3794001004', 0, '2026-03-20 14:45:00'),
+    ('Martin', 'Lopez', '29876543', 'martin.lopez@example.com', '3794001005', 1, '2026-04-12 16:20:00'),
+    ('Sofia', 'Martinez', '36789012', 'sofia.martinez@example.com', '3794001006', 1, '2026-05-08 12:00:00'),
+    ('Diego', 'Gonzalez', '31234567', 'diego.gonzalez@example.com', '3794001007', 0, '2026-06-17 08:30:00'),
+    ('Valentina', 'Diaz', '38901234', 'valentina.diaz@example.com', '3794001008', 1, '2026-07-03 13:10:00'),
+    ('Federico', 'Torres', '33456789', 'federico.torres@example.com', '3794001009', 1, '2026-08-22 15:00:00'),
+    ('Camila', 'Ramirez', '37890123', 'camila.ramirez@example.com', '3794001010', 0, '2026-09-14 10:00:00');
+
+
+SELECT * FROM clients;
 
 SELECT 
     p.Name AS Producto,

@@ -30,6 +30,11 @@ namespace NexoStock
             UserRepository userRepository = new UserRepository();
             UserClass user = userRepository.Login(txtUser.Text, txtPassword.Text);
 
+            if(user.State == false)
+            {
+                MessageBox.Show("Usuario inactivo, contacte con el administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (user.Rol == "Administrador")
             {
