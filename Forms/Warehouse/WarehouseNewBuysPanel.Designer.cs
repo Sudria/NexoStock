@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridPurchaseDetails = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.buttonRemove = new ReaLTaiizor.Controls.ParrotButton();
             this.buttonAddProduct = new ReaLTaiizor.Controls.ParrotButton();
-            this.saveButton = new ReaLTaiizor.Controls.ParrotButton();
+            this.buttonSave = new ReaLTaiizor.Controls.ParrotButton();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxTotal = new ReaLTaiizor.Controls.HopeTextBox();
@@ -66,37 +66,37 @@
             this.dataGridPurchaseDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridPurchaseDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridPurchaseDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridPurchaseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridPurchaseDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridPurchaseDetails.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridPurchaseDetails.EnableHeadersVisualStyles = false;
             this.dataGridPurchaseDetails.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridPurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridPurchaseDetails.Location = new System.Drawing.Point(27, 325);
             this.dataGridPurchaseDetails.Name = "dataGridPurchaseDetails";
             this.dataGridPurchaseDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPurchaseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridPurchaseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridPurchaseDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridPurchaseDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPurchaseDetails.Size = new System.Drawing.Size(1068, 260);
@@ -386,31 +386,31 @@
             this.buttonAddProduct.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
-            // saveButton
+            // buttonSave
             // 
-            this.saveButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(168)))));
-            this.saveButton.ButtonImage = null;
-            this.saveButton.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.saveButton.ButtonText = "Guardar";
-            this.saveButton.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(135)))));
-            this.saveButton.ClickTextColor = System.Drawing.Color.White;
-            this.saveButton.CornerRadius = 4;
-            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.saveButton.HoverBackgroundColor = System.Drawing.Color.Fuchsia;
-            this.saveButton.HoverTextColor = System.Drawing.Color.White;
-            this.saveButton.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.saveButton.Location = new System.Drawing.Point(976, 609);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(119, 37);
-            this.saveButton.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.saveButton.TabIndex = 106;
-            this.saveButton.TextColor = System.Drawing.Color.White;
-            this.saveButton.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.saveButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.buttonSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(168)))));
+            this.buttonSave.ButtonImage = null;
+            this.buttonSave.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.buttonSave.ButtonText = "Guardar";
+            this.buttonSave.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(135)))));
+            this.buttonSave.ClickTextColor = System.Drawing.Color.White;
+            this.buttonSave.CornerRadius = 4;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonSave.HoverBackgroundColor = System.Drawing.Color.Fuchsia;
+            this.buttonSave.HoverTextColor = System.Drawing.Color.White;
+            this.buttonSave.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.buttonSave.Location = new System.Drawing.Point(976, 609);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(119, 37);
+            this.buttonSave.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.buttonSave.TabIndex = 106;
+            this.buttonSave.TextColor = System.Drawing.Color.White;
+            this.buttonSave.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonSave.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // exitButton
             // 
@@ -519,7 +519,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxTotal);
-            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.buttonAddProduct);
@@ -566,7 +566,7 @@
         private System.Windows.Forms.Label label7;
         private ReaLTaiizor.Controls.ParrotButton buttonRemove;
         private ReaLTaiizor.Controls.ParrotButton buttonAddProduct;
-        private ReaLTaiizor.Controls.ParrotButton saveButton;
+        private ReaLTaiizor.Controls.ParrotButton buttonSave;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
         private System.Windows.Forms.Label label13;
         private ReaLTaiizor.Controls.HopeTextBox textBoxTotal;

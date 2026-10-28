@@ -162,6 +162,7 @@
     <Compile Include="Class\ProductClass.cs" />
     <Compile Include="Class\ProductMovementClass.cs" />
     <Compile Include="Class\ProviderClass.cs" />
+    <Compile Include="Class\PurchaseClass.cs" />
     <Compile Include="Class\Sale.cs" />
     <Compile Include="Class\SaleDetail.cs" />
     <Compile Include="Class\UserClass.cs" />
@@ -418,6 +419,7 @@
     <Compile Include="Services\ProductMovementRepository.cs" />
     <Compile Include="Services\ProductRepository.cs" />
     <Compile Include="Services\ProviderRepository.cs" />
+    <Compile Include="Services\PurshaceRepository.cs" />
     <Compile Include="Services\SaleDetailRepository.cs" />
     <Compile Include="Services\SaleRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />

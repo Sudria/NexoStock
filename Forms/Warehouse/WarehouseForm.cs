@@ -1,4 +1,5 @@
-﻿using NexoStock.Class;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using NexoStock.Class;
 using NexoStock.Forms.Admin;
 using ReaLTaiizor.Controls;
 using System;
@@ -60,7 +61,7 @@ namespace NexoStock.Forms.Warehouse
             innactiveButton(activedButton);
             activedButton = buttonBuys;
             activeButton(activedButton);
-            LoadBuysControler();
+            LoadBuysControler(user);
         }
 
         private void buttonCategoryAndBrand_Click(object sender, EventArgs e)
@@ -106,10 +107,10 @@ namespace NexoStock.Forms.Warehouse
             panelContent.Controls.Add(new WarehouseProviderPanel());
         }
 
-        public void LoadBuysControler()
+        public void LoadBuysControler(UserClass user)
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new WarehouseBuysPanel());
+            panelContent.Controls.Add(new WarehouseBuysPanel(user));
         }
 
         public void LoadCategoryAndBrandControler()
@@ -118,10 +119,10 @@ namespace NexoStock.Forms.Warehouse
             panelContent.Controls.Add(new WarehouseCategoryAndBrandPanel());
         }
 
-        public void LoadNewBuyControler()
+        public void LoadNewBuyControler(UserClass user)
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new WarehouseNewBuysPanel());
+            panelContent.Controls.Add(new WarehouseNewBuysPanel(user));
         }
 
 

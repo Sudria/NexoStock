@@ -1,5 +1,8 @@
-﻿using NexoStock.Class;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
+using NexoStock.Class;
 using NexoStock.Services;
+using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +18,13 @@ namespace NexoStock.Forms.Warehouse
     public partial class WarehouseNewBuysPanel : UserControl
     {
         private int? selectedProviderId = null;
-        public WarehouseNewBuysPanel()
+        private UserClass user = new UserClass();
+        public WarehouseNewBuysPanel(UserClass user)
         {
             InitializeComponent();
             LoadComboBoxs();
             ConfigurePurchaseGrid();
+            this.user = user;
         }
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
@@ -131,12 +136,143 @@ namespace NexoStock.Forms.Warehouse
         private void exitButton_Click(object sender, EventArgs e)
         {
             WarehouseForm dashboard = this.ParentForm as WarehouseForm;
-            dashboard.LoadBuysControler();
+            dashboard.LoadBuysControler(user);
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (comboBoxProvider.SelectedIndex == -1 ||
+                comboBoxProvider.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione un proveedor.");
+                return;
+            }
 
+            if (dataGridPurchaseDetails.Rows.Count == 0)
+            {
+                MessageBox.Show("Agregue al menos un producto a la compra.");
+                return;
+            }
+
+            int providerId = Convert.ToInt32(comboBoxProvider.SelectedValue);
+
+            ConnectionDB connectionDB = new ConnectionDB();
+
+            using (MySqlConnection connection = connectionDB.GetConnection())
+            using (MySqlTransaction transaction = connection.BeginTransaction())
+            {
+                try
+                {
+                    decimal total = 0;
+
+                    foreach (DataGridViewRow row in dataGridPurchaseDetails.Rows)
+                    {
+                        total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
+                    }
+
+                    // 1. Registrar la cabecera de la compra
+                    string queryPurchase = @"
+                INSERT INTO purchases
+                    (ProviderId, UserId, PurchaseDate, Total)
+                VALUES
+                    (@ProviderId, @UserId, NOW(), @Total);
+            ";
+
+                    int purchaseId;
+
+                    using (MySqlCommand command = new MySqlCommand(
+                        queryPurchase, connection, transaction))
+                    {
+                        command.Parameters.AddWithValue("@ProviderId", providerId);
+                        command.Parameters.AddWithValue("@UserId", user.Id);
+                        command.Parameters.AddWithValue("@Total", total);
+
+                        command.ExecuteNonQuery();
+                        purchaseId = (int)command.LastInsertedId;
+                    }
+
+                    // 2. Registrar los detalles de la compra
+                    string queryDetail = @"
+                INSERT INTO purchase_details
+                    (PurchaseId, ProductId, Quantity, PurchasePrice)
+                VALUES
+                    (@PurchaseId, @ProductId, @Quantity, @PurchasePrice);
+            ";
+
+                    // 3. Actualizar el precio de venta del producto
+                    string queryUpdatePrice = @"
+                UPDATE products
+                SET SalePrice = @SalePrice
+                WHERE Id = @ProductId;
+            ";
+
+                    foreach (DataGridViewRow row in dataGridPurchaseDetails.Rows)
+                    {
+                        int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+                        int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                        decimal purchasePrice = Convert.ToDecimal(
+                            row.Cells["PurchasePrice"].Value);
+                        decimal salePrice = Convert.ToDecimal(
+                            row.Cells["SalePrice"].Value);
+
+                        using (MySqlCommand command = new MySqlCommand(
+                            queryDetail, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@PurchaseId", purchaseId);
+                            command.Parameters.AddWithValue("@ProductId", productId);
+                            command.Parameters.AddWithValue("@Quantity", quantity);
+                            command.Parameters.AddWithValue("@PurchasePrice", purchasePrice);
+
+                            command.ExecuteNonQuery();
+                        }
+
+                        using (MySqlCommand command = new MySqlCommand(
+                            queryUpdatePrice, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@SalePrice", salePrice);
+                            command.Parameters.AddWithValue("@ProductId", productId);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    transaction.Commit();
+
+                    MessageBox.Show(
+                        $"Compra registrada correctamente. N.º {purchaseId}",
+                        "Compra registrada",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    // Limpiar el formulario después de guardar
+                    dataGridPurchaseDetails.Rows.Clear();
+                    selectedProviderId = null;
+
+                    comboBoxProvider.Enabled = true;
+                    comboBoxProduct.DataSource = null;
+
+                    textBoxTotal.Clear();
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch
+                    {
+                        // La transacción podría ya estar finalizada.
+                    }
+
+                    MessageBox.Show(
+                        "Error al registrar la compra: " + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
         }
 
 
