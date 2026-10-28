@@ -17,6 +17,9 @@ namespace NexoStock.Forms.Warehouse
             InitializeComponent();
         }
 
+        private void buttonNewBuy_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

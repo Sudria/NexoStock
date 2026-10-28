@@ -32,8 +32,6 @@
             this.saveButton = new ReaLTaiizor.Controls.ParrotButton();
             this.activeCheckBox = new ReaLTaiizor.Controls.FoxCheckBox();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new ReaLTaiizor.Controls.HopeTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,9 +59,7 @@
             this.pictureBoxImage1 = new FontAwesome.Sharp.IconPictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.numericStockMin = new ReaLTaiizor.Controls.HopeNumeric();
-            this.numericStock = new ReaLTaiizor.Controls.HopeNumeric();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lostBorderPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage3)).BeginInit();
@@ -160,40 +156,6 @@
             this.exitButton.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.exitButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(23, 347);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 21);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "Precio de venta";
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxPrice.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxPrice.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxPrice.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxPrice.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxPrice.ForeColor = System.Drawing.Color.White;
-            this.textBoxPrice.Hint = "Precio de venta";
-            this.textBoxPrice.Location = new System.Drawing.Point(27, 371);
-            this.textBoxPrice.MaxLength = 32767;
-            this.textBoxPrice.Multiline = false;
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.PasswordChar = '\0';
-            this.textBoxPrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxPrice.SelectedText = "";
-            this.textBoxPrice.SelectionLength = 0;
-            this.textBoxPrice.SelectionStart = 0;
-            this.textBoxPrice.Size = new System.Drawing.Size(324, 38);
-            this.textBoxPrice.TabIndex = 54;
-            this.textBoxPrice.TabStop = false;
-            this.textBoxPrice.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -438,7 +400,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(387, 358);
+            this.label12.Location = new System.Drawing.Point(23, 366);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 21);
             this.label12.TabIndex = 72;
@@ -456,7 +418,7 @@
             this.comboBoxProvider.ForeColor = System.Drawing.Color.White;
             this.comboBoxProvider.FormattingEnabled = true;
             this.comboBoxProvider.ItemHeight = 21;
-            this.comboBoxProvider.Location = new System.Drawing.Point(391, 382);
+            this.comboBoxProvider.Location = new System.Drawing.Point(27, 390);
             this.comboBoxProvider.Name = "comboBoxProvider";
             this.comboBoxProvider.Size = new System.Drawing.Size(324, 27);
             this.comboBoxProvider.TabIndex = 73;
@@ -639,7 +601,7 @@
             this.numericStockMin.ForeColor = System.Drawing.Color.Black;
             this.numericStockMin.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.numericStockMin.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.numericStockMin.Location = new System.Drawing.Point(738, 450);
+            this.numericStockMin.Location = new System.Drawing.Point(391, 385);
             this.numericStockMin.MaxNum = 10F;
             this.numericStockMin.MinNum = 1F;
             this.numericStockMin.Name = "numericStockMin";
@@ -651,54 +613,16 @@
             this.numericStockMin.Text = "numCant";
             this.numericStockMin.ValueNumber = 1F;
             // 
-            // numericStock
-            // 
-            this.numericStock.BackColor = System.Drawing.Color.White;
-            this.numericStock.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.numericStock.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
-            this.numericStock.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
-            this.numericStock.BorderHoverColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.numericStock.ButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.numericStock.ButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
-            this.numericStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.numericStock.EnterKey = true;
-            this.numericStock.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.numericStock.ForeColor = System.Drawing.Color.Black;
-            this.numericStock.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.numericStock.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.numericStock.Location = new System.Drawing.Point(738, 382);
-            this.numericStock.MaxNum = 10F;
-            this.numericStock.MinNum = 1F;
-            this.numericStock.Name = "numericStock";
-            this.numericStock.Precision = 0;
-            this.numericStock.Size = new System.Drawing.Size(120, 32);
-            this.numericStock.Step = 1F;
-            this.numericStock.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
-            this.numericStock.TabIndex = 93;
-            this.numericStock.Text = "numCant";
-            this.numericStock.ValueNumber = 1F;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(734, 426);
+            this.label14.Location = new System.Drawing.Point(387, 361);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 21);
             this.label14.TabIndex = 92;
             this.label14.Text = "Stock min";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(734, 354);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 21);
-            this.label11.TabIndex = 91;
-            this.label11.Text = "Stock";
             // 
             // openFileDialog1
             // 
@@ -710,9 +634,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.Controls.Add(this.numericStockMin);
-            this.Controls.Add(this.numericStock);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.lostBorderPanel2);
             this.Controls.Add(this.lostBorderPanel1);
             this.Controls.Add(this.panelImage1);
@@ -730,8 +652,6 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.activeCheckBox);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -762,8 +682,6 @@
         private ReaLTaiizor.Controls.ParrotButton saveButton;
         private ReaLTaiizor.Controls.FoxCheckBox activeCheckBox;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
-        private System.Windows.Forms.Label label10;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxPrice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -791,9 +709,7 @@
         private FontAwesome.Sharp.IconPictureBox pictureBoxImage1;
         private System.Windows.Forms.Label label13;
         private ReaLTaiizor.Controls.HopeNumeric numericStockMin;
-        private ReaLTaiizor.Controls.HopeNumeric numericStock;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

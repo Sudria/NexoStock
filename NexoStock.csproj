@@ -345,6 +345,12 @@
     <Compile Include="Forms\Seller\SellerForm.Designer.cs">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewBuysPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseNewBuysPanel.Designer.cs">
+      <DependentUpon>WarehouseNewBuysPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Warehouse\WarehouseCategoryAndBrandPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -416,12 +422,6 @@
     <Compile Include="Services\SaleRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />
     <Compile Include="Utils\ConnectionDB.cs" />
-    <Compile Include="Tests.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tests.Designer.cs">
-      <DependentUpon>Tests.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utils\Validator.cs" />
     <EmbeddedResource Include="Forms\Admin\AdminHomePanel.resx">
       <DependentUpon>AdminHomePanel.cs</DependentUpon>
@@ -513,6 +513,9 @@
     <EmbeddedResource Include="Forms\Seller\SellerForm.resx">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseNewBuysPanel.resx">
+      <DependentUpon>WarehouseNewBuysPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse\WarehouseCategoryAndBrandPanel.resx">
       <DependentUpon>WarehouseCategoryAndBrandPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,9 +547,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tests.resx">
-      <DependentUpon>Tests.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,15 +54,15 @@
             this.labelCountClient = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lostBorderPanel5 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.chartSalesByDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lostBorderPanel6 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.chartCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lostBorderPanel7 = new ReaLTaiizor.Controls.LostBorderPanel();
+            this.dataGridLastSales = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.lostBorderPanel8 = new ReaLTaiizor.Controls.LostBorderPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.chartCategories = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartSalesByDay = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridLastSales = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.dataGridTopProducts = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.lostBorderPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.lostBorderPanel2.SuspendLayout();
@@ -70,12 +70,12 @@
             this.lostBorderPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.lostBorderPanel5.SuspendLayout();
-            this.lostBorderPanel6.SuspendLayout();
-            this.lostBorderPanel7.SuspendLayout();
-            this.lostBorderPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesByDay)).BeginInit();
+            this.lostBorderPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).BeginInit();
+            this.lostBorderPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLastSales)).BeginInit();
+            this.lostBorderPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTopProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +151,7 @@
             this.lostBorderPanel2.Controls.Add(this.label9);
             this.lostBorderPanel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel2.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel2.Location = new System.Drawing.Point(303, 65);
+            this.lostBorderPanel2.Location = new System.Drawing.Point(433, 65);
             this.lostBorderPanel2.Name = "lostBorderPanel2";
             this.lostBorderPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel2.ShowText = true;
@@ -203,7 +203,7 @@
             this.lostBorderPanel3.Controls.Add(this.label11);
             this.lostBorderPanel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lostBorderPanel3.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel3.Location = new System.Drawing.Point(570, 65);
+            this.lostBorderPanel3.Location = new System.Drawing.Point(830, 65);
             this.lostBorderPanel3.Name = "lostBorderPanel3";
             this.lostBorderPanel3.Padding = new System.Windows.Forms.Padding(5);
             this.lostBorderPanel3.ShowText = true;
@@ -260,6 +260,24 @@
             this.lostBorderPanel5.Size = new System.Drawing.Size(614, 240);
             this.lostBorderPanel5.TabIndex = 13;
             // 
+            // chartSalesByDay
+            // 
+            this.chartSalesByDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartSalesByDay.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSalesByDay.Legends.Add(legend1);
+            this.chartSalesByDay.Location = new System.Drawing.Point(3, 3);
+            this.chartSalesByDay.Name = "chartSalesByDay";
+            this.chartSalesByDay.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSalesByDay.Series.Add(series1);
+            this.chartSalesByDay.Size = new System.Drawing.Size(608, 234);
+            this.chartSalesByDay.TabIndex = 6;
+            this.chartSalesByDay.Text = "chart1";
+            // 
             // lostBorderPanel6
             // 
             this.lostBorderPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
@@ -273,58 +291,6 @@
             this.lostBorderPanel6.ShowText = true;
             this.lostBorderPanel6.Size = new System.Drawing.Size(437, 240);
             this.lostBorderPanel6.TabIndex = 14;
-            // 
-            // lostBorderPanel7
-            // 
-            this.lostBorderPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.lostBorderPanel7.BorderColor = System.Drawing.Color.Fuchsia;
-            this.lostBorderPanel7.Controls.Add(this.dataGridLastSales);
-            this.lostBorderPanel7.Controls.Add(this.label6);
-            this.lostBorderPanel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lostBorderPanel7.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel7.Location = new System.Drawing.Point(36, 471);
-            this.lostBorderPanel7.Name = "lostBorderPanel7";
-            this.lostBorderPanel7.Padding = new System.Windows.Forms.Padding(5);
-            this.lostBorderPanel7.ShowText = true;
-            this.lostBorderPanel7.Size = new System.Drawing.Size(528, 173);
-            this.lostBorderPanel7.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "ULTIMAS VENTAS";
-            // 
-            // lostBorderPanel8
-            // 
-            this.lostBorderPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.lostBorderPanel8.BorderColor = System.Drawing.Color.Fuchsia;
-            this.lostBorderPanel8.Controls.Add(this.dataGridTopProducts);
-            this.lostBorderPanel8.Controls.Add(this.label5);
-            this.lostBorderPanel8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lostBorderPanel8.ForeColor = System.Drawing.Color.White;
-            this.lostBorderPanel8.Location = new System.Drawing.Point(570, 471);
-            this.lostBorderPanel8.Name = "lostBorderPanel8";
-            this.lostBorderPanel8.Padding = new System.Windows.Forms.Padding(5);
-            this.lostBorderPanel8.ShowText = true;
-            this.lostBorderPanel8.Size = new System.Drawing.Size(528, 173);
-            this.lostBorderPanel8.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(315, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "TOP PRODUCTOS MAS VENDIDOS";
             // 
             // chartCategories
             // 
@@ -343,23 +309,20 @@
             this.chartCategories.TabIndex = 16;
             this.chartCategories.Text = "chart1";
             // 
-            // chartSalesByDay
+            // lostBorderPanel7
             // 
-            this.chartSalesByDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            chartArea1.Name = "ChartArea1";
-            this.chartSalesByDay.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSalesByDay.Legends.Add(legend1);
-            this.chartSalesByDay.Location = new System.Drawing.Point(3, 3);
-            this.chartSalesByDay.Name = "chartSalesByDay";
-            this.chartSalesByDay.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSalesByDay.Series.Add(series1);
-            this.chartSalesByDay.Size = new System.Drawing.Size(608, 234);
-            this.chartSalesByDay.TabIndex = 6;
-            this.chartSalesByDay.Text = "chart1";
+            this.lostBorderPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.lostBorderPanel7.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel7.Controls.Add(this.dataGridLastSales);
+            this.lostBorderPanel7.Controls.Add(this.label6);
+            this.lostBorderPanel7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lostBorderPanel7.ForeColor = System.Drawing.Color.White;
+            this.lostBorderPanel7.Location = new System.Drawing.Point(36, 471);
+            this.lostBorderPanel7.Name = "lostBorderPanel7";
+            this.lostBorderPanel7.Padding = new System.Windows.Forms.Padding(5);
+            this.lostBorderPanel7.ShowText = true;
+            this.lostBorderPanel7.Size = new System.Drawing.Size(528, 173);
+            this.lostBorderPanel7.TabIndex = 14;
             // 
             // dataGridLastSales
             // 
@@ -405,6 +368,32 @@
             this.dataGridLastSales.Size = new System.Drawing.Size(513, 142);
             this.dataGridLastSales.TabIndex = 68;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "ULTIMAS VENTAS";
+            // 
+            // lostBorderPanel8
+            // 
+            this.lostBorderPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.lostBorderPanel8.BorderColor = System.Drawing.Color.Fuchsia;
+            this.lostBorderPanel8.Controls.Add(this.dataGridTopProducts);
+            this.lostBorderPanel8.Controls.Add(this.label5);
+            this.lostBorderPanel8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lostBorderPanel8.ForeColor = System.Drawing.Color.White;
+            this.lostBorderPanel8.Location = new System.Drawing.Point(570, 471);
+            this.lostBorderPanel8.Name = "lostBorderPanel8";
+            this.lostBorderPanel8.Padding = new System.Windows.Forms.Padding(5);
+            this.lostBorderPanel8.ShowText = true;
+            this.lostBorderPanel8.Size = new System.Drawing.Size(528, 173);
+            this.lostBorderPanel8.TabIndex = 15;
+            // 
             // dataGridTopProducts
             // 
             this.dataGridTopProducts.AllowUserToResizeRows = false;
@@ -449,6 +438,17 @@
             this.dataGridTopProducts.Size = new System.Drawing.Size(513, 142);
             this.dataGridTopProducts.TabIndex = 69;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(315, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "TOP PRODUCTOS MAS VENDIDOS";
+            // 
             // SellerHomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,14 +475,14 @@
             this.lostBorderPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.lostBorderPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesByDay)).EndInit();
             this.lostBorderPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).EndInit();
             this.lostBorderPanel7.ResumeLayout(false);
             this.lostBorderPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLastSales)).EndInit();
             this.lostBorderPanel8.ResumeLayout(false);
             this.lostBorderPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesByDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridLastSales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTopProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
