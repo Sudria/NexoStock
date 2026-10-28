@@ -157,5 +157,34 @@ namespace NexoStock.Services
 
             return rowsAffected > 0;
         }
+
+        public List<ProviderClass> GetAllActiveProviders()
+        {
+            List<ProviderClass> providers = new List<ProviderClass>();
+
+            string query = "SELECT * FROM providers WHERE State = 1";
+
+            using (var reader = connectionDB.ExecuteReader(query))
+            {
+                while (reader.Read())
+                {
+                    ProviderClass provider = new ProviderClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Surname = reader.GetString("Surname"),
+                        Cuit = reader.GetString("Cuit"),
+                        Email = reader.GetString("Email"),
+                        Tel = reader.GetString("Tel"),
+                        State = reader.GetBoolean("State"),
+                        CreatedDate = reader.GetDateTime("CreatedDate")
+                    };
+
+                    providers.Add(provider);
+                }
+            }
+
+            return providers;
+        }
     }
 }

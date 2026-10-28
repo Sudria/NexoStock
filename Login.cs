@@ -45,7 +45,7 @@ namespace NexoStock
             if (user.Rol == "Administrador")
             {
                 this.Hide();
-                AdminForm adminForm = new AdminForm();
+                AdminForm adminForm = new AdminForm(user);
                 adminForm.Show();
             }
             else if (user.Rol == "Vendedor")
@@ -57,13 +57,13 @@ namespace NexoStock
             else if (user.Rol == "Repositor")
             {
                 this.Hide();
-                WarehouseForm warehouseForm = new WarehouseForm();
+                WarehouseForm warehouseForm = new WarehouseForm(user);
                 warehouseForm.Show();
             }
             else if (user.Rol == "Encargado")
             {
                 this.Hide();
-                ManagerForm managerForm = new ManagerForm();
+                ManagerForm managerForm = new ManagerForm(user);
                 managerForm.Show();
             }
         }

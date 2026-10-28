@@ -82,7 +82,6 @@ namespace NexoStock.Services
         {
             List<ProductClass> products = new List<ProductClass>();
 
-            // 1. Cambiamos a LEFT JOIN para que traiga TODOS los productos siempre
             string query = @"
         SELECT 
             p.Id, p.Name, p.Cod, p.Description, p.SalePrice, p.Stock, p.StockMin, p.State,
@@ -280,6 +279,112 @@ namespace NexoStock.Services
             }
 
             return 0;
+        }
+
+        public List<ProductClass> GetAllActiveProducts()
+        {
+            List<ProductClass> products = new List<ProductClass>();
+
+            string query = @"
+        SELECT 
+               p.Id, p.Name, p.Cod, p.Description, p.SalePrice, p.Stock, p.StockMin, p.State,
+               p.BrandId, b.Name AS Brand,
+               p.CategoryId, c.Name AS Category,
+               p.ProviderId, pr.Name AS Provider
+               FROM products p
+               LEFT JOIN brands b ON p.BrandId = b.Id
+               LEFT JOIN categorys c ON p.CategoryId = c.Id
+               LEFT JOIN providers pr ON p.ProviderId = pr.Id
+               WHERE p.State = 1;
+               ";
+
+            using (var reader = connectionDB.ExecuteReader(query))
+            {
+                while (reader.Read())
+                {
+                    ProductClass product = new ProductClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Cod = reader.GetString("Cod"),
+                        // IsDBNull protege tu código si Description es opcional en la BD
+                        Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? "" : reader.GetString("Description"),
+                        SalePrice = reader.GetDecimal("SalePrice"),
+                        Stock = reader.GetInt32("Stock"),
+                        StockMin = reader.GetInt32("StockMin"),
+                        State = reader.GetBoolean("State"),
+
+                        // IDs (si permiten nulos en tu BD, usa IsDBNull para evitar caídas)
+                        BrandId = reader.IsDBNull(reader.GetOrdinal("BrandId")) ? 0 : reader.GetInt32("BrandId"),
+                        CategoryId = reader.IsDBNull(reader.GetOrdinal("CategoryId")) ? 0 : reader.GetInt32("CategoryId"),
+                        ProviderId = reader.IsDBNull(reader.GetOrdinal("ProviderId")) ? 0 : reader.GetInt32("ProviderId"),
+
+                        // Nombres obtenidos por LEFT JOIN (pueden venir NULL si el ID no existía)
+                        Brand = reader.IsDBNull(reader.GetOrdinal("Brand")) ? "Sin Marca" : reader.GetString("Brand"),
+                        Category = reader.IsDBNull(reader.GetOrdinal("Category")) ? "Sin Categoría" : reader.GetString("Category"),
+                        Provider = reader.IsDBNull(reader.GetOrdinal("Provider")) ? "Sin Proveedor" : reader.GetString("Provider")
+                    };
+
+                    products.Add(product);
+                }
+            }
+
+            return products;
+        }
+
+        public List<ProductClass> GetProductsByProvider(int providerId)
+        {
+            List<ProductClass> products = new List<ProductClass>();
+
+            string query = @"
+        SELECT 
+            p.Id, p.Name, p.Cod, p.Description, p.SalePrice,
+            p.Stock, p.StockMin, p.State,
+            p.BrandId, b.Name AS Brand,
+            p.CategoryId, c.Name AS Category,
+            p.ProviderId, pr.Name AS Provider
+        FROM products p
+        LEFT JOIN brands b ON p.BrandId = b.Id
+        LEFT JOIN categorys c ON p.CategoryId = c.Id
+        LEFT JOIN providers pr ON p.ProviderId = pr.Id
+        WHERE p.State = 1
+          AND p.ProviderId = @ProviderId";
+
+            using (var reader = connectionDB.ExecuteReader(
+                query,
+                new MySql.Data.MySqlClient.MySqlParameter("@ProviderId", providerId)))
+            {
+                while (reader.Read())
+                {
+                    ProductClass product = new ProductClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Cod = reader.GetString("Cod"),
+                        Description = reader.GetString("Description"),
+                        SalePrice = reader.GetDecimal("SalePrice"),
+                        Stock = reader.GetInt32("Stock"),
+                        StockMin = reader.GetInt32("StockMin"),
+                        State = reader.GetBoolean("State"),
+                        BrandId = reader.GetInt32("BrandId"),
+                        Brand = reader.IsDBNull(reader.GetOrdinal("Brand"))
+                            ? ""
+                            : reader.GetString("Brand"),
+                        CategoryId = reader.GetInt32("CategoryId"),
+                        Category = reader.IsDBNull(reader.GetOrdinal("Category"))
+                            ? ""
+                            : reader.GetString("Category"),
+                        ProviderId = reader.GetInt32("ProviderId"),
+                        Provider = reader.IsDBNull(reader.GetOrdinal("Provider"))
+                            ? ""
+                            : reader.GetString("Provider")
+                    };
+
+                    products.Add(product);
+                }
+            }
+
+            return products;
         }
     }
 }

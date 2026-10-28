@@ -19,7 +19,8 @@ namespace NexoStock.Forms.Warehouse
 
         private void buttonNewBuy_Click(object sender, EventArgs e)
         {
-
+            WarehouseForm dashboard = this.ParentForm as WarehouseForm;
+            dashboard.LoadNewBuyControler();
         }
     }
 }

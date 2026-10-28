@@ -141,7 +141,6 @@ CREATE TABLE purchases (
     UserId INT NOT NULL,
     PurchaseDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Total DECIMAL(13,2) NOT NULL DEFAULT 0,
-    State TINYINT(1) NOT NULL DEFAULT 1,
 
     PRIMARY KEY (Id),
 
@@ -153,8 +152,7 @@ CREATE TABLE purchases (
         FOREIGN KEY (UserId)
         REFERENCES users(Id),
 
-    CONSTRAINT chk_purchases_total
-        CHECK (Total >= 0)
+    INDEX idx_purchases_date (PurchaseDate)
 );
 
 
@@ -163,10 +161,10 @@ CREATE TABLE purchase_details (
     PurchaseId INT NOT NULL,
     ProductId INT NOT NULL,
     Quantity INT NOT NULL,
-    UnitCost DECIMAL(13,2) NOT NULL,
+    PurchasePrice DECIMAL(13,2) NOT NULL,
 
     Subtotal DECIMAL(13,2)
-        GENERATED ALWAYS AS (Quantity * UnitCost) STORED,
+        GENERATED ALWAYS AS (Quantity * PurchasePrice) STORED,
 
     PRIMARY KEY (Id),
 
@@ -178,12 +176,16 @@ CREATE TABLE purchase_details (
         FOREIGN KEY (ProductId)
         REFERENCES products(Id),
 
-    CONSTRAINT chk_purchase_quantity
+    CONSTRAINT chk_purchase_details_quantity
         CHECK (Quantity > 0),
 
-    CONSTRAINT chk_purchase_cost
-        CHECK (UnitCost >= 0)
+    CONSTRAINT chk_purchase_details_price
+        CHECK (PurchasePrice >= 0),
+
+    INDEX idx_purchase_details_product (ProductId),
+    INDEX idx_purchase_details_purchase (PurchaseId)
 );
+
 
 CREATE TABLE product_movements (
     Id INT NOT NULL AUTO_INCREMENT,
@@ -241,9 +243,18 @@ BEGIN
     END IF;
 END //
 
+
+
+CREATE TRIGGER trg_purchase_details_after_insert
+AFTER INSERT ON purchase_details
+FOR EACH ROW
+BEGIN
+    UPDATE products
+    SET Stock = Stock + NEW.Quantity
+    WHERE Id = NEW.ProductId;
+END //
+
 DELIMITER ;
-
-
 
 
 
@@ -381,6 +392,9 @@ JOIN brands b ON p.BrandId = b.Id
 JOIN categorys c ON p.CategoryId = c.Id
 JOIN providers pr ON p.ProviderId = pr.Id;
 
+select * from users;
+
+UPDATE users set state = 1 where id = 44;
 
 
 

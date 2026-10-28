@@ -233,7 +233,7 @@
             this.buttonNewBuy.Lighting = true;
             this.buttonNewBuy.LinearGradient_Background = true;
             this.buttonNewBuy.LinearGradientPen = true;
-            this.buttonNewBuy.Location = new System.Drawing.Point(849, 3);
+            this.buttonNewBuy.Location = new System.Drawing.Point(849, 13);
             this.buttonNewBuy.Name = "buttonNewBuy";
             this.buttonNewBuy.PenWidth = 15;
             this.buttonNewBuy.Rounding = true;

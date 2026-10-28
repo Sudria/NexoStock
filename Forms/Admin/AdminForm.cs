@@ -17,13 +17,15 @@ namespace NexoStock.Forms.Admin
     public partial class AdminForm : Form
     {
         CyberButton activedButton = new CyberButton();
+        UserClass user = new UserClass();
 
-        public AdminForm()
+        public AdminForm(UserClass user)
         {
             InitializeComponent();
             activedButton = buttonHome;
             activeButton(activedButton);
             LoadHomeControler();
+            this.user = user;
         }
 
 

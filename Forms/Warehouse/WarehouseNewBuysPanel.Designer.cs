@@ -31,12 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.dataGridPurchaseDetails = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxProvider = new ReaLTaiizor.Controls.HopeComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBoxCategory = new ReaLTaiizor.Controls.HopeComboBox();
+            this.comboBoxProduct = new ReaLTaiizor.Controls.HopeComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.numericQuantity = new ReaLTaiizor.Controls.HopeNumeric();
             this.label14 = new System.Windows.Forms.Label();
@@ -47,46 +47,48 @@
             this.textBoxSellPrice = new ReaLTaiizor.Controls.HopeTextBox();
             this.numericNetwin = new ReaLTaiizor.Controls.DungeonNumeric();
             this.label7 = new System.Windows.Forms.Label();
-            this.parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
+            this.buttonRemove = new ReaLTaiizor.Controls.ParrotButton();
             this.buttonAddProduct = new ReaLTaiizor.Controls.ParrotButton();
             this.saveButton = new ReaLTaiizor.Controls.ParrotButton();
             this.exitButton = new ReaLTaiizor.Controls.ParrotButton();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxTotal = new ReaLTaiizor.Controls.HopeTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            this.buttonClear = new ReaLTaiizor.Controls.ParrotButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPurchaseDetails)).BeginInit();
             this.SuspendLayout();
             // 
-            // poisonDataGridView1
+            // dataGridPurchaseDetails
             // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridPurchaseDetails.AllowUserToResizeRows = false;
+            this.dataGridPurchaseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.dataGridPurchaseDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridPurchaseDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridPurchaseDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridPurchaseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(27, 325);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridPurchaseDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridPurchaseDetails.EnableHeadersVisualStyles = false;
+            this.dataGridPurchaseDetails.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dataGridPurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridPurchaseDetails.Location = new System.Drawing.Point(27, 325);
+            this.dataGridPurchaseDetails.Name = "dataGridPurchaseDetails";
+            this.dataGridPurchaseDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -94,11 +96,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1068, 260);
-            this.poisonDataGridView1.TabIndex = 27;
+            this.dataGridPurchaseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridPurchaseDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridPurchaseDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridPurchaseDetails.Size = new System.Drawing.Size(1068, 260);
+            this.dataGridPurchaseDetails.TabIndex = 27;
             // 
             // label2
             // 
@@ -138,6 +140,7 @@
             this.comboBoxProvider.Name = "comboBoxProvider";
             this.comboBoxProvider.Size = new System.Drawing.Size(324, 27);
             this.comboBoxProvider.TabIndex = 75;
+            this.comboBoxProvider.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvider_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -150,22 +153,22 @@
             this.label12.TabIndex = 74;
             this.label12.Text = "Proveedor";
             // 
-            // comboBoxCategory
+            // comboBoxProduct
             // 
-            this.comboBoxCategory.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
-            this.comboBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.comboBoxCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBoxCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.ItemHeight = 21;
-            this.comboBoxCategory.Location = new System.Drawing.Point(27, 245);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(324, 27);
-            this.comboBoxCategory.TabIndex = 77;
+            this.comboBoxProduct.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.comboBoxProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxProduct.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxProduct.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxProduct.ForeColor = System.Drawing.Color.White;
+            this.comboBoxProduct.FormattingEnabled = true;
+            this.comboBoxProduct.ItemHeight = 21;
+            this.comboBoxProduct.Location = new System.Drawing.Point(27, 245);
+            this.comboBoxProduct.Name = "comboBoxProduct";
+            this.comboBoxProduct.Size = new System.Drawing.Size(324, 27);
+            this.comboBoxProduct.TabIndex = 77;
             // 
             // label5
             // 
@@ -239,6 +242,7 @@
             this.textBoxCost.TabStop = false;
             this.textBoxCost.UseSystemPasswordChar = false;
             this.textBoxCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCost_KeyPress);
+            this.textBoxCost.TextChanged += new System.EventHandler(this.textBoxCost_TextChanged);
             // 
             // label3
             // 
@@ -317,6 +321,7 @@
             this.numericNetwin.Text = "numericNetwin";
             this.numericNetwin.TextAlignment = ReaLTaiizor.Controls.DungeonNumeric._TextAlignment.Near;
             this.numericNetwin.Value = ((long)(1));
+            this.numericNetwin.Click += new System.EventHandler(this.numericNetwin_Click);
             // 
             // label7
             // 
@@ -329,30 +334,31 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "Detalle de la compra";
             // 
-            // parrotButton1
+            // buttonRemove
             // 
-            this.parrotButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.parrotButton1.ButtonImage = null;
-            this.parrotButton1.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.parrotButton1.ButtonText = "- Quitar";
-            this.parrotButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(135)))));
-            this.parrotButton1.ClickTextColor = System.Drawing.Color.White;
-            this.parrotButton1.CornerRadius = 4;
-            this.parrotButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrotButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton1.HoverBackgroundColor = System.Drawing.Color.Fuchsia;
-            this.parrotButton1.HoverTextColor = System.Drawing.Color.White;
-            this.parrotButton1.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton1.Location = new System.Drawing.Point(976, 290);
-            this.parrotButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.parrotButton1.Name = "parrotButton1";
-            this.parrotButton1.Size = new System.Drawing.Size(119, 32);
-            this.parrotButton1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotButton1.TabIndex = 104;
-            this.parrotButton1.TextColor = System.Drawing.Color.White;
-            this.parrotButton1.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.parrotButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonRemove.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRemove.ButtonImage = null;
+            this.buttonRemove.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.buttonRemove.ButtonText = "- Quitar";
+            this.buttonRemove.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(135)))));
+            this.buttonRemove.ClickTextColor = System.Drawing.Color.White;
+            this.buttonRemove.CornerRadius = 4;
+            this.buttonRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemove.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonRemove.HoverBackgroundColor = System.Drawing.Color.Fuchsia;
+            this.buttonRemove.HoverTextColor = System.Drawing.Color.White;
+            this.buttonRemove.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.buttonRemove.Location = new System.Drawing.Point(976, 290);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(119, 32);
+            this.buttonRemove.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.buttonRemove.TabIndex = 104;
+            this.buttonRemove.TextColor = System.Drawing.Color.White;
+            this.buttonRemove.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonRemove.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonAddProduct
             // 
@@ -404,6 +410,7 @@
             this.saveButton.TextColor = System.Drawing.Color.White;
             this.saveButton.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.saveButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // exitButton
             // 
@@ -429,6 +436,7 @@
             this.exitButton.TextColor = System.Drawing.Color.White;
             this.exitButton.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.exitButton.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // label13
             // 
@@ -476,17 +484,44 @@
             this.label8.TabIndex = 109;
             this.label8.Text = "%";
             // 
+            // buttonClear
+            // 
+            this.buttonClear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonClear.ButtonImage = null;
+            this.buttonClear.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.buttonClear.ButtonText = "Vaciar";
+            this.buttonClear.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(135)))));
+            this.buttonClear.ClickTextColor = System.Drawing.Color.White;
+            this.buttonClear.CornerRadius = 4;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClear.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonClear.HoverBackgroundColor = System.Drawing.Color.Fuchsia;
+            this.buttonClear.HoverTextColor = System.Drawing.Color.White;
+            this.buttonClear.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.buttonClear.Location = new System.Drawing.Point(976, 23);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(119, 32);
+            this.buttonClear.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.buttonClear.TabIndex = 110;
+            this.buttonClear.TextColor = System.Drawing.Color.White;
+            this.buttonClear.TextRenderingType = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonClear.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // WarehouseNewBuysPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.parrotButton1);
+            this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.numericNetwin);
@@ -497,28 +532,28 @@
             this.Controls.Add(this.textBoxCost);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.numericQuantity);
-            this.Controls.Add(this.comboBoxCategory);
+            this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxProvider);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.poisonDataGridView1);
+            this.Controls.Add(this.dataGridPurchaseDetails);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "WarehouseNewBuysPanel";
             this.Size = new System.Drawing.Size(1120, 662);
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPurchaseDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.PoisonDataGridView dataGridPurchaseDetails;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxProvider;
         private System.Windows.Forms.Label label12;
-        private ReaLTaiizor.Controls.HopeComboBox comboBoxCategory;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxProduct;
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.HopeNumeric numericQuantity;
         private System.Windows.Forms.Label label14;
@@ -529,12 +564,13 @@
         private ReaLTaiizor.Controls.HopeTextBox textBoxSellPrice;
         private ReaLTaiizor.Controls.DungeonNumeric numericNetwin;
         private System.Windows.Forms.Label label7;
-        private ReaLTaiizor.Controls.ParrotButton parrotButton1;
+        private ReaLTaiizor.Controls.ParrotButton buttonRemove;
         private ReaLTaiizor.Controls.ParrotButton buttonAddProduct;
         private ReaLTaiizor.Controls.ParrotButton saveButton;
         private ReaLTaiizor.Controls.ParrotButton exitButton;
         private System.Windows.Forms.Label label13;
         private ReaLTaiizor.Controls.HopeTextBox textBoxTotal;
         private System.Windows.Forms.Label label8;
+        private ReaLTaiizor.Controls.ParrotButton buttonClear;
     }
 }

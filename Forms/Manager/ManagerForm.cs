@@ -1,4 +1,5 @@
-﻿using NexoStock.Forms.Admin;
+﻿using NexoStock.Class;
+using NexoStock.Forms.Admin;
 using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,15 @@ namespace NexoStock.Forms.Manager
     public partial class ManagerForm : Form
     {
         CyberButton activedButton = new CyberButton();
+        UserClass user = new UserClass();
 
-        public ManagerForm()
+        public ManagerForm(UserClass user)
         {
             InitializeComponent();
             activedButton = buttonHome;
             activeButton(activedButton);
             LoadHomeController();
+            this.user = user;
         }
 
 
