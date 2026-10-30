@@ -180,14 +180,8 @@ namespace NexoStock.Services
 
                     return user;
                 }
-                else
-                {
-                    MessageBox.Show(
-                        "Usuario o contraseña incorrectos, o el usuario está inactivo.",
-                        "Error de Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
+         
+           
 
                     return null;
                 }
