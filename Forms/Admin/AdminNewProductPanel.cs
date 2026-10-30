@@ -48,9 +48,9 @@ namespace NexoStock.Forms.Admin
                 Description = textBoxDescription.Text,
                 State = activeCheckBox.Checked,
                 StockMin = (int)numericStockMin.ValueNumber,
-                CategoryId = 1,
-                BrandId = 1,
-                ProviderId = 1,
+                CategoryId = Convert.ToInt32(comboBoxCategory.SelectedValue),
+                BrandId = Convert.ToInt32(comboBoxBrand.SelectedValue),
+                ProviderId = Convert.ToInt32(comboBoxProvider.SelectedValue),
             };
 
             if (!Utils.Validator.isValidText(product.Name, "Nombre del producto"))
@@ -125,6 +125,8 @@ namespace NexoStock.Forms.Admin
             {
                 MessageBox.Show("Producto creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            ClearAllFields();
         }
 
 
@@ -251,6 +253,24 @@ namespace NexoStock.Forms.Admin
                     pictureBox.Image = new Bitmap(image);
                 }
             }
+        }
+
+        private void ClearAllFields()
+        {
+            textBoxProductName.Text = string.Empty;
+            textBoxCod.Text = string.Empty;
+            textBoxDescription.Text = string.Empty;
+            numericStockMin.ValueNumber = 0;
+            comboBoxCategory.SelectedIndex = -1;
+            comboBoxBrand.SelectedIndex = -1;
+            comboBoxProvider.SelectedIndex = -1;
+            activeCheckBox.Checked = false;
+            pictureBoxImage1.Image?.Dispose();
+            pictureBoxImage2.Image?.Dispose();
+            pictureBoxImage3.Image?.Dispose();
+            pictureBoxImage1.Image = null;
+            pictureBoxImage2.Image = null;
+            pictureBoxImage3.Image = null;
         }
     }
 }

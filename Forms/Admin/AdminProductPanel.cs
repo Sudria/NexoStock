@@ -225,7 +225,19 @@ namespace NexoStock.Forms.Admin
                 return;
             }
 
-            
+            int productId = Convert.ToInt32(
+                dataGridViewProducts.SelectedRows[0].Cells["Id"].Value
+            );
+
+            ProductClass selectedProduct = products
+                .FirstOrDefault(p => p.Id == productId);
+
+            if (selectedProduct == null)
+                return;
+
+            AdminForm dashboard = this.ParentForm as AdminForm;
+
+            dashboard.LoadUpdateProductControler(selectedProduct);
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)

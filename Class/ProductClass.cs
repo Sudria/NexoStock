@@ -20,7 +20,7 @@ namespace NexoStock.Class
 
         public decimal SalePrice { get; set; } = 0;
 
-        public int Stock { get; set; } = 1;
+        public int Stock { get; set; } = 0;
 
         public int StockMin { get; set; } = 1;
 
