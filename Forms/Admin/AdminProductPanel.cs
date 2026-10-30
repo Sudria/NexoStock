@@ -182,10 +182,12 @@ namespace NexoStock.Forms.Admin
             int totalProducts = products.Count;
             int activeProducts = products.Count(p => p.State);
             int inactiveProducts = products.Count(p => !p.State);
+            int lowStockProducts = products.Count(p => p.Stock <= p.StockMin);
 
             labelCountProducts.Text = totalProducts.ToString();
             labelActiveProducts.Text = activeProducts.ToString();
             labelInactiveProducts.Text = inactiveProducts.ToString();
+            labelLowStockProducts.Text = lowStockProducts.ToString();
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
