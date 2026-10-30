@@ -58,7 +58,7 @@ namespace NexoStock.Services
                 {
                     mensajeError = $"El correo electrónico '{user.Email}' ya está siendo usado por otra cuenta.";
                 }
-                else if (mensajeMySQL.Contains("username") )
+                else if (mensajeMySQL.Contains("username"))
                 {
                     mensajeError = $"El nombre de usuario '{user.Username}' ya no está disponible.";
                 }
@@ -180,12 +180,12 @@ namespace NexoStock.Services
 
                     return user;
                 }
-         
-           
 
-                    return null;
-                }
+
+
+                return null;
             }
         }
     }
 }
+

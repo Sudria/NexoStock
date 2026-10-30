@@ -528,10 +528,12 @@
             // 
             this.pictureBoxImage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.pictureBoxImage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxImage1.ErrorImage = null;
             this.pictureBoxImage1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.pictureBoxImage1.IconColor = System.Drawing.Color.White;
             this.pictureBoxImage1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pictureBoxImage1.IconSize = 154;
+            this.pictureBoxImage1.InitialImage = null;
             this.pictureBoxImage1.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxImage1.Name = "pictureBoxImage1";
             this.pictureBoxImage1.Size = new System.Drawing.Size(191, 154);
@@ -560,10 +562,12 @@
             // 
             this.pictureBoxImage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.pictureBoxImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxImage2.ErrorImage = null;
             this.pictureBoxImage2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.pictureBoxImage2.IconColor = System.Drawing.Color.White;
             this.pictureBoxImage2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pictureBoxImage2.IconSize = 154;
+            this.pictureBoxImage2.InitialImage = null;
             this.pictureBoxImage2.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxImage2.Name = "pictureBoxImage2";
             this.pictureBoxImage2.Size = new System.Drawing.Size(191, 154);
@@ -592,10 +596,12 @@
             // 
             this.pictureBoxImage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
             this.pictureBoxImage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxImage3.ErrorImage = null;
             this.pictureBoxImage3.IconChar = FontAwesome.Sharp.IconChar.None;
             this.pictureBoxImage3.IconColor = System.Drawing.Color.White;
             this.pictureBoxImage3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pictureBoxImage3.IconSize = 154;
+            this.pictureBoxImage3.InitialImage = null;
             this.pictureBoxImage3.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxImage3.Name = "pictureBoxImage3";
             this.pictureBoxImage3.Size = new System.Drawing.Size(191, 154);

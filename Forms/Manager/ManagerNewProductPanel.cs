@@ -45,7 +45,6 @@ namespace NexoStock.Forms.Manager
                 CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
                 BrandId = 1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
                 ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
-                Images = new List<string>()
             };
 
         

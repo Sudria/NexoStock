@@ -160,6 +160,7 @@
     <Compile Include="Class\CategoryClass.cs" />
     <Compile Include="Class\ClientClass.cs" />
     <Compile Include="Class\ProductClass.cs" />
+    <Compile Include="Class\ProductImageClass.cs" />
     <Compile Include="Class\ProductMovementClass.cs" />
     <Compile Include="Class\ProviderClass.cs" />
     <Compile Include="Class\PurchaseClass.cs" />
@@ -171,6 +172,12 @@
     </Compile>
     <Compile Include="Forms\Admin\AdminHomePanel.Designer.cs">
       <DependentUpon>AdminHomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminUpdateProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminUpdateProductPanel.Designer.cs">
+      <DependentUpon>AdminUpdateProductPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\AdminNewProductPanel.cs">
       <SubType>UserControl</SubType>
@@ -416,6 +423,7 @@
     <Compile Include="Services\BrandRepository.cs" />
     <Compile Include="Services\CategoryRepository.cs" />
     <Compile Include="Services\ClientRepository.cs" />
+    <Compile Include="Services\ProductImageRepository.cs" />
     <Compile Include="Services\ProductMovementRepository.cs" />
     <Compile Include="Services\ProductRepository.cs" />
     <Compile Include="Services\ProviderRepository.cs" />
@@ -427,6 +435,9 @@
     <Compile Include="Utils\Validator.cs" />
     <EmbeddedResource Include="Forms\Admin\AdminHomePanel.resx">
       <DependentUpon>AdminHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\AdminUpdateProductPanel.resx">
+      <DependentUpon>AdminUpdateProductPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminNewProductPanel.resx">
       <DependentUpon>AdminNewProductPanel.cs</DependentUpon>
@@ -586,6 +597,7 @@
   <ItemGroup>
     <None Include="Resources\dashboard-2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SkiaSharp.NativeAssets.macOS.3.119.0\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('packages\SkiaSharp.NativeAssets.macOS.3.119.0\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -10,7 +10,6 @@ namespace NexoStock.Utils
 {
     internal static class Validator
     {
-        static string patron = @"^[a-zA-Z\s]+$";
         static string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
 
@@ -19,11 +18,6 @@ namespace NexoStock.Utils
             if (string.IsNullOrWhiteSpace(text))
             {
                 MessageBox.Show($"El campo {fieldCamp} no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else if (!Regex.IsMatch(text, patron))
-            {
-                MessageBox.Show($"El campo {fieldCamp} solo puede contener letras y espacios.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -47,6 +41,21 @@ namespace NexoStock.Utils
                 return false;
             }
             return true;
+        }
+
+        public static bool isValidStock(string text, string fieldCamp)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                MessageBox.Show($"El campo {fieldCamp} no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!text.All(char.IsDigit))
+            {
+                MessageBox.Show($"El campo {fieldCamp} debe contener un número válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+                 return true;
         }
 
         // Validación de email

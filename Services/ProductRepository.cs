@@ -17,32 +17,36 @@ namespace NexoStock.Services
         }
 
         // CREAR PRODUCTO
-        public bool CreateProduct(ProductClass product)
+
+        public int CreateProduct(ProductClass product)
         {
             string query = @"
-                INSERT INTO products
-                    (Name, Cod, Description, SalePrice, Stock, StockMin, State, BrandId, CategoryId, ProviderId)
-                VALUES
-                    (@name, @cod, @description, @salePrice, @stock, @stockMin, @state, @brandId, @categoryId, @providerId);
-            ";
+        INSERT INTO products
+            (Name, Cod, Description, SalePrice, Stock, StockMin, State, BrandId, CategoryId, ProviderId)
+        VALUES
+            (@name, @cod, @description, @salePrice, @stock, @stockMin, @state, @brandId, @categoryId, @providerId);
+    ";
 
             try
             {
-                int rowsAffected = connectionDB.ExecuteNonQuery(
-                    query,
-                    new MySqlParameter("@name", product.Name),
-                    new MySqlParameter("@cod", product.Cod),
-                    new MySqlParameter("@description", product.Description),
-                    new MySqlParameter("@salePrice", product.SalePrice),
-                    new MySqlParameter("@stock", product.Stock),
-                    new MySqlParameter("@stockMin", product.StockMin),
-                    new MySqlParameter("@state", product.State),
-                    new MySqlParameter("@brandId", product.BrandId),
-                    new MySqlParameter("@categoryId", product.CategoryId),
-                    new MySqlParameter("@providerId", product.ProviderId)
-                );
+                using (MySqlConnection connection = connectionDB.GetConnection())
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@name", product.Name);
+                    command.Parameters.AddWithValue("@cod", product.Cod);
+                    command.Parameters.AddWithValue("@description", product.Description);
+                    command.Parameters.AddWithValue("@salePrice", product.SalePrice);
+                    command.Parameters.AddWithValue("@stock", product.Stock);
+                    command.Parameters.AddWithValue("@stockMin", product.StockMin);
+                    command.Parameters.AddWithValue("@state", product.State);
+                    command.Parameters.AddWithValue("@brandId", product.BrandId);
+                    command.Parameters.AddWithValue("@categoryId", product.CategoryId);
+                    command.Parameters.AddWithValue("@providerId", product.ProviderId);
 
-                return rowsAffected > 0;
+                    command.ExecuteNonQuery();
+
+                    return Convert.ToInt32(command.LastInsertedId);
+                }
             }
             catch (MySqlException ex) when (ex.Number == 1062)
             {
@@ -61,7 +65,7 @@ namespace NexoStock.Services
                     MessageBoxIcon.Warning
                 );
 
-                return false;
+                return 0;
             }
             catch (MySqlException ex)
             {
@@ -72,9 +76,10 @@ namespace NexoStock.Services
                     MessageBoxIcon.Error
                 );
 
-                return false;
+                return 0;
             }
         }
+
 
 
         // OBTENER TODOS LOS PRODUCTOS

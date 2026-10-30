@@ -214,7 +214,18 @@ namespace NexoStock.Forms.Admin
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            if (dataGridViewProducts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(
+                    "Por favor, seleccione un producto para editar.",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
 
+            
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)

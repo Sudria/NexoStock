@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,10 @@ namespace NexoStock.Forms.Admin
         public AdminNewProductPanel()
         {
             InitializeComponent();
+            pictureBoxImage1.Image = null;
+            pictureBoxImage2.Image = null;
+            pictureBoxImage3.Image = null;
+
             LoadComboBoxs();
         }
 
@@ -33,27 +39,28 @@ namespace NexoStock.Forms.Admin
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            ProductClass productClass = new ProductClass
+            ProductRepository productRepository = new ProductRepository();
+
+            ProductClass product = new ProductClass
             {
                 Name = textBoxProductName.Text,
                 Cod = textBoxCod.Text,
                 Description = textBoxDescription.Text,
                 State = activeCheckBox.Checked,
                 StockMin = (int)numericStockMin.ValueNumber,
-                CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
-                BrandId =  1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
-                ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
-                Images = new List<string>()
+                CategoryId = 1,
+                BrandId = 1,
+                ProviderId = 1,
             };
 
-            if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
+            if (!Utils.Validator.isValidText(product.Name, "Nombre del producto"))
             {
                 textBoxProductName.Focus();
                 textBoxProductName.BorderColorA = Color.Red;
                 return;
             }
 
-            if (!Utils.Validator.isValidText(productClass.Description, "Descripción del producto"))
+            if (!Utils.Validator.isValidText(product.Description, "Descripción del producto"))
             {
                 textBoxDescription.Focus();
                 textBoxDescription.BorderColorA = Color.Red;
@@ -61,7 +68,7 @@ namespace NexoStock.Forms.Admin
             }
 
 
-            if (!Utils.Validator.isValidNum(productClass.StockMin.ToString(), "Stock Mínimo", 10))
+            if (!Utils.Validator.isValidStock(product.StockMin.ToString(), "Stock Mínimo"))
             {
                 numericStockMin.Focus();
                 return;
@@ -81,17 +88,48 @@ namespace NexoStock.Forms.Admin
                 return;
             }
 
-            if(comboBoxProvider.SelectedIndex == -1)
+            if (comboBoxProvider.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxProvider.Focus();
                 return;
             }
+
+
+
+            int productId = productRepository.CreateProduct(product);
+
+
+
+
+            if (productId > 0)
+            {
+
+                List<string> imagePaths = SaveProductImages(productId);
+
+                ProductImageRepository imageRepository = new ProductImageRepository();
+
+                foreach (string path in imagePaths)
+                {
+                    ProductImageClass image = new ProductImageClass
+                    {
+                        ProductId = productId,
+                        ImagePath = path
+                    };
+
+                    imageRepository.AddImage(image);
+                }
+            }
+
+            if (productId > 0)
+            {
+                MessageBox.Show("Producto creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
 
-  
+
 
 
 
@@ -126,29 +164,17 @@ namespace NexoStock.Forms.Admin
 
         private void pictureBoxImage1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBoxImage1.Image = Image.FromFile(openFileDialog1.FileName);
-            }
+            LoadProductImage(pictureBoxImage1);
         }
 
         private void pictureBoxImage2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBoxImage2.Image = Image.FromFile(openFileDialog1.FileName);
-            }
+            LoadProductImage(pictureBoxImage2);
         }
 
         private void pictureBoxImage3_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBoxImage3.Image = Image.FromFile(openFileDialog1.FileName);
-            }
+            LoadProductImage(pictureBoxImage3);
         }
 
         private void LoadComboBoxs()
@@ -174,6 +200,57 @@ namespace NexoStock.Forms.Admin
             comboBoxProvider.ValueMember = "Id";
         }
 
+        private List<string> SaveProductImages(int productId)
+        {
+            List<string> imagePaths = new List<string>();
 
+            PictureBox[] pictureBoxes =
+            {
+        pictureBoxImage1,
+        pictureBoxImage2,
+        pictureBoxImage3
+    };
+
+            string folderPath = Path.Combine(
+                Application.StartupPath,
+                "ProductImages"
+            );
+
+            Directory.CreateDirectory(folderPath);
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                PictureBox pictureBox = pictureBoxes[i];
+
+                if (pictureBox.Image == null)
+                    continue;
+
+
+
+                string fileName = $"{productId}_{i + 1}.jpg";
+                string fullPath = Path.Combine(folderPath, fileName);
+
+                pictureBox.Image.Save(fullPath, ImageFormat.Jpeg);
+
+                imagePaths.Add(Path.Combine("ProductImages", fileName));
+            }
+
+            return imagePaths;
+        }
+
+
+        private void LoadProductImage(PictureBox pictureBox)
+        {
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (Image image = Image.FromFile(openFileDialog1.FileName))
+                {
+                    pictureBox.Image?.Dispose();
+                    pictureBox.Image = new Bitmap(image);
+                }
+            }
+        }
     }
 }

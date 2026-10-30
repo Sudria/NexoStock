@@ -32,7 +32,7 @@ namespace NexoStock.Class
         public int  ProviderId { get; set; } = 0;
 
         //List of images
-        public List<string> Images { get; set; } = new List<string>();
+        public List<ProductImageClass> Images { get; set; } = new List<ProductImageClass>();
 
         // Internal use
         public string Brand { get; set; }

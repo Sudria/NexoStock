@@ -39,7 +39,6 @@ namespace NexoStock.Forms.Warehouse
                 CategoryId = 1, //int.Parse(comboBoxCategory.SelectedValue.ToString()),
                 BrandId = 1,//int.Parse(comboBoxBrand.SelectedValue.ToString()),
                 ProviderId = 1, //int.Parse(comboBoxProvider.SelectedValue.ToString()),
-                Images = new List<string>()
             };
 
             if (!Utils.Validator.isValidText(productClass.Name, "Nombre del producto"))
