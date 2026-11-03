@@ -391,5 +391,38 @@ namespace NexoStock.Services
 
             return products;
         }
+
+        public List<ProductClass> GetProductsByProviderId(int providerId)
+        {
+            List<ProductClass> products = new List<ProductClass>();
+
+            string query = @"
+        SELECT Id, Name, Cod, SalePrice, Stock, State
+        FROM products
+        WHERE ProviderId = @ProviderId";
+
+            using (var reader = connectionDB.ExecuteReader(
+                query,
+                new MySqlParameter("@ProviderId", providerId)))
+            {
+                while (reader.Read())
+                {
+                    ProductClass product = new ProductClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Cod = reader.GetString("Cod"),
+                        SalePrice = reader.GetDecimal("SalePrice"),
+                        Stock = reader.GetInt32("Stock"),
+                        State = reader.GetBoolean("State")
+                    };
+
+                    products.Add(product);
+                }
+            }
+
+            return products;
+        }
+
     }
 }

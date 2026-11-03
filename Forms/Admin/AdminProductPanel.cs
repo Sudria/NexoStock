@@ -59,6 +59,13 @@ namespace NexoStock.Forms.Admin
             comboBoxProvider.DisplayMember = "FullName";
             comboBoxProvider.ValueMember = "Id";
 
+            comboBoxState.Items.Clear();
+
+            comboBoxState.Items.Add("TODOS");
+            comboBoxState.Items.Add("ACTIVOS");
+            comboBoxState.Items.Add("INACTIVOS");
+
+            comboBoxState.SelectedIndex = 0;
         }
 
 
@@ -71,9 +78,29 @@ namespace NexoStock.Forms.Admin
             {
                 products = productRepository.GetAllProducts();
 
+                // Filtro de stock mínimo
+                var filteredProducts = products.AsEnumerable();
+
+                if (checkBoxLowStock.Checked)
+                {
+                    filteredProducts = filteredProducts.Where(p => p.Stock < p.StockMin);
+                }
+
+                // Filtro por estado
+                switch (comboBoxState.SelectedIndex)
+                {
+                    case 1: // ACTIVOS
+                        filteredProducts = filteredProducts.Where(p => p.State == true);
+                        break;
+
+                    case 2: // INACTIVOS
+                        filteredProducts = filteredProducts.Where(p => p.State == false);
+                        break;
+                }
+
                 dataGridViewProducts.DataSource = null;
                 dataGridViewProducts.AutoGenerateColumns = true;
-                dataGridViewProducts.DataSource = products;
+                dataGridViewProducts.DataSource = filteredProducts.ToList();
 
                 string[] hiddenColumns =
                 {
@@ -90,8 +117,27 @@ namespace NexoStock.Forms.Admin
                         dataGridViewProducts.Columns[column].Visible = false;
                 }
 
-                if (dataGridViewProducts.Columns.Contains("StateText"))
-                    dataGridViewProducts.Columns["StateText"].HeaderText = "Estado";
+                Dictionary<string, string> columnHeaders = new Dictionary<string, string>
+        {
+            { "Name", "Nombre" },
+            { "Cod", "Código" },
+            { "Description", "Descripción" },
+            { "SalePrice", "Precio de venta" },
+            { "Stock", "Stock" },
+            { "StockMin", "Stock mínimo" },
+            { "Brand", "Marca" },
+            { "Category", "Categoría" },
+            { "Provider", "Proveedor" },
+            { "StateText", "Estado" }
+        };
+
+                foreach (var column in columnHeaders)
+                {
+                    if (dataGridViewProducts.Columns.Contains(column.Key))
+                    {
+                        dataGridViewProducts.Columns[column.Key].HeaderText = column.Value;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -103,6 +149,7 @@ namespace NexoStock.Forms.Admin
                 );
             }
         }
+
 
 
 
@@ -252,5 +299,17 @@ namespace NexoStock.Forms.Admin
 
             dataGridViewProducts.DataSource = filteredProducts;
         }
+
+        private void checkBoxLowStock_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDataGridView();
+        }
+
+        private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDataGridView();
+        }
     }
+
+
 }

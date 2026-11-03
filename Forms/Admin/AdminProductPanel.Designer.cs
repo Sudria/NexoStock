@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEdit = new ReaLTaiizor.Controls.CyberButton();
             this.lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@
             this.labelLowStockProducts = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.dataGridViewProducts = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxState = new ReaLTaiizor.Controls.HopeComboBox();
+            this.checkBoxLowStock = new ReaLTaiizor.Controls.FoxCheckBox();
             this.lostBorderPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.lostBorderPanel1.SuspendLayout();
@@ -530,23 +534,23 @@
             this.dataGridViewProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridViewProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Fuchsia;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProducts.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewProducts.EnableHeadersVisualStyles = false;
             this.dataGridViewProducts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridViewProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -555,25 +559,93 @@
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.ReadOnly = true;
             this.dataGridViewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(1015, 292);
             this.dataGridViewProducts.TabIndex = 43;
             this.dataGridViewProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellClick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(331, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(244, 20);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Ver solo productos con bajo stock";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(331, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Estado";
+            // 
+            // comboBoxState
+            // 
+            this.comboBoxState.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.comboBoxState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxState.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxState.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxState.ForeColor = System.Drawing.Color.White;
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.ItemHeight = 21;
+            this.comboBoxState.Location = new System.Drawing.Point(395, 61);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(161, 27);
+            this.comboBoxState.TabIndex = 46;
+            this.comboBoxState.SelectedIndexChanged += new System.EventHandler(this.comboBoxState_SelectedIndexChanged);
+            // 
+            // checkBoxLowStock
+            // 
+            this.checkBoxLowStock.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxLowStock.Checked = false;
+            this.checkBoxLowStock.CheckedBorderColorA = System.Drawing.Color.Fuchsia;
+            this.checkBoxLowStock.CheckedBorderColorB = System.Drawing.Color.Fuchsia;
+            this.checkBoxLowStock.CheckedColor = System.Drawing.Color.Fuchsia;
+            this.checkBoxLowStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxLowStock.DisabledCheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.checkBoxLowStock.DisabledCheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.DisabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.DisabledUncheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.checkBoxLowStock.DisabledUncheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.DisabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.EnabledCalc = true;
+            this.checkBoxLowStock.Location = new System.Drawing.Point(599, 27);
+            this.checkBoxLowStock.Name = "checkBoxLowStock";
+            this.checkBoxLowStock.Size = new System.Drawing.Size(55, 28);
+            this.checkBoxLowStock.TabIndex = 65;
+            this.checkBoxLowStock.Text = "foxCheckBox1";
+            this.checkBoxLowStock.UncheckedBorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.UncheckedBorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.UncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.checkBoxLowStock.CheckedChanged += new ReaLTaiizor.Util.FoxBase.CheckControlBox.CheckedChangedEventHandler(this.checkBoxLowStock_CheckedChanged);
+            // 
             // AdminProductPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.checkBoxLowStock);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboBoxState);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.dataGridViewProducts);
             this.Controls.Add(this.lostBorderPanel4);
             this.Controls.Add(this.buttonDelete);
@@ -640,5 +712,9 @@
         private System.Windows.Forms.Label labelLowStockProducts;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridViewProducts;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private ReaLTaiizor.Controls.HopeComboBox comboBoxState;
+        private ReaLTaiizor.Controls.FoxCheckBox checkBoxLowStock;
     }
 }

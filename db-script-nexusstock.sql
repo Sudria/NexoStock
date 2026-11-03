@@ -89,6 +89,24 @@ CREATE TABLE `products` (
   UNIQUE KEY `Cod` (`Cod`)
 );
 
+CREATE TABLE product_images (
+    Id INT NOT NULL AUTO_INCREMENT,
+    ProductId INT NOT NULL,
+    ImagePath VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_product_images_products
+        FOREIGN KEY (ProductId)
+        REFERENCES products(Id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT uq_product_image_path
+        UNIQUE (ProductId, ImagePath),
+
+    INDEX idx_product_images_product (ProductId)
+);
+
 CREATE TABLE sales (
     Id INT NOT NULL AUTO_INCREMENT,
     UserId INT NOT NULL,
@@ -187,22 +205,7 @@ CREATE TABLE purchase_details (
 );
 
 
-CREATE TABLE product_movements (
-    Id INT NOT NULL AUTO_INCREMENT,
-    UserId INT NOT NULL,
-    Type VARCHAR(20) NOT NULL,
-    ReferenceId INT NOT NULL,
-    MovementDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (Id),
-
-    CONSTRAINT fk_product_movements_users
-        FOREIGN KEY (UserId)
-        REFERENCES users(Id),
-
-    CONSTRAINT chk_product_movements_type
-        CHECK (Type IN ('Venta', 'Compra', 'Ajuste'))
-);
 
 CREATE TABLE clients (
 	`Id` INT NOT NULL AUTO_INCREMENT,
@@ -221,28 +224,41 @@ UNIQUE KEY `Email` (`Email`)
 );
 
 
+CREATE TABLE product_movements (
+    Id INT NOT NULL AUTO_INCREMENT,
+    ProductId INT NOT NULL,
+    UserId INT NOT NULL,
+
+    MovementType ENUM('COMPRA', 'VENTA') NOT NULL,
+    Quantity INT NOT NULL,
+
+    MovementDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    Description VARCHAR(255) NULL,
+
+    PRIMARY KEY (Id),
+
+    CONSTRAINT fk_movements_products
+        FOREIGN KEY (ProductId)
+        REFERENCES products(Id),
+
+    CONSTRAINT fk_movements_users
+        FOREIGN KEY (UserId)
+        REFERENCES users(Id),
+
+    INDEX idx_movements_product (ProductId),
+    INDEX idx_movements_user (UserId),
+    INDEX idx_movements_date (MovementDate)
+);
+
+
+
+
 
 
 
 -- Triggers
 DELIMITER //
-
-CREATE TRIGGER Actualizar_Stock_Compra
-AFTER UPDATE ON purchases
-FOR EACH ROW
-BEGIN
-    -- Solo ejecutar cuando la compra cambia de inactiva a activa
-    IF OLD.State = 0 AND NEW.State = 1 THEN
-
-        UPDATE products p
-        INNER JOIN purchase_details pd
-            ON p.Id = pd.ProductId
-        SET p.Stock = p.Stock + pd.Quantity
-        WHERE pd.PurchaseId = NEW.Id;
-
-    END IF;
-END //
-
 
 
 CREATE TRIGGER trg_purchase_details_after_insert
@@ -394,7 +410,8 @@ JOIN providers pr ON p.ProviderId = pr.Id;
 
 select * from users;
 
-UPDATE users set state = 1 where id = 44;
+
+
 
 
 
