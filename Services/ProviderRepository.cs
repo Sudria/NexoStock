@@ -186,5 +186,29 @@ namespace NexoStock.Services
 
             return providers;
         }
+
+
+        public ProviderClass GetProviderById(int providerId)
+        {
+            string query = "SELECT * FROM providers WHERE Id = @id";
+            using (var reader = connectionDB.ExecuteReader(query, new MySqlParameter("@id", providerId)))
+            {
+                if (reader.Read())
+                {
+                    return new ProviderClass
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader.GetString("Name"),
+                        Surname = reader.GetString("Surname"),
+                        Cuit = reader.GetString("Cuit"),
+                        Email = reader.GetString("Email"),
+                        Tel = reader.GetString("Tel"),
+                        State = reader.GetBoolean("State"),
+                        CreatedDate = reader.GetDateTime("CreatedDate")
+                    };
+                }
+            }
+            return null; // Return null if the provider is not found
+        }
     }
 }

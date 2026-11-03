@@ -85,8 +85,30 @@ namespace NexoStock.Forms.Admin
             }).ToList();
 
             dataGridProviders.DataSource = null;
+            dataGridProviders.AutoGenerateColumns = true;
             dataGridProviders.DataSource = data;
+
+            // Ocultar columnas
             dataGridProviders.Columns["Id"].Visible = false;
+
+            // Nombres personalizados
+            Dictionary<string, string> columnHeaders = new Dictionary<string, string>
+    {
+        { "Name", "Nombre" },
+        { "Surname", "Apellido" },
+        { "Cuit", "CUIT" },
+        { "Email", "Correo electrónico" },
+        { "Tel", "Teléfono" },
+        { "StateText", "Estado" }
+    };
+
+            foreach (var column in columnHeaders)
+            {
+                if (dataGridProviders.Columns.Contains(column.Key))
+                {
+                    dataGridProviders.Columns[column.Key].HeaderText = column.Value;
+                }
+            }
         }
 
         private void LoadStateFilter()
@@ -105,6 +127,38 @@ namespace NexoStock.Forms.Admin
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            if (dataGridProviders.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(
+                    "Por favor, seleccione un proveedor para editar.",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            int providerId = Convert.ToInt32(
+                dataGridProviders.SelectedRows[0].Cells["Id"].Value
+            );
+
+            ProviderRepository providerRepository = new ProviderRepository();
+
+            ProviderClass provider = providerRepository.GetProviderById(providerId);
+
+            if (provider == null)
+            {
+                MessageBox.Show(
+                    "No se pudo encontrar el proveedor seleccionado.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
+
+            AdminForm dashboard = this.ParentForm as AdminForm;
+            dashboard.LoadUpdateProviderControler(provider);
 
         }
 

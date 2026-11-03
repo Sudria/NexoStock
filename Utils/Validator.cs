@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace NexoStock.Utils
 {
-    internal static class Validator
+    public static class Validator
     {
         static string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 

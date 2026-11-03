@@ -160,6 +160,12 @@ namespace NexoStock.Forms.Admin
             panelContent.Controls.Clear();
             panelContent.Controls.Add(new AdminUpdateProductPanel(product));
         }
+
+        public void LoadUpdateProviderControler(ProviderClass provider)
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new AdminUpdateProviderPanel(provider));
+        }
         //COMPORTAMIENTO DE BOTONES
 
         private void activeButton(CyberButton e)
