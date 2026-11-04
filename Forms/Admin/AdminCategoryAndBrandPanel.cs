@@ -271,5 +271,49 @@ namespace NexoStock.Forms.Admin
             dataGridBrand.Columns["Name"].HeaderText = "Nombre";
             dataGridBrand.Columns["StateText"].HeaderText = "Estado";
         }
+
+        private void buttonEditBrand_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridBrand.SelectedRows[0];
+
+
+
+            int id = Convert.ToInt32(row.Cells["Id"].Value);
+            string name = row.Cells["Name"].Value.ToString();
+            bool state = row.Cells["StateText"].Value.ToString() == "Activo";
+
+            BrandClass brand = new BrandClass
+            {
+                Id = id,
+                Name = name,
+                State = state
+            };
+
+            NewBrandForm newBrandForm = new NewBrandForm(brand);
+            newBrandForm.ShowDialog();
+            LoadDataGrids();
+        }
+
+        private void buttonEditCategory_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridCategory.SelectedRows[0];
+
+
+
+            int id = Convert.ToInt32(row.Cells["Id"].Value);
+            string name = row.Cells["Name"].Value.ToString();
+            bool state = row.Cells["StateText"].Value.ToString() == "Activo";
+
+            CategoryClass category = new CategoryClass
+            {
+                Id = id,
+                Name = name,
+                State = state
+            };
+
+            NewCategoryForm newCategoryForm = new NewCategoryForm(category);
+            newCategoryForm.ShowDialog();
+            LoadDataGrids();
+        }
     }
 }

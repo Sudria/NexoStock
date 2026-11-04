@@ -153,6 +153,7 @@ namespace NexoStock.Forms.Admin
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+
             if (dataGridViewUsers.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por favor, seleccione un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -161,6 +162,14 @@ namespace NexoStock.Forms.Admin
             var userId = dataGridViewUsers.SelectedRows[0].Cells[0].Value.ToString();
             var userName = dataGridViewUsers.SelectedRows[0].Cells[2].Value.ToString();
             var userState = dataGridViewUsers.SelectedRows[0].Cells[7].Value.ToString();
+
+            AdminForm dashboard = this.ParentForm as AdminForm;
+
+            if (dashboard.GetUser().Id == int.Parse(userId))
+            {
+                MessageBox.Show("No puedes eliminar tu propio usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (userState == "Inactivo")
             {

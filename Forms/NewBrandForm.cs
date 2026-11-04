@@ -14,9 +14,15 @@ namespace NexoStock.Forms
 {
     public partial class NewBrandForm : Form
     {
-        public NewBrandForm()
+        BrandClass brand = new BrandClass();
+        public NewBrandForm(BrandClass brand = null)
         {
             InitializeComponent();
+            if (brand != null)
+            {
+                this.brand = brand;
+                textBoxBrandName.Text = brand.Name;
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -32,14 +38,30 @@ namespace NexoStock.Forms
                 return;
             }
 
-            BrandClass brand = new BrandClass
+            if (this.brand == null)
             {
-                Name = textBoxBrandName.Text
-            };
+                BrandClass newBrand = new BrandClass
+                {
+                    Name = textBoxBrandName.Text
+                };
 
-            Services.BrandRepository brandRepository = new Services.BrandRepository();
-            brandRepository.CreateBrand(brand);
-            MessageBox.Show($"Marca '{brand.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Services.BrandRepository brandRepository = new Services.BrandRepository();
+                brandRepository.CreateBrand(newBrand);
+                MessageBox.Show($"Marca '{newBrand.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+
+            }
+            else
+            {
+                this.brand.Name = textBoxBrandName.Text;
+                Services.BrandRepository brandRepository = new Services.BrandRepository();
+                brandRepository.UpdateBrand(this.brand);
+                MessageBox.Show($"Marca '{this.brand.Name}' actualizada con éxito.", "Actualización Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+            }
+
+
+
         }
     }
 }

@@ -14,9 +14,15 @@ namespace NexoStock.Forms
 {
     public partial class NewCategoryForm : Form
     {
-        public NewCategoryForm()
+        CategoryClass category = new CategoryClass();
+        public NewCategoryForm(CategoryClass category = null)
         {
             InitializeComponent();
+            if (category != null)
+            {
+                this.category = category;
+                textBoxCategoryName.Text = category.Name;
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -32,15 +38,29 @@ namespace NexoStock.Forms
                 return;
             }
 
-            CategoryClass category = new CategoryClass
+            if (this.category == null)
             {
-                Name = textBoxCategoryName.Text
-            };
+                CategoryClass newCategory = new CategoryClass
+                {
+                    Name = textBoxCategoryName.Text
+                };
 
-            Services.CategoryRepository categoryRepository = new Services.CategoryRepository();
-            categoryRepository.CreateCategory(category);
-            MessageBox.Show($"Categoría '{category.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Services.CategoryRepository categoryRepository = new Services.CategoryRepository();
+                categoryRepository.CreateCategory(newCategory);
+                MessageBox.Show($"Categoría '{newCategory.Name}' registrada con éxito.", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+            }
+            else
+            {
+                this.category.Name = textBoxCategoryName.Text;
+                Services.CategoryRepository categoryRepository = new Services.CategoryRepository();
+                categoryRepository.UpdateCategory(this.category);
+                MessageBox.Show($"Categoría '{this.category.Name}' actualizada con éxito.", "Actualización Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
 
+
+            }
         }
     }
 }
+

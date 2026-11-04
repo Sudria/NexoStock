@@ -28,6 +28,12 @@ namespace NexoStock.Forms.Admin
             this.user = user;
         }
 
+       
+        public UserClass GetUser()
+        {
+            return user;
+        }
+
 
         //BOTONES
 
