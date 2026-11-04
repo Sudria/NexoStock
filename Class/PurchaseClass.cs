@@ -2,7 +2,7 @@
 
 namespace NexoStock.Class
 {
-    internal class PurchaseClass
+    public class PurchaseClass
     {
         public int Id { get; set; }
         public int ProviderId { get; set; }

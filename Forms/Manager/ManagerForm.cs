@@ -67,13 +67,6 @@ namespace NexoStock.Forms.Manager
             LoadBuysController();
         }
 
-        private void buttonSellers_Click(object sender, EventArgs e)
-        {
-            innactiveButton(activedButton);
-            activedButton = buttonSellers;
-            activeButton(activedButton);
-            LoadSellersController();
-        }
 
         private void buttonInforms_Click(object sender, EventArgs e)
         {
@@ -128,7 +121,7 @@ namespace NexoStock.Forms.Manager
         public void LoadBuysController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new ManagerBuysPanel());
+            panelContent.Controls.Add(new ManagerBuysPanel(this.user));
         }
 
         public void LoadSellersController()

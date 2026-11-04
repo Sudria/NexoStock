@@ -257,6 +257,12 @@
     <Compile Include="Forms\Manager\ManagerSellersPanel.Designer.cs">
       <DependentUpon>ManagerSellersPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Manager\ManagerPurshaceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerPurshaceDetail.Designer.cs">
+      <DependentUpon>ManagerPurshaceDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewBrandForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Manager\ManagerSellersPanel.resx">
       <DependentUpon>ManagerSellersPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerPurshaceDetail.resx">
+      <DependentUpon>ManagerPurshaceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewBrandForm.resx">
       <DependentUpon>NewBrandForm.cs</DependentUpon>

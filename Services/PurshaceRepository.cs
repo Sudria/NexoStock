@@ -1,8 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using NexoStock.Class;
 using NexoStock.Utils;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace NexoStock.Services
 {
@@ -57,6 +59,107 @@ namespace NexoStock.Services
             }
 
             return purchases;
+        }
+
+        public DataTable GetPurchaseDetailsTable(int purchaseId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            pd.Id AS 'ID',
+            pd.PurchaseId AS 'N° Compra',
+            p.Name AS 'Producto',
+            p.Cod AS 'Código',
+            pd.Quantity AS 'Cantidad',
+            pd.PurchasePrice AS 'Precio de Compra',
+            pd.Subtotal AS 'Subtotal'
+        FROM purchase_details pd
+        INNER JOIN products p ON pd.ProductId = p.Id
+        WHERE pd.PurchaseId = @PurchaseId
+        ORDER BY pd.Id;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@PurchaseId", purchaseId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener los detalles de la compra: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
+
+        public decimal GetPurchaseTotal(int purchaseId)
+        {
+            string query = @"
+        SELECT Total
+        FROM purchases
+        WHERE Id = @PurchaseId;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@PurchaseId", purchaseId)))
+                {
+                    if (reader.Read())
+                        return reader.GetDecimal("Total");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener el total de la compra: " + ex.Message
+                );
+            }
+
+            return 0;
+        }
+
+        public DataTable GetPurchaseHeader(int purchaseId)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            p.PurchaseDate AS Fecha,
+            CONCAT(pr.Name, ' ', pr.Surname) AS Proveedor
+        FROM purchases p
+        INNER JOIN providers pr ON p.ProviderId = pr.Id
+        WHERE p.Id = @PurchaseId;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@PurchaseId", purchaseId)))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener los datos de la compra: " + ex.Message
+                );
+            }
+
+            return table;
         }
     }
 }

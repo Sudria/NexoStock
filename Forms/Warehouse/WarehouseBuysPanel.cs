@@ -145,5 +145,10 @@ namespace NexoStock.Forms.Warehouse
             datePickerFrom.MinDate = new DateTime(2020, 1, 1);
             datePickerFrom.MaxDate = DateTime.Now;
         }
+
+        private void buttonDetails_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

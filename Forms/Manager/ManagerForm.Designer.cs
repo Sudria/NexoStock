@@ -33,7 +33,6 @@
             this.buttonInforms = new ReaLTaiizor.Controls.CyberButton();
             this.buttonExit = new ReaLTaiizor.Controls.CyberButton();
             this.buttonCloseSession = new ReaLTaiizor.Controls.CyberButton();
-            this.buttonSellers = new ReaLTaiizor.Controls.CyberButton();
             this.buttonBuys = new ReaLTaiizor.Controls.CyberButton();
             this.buttonProduct = new ReaLTaiizor.Controls.CyberButton();
             this.buttonSales = new ReaLTaiizor.Controls.CyberButton();
@@ -55,7 +54,6 @@
             this.panelDashboard.Controls.Add(this.buttonInforms);
             this.panelDashboard.Controls.Add(this.buttonExit);
             this.panelDashboard.Controls.Add(this.buttonCloseSession);
-            this.panelDashboard.Controls.Add(this.buttonSellers);
             this.panelDashboard.Controls.Add(this.buttonBuys);
             this.panelDashboard.Controls.Add(this.buttonProduct);
             this.panelDashboard.Controls.Add(this.buttonSales);
@@ -93,7 +91,7 @@
             this.buttonInforms.Lighting = false;
             this.buttonInforms.LinearGradient_Background = false;
             this.buttonInforms.LinearGradientPen = true;
-            this.buttonInforms.Location = new System.Drawing.Point(48, 460);
+            this.buttonInforms.Location = new System.Drawing.Point(48, 406);
             this.buttonInforms.Name = "buttonInforms";
             this.buttonInforms.PenWidth = 15;
             this.buttonInforms.Rounding = true;
@@ -193,49 +191,6 @@
             this.buttonCloseSession.Timer_Effect_1 = 1;
             this.buttonCloseSession.Timer_RGB = 1;
             this.buttonCloseSession.Click += new System.EventHandler(this.buttonCloseSession_Click);
-            // 
-            // buttonSellers
-            // 
-            this.buttonSellers.Alpha = 30;
-            this.buttonSellers.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSellers.Background = true;
-            this.buttonSellers.Background_WidthPen = 2F;
-            this.buttonSellers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSellers.BackgroundPen = true;
-            this.buttonSellers.ColorBackground = System.Drawing.Color.Empty;
-            this.buttonSellers.ColorBackground_1 = System.Drawing.Color.Fuchsia;
-            this.buttonSellers.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
-            this.buttonSellers.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.buttonSellers.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
-            this.buttonSellers.ColorPen_1 = System.Drawing.Color.Transparent;
-            this.buttonSellers.ColorPen_2 = System.Drawing.Color.Transparent;
-            this.buttonSellers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSellers.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.buttonSellers.Effect_1 = true;
-            this.buttonSellers.Effect_1_ColorBackground = System.Drawing.Color.Violet;
-            this.buttonSellers.Effect_1_Transparency = 25;
-            this.buttonSellers.Effect_2 = false;
-            this.buttonSellers.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
-            this.buttonSellers.Effect_2_Transparency = 20;
-            this.buttonSellers.Font = new System.Drawing.Font("Arial", 11F);
-            this.buttonSellers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.buttonSellers.Lighting = false;
-            this.buttonSellers.LinearGradient_Background = false;
-            this.buttonSellers.LinearGradientPen = true;
-            this.buttonSellers.Location = new System.Drawing.Point(48, 405);
-            this.buttonSellers.Name = "buttonSellers";
-            this.buttonSellers.PenWidth = 15;
-            this.buttonSellers.Rounding = true;
-            this.buttonSellers.RoundingInt = 25;
-            this.buttonSellers.Size = new System.Drawing.Size(235, 50);
-            this.buttonSellers.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.buttonSellers.TabIndex = 19;
-            this.buttonSellers.Tag = "Cyber";
-            this.buttonSellers.TextButton = "VENDEDORES";
-            this.buttonSellers.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.buttonSellers.Timer_Effect_1 = 1;
-            this.buttonSellers.Timer_RGB = 1;
-            this.buttonSellers.Click += new System.EventHandler(this.buttonSellers_Click);
             // 
             // buttonBuys
             // 
@@ -430,7 +385,6 @@
         #endregion
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelDashboard;
-        private ReaLTaiizor.Controls.CyberButton buttonSellers;
         private ReaLTaiizor.Controls.CyberButton buttonBuys;
         private ReaLTaiizor.Controls.CyberButton buttonProduct;
         private ReaLTaiizor.Controls.CyberButton buttonSales;

@@ -329,7 +329,7 @@
             this.labelClients.AutoSize = true;
             this.labelClients.BackColor = System.Drawing.Color.Transparent;
             this.labelClients.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelClients.Location = new System.Drawing.Point(144, 51);
+            this.labelClients.Location = new System.Drawing.Point(86, 51);
             this.labelClients.Name = "labelClients";
             this.labelClients.Size = new System.Drawing.Size(30, 36);
             this.labelClients.TabIndex = 1;
@@ -381,7 +381,7 @@
             this.labelProducts.AutoSize = true;
             this.labelProducts.BackColor = System.Drawing.Color.Transparent;
             this.labelProducts.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelProducts.Location = new System.Drawing.Point(144, 51);
+            this.labelProducts.Location = new System.Drawing.Point(86, 51);
             this.labelProducts.Name = "labelProducts";
             this.labelProducts.Size = new System.Drawing.Size(82, 36);
             this.labelProducts.TabIndex = 1;
@@ -432,10 +432,10 @@
             // 
             this.labelSales.AutoSize = true;
             this.labelSales.BackColor = System.Drawing.Color.Transparent;
-            this.labelSales.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
-            this.labelSales.Location = new System.Drawing.Point(90, 51);
+            this.labelSales.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.labelSales.Location = new System.Drawing.Point(86, 51);
             this.labelSales.Name = "labelSales";
-            this.labelSales.Size = new System.Drawing.Size(89, 36);
+            this.labelSales.Size = new System.Drawing.Size(77, 30);
             this.labelSales.TabIndex = 1;
             this.labelSales.Text = "$ 0,00";
             // 
