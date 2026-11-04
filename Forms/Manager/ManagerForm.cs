@@ -28,6 +28,10 @@ namespace NexoStock.Forms.Manager
             this.user = user;
         }
 
+        public UserClass GetUser()
+        {
+            return user;
+        }
 
         //BOTONES
 
@@ -106,7 +110,7 @@ namespace NexoStock.Forms.Manager
         public void LoadSalesController()
         {
             panelContent.Controls.Clear();
-            panelContent.Controls.Add(new ManagerSalesPanel());
+            panelContent.Controls.Add(new ManagerSalesPanel(this.user));
         }
 
         public void LoadNewProductController()

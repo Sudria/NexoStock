@@ -601,5 +601,45 @@ namespace NexoStock.Services
                 }
             }
         }
+
+        public DataTable GetAllSalesWithClients()
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            s.Id AS 'N° Venta',
+            s.SaleDate AS 'Fecha',
+            CONCAT(c.Name, ' ', c.Surname) AS 'Cliente',
+            c.Dni AS 'DNI Cliente',
+            u.Username AS 'Vendedor',
+            s.Total AS 'Total',
+            s.ClientId AS ClientId,
+            s.UserId AS UserId
+        FROM sales s
+        INNER JOIN clients c ON s.ClientId = c.Id
+        INNER JOIN users u ON s.UserId = u.Id
+        ORDER BY s.SaleDate DESC;
+    ";
+
+            try
+            {
+                using (MySqlDataReader reader = connectionDB.ExecuteReader(query))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar las ventas: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
+        }
     }
 }
