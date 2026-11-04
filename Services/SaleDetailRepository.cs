@@ -19,7 +19,7 @@ namespace NexoStock.Services
         }
 
         // CREAR DETALLE DE VENTA
-        public bool CreateSaleDetail(SaleDetail detail)
+        public bool CreateSaleDetail(SaleDetailClass detail)
         {
             string query = @"
                 INSERT INTO sale_details
@@ -95,9 +95,9 @@ namespace NexoStock.Services
         }
 
         // OBTENER TODOS LOS DETALLES DE UNA VENTA
-        public List<SaleDetail> GetDetailsBySaleId(int saleId)
+        public List<SaleDetailClass> GetDetailsBySaleId(int saleId)
         {
-            List<SaleDetail> details = new List<SaleDetail>();
+            List<SaleDetailClass> details = new List<SaleDetailClass>();
 
             string query = @"
                 SELECT
@@ -119,7 +119,7 @@ namespace NexoStock.Services
                 {
                     while (reader.Read())
                     {
-                        SaleDetail detail = new SaleDetail
+                        SaleDetailClass detail = new SaleDetailClass
                         {
                             Id = reader.GetInt32("Id"),
                             SaleId = reader.GetInt32("SaleId"),

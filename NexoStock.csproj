@@ -164,8 +164,8 @@
     <Compile Include="Class\ProductMovementClass.cs" />
     <Compile Include="Class\ProviderClass.cs" />
     <Compile Include="Class\PurchaseClass.cs" />
-    <Compile Include="Class\Sale.cs" />
-    <Compile Include="Class\SaleDetail.cs" />
+    <Compile Include="Class\SaleClass.cs" />
+    <Compile Include="Class\SaleDetailClass.cs" />
     <Compile Include="Class\UserClass.cs" />
     <Compile Include="Forms\Admin\AdminHomePanel.cs">
       <SubType>UserControl</SubType>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NexoStock.Class
 {
 
-    public class Sale
+    public class SaleClass
     {
         public int Id { get; set; }
 

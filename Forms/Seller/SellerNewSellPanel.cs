@@ -283,7 +283,7 @@ namespace NexoStock.Forms.Seller
             }
 
             // Validar que haya productos
-            List<SaleDetail> details = new List<SaleDetail>();
+            List<SaleDetailClass> details = new List<SaleDetailClass>();
             decimal total = 0;
 
             foreach (DataGridViewRow row in dataGridSell.Rows)
@@ -301,7 +301,7 @@ namespace NexoStock.Forms.Seller
                     return;
                 }
 
-                SaleDetail detail = new SaleDetail
+                SaleDetailClass detail = new SaleDetailClass
                 {
                     ProductId = productId,
                     Quantity = quantity,
@@ -319,7 +319,7 @@ namespace NexoStock.Forms.Seller
             }
 
             // Crear la venta
-            Sale sale = new Sale
+            SaleClass sale = new SaleClass
             {
                 UserId = user.Id,
                 ClientId = client.Id,

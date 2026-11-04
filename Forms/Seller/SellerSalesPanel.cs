@@ -38,7 +38,7 @@ namespace NexoStock.Forms.Seller
                 return;
             }
 
-            Sale sale = new Sale
+            SaleClass sale = new SaleClass
             {
                 Id = Convert.ToInt32(
            dataGridSales.CurrentRow.Cells["N° Venta"].Value),

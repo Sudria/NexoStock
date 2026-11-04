@@ -19,7 +19,7 @@ namespace NexoStock.Services
         }
 
         // CREAR VENTA
-        public bool CreateSale(Sale sale)
+        public bool CreateSale(SaleClass sale)
         {
             string query = @"
                 INSERT INTO sales (UserId, Total, State)
@@ -51,9 +51,9 @@ namespace NexoStock.Services
         }
 
         // OBTENER TODAS LAS VENTAS
-        public List<Sale> GetAllSales()
+        public List<SaleClass> GetAllSales()
         {
-            List<Sale> sales = new List<Sale>();
+            List<SaleClass> sales = new List<SaleClass>();
 
             string query = @"
                 SELECT
@@ -72,7 +72,7 @@ namespace NexoStock.Services
                 {
                     while (reader.Read())
                     {
-                        Sale sale = new Sale
+                        SaleClass sale = new SaleClass
                         {
                             Id = reader.GetInt32("Id"),
                             UserId = reader.GetInt32("UserId"),
@@ -99,7 +99,7 @@ namespace NexoStock.Services
         }
 
         // OBTENER VENTA POR ID
-        public Sale GetSaleById(int saleId)
+        public SaleClass GetSaleById(int saleId)
         {
             string query = @"
                 SELECT
@@ -120,7 +120,7 @@ namespace NexoStock.Services
                 {
                     if (reader.Read())
                     {
-                        return new Sale
+                        return new SaleClass
                         {
                             Id = reader.GetInt32("Id"),
                             UserId = reader.GetInt32("UserId"),
@@ -376,8 +376,125 @@ namespace NexoStock.Services
         }
 
 
+        public DataTable GetSalesByCategory()
+        {
+            DataTable data = new DataTable();
 
-        public bool CreateCompleteSale(Sale sale, List<SaleDetail> details, out int saleId)
+            string query = @"
+        SELECT 
+            c.Name AS Categoria,
+            SUM(sd.Quantity) AS CantidadVendida
+        FROM sale_details sd
+        INNER JOIN sales s ON s.Id = sd.SaleId
+        INNER JOIN products p ON p.Id = sd.ProductId
+        INNER JOIN categorys c ON c.Id = p.CategoryId
+        WHERE s.State = 1
+        GROUP BY c.Id, c.Name
+        ORDER BY CantidadVendida DESC;";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(query))
+                {
+                    data.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al obtener las categorías más vendidas:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return data;
+        }
+
+
+        public DataTable GetTopSellersOfCurrentMonth()
+        {
+            DataTable data = new DataTable();
+
+            string query = @"
+        SELECT 
+            CONCAT(u.Name, ' ', u.Surname) AS Nombre,
+            SUM(s.Total) AS TotalVendido
+        FROM sales s
+        INNER JOIN users u ON s.UserId = u.Id
+        WHERE 
+            s.State = 1
+            AND YEAR(s.SaleDate) = YEAR(CURRENT_DATE())
+            AND MONTH(s.SaleDate) = MONTH(CURRENT_DATE())
+        GROUP BY 
+            s.UserId, u.Name, u.Surname
+        ORDER BY 
+            TotalVendido DESC
+        LIMIT 5;";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(query))
+                {
+                    data.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al obtener los mejores vendedores:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return data;
+        }
+
+        public DataTable GetTopSellingProductsOfCurrentMonth()
+        {
+            DataTable data = new DataTable();
+
+            string query = @"
+        SELECT
+            p.Name AS Producto,
+            SUM(sd.Quantity) AS CantidadVendida
+        FROM sale_details sd
+        INNER JOIN sales s ON sd.SaleId = s.Id
+        INNER JOIN products p ON sd.ProductId = p.Id
+        WHERE
+            s.State = 1
+            AND YEAR(s.SaleDate) = YEAR(CURRENT_DATE())
+            AND MONTH(s.SaleDate) = MONTH(CURRENT_DATE())
+        GROUP BY
+            p.Id, p.Name
+        ORDER BY
+            CantidadVendida DESC
+        LIMIT 5;";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(query))
+                {
+                    data.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al obtener los productos más vendidos:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return data;
+        }
+
+        public bool CreateCompleteSale(SaleClass sale, List<SaleDetailClass> details, out int saleId)
         {
             saleId = 0;
 
@@ -410,7 +527,7 @@ namespace NexoStock.Services
                     }
 
                     // 2. Registrar cada producto y descontar el stock
-                    foreach (SaleDetail detail in details)
+                    foreach (SaleDetailClass detail in details)
                     {
                         if (detail.Quantity <= 0 || detail.UnitPrice < 0)
                         {

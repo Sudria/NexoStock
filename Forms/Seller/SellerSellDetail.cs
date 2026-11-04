@@ -16,9 +16,9 @@ namespace NexoStock.Forms.Seller
     public partial class SellerSellDetail : Form
     {
 
-        private Sale _sale;
+        private SaleClass _sale;
 
-        public SellerSellDetail(Sale sale)
+        public SellerSellDetail(SaleClass sale)
         {
             InitializeComponent();
             _sale = sale;

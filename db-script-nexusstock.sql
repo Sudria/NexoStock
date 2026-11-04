@@ -112,6 +112,7 @@ CREATE TABLE sales (
     UserId INT NOT NULL,
     ClientId INT NOT NULL,
     SaleDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    State TINYINT(1) DEFAULT TRUE,
     Total DECIMAL(13,2) NOT NULL DEFAULT 0,
 
     PRIMARY KEY (Id),
@@ -228,26 +229,23 @@ CREATE TABLE product_movements (
     Id INT NOT NULL AUTO_INCREMENT,
     ProductId INT NOT NULL,
     UserId INT NOT NULL,
-
-    MovementType ENUM('COMPRA', 'VENTA') NOT NULL,
+    Type VARCHAR(20) NOT NULL,
+    ReferenceId INT NOT NULL,
     Quantity INT NOT NULL,
-
+    PreviousStock INT NOT NULL,
+    NewStock INT NOT NULL,
     MovementDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-    Description VARCHAR(255) NULL,
 
     PRIMARY KEY (Id),
 
     CONSTRAINT fk_movements_products
-        FOREIGN KEY (ProductId)
-        REFERENCES products(Id),
+        FOREIGN KEY (ProductId) REFERENCES products(Id),
 
     CONSTRAINT fk_movements_users
-        FOREIGN KEY (UserId)
-        REFERENCES users(Id),
+        FOREIGN KEY (UserId) REFERENCES users(Id),
 
-    INDEX idx_movements_product (ProductId),
-    INDEX idx_movements_user (UserId),
+    INDEX idx_movements_type (Type),
+    INDEX idx_movements_reference (ReferenceId),
     INDEX idx_movements_date (MovementDate)
 );
 
@@ -270,9 +268,60 @@ BEGIN
     WHERE Id = NEW.ProductId;
 END //
 
+
+CREATE TRIGGER trg_purchase_detail_movement
+AFTER INSERT ON purchase_details
+FOR EACH ROW
+BEGIN
+    DECLARE v_previous_stock INT;
+    DECLARE v_new_stock INT;
+    DECLARE v_user_id INT;
+
+    -- Obtener stock actual y bloquear el producto
+    SELECT Stock
+    INTO v_previous_stock
+    FROM products
+    WHERE Id = NEW.ProductId
+    FOR UPDATE;
+
+    -- Obtener usuario responsable
+    SELECT UserId
+    INTO v_user_id
+    FROM purchases
+    WHERE Id = NEW.PurchaseId;
+
+    -- Calcular nuevo stock
+    SET v_new_stock = v_previous_stock + NEW.Quantity;
+
+    -- Actualizar stock
+    UPDATE products
+    SET Stock = v_new_stock
+    WHERE Id = NEW.ProductId;
+
+    -- Registrar movimiento
+    INSERT INTO product_movements
+    (
+        ProductId,
+        UserId,
+        Type,
+        ReferenceId,
+        Quantity,
+        PreviousStock,
+        NewStock
+    )
+    VALUES
+    (
+        NEW.ProductId,
+        v_user_id,
+        'COMPRA',
+        NEW.PurchaseId,
+        NEW.Quantity,
+        v_previous_stock,
+        v_new_stock
+    );
+END //
+
 DELIMITER ;
-
-
 
 
 
@@ -408,7 +457,7 @@ JOIN brands b ON p.BrandId = b.Id
 JOIN categorys c ON p.CategoryId = c.Id
 JOIN providers pr ON p.ProviderId = pr.Id;
 
-select * from users;
+select * from product_movements;
 
 
 

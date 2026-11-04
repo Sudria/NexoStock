@@ -4,6 +4,7 @@ using NexoStock.Class;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace NexoStock.Services
@@ -200,6 +201,46 @@ namespace NexoStock.Services
             }
 
             return movements;
+        }
+
+        public DataTable GetMovementsDataTable()
+        {
+            DataTable data = new DataTable();
+
+            string query = @"
+    SELECT
+        pm.Id,
+        p.Name AS Producto,
+        pm.`Type` AS Tipo,
+        pm.ReferenceId AS Operacion,
+        pm.Quantity AS Cantidad,
+        pm.PreviousStock AS StockAnterior,
+        pm.NewStock AS StockNuevo,
+        u.Username AS Usuario,
+        pm.MovementDate AS Fecha
+    FROM product_movements pm
+    INNER JOIN products p ON pm.ProductId = p.Id
+    INNER JOIN users u ON pm.UserId = u.Id
+    ORDER BY pm.MovementDate DESC;";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(query))
+                {
+                    data.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    $"Error al obtener los movimientos:\n{ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return data;
         }
     }
 }
