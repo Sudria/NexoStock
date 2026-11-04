@@ -144,6 +144,7 @@ namespace NexoStock.Forms.Manager
         }
 
 
+
         //COMPORTAMIENTO DE BOTONES
 
         private void activeButton(CyberButton e)
