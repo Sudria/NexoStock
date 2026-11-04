@@ -212,9 +212,8 @@
             this.textBoxTel.Size = new System.Drawing.Size(324, 38);
             this.textBoxTel.TabIndex = 45;
             this.textBoxTel.TabStop = false;
-            this.textBoxTel.Text = "54 9 ";
+            this.textBoxTel.Text = "549";
             this.textBoxTel.UseSystemPasswordChar = false;
-            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
             // 
             // textBoxEmail
             // 
@@ -352,7 +351,7 @@
             this.label8.TabIndex = 69;
             this.label8.Text = "Proveedores ->";
             // 
-            // AdminNewProviderPanel
+            // WarehouseNewProviderPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -376,7 +375,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Name = "AdminNewProviderPanel";
+            this.Name = "WarehouseNewProviderPanel";
             this.Size = new System.Drawing.Size(1120, 662);
             this.ResumeLayout(false);
             this.PerformLayout();

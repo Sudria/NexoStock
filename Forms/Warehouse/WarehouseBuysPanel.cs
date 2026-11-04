@@ -148,7 +148,9 @@ namespace NexoStock.Forms.Warehouse
 
         private void buttonDetails_Click(object sender, EventArgs e)
         {
-
+            WarehousePurshaceDetail warehousePurshaceDetail = new WarehousePurshaceDetail(
+                Convert.ToInt32(dataGridPurchases.CurrentRow.Cells["Id"].Value));
+            warehousePurshaceDetail.ShowDialog();
         }
     }
 }

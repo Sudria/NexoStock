@@ -55,15 +55,11 @@ namespace NexoStock.Forms.Warehouse
 
         private void formatTel(object sender, KeyPressEventArgs e)
         {
-            if (textBoxTel.Text.Length == 4)
-            {
-                textBoxTel.Text += " ";
-                textBoxTel.SelectionStart = textBoxTel.Text.Length;
-            }
+
         }
 
 
 
-       
+
     }
 }

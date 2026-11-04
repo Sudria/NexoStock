@@ -3,6 +3,7 @@ using NexoStock.Class;
 using NexoStock.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace NexoStock.Services
@@ -422,6 +423,48 @@ namespace NexoStock.Services
             }
 
             return products;
+        }
+
+        public DataTable GetStockDistribution()
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            COUNT(CASE
+                WHEN Stock > StockMin THEN 1
+            END) AS StockNormal,
+
+            COUNT(CASE
+                WHEN Stock > 0 AND Stock <= StockMin THEN 1
+            END) AS StockBajo,
+
+            COUNT(CASE
+                WHEN Stock <= 0 THEN 1
+            END) AS SinStock
+
+        FROM products
+        WHERE State = 1;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(query))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al obtener la distribución del stock: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+
+            return table;
         }
 
     }

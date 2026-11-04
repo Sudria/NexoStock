@@ -365,6 +365,24 @@
     <Compile Include="Forms\Seller\SellerForm.Designer.cs">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseUpdateProviderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseUpdateProviderPanel.Designer.cs">
+      <DependentUpon>WarehouseUpdateProviderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseUpdateProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehouseUpdateProductPanel.Designer.cs">
+      <DependentUpon>WarehouseUpdateProductPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehousePurshaceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse\WarehousePurshaceDetail.Designer.cs">
+      <DependentUpon>WarehousePurshaceDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Warehouse\WarehouseNewBuysPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -543,6 +561,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seller\SellerForm.resx">
       <DependentUpon>SellerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseUpdateProviderPanel.resx">
+      <DependentUpon>WarehouseUpdateProviderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehouseUpdateProductPanel.resx">
+      <DependentUpon>WarehouseUpdateProductPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse\WarehousePurshaceDetail.resx">
+      <DependentUpon>WarehousePurshaceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse\WarehouseNewBuysPanel.resx">
       <DependentUpon>WarehouseNewBuysPanel.cs</DependentUpon>
