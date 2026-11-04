@@ -321,9 +321,60 @@ BEGIN
     );
 END //
 
+
+CREATE TRIGGER trg_sale_detail_movement
+AFTER INSERT ON sale_details
+FOR EACH ROW
+BEGIN
+    DECLARE v_previous_stock INT;
+    DECLARE v_new_stock INT;
+    DECLARE v_user_id INT;
+
+    SELECT Stock
+    INTO v_previous_stock
+    FROM products
+    WHERE Id = NEW.ProductId
+    FOR UPDATE;
+
+    IF v_previous_stock < NEW.Quantity THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Stock insuficiente para realizar la venta';
+    END IF;
+
+    SELECT UserId
+    INTO v_user_id
+    FROM sales
+    WHERE Id = NEW.SaleId;
+
+    SET v_new_stock = v_previous_stock - NEW.Quantity;
+
+    UPDATE products
+    SET Stock = v_new_stock
+    WHERE Id = NEW.ProductId;
+
+    INSERT INTO product_movements
+    (
+        ProductId,
+        UserId,
+        Type,
+        ReferenceId,
+        Quantity,
+        PreviousStock,
+        NewStock
+    )
+    VALUES
+    (
+        NEW.ProductId,
+        v_user_id,
+        'VENTA',
+        NEW.SaleId,
+        NEW.Quantity,
+        v_previous_stock,
+        v_new_stock
+    );
+END //
+
 DELIMITER ;
-
-
 
 
 -- Usuarios de prueba randoms
@@ -457,11 +508,20 @@ JOIN brands b ON p.BrandId = b.Id
 JOIN categorys c ON p.CategoryId = c.Id
 JOIN providers pr ON p.ProviderId = pr.Id;
 
-select * from product_movements;
+SELECT *
+FROM product_movements
+ORDER BY Id DESC
+LIMIT 10;
 
+SHOW TRIGGERS;
 
+SELECT *
+FROM sale_details
+ORDER BY Id DESC
+LIMIT 10;
 
+SHOW CREATE TRIGGER trg_sale_detail_movement;
 
-
-
+SELECT * FROM brands;
+DELETE FROM brands WHERE id = 12;
 
