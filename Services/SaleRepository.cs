@@ -494,6 +494,7 @@ namespace NexoStock.Services
             return data;
         }
 
+
         public bool CreateCompleteSale(SaleClass sale, List<SaleDetailClass> details, out int saleId)
         {
             saleId = 0;
@@ -526,34 +527,13 @@ namespace NexoStock.Services
                         saleId = Convert.ToInt32(command.LastInsertedId);
                     }
 
-                    // 2. Registrar cada producto y descontar el stock
+                    // 2. Registrar los detalles de venta
+                    // El trigger de MySQL se encarga de descontar el stock.
                     foreach (SaleDetailClass detail in details)
                     {
                         if (detail.Quantity <= 0 || detail.UnitPrice < 0)
                         {
                             throw new Exception("La cantidad o el precio no son válidos.");
-                        }
-
-                        string stockQuery = @"
-                    UPDATE products
-                    SET Stock = Stock - @Quantity
-                    WHERE Id = @ProductId
-                      AND Stock >= @Quantity
-                      AND State = 1;
-                ";
-
-                        using (MySqlCommand command =
-                            new MySqlCommand(stockQuery, connection, transaction))
-                        {
-                            command.Parameters.AddWithValue("@Quantity", detail.Quantity);
-                            command.Parameters.AddWithValue("@ProductId", detail.ProductId);
-
-                            if (command.ExecuteNonQuery() != 1)
-                            {
-                                throw new Exception(
-                                    "Stock insuficiente o producto inactivo. ID: "
-                                    + detail.ProductId);
-                            }
                         }
 
                         string detailQuery = @"
@@ -575,6 +555,7 @@ namespace NexoStock.Services
                         }
                     }
 
+                    // 3. Confirmar transacción
                     transaction.Commit();
                     return true;
                 }
@@ -601,6 +582,7 @@ namespace NexoStock.Services
                 }
             }
         }
+
 
         public DataTable GetAllSalesWithClients()
         {

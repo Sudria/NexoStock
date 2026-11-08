@@ -295,7 +295,7 @@ namespace NexoStock.Forms.Seller
                 int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
                 decimal unitPrice = Convert.ToDecimal(row.Cells["Price"].Value);
 
-                if (quantity <= 0 || unitPrice < 0)
+                if (quantity <= 0 || unitPrice <= 0)
                 {
                     MessageBox.Show("Hay productos con cantidades o precios inválidos.");
                     return;
@@ -348,7 +348,8 @@ namespace NexoStock.Forms.Seller
                 dataGridSell.Rows.Clear();
                 txtTotal.Text = 0m.ToString("C2");
 
-                LoadProducts();
+                SellerForm dashboard = this.ParentForm as SellerForm;
+                dashboard.LoadSalesControler(this.user);
             }
         }
     }
