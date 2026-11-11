@@ -467,5 +467,45 @@ namespace NexoStock.Services
             return table;
         }
 
+
+        public DataTable GetTopSellingProducts(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            p.Id AS Id,
+            p.Name AS Producto,
+            p.Cod AS Codigo,
+            SUM(sd.Quantity) AS CantidadVendida,
+            SUM(sd.Quantity * sd.UnitPrice) AS TotalFacturado
+        FROM sale_details sd
+        INNER JOIN sales s ON sd.SaleId = s.Id
+        INNER JOIN products p ON sd.ProductId = p.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY p.Id, p.Name, p.Cod
+        ORDER BY CantidadVendida DESC
+        LIMIT 10;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener los productos más vendidos: " + ex.Message);
+            }
+
+            return table;
+        }
     }
 }

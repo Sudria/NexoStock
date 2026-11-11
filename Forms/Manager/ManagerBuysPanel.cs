@@ -44,10 +44,7 @@ namespace NexoStock.Forms.Manager
 
             detailForm.ShowDialog();
         }
-        private void buttonNewBuy_Click(object sender, EventArgs e)
-        {
-          
-        }
+
         private void LoadComboBoxs()
         {
             ProviderRepository providerRepository = new ProviderRepository();

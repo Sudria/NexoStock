@@ -623,5 +623,233 @@ namespace NexoStock.Services
 
             return table;
         }
+
+        public DataTable GetTopSellingProducts(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            p.Id AS Id,
+            p.Name AS Producto,
+            p.Cod AS Codigo,
+            SUM(sd.Quantity) AS CantidadVendida,
+            SUM(sd.Quantity * sd.UnitPrice) AS TotalFacturado
+        FROM sale_details sd
+        INNER JOIN sales s ON sd.SaleId = s.Id
+        INNER JOIN products p ON sd.ProductId = p.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY p.Id, p.Name, p.Cod
+        ORDER BY CantidadVendida DESC
+        LIMIT 10;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener los productos más vendidos: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable GetTopSellingCategories(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            c.Id AS Id,
+            c.Name AS Categoria,
+            SUM(sd.Quantity) AS CantidadVendida,
+            SUM(sd.Quantity * sd.UnitPrice) AS TotalFacturado
+        FROM sale_details sd
+        INNER JOIN sales s ON sd.SaleId = s.Id
+        INNER JOIN products p ON sd.ProductId = p.Id
+        INNER JOIN categorys c ON p.CategoryId = c.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY c.Id, c.Name
+        ORDER BY CantidadVendida DESC;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener las categorías más vendidas: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable GetBestSellers(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            u.Id AS Id,
+            CONCAT(u.Name, ' ', u.Surname) AS Vendedor,
+            COUNT(s.Id) AS CantidadVentas,
+            SUM(s.Total) AS TotalFacturado
+        FROM sales s
+        INNER JOIN users u ON s.UserId = u.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY u.Id, u.Name, u.Surname
+        ORDER BY TotalFacturado DESC
+        LIMIT 10;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener los mejores vendedores: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable GetTopSellingBrands(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            b.Id AS Id,
+            b.Name AS Marca,
+            SUM(sd.Quantity) AS CantidadVendida,
+            SUM(sd.Quantity * sd.UnitPrice) AS TotalFacturado
+        FROM sale_details sd
+        INNER JOIN sales s ON sd.SaleId = s.Id
+        INNER JOIN products p ON sd.ProductId = p.Id
+        INNER JOIN brands b ON p.BrandId = b.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY b.Id, b.Name
+        ORDER BY CantidadVendida DESC
+        LIMIT 10;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener las marcas más vendidas: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable GetBestClients(DateTime dateFrom, DateTime dateTo)
+        {
+            DataTable table = new DataTable();
+
+            string query = @"
+        SELECT
+            c.Id AS Id,
+            CONCAT(c.Name, ' ', c.Surname) AS Cliente,
+            c.Dni AS DNI,
+            COUNT(s.Id) AS CantidadCompras,
+            SUM(s.Total) AS TotalGastado
+        FROM sales s
+        INNER JOIN clients c ON s.ClientId = c.Id
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY c.Id, c.Name, c.Surname, c.Dni
+        ORDER BY TotalGastado DESC
+        LIMIT 10;
+    ";
+
+            try
+            {
+                using (var reader = connectionDB.ExecuteReader(
+                    query,
+                    new MySqlParameter("@DateFrom", dateFrom.Date),
+                    new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))))
+                {
+                    table.Load(reader);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error al obtener los mejores clientes: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable GetSalesByPeriod(DateTime dateFrom, DateTime dateTo)
+        {
+            string query = @"
+        SELECT
+            DATE(s.SaleDate) AS Fecha,
+            COUNT(DISTINCT s.Id) AS CantidadVentas,
+            SUM(sd.Quantity) AS UnidadesVendidas,
+            SUM(sd.Quantity * sd.UnitPrice) AS TotalFacturado
+        FROM sales s
+        INNER JOIN sale_details sd ON s.Id = sd.SaleId
+        WHERE s.State = 1
+          AND s.SaleDate >= @DateFrom
+          AND s.SaleDate < @DateTo
+        GROUP BY DATE(s.SaleDate)
+        ORDER BY Fecha ASC;";
+
+            MySqlParameter[] parameters =
+            {
+        new MySqlParameter("@DateFrom", dateFrom.Date),
+        new MySqlParameter("@DateTo", dateTo.Date.AddDays(1))
+    };
+
+            DataTable data = new DataTable();
+
+            using (MySqlDataReader reader = connectionDB.ExecuteReader(query, parameters))
+            {
+                data.Load(reader);
+            }
+
+            return data;
+        }
     }
 }
