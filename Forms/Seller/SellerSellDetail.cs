@@ -78,7 +78,10 @@ namespace NexoStock.Forms.Seller
 
             if (client != null)
             {
-                labelClient.Text = client.FullNameAndDni;
+                labelClient.Text = client.FullName;
+                labelCuit.Text = client.Dni;
+                labelTel.Text = client.Tel;
+                labelEmail.Text = client.Email;
             }
             else
             {
