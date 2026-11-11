@@ -259,15 +259,6 @@ CREATE TABLE product_movements (
 DELIMITER //
 
 
-CREATE TRIGGER trg_purchase_details_after_insert
-AFTER INSERT ON purchase_details
-FOR EACH ROW
-BEGIN
-    UPDATE products
-    SET Stock = Stock + NEW.Quantity
-    WHERE Id = NEW.ProductId;
-END //
-
 
 CREATE TRIGGER trg_purchase_detail_movement
 AFTER INSERT ON purchase_details
@@ -579,4 +570,354 @@ VALUES
     ('Camila', 'Ramirez', '37890123', 'camila.ramirez@example.com', '3794001010', 0, '2026-09-14 10:00:00');
 
 
+DROP TRIGGER IF EXISTS trg_purchase_details_after_insert;
+
+
+START TRANSACTION;
+
+-- =====================================================
+-- 1. OBTENER LOS ID DE LOS REPOSITORES
+-- =====================================================
+
+SET @u1 = (SELECT Id FROM users WHERE Username = 'bgimenez' AND rol = 'Repositor' LIMIT 1);
+SET @u2 = (SELECT Id FROM users WHERE Username = 'vcastro' AND rol = 'Repositor' LIMIT 1);
+SET @u3 = (SELECT Id FROM users WHERE Username = 'tsilva' AND rol = 'Repositor' LIMIT 1);
+SET @u4 = (SELECT Id FROM users WHERE Username = 'crios' AND rol = 'Repositor' LIMIT 1);
+SET @u5 = (SELECT Id FROM users WHERE Username = 'macosta' AND rol = 'Repositor' LIMIT 1);
+
+
+-- =====================================================
+-- 2. OBTENER LOS ID DE LOS PROVEEDORES ACTIVOS
+-- =====================================================
+
+SET @pr1 = (SELECT Id FROM providers WHERE Cuit = '30-71234567-1' AND State = 1 LIMIT 1);
+SET @pr2 = (SELECT Id FROM providers WHERE Cuit = '30-72345678-2' AND State = 1 LIMIT 1);
+SET @pr3 = (SELECT Id FROM providers WHERE Cuit = '30-73456789-3' AND State = 1 LIMIT 1);
+SET @pr4 = (SELECT Id FROM providers WHERE Cuit = '30-74567890-4' AND State = 1 LIMIT 1);
+SET @pr5 = (SELECT Id FROM providers WHERE Cuit = '30-75678901-5' AND State = 1 LIMIT 1);
+SET @pr6 = (SELECT Id FROM providers WHERE Cuit = '30-76789012-6' AND State = 1 LIMIT 1);
+SET @pr7 = (SELECT Id FROM providers WHERE Cuit = '30-77890123-7' AND State = 1 LIMIT 1);
+SET @pr8 = (SELECT Id FROM providers WHERE Cuit = '30-78901234-8' AND State = 1 LIMIT 1);
+SET @pr9 = (SELECT Id FROM providers WHERE Cuit = '30-79012345-9' AND State = 1 LIMIT 1);
+
+
+-- =====================================================
+-- 3. OBTENER LOS ID DE LOS PRODUCTOS
+-- =====================================================
+
+SET @CPUAMD5500 = (SELECT Id FROM products WHERE Cod = 'CPUAMD5500' LIMIT 1);
+SET @CPUAMD5700X = (SELECT Id FROM products WHERE Cod = 'CPUAMD5700X' LIMIT 1);
+SET @CPUAMD5800X = (SELECT Id FROM products WHERE Cod = 'CPUAMD5800X' LIMIT 1);
+SET @CPUAMD5900X = (SELECT Id FROM products WHERE Cod = 'CPUAMD5900X' LIMIT 1);
+
+SET @CPUINT12100F = (SELECT Id FROM products WHERE Cod = 'CPUINT12100F' LIMIT 1);
+SET @CPUINT13400F = (SELECT Id FROM products WHERE Cod = 'CPUINT13400F' LIMIT 1);
+
+SET @GPU_N1650_4 = (SELECT Id FROM products WHERE Cod = 'GPU-N1650-4' LIMIT 1);
+SET @GPU_N3060_12 = (SELECT Id FROM products WHERE Cod = 'GPU-N3060-12' LIMIT 1);
+SET @GPU_N4060TI_8 = (SELECT Id FROM products WHERE Cod = 'GPU-N4060TI-8' LIMIT 1);
+SET @GPU_N4070_12 = (SELECT Id FROM products WHERE Cod = 'GPU-N4070-12' LIMIT 1);
+
+SET @GPU_AMD6600_8 = (SELECT Id FROM products WHERE Cod = 'GPU-AMD6600-8' LIMIT 1);
+SET @GPU_AMD7600_8 = (SELECT Id FROM products WHERE Cod = 'GPU-AMD7600-8' LIMIT 1);
+
+SET @MBAUS_A520MK = (SELECT Id FROM products WHERE Cod = 'MBAUS-A520MK' LIMIT 1);
+SET @MBGIG_B450DS = (SELECT Id FROM products WHERE Cod = 'MBGIG-B450DS' LIMIT 1);
+SET @MBMSI_B550GP = (SELECT Id FROM products WHERE Cod = 'MBMSI-B550GP' LIMIT 1);
+SET @MBGIG_B760DS = (SELECT Id FROM products WHERE Cod = 'MBGIG-B760DS' LIMIT 1);
+
+SET @RAMKF8DDR4 = (SELECT Id FROM products WHERE Cod = 'RAMKF8DDR4' LIMIT 1);
+SET @RAMKF32DDR4 = (SELECT Id FROM products WHERE Cod = 'RAMKF32DDR4' LIMIT 1);
+SET @RAMKF16DDR5 = (SELECT Id FROM products WHERE Cod = 'RAMKF16DDR5' LIMIT 1);
+SET @RAMCV16DDR4 = (SELECT Id FROM products WHERE Cod = 'RAMCV16DDR4' LIMIT 1);
+SET @RAMCV32DDR4 = (SELECT Id FROM products WHERE Cod = 'RAMCV32DDR4' LIMIT 1);
+
+SET @HDD500GB001 = (SELECT Id FROM products WHERE Cod = 'HDD500GB001' LIMIT 1);
+SET @HDD1TB0001 = (SELECT Id FROM products WHERE Cod = 'HDD1TB0001' LIMIT 1);
+SET @HDD2TB0001 = (SELECT Id FROM products WHERE Cod = 'HDD2TB0001' LIMIT 1);
+
+SET @SSD_KNV2500 = (SELECT Id FROM products WHERE Cod = 'SSD-KNV2500' LIMIT 1);
+SET @SSD_KNV21000 = (SELECT Id FROM products WHERE Cod = 'SSD-KNV21000' LIMIT 1);
+SET @SSD_KA400480 = (SELECT Id FROM products WHERE Cod = 'SSD-KA400480' LIMIT 1);
+SET @SSD_CMP6001T = (SELECT Id FROM products WHERE Cod = 'SSD-CMP6001T' LIMIT 1);
+
+SET @PSU_CORCV550 = (SELECT Id FROM products WHERE Cod = 'PSU-CORCV550' LIMIT 1);
+SET @PSU_CORCV650 = (SELECT Id FROM products WHERE Cod = 'PSU-CORCV650' LIMIT 1);
+SET @PSU_GIGP650 = (SELECT Id FROM products WHERE Cod = 'PSU-GIGP650' LIMIT 1);
+SET @PSU_MSI750BN = (SELECT Id FROM products WHERE Cod = 'PSU-MSI750BN' LIMIT 1);
+
+SET @CASE_ASAP201 = (SELECT Id FROM products WHERE Cod = 'CASE-ASAP201' LIMIT 1);
+SET @CASE_MSI100R = (SELECT Id FROM products WHERE Cod = 'CASE-MSI100R' LIMIT 1);
+SET @CASE_GIGC200 = (SELECT Id FROM products WHERE Cod = 'CASE-GIGC200' LIMIT 1);
+SET @CASE_ASROCK01 = (SELECT Id FROM products WHERE Cod = 'CASE-ASROCK01' LIMIT 1);
+
+SET @COOL_CORH100 = (SELECT Id FROM products WHERE Cod = 'COOL-CORH100' LIMIT 1);
+SET @FAN_CORSP120 = (SELECT Id FROM products WHERE Cod = 'FAN-CORSP120' LIMIT 1);
+SET @COOL_ASUSTUF240 = (SELECT Id FROM products WHERE Cod = 'COOL-ASUSTUF240' LIMIT 1);
+SET @COOL_MSICL240 = (SELECT Id FROM products WHERE Cod = 'COOL-MSICL240' LIMIT 1);
+
+SET @MON_ASVG249 = (SELECT Id FROM products WHERE Cod = 'MON-ASVG249' LIMIT 1);
+SET @MON_MSIG2412 = (SELECT Id FROM products WHERE Cod = 'MON-MSIG2412' LIMIT 1);
+
+
+-- =====================================================
+-- 4. VALIDAR QUE EXISTAN LOS USUARIOS Y PROVEEDORES
+-- =====================================================
+
+SELECT
+    @u1 IS NOT NULL AND @u2 IS NOT NULL AND
+    @u3 IS NOT NULL AND @u4 IS NOT NULL AND
+    @u5 IS NOT NULL AS RepositoresCorrectos,
+    @pr1 IS NOT NULL AND @pr2 IS NOT NULL AND
+    @pr3 IS NOT NULL AND @pr4 IS NOT NULL AND
+    @pr5 IS NOT NULL AND @pr6 IS NOT NULL AND
+    @pr7 IS NOT NULL AND @pr8 IS NOT NULL AND
+    @pr9 IS NOT NULL AS ProveedoresCorrectos;
+
+
+-- =====================================================
+-- 5. VALIDAR QUE NO FALTEN PRODUCTOS
+-- =====================================================
+
+SELECT
+    (
+        @CPUAMD5500 IS NULL OR @CPUAMD5700X IS NULL OR
+        @CPUAMD5800X IS NULL OR @CPUAMD5900X IS NULL OR
+        @CPUINT12100F IS NULL OR @CPUINT13400F IS NULL OR
+        @GPU_N1650_4 IS NULL OR @GPU_N3060_12 IS NULL OR
+        @GPU_N4060TI_8 IS NULL OR @GPU_N4070_12 IS NULL OR
+        @GPU_AMD6600_8 IS NULL OR @GPU_AMD7600_8 IS NULL OR
+        @MBAUS_A520MK IS NULL OR @MBGIG_B450DS IS NULL OR
+        @MBMSI_B550GP IS NULL OR @MBGIG_B760DS IS NULL OR
+        @RAMKF8DDR4 IS NULL OR @RAMKF32DDR4 IS NULL OR
+        @RAMKF16DDR5 IS NULL OR @RAMCV16DDR4 IS NULL OR
+        @RAMCV32DDR4 IS NULL OR
+        @HDD500GB001 IS NULL OR @HDD1TB0001 IS NULL OR
+        @HDD2TB0001 IS NULL OR
+        @SSD_KNV2500 IS NULL OR @SSD_KNV21000 IS NULL OR
+        @SSD_KA400480 IS NULL OR @SSD_CMP6001T IS NULL OR
+        @PSU_CORCV550 IS NULL OR @PSU_CORCV650 IS NULL OR
+        @PSU_GIGP650 IS NULL OR @PSU_MSI750BN IS NULL OR
+        @CASE_ASAP201 IS NULL OR @CASE_MSI100R IS NULL OR
+        @CASE_GIGC200 IS NULL OR @CASE_ASROCK01 IS NULL OR
+        @COOL_CORH100 IS NULL OR @FAN_CORSP120 IS NULL OR
+        @COOL_ASUSTUF240 IS NULL OR @COOL_MSICL240 IS NULL OR
+        @MON_ASVG249 IS NULL OR @MON_MSIG2412 IS NULL
+    ) AS HayProductosSinEncontrar;
+
+
+-- =====================================================
+-- 6. CREAR LAS 30 CABECERAS DE COMPRAS
+-- =====================================================
+
+INSERT INTO purchases (ProviderId, UserId, PurchaseDate, Total) VALUES
+(@pr1, @u1, '2026-08-03', 0),
+(@pr2, @u2, '2026-08-07', 0),
+(@pr3, @u3, '2026-08-11', 0),
+(@pr4, @u4, '2026-08-14', 0),
+(@pr5, @u5, '2026-08-18', 0),
+(@pr6, @u1, '2026-08-22', 0),
+(@pr7, @u2, '2026-08-26', 0),
+(@pr8, @u3, '2026-08-29', 0),
+(@pr2, @u4, '2026-09-02', 0),
+(@pr3, @u5, '2026-09-05', 0),
+(@pr4, @u1, '2026-09-09', 0),
+(@pr5, @u2, '2026-09-12', 0),
+(@pr6, @u3, '2026-09-16', 0),
+(@pr7, @u4, '2026-09-19', 0),
+(@pr8, @u5, '2026-09-23', 0),
+(@pr9, @u1, '2026-09-27', 0),
+(@pr1, @u2, '2026-10-01', 0),
+(@pr3, @u3, '2026-10-04', 0),
+(@pr5, @u4, '2026-10-08', 0),
+(@pr7, @u5, '2026-10-11', 0),
+(@pr9, @u1, '2026-10-14', 0),
+(@pr2, @u2, '2026-10-17', 0),
+(@pr4, @u3, '2026-10-21', 0),
+(@pr6, @u4, '2026-10-25', 0),
+(@pr8, @u5, '2026-11-01', 0),
+(@pr1, @u1, '2026-11-03', 0),
+(@pr3, @u2, '2026-11-05', 0),
+(@pr5, @u3, '2026-11-07', 0),
+(@pr7, @u4, '2026-11-09', 0),
+(@pr9, @u5, '2026-11-11', 0);
+
+
+-- =====================================================
+-- 7. OBTENER LOS ID DE LAS CABECERAS RECIÉN CREADAS
+-- =====================================================
+
+SET @p1 = LAST_INSERT_ID();
+
+-- El INSERT anterior genera IDs consecutivos.
+-- Recuperamos el primer ID mediante LAST_INSERT_ID()
+-- y asignamos el resto.
+
+SET @p2 = @p1 + 1;
+SET @p3 = @p1 + 2;
+SET @p4 = @p1 + 3;
+SET @p5 = @p1 + 4;
+SET @p6 = @p1 + 5;
+SET @p7 = @p1 + 6;
+SET @p8 = @p1 + 7;
+SET @p9 = @p1 + 8;
+SET @p10 = @p1 + 9;
+SET @p11 = @p1 + 10;
+SET @p12 = @p1 + 11;
+SET @p13 = @p1 + 12;
+SET @p14 = @p1 + 13;
+SET @p15 = @p1 + 14;
+SET @p16 = @p1 + 15;
+SET @p17 = @p1 + 16;
+SET @p18 = @p1 + 17;
+SET @p19 = @p1 + 18;
+SET @p20 = @p1 + 19;
+SET @p21 = @p1 + 20;
+SET @p22 = @p1 + 21;
+SET @p23 = @p1 + 22;
+SET @p24 = @p1 + 23;
+SET @p25 = @p1 + 24;
+SET @p26 = @p1 + 25;
+SET @p27 = @p1 + 26;
+SET @p28 = @p1 + 27;
+SET @p29 = @p1 + 28;
+SET @p30 = @p1 + 29;
+
+
+-- =====================================================
+-- 8. INSERTAR LOS 60 DETALLES
+-- =====================================================
+
+INSERT INTO purchase_details
+    (PurchaseId, ProductId, Quantity, PurchasePrice)
+VALUES
+
+-- AGOSTO
+(@p1, @CPUAMD5500, 5, 95000),
+(@p1, @CPUAMD5700X, 3, 185000),
+
+(@p2, @GPU_N3060_12, 2, 290000),
+(@p2, @GPU_N4060TI_8, 1, 420000),
+
+(@p3, @MBMSI_B550GP, 4, 155000),
+(@p3, @MBAUS_A520MK, 5, 70000),
+
+(@p4, @RAMKF8DDR4, 10, 25000),
+(@p4, @RAMKF32DDR4, 5, 85000),
+
+(@p5, @SSD_KNV2500, 8, 45000),
+(@p5, @SSD_KNV21000, 5, 75000),
+
+(@p6, @PSU_CORCV550, 5, 70000),
+(@p6, @PSU_CORCV650, 4, 90000),
+
+(@p7, @CASE_ASAP201, 3, 110000),
+(@p7, @CASE_MSI100R, 4, 95000),
+
+(@p8, @COOL_CORH100, 2, 165000),
+(@p8, @FAN_CORSP120, 10, 22000),
+
+-- SEPTIEMBRE
+(@p9, @CPUINT12100F, 6, 80000),
+(@p9, @CPUINT13400F, 3, 190000),
+
+(@p10, @GPU_AMD6600_8, 3, 230000),
+(@p10, @GPU_AMD7600_8, 2, 320000),
+
+(@p11, @MBGIG_B450DS, 5, 80000),
+(@p11, @MBGIG_B760DS, 3, 140000),
+
+(@p12, @RAMCV16DDR4, 8, 48000),
+(@p12, @RAMCV32DDR4, 5, 95000),
+
+(@p13, @HDD500GB001, 6, 40000),
+(@p13, @HDD1TB0001, 8, 62000),
+
+(@p14, @SSD_KA400480, 10, 42000),
+(@p14, @SSD_CMP6001T, 3, 115000),
+
+(@p15, @PSU_GIGP650, 5, 80000),
+(@p15, @PSU_MSI750BN, 4, 105000),
+
+(@p16, @CASE_GIGC200, 5, 85000),
+(@p16, @CASE_ASROCK01, 4, 75000),
+
+-- OCTUBRE
+(@p17, @CPUAMD5800X, 3, 220000),
+(@p17, @CPUAMD5900X, 2, 310000),
+
+(@p18, @GPU_N1650_4, 4, 165000),
+(@p18, @GPU_N4070_12, 1, 680000),
+
+(@p19, @RAMKF16DDR5, 8, 62000),
+(@p19, @RAMKF32DDR4, 6, 85000),
+
+(@p20, @HDD2TB0001, 5, 85000),
+(@p20, @SSD_KNV21000, 6, 75000),
+
+(@p21, @PSU_CORCV550, 4, 70000),
+(@p21, @PSU_CORCV650, 5, 90000),
+
+(@p22, @MBAUS_A520MK, 4, 70000),
+(@p22, @MBMSI_B550GP, 3, 155000),
+
+(@p23, @COOL_ASUSTUF240, 3, 145000),
+(@p23, @COOL_MSICL240, 3, 135000),
+
+(@p24, @MON_ASVG249, 2, 245000),
+(@p24, @MON_MSIG2412, 2, 260000),
+
+-- NOVIEMBRE
+(@p25, @CPUAMD5500, 4, 95000),
+(@p25, @CPUINT13400F, 2, 190000),
+
+(@p26, @GPU_N3060_12, 3, 290000),
+(@p26, @GPU_AMD7600_8, 2, 320000),
+
+(@p27, @RAMKF8DDR4, 12, 25000),
+(@p27, @RAMCV16DDR4, 8, 48000),
+
+(@p28, @SSD_KNV2500, 10, 45000),
+(@p28, @SSD_KNV21000, 8, 75000),
+
+(@p29, @PSU_GIGP650, 4, 80000),
+(@p29, @PSU_MSI750BN, 3, 105000),
+
+(@p30, @CASE_ASAP201, 3, 110000),
+(@p30, @COOL_CORH100, 2, 165000);
+
+
+-- =====================================================
+-- 9. ACTUALIZAR LOS TOTALES DE LAS COMPRAS
+-- =====================================================
+
+UPDATE purchases p
+SET p.Total = (
+    SELECT COALESCE(SUM(pd.Quantity * pd.PurchasePrice), 0)
+    FROM purchase_details pd
+    WHERE pd.PurchaseId = p.Id
+)
+WHERE p.Id BETWEEN @p1 AND @p30;
+
+
+-- =====================================================
+-- 10. ACTUALIZAR LOS PRECIOS DE VENTA (+20%)
+-- =====================================================
+
+UPDATE products p
+INNER JOIN (
+    SELECT pd.ProductId, MAX(pd.Id) AS LastDetailId
+    FROM purchase_details pd
+    WHERE pd.PurchaseId BETWEEN @p1 AND @p30
+    GROUP BY pd.ProductId
+) latest ON latest.ProductId = p.Id
+INNER JOIN purchase_details pd ON pd.Id = latest.LastDetailId
+SET p.SalePrice = ROUND(pd.PurchasePrice * 1.20, 2);
+
+
+-- =====================================================
+-- 11. CONFIRMAR TRANSACCIÓN
+-- =====================================================
+
+COMMIT;
 
