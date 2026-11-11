@@ -245,6 +245,12 @@
     <Compile Include="Forms\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Manager\ManagerUpdateProductPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Manager\ManagerUpdateProductPanel.Designer.cs">
+      <DependentUpon>ManagerUpdateProductPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Manager\ManagerInformsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -501,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manager\ManagerUpdateProductPanel.resx">
+      <DependentUpon>ManagerUpdateProductPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Manager\ManagerInformsPanel.resx">
       <DependentUpon>ManagerInformsPanel.cs</DependentUpon>

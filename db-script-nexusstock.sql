@@ -476,7 +476,92 @@ VALUES
 
 ('B550M Gaming', 'MBMSIB550M', 'Motherboard MSI B550M compatible con procesadores AMD Ryzen', 139999.99, 12, 4, TRUE, 5, 3, 4),
 
-('Kingston Fury 16GB', 'RAMKF16DDR4', 'Memoria RAM Kingston Fury de 16GB DDR4 3200MHz', 59999.99, 20, 5, TRUE, 9, 4, 5);
+('Kingston Fury 16GB', 'RAMKF16DDR4', 'Memoria RAM Kingston Fury de 16GB DDR4 3200MHz', 59999.99, 20, 5, TRUE, 9, 4, 5),
+
+-- PROCESADORES (CategoryId = 1)
+('Ryzen 5 5500', 'CPUAMD5500', 'Procesador AMD Ryzen 5 5500 de 6 nucleos y 12 hilos', 125000, 12, 4, TRUE, 1, 1, 1),
+('Ryzen 7 5700X', 'CPUAMD5700X', 'Procesador AMD Ryzen 7 5700X de 8 nucleos y 16 hilos', 235000, 8, 3, TRUE, 1, 1, 2),
+('Ryzen 7 5800X', 'CPUAMD5800X', 'Procesador AMD Ryzen 7 5800X de 8 nucleos y 16 hilos', 280000, 6, 2, TRUE, 1, 1, 3),
+('Ryzen 9 5900X', 'CPUAMD5900X', 'Procesador AMD Ryzen 9 5900X de 12 nucleos y 24 hilos', 390000, 4, 2, TRUE, 1, 1, 4),
+('Core i3 12100F', 'CPUINT12100F', 'Procesador Intel Core i3 12100F de 4 nucleos y 8 hilos', 110000, 14, 4, TRUE, 2, 1, 5),
+('Core i5 13400F', 'CPUINT13400F', 'Procesador Intel Core i5 13400F de 10 nucleos y 16 hilos', 250000, 9, 3, TRUE, 2, 1, 6),
+
+-- PLACAS DE VIDEO (CategoryId = 2)
+('GTX 1650 4GB', 'GPU-N1650-4', 'Placa de video NVIDIA GeForce GTX 1650 de 4GB', 220000, 7, 2, TRUE, 3, 2, 3),
+('RTX 3060 12GB', 'GPU-N3060-12', 'Placa de video NVIDIA GeForce RTX 3060 de 12GB', 380000, 9, 3, TRUE, 3, 2, 4),
+('RTX 4060 Ti 8GB', 'GPU-N4060TI-8', 'Placa de video NVIDIA GeForce RTX 4060 Ti de 8GB', 550000, 5, 2, TRUE, 3, 2, 5),
+('RTX 4070 12GB', 'GPU-N4070-12', 'Placa de video NVIDIA GeForce RTX 4070 de 12GB', 850000, 4, 1, TRUE, 3, 2, 6),
+('Radeon RX 6600 8GB', 'GPU-AMD6600-8', 'Placa de video AMD Radeon RX 6600 de 8GB', 300000, 8, 3, TRUE, 1, 2, 7),
+('Radeon RX 7600 8GB', 'GPU-AMD7600-8', 'Placa de video AMD Radeon RX 7600 de 8GB', 420000, 6, 2, TRUE, 1, 2, 8),
+
+-- MOTHERBOARDS (CategoryId = 3)
+('A520M-K', 'MBAUS-A520MK', 'Motherboard ASUS A520M-K compatible con procesadores AMD Ryzen', 95000, 10, 3, TRUE, 4, 3, 1),
+('B450M DS3H', 'MBGIG-B450DS', 'Motherboard Gigabyte B450M DS3H para procesadores AMD Ryzen', 110000, 8, 3, TRUE, 6, 3, 2),
+('B550 Gaming Plus', 'MBMSI-B550GP', 'Motherboard MSI B550 Gaming Plus para procesadores AMD Ryzen', 210000, 7, 2, TRUE, 5, 3, 3),
+('H610M-H', 'MBGIG-H610MH', 'Motherboard Gigabyte H610M-H compatible con Intel de 12va generacion', 105000, 9, 3, TRUE, 6, 3, 4),
+('B760M DS3H', 'MBGIG-B760DS', 'Motherboard Gigabyte B760M DS3H compatible con Intel', 185000, 5, 2, TRUE, 6, 3, 5),
+
+-- MEMORIAS RAM (CategoryId = 4)
+('Kingston Fury 8GB', 'RAMKF8DDR4', 'Memoria RAM Kingston Fury de 8GB DDR4 3200MHz', 35000, 25, 6, TRUE, 9, 4, 6),
+('Kingston Fury 32GB', 'RAMKF32DDR4', 'Memoria RAM Kingston Fury de 32GB DDR4 3200MHz', 115000, 12, 4, TRUE, 9, 4, 7),
+('Corsair Vengeance 16GB', 'RAMCV16DDR4', 'Memoria RAM Corsair Vengeance de 16GB DDR4 3200MHz', 65000, 18, 5, TRUE, 8, 4, 8),
+('Corsair Vengeance 32GB', 'RAMCV32DDR4', 'Memoria RAM Corsair Vengeance de 32GB DDR4 3600MHz', 125000, 10, 3, TRUE, 8, 4, 9),
+('Kingston Fury 16GB DDR5', 'RAMKF16DDR5', 'Memoria RAM Kingston Fury de 16GB DDR5 5200MHz', 85000, 14, 4, TRUE, 9, 4, 1),
+
+-- DISCOS HDD (CategoryId = 5)
+('HDD 500GB', 'HDD500GB001', 'Disco rigido de 500GB SATA para almacenamiento', 55000, 10, 3, TRUE, 9, 5, 2),
+('HDD 1TB', 'HDD1TB0001', 'Disco rigido de 1TB SATA para computadoras de escritorio', 85000, 12, 4, TRUE, 9, 5, 3),
+('HDD 2TB', 'HDD2TB0001', 'Disco rigido de 2TB SATA para almacenamiento de datos', 115000, 7, 2, TRUE, 9, 5, 4),
+
+-- DISCOS SSD (CategoryId = 6)
+('Kingston NV2 500GB', 'SSD-KNV2500', 'Disco SSD Kingston NV2 NVMe de 500GB', 65000, 16, 5, TRUE, 9, 6, 5),
+('Kingston NV2 1TB', 'SSD-KNV21000', 'Disco SSD Kingston NV2 NVMe de 1TB', 105000, 12, 4, TRUE, 9, 6, 6),
+('Kingston A400 480GB', 'SSD-KA400480', 'Disco SSD Kingston A400 SATA de 480GB', 60000, 15, 5, TRUE, 9, 6, 7),
+('Corsair MP600 1TB', 'SSD-CMP6001T', 'Disco SSD Corsair MP600 NVMe de 1TB', 155000, 6, 2, TRUE, 8, 6, 8),
+
+-- FUENTES (CategoryId = 7)
+('Corsair CV550', 'PSU-CORCV550', 'Fuente Corsair CV550 de 550W certificacion 80 Plus Bronze', 95000, 8, 3, TRUE, 8, 7, 9),
+('Corsair CV650', 'PSU-CORCV650', 'Fuente Corsair CV650 de 650W certificacion 80 Plus Bronze', 120000, 9, 3, TRUE, 8, 7, 1),
+('Gigabyte P650B', 'PSU-GIGP650', 'Fuente Gigabyte P650B de 650W certificacion 80 Plus Bronze', 110000, 6, 2, TRUE, 6, 7, 2),
+('MSI MAG A750BN', 'PSU-MSI750BN', 'Fuente MSI MAG A750BN de 750W certificacion 80 Plus Bronze', 145000, 5, 2, TRUE, 5, 7, 3),
+
+-- GABINETES (CategoryId = 8)
+('ASUS Prime AP201', 'CASE-ASAP201', 'Gabinete ASUS Prime AP201 Micro ATX', 150000, 7, 2, TRUE, 4, 8, 4),
+('MSI MAG Forge 100R', 'CASE-MSI100R', 'Gabinete MSI MAG Forge 100R con panel lateral de vidrio', 135000, 6, 2, TRUE, 5, 8, 5),
+('Gigabyte C200 Glass', 'CASE-GIGC200', 'Gabinete Gigabyte C200 Glass con panel lateral transparente', 115000, 8, 3, TRUE, 6, 8, 6),
+('ASRock Gaming Case', 'CASE-ASROCK01', 'Gabinete ASRock para PC gamer con ventilacion frontal', 105000, 4, 2, TRUE, 7, 8, 7),
+
+-- COOLERS (CategoryId = 9)
+('Corsair H100 RGB', 'COOL-CORH100', 'Refrigeracion liquida Corsair H100 RGB de 240mm', 220000, 4, 1, TRUE, 8, 9, 8),
+('Corsair SP120 RGB', 'FAN-CORSP120', 'Ventilador Corsair SP120 RGB de 120mm', 35000, 15, 4, TRUE, 8, 9, 9),
+('ASUS TUF Gaming LC 240', 'COOL-ASUSTUF240', 'Refrigeracion liquida ASUS TUF Gaming LC 240 de 240mm', 195000, 5, 2, TRUE, 4, 9, 1),
+('MSI MAG CoreLiquid 240R', 'COOL-MSICL240', 'Refrigeracion liquida MSI MAG CoreLiquid de 240mm', 185000, 3, 1, TRUE, 5, 9, 2),
+
+-- MONITORES (CategoryId = 10, categoria actualmente inactiva)
+('ASUS TUF VG249Q1A', 'MON-ASVG249', 'Monitor ASUS TUF de 24 pulgadas Full HD 165Hz', 320000, 5, 2, TRUE, 4, 10, 3),
+('MSI G2412', 'MON-MSIG2412', 'Monitor gamer MSI G2412 de 24 pulgadas Full HD 170Hz', 340000, 4, 1, TRUE, 5, 10, 4),
+('Gigabyte G27F', 'MON-GIGG27F', 'Monitor gamer Gigabyte G27F de 27 pulgadas Full HD 144Hz', 390000, 3, 1, TRUE, 6, 10, 5),
+('ASRock PG27Q15R2A', 'MON-ASPG27Q', 'Monitor ASRock de 27 pulgadas QHD 165Hz', 450000, 2, 1, TRUE, 7, 10, 6);
+
+
+UPDATE products
+SET Stock = 0
+WHERE Cod IN (
+    'CPUAMD5500', 'CPUAMD5700X', 'CPUAMD5800X', 'CPUAMD5900X',
+    'CPUINT12100F', 'CPUINT13400F',
+    'GPU-N1650-4', 'GPU-N3060-12', 'GPU-N4060TI-8', 'GPU-N4070-12',
+    'GPU-AMD6600-8', 'GPU-AMD7600-8',
+    'MBAUS-A520MK', 'MBGIG-B450DS', 'MBMSI-B550GP', 'MBGIG-H610MH',
+    'MBGIG-B760DS',
+    'RAMKF8DDR4', 'RAMKF32DDR4', 'RAMCV16DDR4', 'RAMCV32DDR4',
+    'RAMKF16DDR5',
+    'HDD500GB001', 'HDD1TB0001', 'HDD2TB0001',
+    'SSD-KNV2500', 'SSD-KNV21000', 'SSD-KA400480', 'SSD-CMP6001T',
+    'PSU-CORCV550', 'PSU-CORCV650', 'PSU-GIGP650', 'PSU-MSI750BN',
+    'CASE-ASAP201', 'CASE-MSI100R', 'CASE-GIGC200', 'CASE-ASROCK01',
+    'COOL-CORH100', 'FAN-CORSP120', 'COOL-ASUSTUF240', 'COOL-MSICL240',
+    'MON-ASVG249', 'MON-MSIG2412', 'MON-GIGG27F', 'MON-ASPG27Q'
+);
 
 
 INSERT INTO clients
@@ -494,34 +579,4 @@ VALUES
     ('Camila', 'Ramirez', '37890123', 'camila.ramirez@example.com', '3794001010', 0, '2026-09-14 10:00:00');
 
 
-SELECT * FROM clients;
-
-SELECT 
-    p.Name AS Producto,
-    b.Name AS Marca,
-    c.Name AS Categoria,
-    pr.Name AS Proveedor,
-    p.SalePrice AS Precio,
-    p.Stock
-FROM products p
-JOIN brands b ON p.BrandId = b.Id
-JOIN categorys c ON p.CategoryId = c.Id
-JOIN providers pr ON p.ProviderId = pr.Id;
-
-SELECT *
-FROM product_movements
-ORDER BY Id DESC
-LIMIT 10;
-
-SHOW TRIGGERS;
-
-SELECT *
-FROM sale_details
-ORDER BY Id DESC
-LIMIT 10;
-
-SHOW CREATE TRIGGER trg_sale_detail_movement;
-
-SELECT * FROM brands;
-DELETE FROM brands WHERE id = 12;
 

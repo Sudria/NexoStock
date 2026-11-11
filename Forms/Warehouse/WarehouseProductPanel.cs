@@ -1,5 +1,6 @@
 ﻿using NexoStock.Class;
 using NexoStock.Forms.Admin;
+using NexoStock.Forms.Manager;
 using NexoStock.Services;
 using System;
 using System.Collections.Generic;
@@ -319,9 +320,9 @@ namespace NexoStock.Forms.Warehouse
             if (selectedProduct == null)
                 return;
 
-            AdminForm dashboard = this.ParentForm as AdminForm;
+            ManagerForm dashboard = this.ParentForm as ManagerForm;
 
-            dashboard.LoadUpdateProductControler(selectedProduct);
+            dashboard.LoadUpdateProductController(selectedProduct);
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)

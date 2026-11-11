@@ -135,7 +135,11 @@ namespace NexoStock.Forms.Manager
             panelContent.Controls.Clear();
             panelContent.Controls.Add(new ManagerInformsPanel());
         }
-
+        public void LoadUpdateProductController(ProductClass product)
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new ManagerUpdateProductPanel(product));
+        }
 
 
         //COMPORTAMIENTO DE BOTONES

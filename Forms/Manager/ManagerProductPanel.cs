@@ -322,9 +322,9 @@ namespace NexoStock.Forms.Manager
             if (selectedProduct == null)
                 return;
 
-            AdminForm dashboard = this.ParentForm as AdminForm;
+            ManagerForm dashboard = this.ParentForm as ManagerForm;
 
-            dashboard.LoadUpdateProductControler(selectedProduct);
+            dashboard.LoadUpdateProductController(selectedProduct);
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
