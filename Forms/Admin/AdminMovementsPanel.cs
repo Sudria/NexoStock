@@ -137,5 +137,10 @@ namespace NexoStock.Forms.Admin
         {
             ApplyMovementFilter();
         }
+
+        private void cc(object sender, EventArgs e)
+        {
+            ApplyMovementFilter();
+        }
     }
 }

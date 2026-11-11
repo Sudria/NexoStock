@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label6 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxMovementType = new ReaLTaiizor.Controls.HopeComboBox();
-            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
@@ -42,19 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridMovements = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.textBoxName = new ReaLTaiizor.Controls.HopeTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMovements)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(67, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 20);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Nombre o Código";
             // 
             // label3
             // 
@@ -88,29 +77,6 @@
             this.comboBoxMovementType.Size = new System.Drawing.Size(200, 31);
             this.comboBoxMovementType.TabIndex = 22;
             this.comboBoxMovementType.SelectedIndexChanged += new System.EventHandler(this.comboBoxMovementType_SelectedIndexChanged);
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
-            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
-            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBoxName.ForeColor = System.Drawing.Color.White;
-            this.textBoxName.Hint = "Buscar por Nombre o Código";
-            this.textBoxName.Location = new System.Drawing.Point(71, 114);
-            this.textBoxName.MaxLength = 32767;
-            this.textBoxName.Multiline = false;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PasswordChar = '\0';
-            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.SelectedText = "";
-            this.textBoxName.SelectionLength = 0;
-            this.textBoxName.SelectionStart = 0;
-            this.textBoxName.Size = new System.Drawing.Size(420, 38);
-            this.textBoxName.TabIndex = 21;
-            this.textBoxName.TabStop = false;
-            this.textBoxName.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -182,23 +148,23 @@
             this.dataGridMovements.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridMovements.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridMovements.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridMovements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridMovements.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridMovements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Fuchsia;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridMovements.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridMovements.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridMovements.EnableHeadersVisualStyles = false;
             this.dataGridMovements.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridMovements.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -207,18 +173,53 @@
             this.dataGridMovements.Name = "dataGridMovements";
             this.dataGridMovements.ReadOnly = true;
             this.dataGridMovements.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridMovements.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridMovements.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridMovements.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridMovements.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridMovements.Size = new System.Drawing.Size(1036, 440);
             this.dataGridMovements.TabIndex = 44;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(7)))), ((int)(((byte)(25)))));
+            this.textBoxName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.textBoxName.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(190)))));
+            this.textBoxName.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
+            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxName.ForeColor = System.Drawing.Color.White;
+            this.textBoxName.Hint = "Buscar por Nombre o Código";
+            this.textBoxName.Location = new System.Drawing.Point(71, 114);
+            this.textBoxName.MaxLength = 32767;
+            this.textBoxName.Multiline = false;
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PasswordChar = '\0';
+            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxName.SelectedText = "";
+            this.textBoxName.SelectionLength = 0;
+            this.textBoxName.SelectionStart = 0;
+            this.textBoxName.Size = new System.Drawing.Size(420, 38);
+            this.textBoxName.TabIndex = 21;
+            this.textBoxName.TabStop = false;
+            this.textBoxName.UseSystemPasswordChar = false;
+            this.textBoxName.TextChanged += new System.EventHandler(this.cc);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(67, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Nombre o Código";
             // 
             // AdminMovementsPanel
             // 
@@ -245,10 +246,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxMovementType;
-        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
@@ -256,5 +255,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.PoisonDataGridView dataGridMovements;
+        private ReaLTaiizor.Controls.HopeTextBox textBoxName;
+        private System.Windows.Forms.Label label6;
     }
 }
