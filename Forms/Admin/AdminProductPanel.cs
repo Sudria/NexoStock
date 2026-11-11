@@ -78,66 +78,7 @@ namespace NexoStock.Forms.Admin
             {
                 products = productRepository.GetAllProducts();
 
-                // Filtro de stock mínimo
-                var filteredProducts = products.AsEnumerable();
-
-                if (checkBoxLowStock.Checked)
-                {
-                    filteredProducts = filteredProducts.Where(p => p.Stock < p.StockMin);
-                }
-
-                // Filtro por estado
-                switch (comboBoxState.SelectedIndex)
-                {
-                    case 1: // ACTIVOS
-                        filteredProducts = filteredProducts.Where(p => p.State == true);
-                        break;
-
-                    case 2: // INACTIVOS
-                        filteredProducts = filteredProducts.Where(p => p.State == false);
-                        break;
-                }
-
-                dataGridViewProducts.DataSource = null;
-                dataGridViewProducts.AutoGenerateColumns = true;
-                dataGridViewProducts.DataSource = filteredProducts.ToList();
-
-                string[] hiddenColumns =
-                {
-            "Id",
-            "BrandId",
-            "CategoryId",
-            "ProviderId",
-            "State"
-        };
-
-                foreach (string column in hiddenColumns)
-                {
-                    if (dataGridViewProducts.Columns.Contains(column))
-                        dataGridViewProducts.Columns[column].Visible = false;
-                }
-
-                Dictionary<string, string> columnHeaders = new Dictionary<string, string>
-        {
-            { "Name", "Nombre" },
-            { "Cod", "Código" },
-            { "Description", "Descripción" },
-            { "SalePrice", "Precio de venta" },
-            { "Stock", "Stock" },
-            { "StockMin", "Stock mínimo" },
-            { "Brand", "Marca" },
-            { "Category", "Categoría" },
-            { "Provider", "Proveedor" },
-            { "StateText", "Estado" }
-        };
-
-                foreach (var column in columnHeaders)
-                {
-                    if (dataGridViewProducts.Columns.Contains(column.Key))
-                    {
-                        dataGridViewProducts.Columns[column.Key].HeaderText = column.Value;
-                    }
-                }
+                ApplyProductFilters();
             }
             catch (Exception ex)
             {
@@ -151,7 +92,104 @@ namespace NexoStock.Forms.Admin
         }
 
 
+        private void ApplyProductFilters()
+        {
+            var filteredProducts = products.AsEnumerable();
 
+            // Filtro por stock bajo
+            if (checkBoxLowStock.Checked)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Stock < p.StockMin);
+            }
+
+            // Filtro por estado
+            switch (comboBoxState.SelectedIndex)
+            {
+                case 1: // ACTIVOS
+                    filteredProducts = filteredProducts.Where(p => p.State);
+                    break;
+
+                case 2: // INACTIVOS
+                    filteredProducts = filteredProducts.Where(p => !p.State);
+                    break;
+            }
+
+            // Filtro por categoría
+            var categoriaSeleccionada = comboBoxCategory.SelectedItem as CategoryClass;
+
+            if (categoriaSeleccionada != null && categoriaSeleccionada.Id != 0)
+            {
+                filteredProducts = filteredProducts.Where(
+                    p => p.CategoryId == categoriaSeleccionada.Id
+                );
+            }
+
+            // Filtro por proveedor
+            var proveedorSeleccionado = comboBoxProvider.SelectedItem as ProviderClass;
+
+            if (proveedorSeleccionado != null && proveedorSeleccionado.Id != 0)
+            {
+                filteredProducts = filteredProducts.Where(
+                    p => p.ProviderId == proveedorSeleccionado.Id
+                );
+            }
+
+            // Filtro por búsqueda
+            string search = txtProduct.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                filteredProducts = filteredProducts.Where(p =>
+                    (p.Name ?? "").IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (p.Cod ?? "").IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (p.Description ?? "").IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0
+                );
+            }
+
+            // Actualizar DataGridView
+            dataGridViewProducts.DataSource = null;
+            dataGridViewProducts.AutoGenerateColumns = true;
+            dataGridViewProducts.DataSource = filteredProducts.ToList();
+
+            // Ocultar columnas
+            string[] hiddenColumns =
+            {
+        "Id",
+        "BrandId",
+        "CategoryId",
+        "ProviderId",
+        "State"
+    };
+
+            foreach (string column in hiddenColumns)
+            {
+                if (dataGridViewProducts.Columns.Contains(column))
+                    dataGridViewProducts.Columns[column].Visible = false;
+            }
+
+            // Personalizar encabezados
+            Dictionary<string, string> columnHeaders = new Dictionary<string, string>
+    {
+        { "Name", "Nombre" },
+        { "Cod", "Código" },
+        { "Description", "Descripción" },
+        { "SalePrice", "Precio de venta" },
+        { "Stock", "Stock" },
+        { "StockMin", "Stock mínimo" },
+        { "Brand", "Marca" },
+        { "Category", "Categoría" },
+        { "Provider", "Proveedor" },
+        { "StateText", "Estado" }
+    };
+
+            foreach (var column in columnHeaders)
+            {
+                if (dataGridViewProducts.Columns.Contains(column.Key))
+                {
+                    dataGridViewProducts.Columns[column.Key].HeaderText = column.Value;
+                }
+            }
+        }
 
 
 
@@ -239,7 +277,7 @@ namespace NexoStock.Forms.Admin
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataFilter();
+            ApplyProductFilters();
         }
 
         private void DataFilter()
@@ -291,23 +329,17 @@ namespace NexoStock.Forms.Admin
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
         {
-            var filteredProducts = products.Where(p =>
-            p.Name.ToLower().Contains(txtProduct.Text.ToLower()) ||
-            p.Cod.ToLower().Contains(txtProduct.Text.ToLower()) ||
-            p.Description.ToLower().Contains(txtProduct.Text.ToLower())
-            ).ToList();
-
-            dataGridViewProducts.DataSource = filteredProducts;
+            ApplyProductFilters();
         }
 
         private void checkBoxLowStock_CheckedChanged(object sender, EventArgs e)
         {
-            LoadDataGridView();
+            ApplyProductFilters();
         }
 
         private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadDataGridView();
+            ApplyProductFilters();
         }
     }
 
