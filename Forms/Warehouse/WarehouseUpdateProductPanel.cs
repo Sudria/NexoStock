@@ -377,7 +377,7 @@ namespace NexoStock.Forms.Warehouse
         private void exitButton_Click(object sender, EventArgs e)
         {
             WarehouseForm dashboard = this.ParentForm as WarehouseForm;
-            dashboard?.LoadUpdateProductControler(productClass);
+            dashboard?.LoadProductControler();
         }
 
         private void buttonAddCategory_Click(object sender, EventArgs e)

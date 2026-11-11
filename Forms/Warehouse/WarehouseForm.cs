@@ -137,6 +137,12 @@ namespace NexoStock.Forms.Warehouse
             panelContent.Controls.Add(new WarehouseUpdateProviderPanel(provider));
         }
 
+        public void LoadUpdateProductController(ProductClass product)
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(new WarehouseUpdateProductPanel(product));
+        }
+
         //BOTONES DENTRO DE LOS CONTROLES
 
         public void LoadNewProductControler()

@@ -320,7 +320,7 @@ namespace NexoStock.Forms.Warehouse
             if (selectedProduct == null)
                 return;
 
-            ManagerForm dashboard = this.ParentForm as ManagerForm;
+            WarehouseForm dashboard = this.ParentForm as WarehouseForm;
 
             dashboard.LoadUpdateProductController(selectedProduct);
         }
