@@ -19,38 +19,34 @@ namespace NexoStock.Forms.Manager
         {
             InitializeComponent();
             comboBoxInforms.SelectedIndex = 0;
+            numericUpDownYear1.MinNum = 2000;
+            numericUpDownYear2.MinNum = 2000;
+            numericUpDownYear1.MaxNum = DateTime.Now.Year - 1;
+            numericUpDownYear2.MaxNum = DateTime.Now.Year;
+            numericUpDownYear1.ValueNumber = DateTime.Now.Year -1;
+            numericUpDownYear2.ValueNumber = DateTime.Now.Year ;
         }
 
         private void comboBoxInforms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxInforms.SelectedIndex)
-            {
-                case 0:
-                    LoadTopSellingProducts();
-                    break;
+            bool compararAnios = comboBoxInforms.SelectedIndex == 6;
+
+            // Mostrar u ocultar controles de fechas
+            dateTimePickerFrom.Visible = !compararAnios;
+            dateTimePickerTo.Visible = !compararAnios;
+
+            labelFrom.Visible = !compararAnios;
+            labelTo.Visible = !compararAnios;
+
+            numericUpDownYear1.Visible = compararAnios;
+            numericUpDownYear2.Visible = compararAnios;
+            labelNumericFrom.Visible = compararAnios;
+            labelNumericTo.Visible = compararAnios;
+            buttonAll.Visible = !compararAnios;
 
 
-                case 1:
-                    LoadTopSellingCategories();
-                    break;
-
-                case 2:
-                    LoadBestSellers();
-                    break;
-
-                case 3:
-                    LoadTopSellingBrands();
-                    break;
-
-                case 4:
-                    LoadBestClients();
-                    break;
-
-                case 5:
-                    LoadSalesByPeriod();
-                    break;
-
-            }
+            // Cargar el informe seleccionado
+            LoadSelectedInform();
         }
 
 
@@ -481,6 +477,12 @@ namespace NexoStock.Forms.Manager
                 return;
             }
 
+            if (numericUpDownYear1.ValueNumber > numericUpDownYear2.ValueNumber)
+            {
+                MessageBox.Show("El año desde no puede ser posterior al año hasta.");
+                return;
+            }
+
             LoadSelectedInform();
         }
 
@@ -493,6 +495,12 @@ namespace NexoStock.Forms.Manager
 
         private void LoadSelectedInform()
         {
+            if (comboBoxInforms.SelectedIndex == 6)
+            {
+                LoadYearComparison();
+                return;
+            }
+
             switch (comboBoxInforms.SelectedIndex)
             {
                 case 0:
@@ -518,7 +526,119 @@ namespace NexoStock.Forms.Manager
                 case 5:
                     LoadSalesByPeriod();
                     break;
+
+                case 6:
+                    LoadYearComparison();
+                    break;
             }
+        }
+
+        private void LoadSalesYearComparison(DataTable data, int year1, int year2)
+        {
+            chartInforms.Series.Clear();
+            chartInforms.ChartAreas.Clear();
+            chartInforms.Legends.Clear();
+            chartInforms.Titles.Clear();
+
+            chartInforms.Titles.Add("Comparación de facturación anual");
+
+            ChartArea area = new ChartArea("MainArea");
+            area.AxisX.Title = "Mes";
+            area.AxisY.Title = "Facturación";
+            area.AxisY.LabelStyle.Format = "C0";
+            area.AxisX.Interval = 1;
+
+            chartInforms.ChartAreas.Add(area);
+            chartInforms.Legends.Add(new Legend("MainLegend"));
+
+            string[] months =
+            {
+        "Ene", "Feb", "Mar", "Abr",
+        "May", "Jun", "Jul", "Ago",
+        "Sep", "Oct", "Nov", "Dic"
+    };
+
+            Series series1 = new Series(year1.ToString())
+            {
+                ChartType = SeriesChartType.Line,
+                BorderWidth = 3,
+                MarkerStyle = MarkerStyle.Circle,
+                MarkerSize = 8,
+                XValueType = ChartValueType.String
+            };
+
+            Series series2 = new Series(year2.ToString())
+            {
+                ChartType = SeriesChartType.Line,
+                BorderWidth = 3,
+                MarkerStyle = MarkerStyle.Circle,
+                MarkerSize = 8,
+                XValueType = ChartValueType.String
+            };
+
+            // Inicializar los 12 meses para ambos años.
+            foreach (string month in months)
+            {
+                series1.Points.AddXY(month, 0);
+                series2.Points.AddXY(month, 0);
+            }
+
+            // Cargar los valores obtenidos desde MySQL.
+            foreach (DataRow row in data.Rows)
+            {
+                int year = Convert.ToInt32(row["Anio"]);
+                int month = Convert.ToInt32(row["Mes"]);
+                decimal total = Convert.ToDecimal(row["TotalFacturado"]);
+
+                if (month < 1 || month > 12)
+                    continue;
+
+                if (year == year1)
+                    series1.Points[month - 1].YValues[0] = (double)total;
+
+                if (year == year2)
+                    series2.Points[month - 1].YValues[0] = (double)total;
+            }
+
+            chartInforms.Series.Add(series1);
+            chartInforms.Series.Add(series2);
+        }
+
+        private void LoadYearComparison()
+        {
+            int year1 = (int)numericUpDownYear1.ValueNumber;
+            int year2 = (int)numericUpDownYear2.ValueNumber;
+
+            if (year1 == year2)
+            {
+                MessageBox.Show("Seleccioná dos años diferentes.");
+                return;
+            }
+
+            SaleRepository repository = new SaleRepository();
+
+            DataTable data = repository.GetSalesYearComparison(year1, year2);
+
+            dataGridInforms.DataSource = null;
+            dataGridInforms.DataSource = data;
+
+            dataGridInforms.Columns["Anio"].HeaderText = "Año";
+            dataGridInforms.Columns["Mes"].HeaderText = "Mes";
+            dataGridInforms.Columns["TotalFacturado"].HeaderText = "Total facturado";
+
+            dataGridInforms.Columns["TotalFacturado"].DefaultCellStyle.Format = "C2";
+
+            LoadSalesYearComparison(data, year1, year2);
+        }
+
+        private void numericUpDownYear1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDownYear2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

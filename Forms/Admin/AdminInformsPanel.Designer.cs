@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridInforms = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
             this.comboBoxInforms = new ReaLTaiizor.Controls.HopeComboBox();
             this.chartInforms = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonFilter = new ReaLTaiizor.Controls.CyberButton();
             this.buttonAll = new ReaLTaiizor.Controls.CyberButton();
+            this.numericUpDownYear2 = new ReaLTaiizor.Controls.HopeNumeric();
+            this.numericUpDownYear1 = new ReaLTaiizor.Controls.HopeNumeric();
+            this.labelNumericTo = new System.Windows.Forms.Label();
+            this.labelNumericFrom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInforms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInforms)).BeginInit();
             this.SuspendLayout();
@@ -57,23 +61,23 @@
             this.dataGridInforms.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridInforms.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridInforms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridInforms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridInforms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridInforms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridInforms.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridInforms.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridInforms.EnableHeadersVisualStyles = false;
             this.dataGridInforms.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridInforms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -81,14 +85,14 @@
             this.dataGridInforms.Name = "dataGridInforms";
             this.dataGridInforms.ReadOnly = true;
             this.dataGridInforms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridInforms.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridInforms.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridInforms.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridInforms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridInforms.Size = new System.Drawing.Size(406, 404);
@@ -132,27 +136,27 @@
             this.dateTimePickerTo.TabIndex = 33;
             this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerTo_ValueChanged);
             // 
-            // label4
+            // labelFrom
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(479, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Desde";
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.labelFrom.ForeColor = System.Drawing.Color.White;
+            this.labelFrom.Location = new System.Drawing.Point(479, 120);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(52, 20);
+            this.labelFrom.TabIndex = 34;
+            this.labelFrom.Text = "Desde";
             // 
-            // label5
+            // labelTo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(645, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Hasta";
+            this.labelTo.AutoSize = true;
+            this.labelTo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.labelTo.ForeColor = System.Drawing.Color.White;
+            this.labelTo.Location = new System.Drawing.Point(645, 120);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(49, 20);
+            this.labelTo.TabIndex = 35;
+            this.labelTo.Text = "Hasta";
             // 
             // comboBoxInforms
             // 
@@ -175,7 +179,8 @@
             "MEJORES VENDEDORES",
             "MARCAS MAS VENDIDAS",
             "MEJORES CLIENTES",
-            "VENTAS POR PERIODO"});
+            "VENTAS POR PERIODO",
+            "COMPARACIÓN ENTRE AÑOS"});
             this.comboBoxInforms.Location = new System.Drawing.Point(71, 132);
             this.comboBoxInforms.Name = "comboBoxInforms";
             this.comboBoxInforms.Size = new System.Drawing.Size(406, 31);
@@ -184,17 +189,17 @@
             // 
             // chartInforms
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartInforms.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartInforms.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartInforms.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartInforms.Legends.Add(legend1);
             this.chartInforms.Location = new System.Drawing.Point(561, 226);
             this.chartInforms.Name = "chartInforms";
             this.chartInforms.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartInforms.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartInforms.Series.Add(series1);
             this.chartInforms.Size = new System.Drawing.Size(521, 404);
             this.chartInforms.TabIndex = 38;
             this.chartInforms.Text = "chart1";
@@ -285,17 +290,99 @@
             this.buttonAll.Timer_RGB = 1;
             this.buttonAll.Click += new System.EventHandler(this.buttonAll_Click);
             // 
+            // numericUpDownYear2
+            // 
+            this.numericUpDownYear2.BackColor = System.Drawing.Color.White;
+            this.numericUpDownYear2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.numericUpDownYear2.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericUpDownYear2.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericUpDownYear2.BorderHoverColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear2.ButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericUpDownYear2.ButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericUpDownYear2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.numericUpDownYear2.EnterKey = true;
+            this.numericUpDownYear2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.numericUpDownYear2.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDownYear2.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear2.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear2.Location = new System.Drawing.Point(956, 61);
+            this.numericUpDownYear2.MaxNum = 10F;
+            this.numericUpDownYear2.MinNum = 0F;
+            this.numericUpDownYear2.Name = "numericUpDownYear2";
+            this.numericUpDownYear2.Precision = 0;
+            this.numericUpDownYear2.Size = new System.Drawing.Size(135, 32);
+            this.numericUpDownYear2.Step = 1F;
+            this.numericUpDownYear2.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
+            this.numericUpDownYear2.TabIndex = 45;
+            this.numericUpDownYear2.Text = "hopeNumeric1";
+            this.numericUpDownYear2.ValueNumber = 0F;
+            this.numericUpDownYear2.TextChanged += new System.EventHandler(this.numericUpDownYear2_TextChanged);
+            // 
+            // numericUpDownYear1
+            // 
+            this.numericUpDownYear1.BackColor = System.Drawing.Color.White;
+            this.numericUpDownYear1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.numericUpDownYear1.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericUpDownYear1.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(196)))), ((int)(((byte)(204)))));
+            this.numericUpDownYear1.BorderHoverColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear1.ButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericUpDownYear1.ButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.numericUpDownYear1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.numericUpDownYear1.EnterKey = true;
+            this.numericUpDownYear1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.numericUpDownYear1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDownYear1.HoverButtonTextColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear1.HoverButtonTextColorB = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.numericUpDownYear1.Location = new System.Drawing.Point(815, 61);
+            this.numericUpDownYear1.MaxNum = 10F;
+            this.numericUpDownYear1.MinNum = 10F;
+            this.numericUpDownYear1.Name = "numericUpDownYear1";
+            this.numericUpDownYear1.Precision = 0;
+            this.numericUpDownYear1.Size = new System.Drawing.Size(135, 32);
+            this.numericUpDownYear1.Step = 1F;
+            this.numericUpDownYear1.Style = ReaLTaiizor.Controls.HopeNumeric.NumericStyle.LeftRight;
+            this.numericUpDownYear1.TabIndex = 46;
+            this.numericUpDownYear1.Text = "hopeNumeric2";
+            this.numericUpDownYear1.ValueNumber = 10F;
+            this.numericUpDownYear1.Click += new System.EventHandler(this.numericUpDownYear1_TextChanged);
+            // 
+            // labelNumericTo
+            // 
+            this.labelNumericTo.AutoSize = true;
+            this.labelNumericTo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.labelNumericTo.ForeColor = System.Drawing.Color.White;
+            this.labelNumericTo.Location = new System.Drawing.Point(952, 38);
+            this.labelNumericTo.Name = "labelNumericTo";
+            this.labelNumericTo.Size = new System.Drawing.Size(49, 20);
+            this.labelNumericTo.TabIndex = 48;
+            this.labelNumericTo.Text = "Hasta";
+            // 
+            // labelNumericFrom
+            // 
+            this.labelNumericFrom.AutoSize = true;
+            this.labelNumericFrom.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.labelNumericFrom.ForeColor = System.Drawing.Color.White;
+            this.labelNumericFrom.Location = new System.Drawing.Point(811, 38);
+            this.labelNumericFrom.Name = "labelNumericFrom";
+            this.labelNumericFrom.Size = new System.Drawing.Size(52, 20);
+            this.labelNumericFrom.TabIndex = 47;
+            this.labelNumericFrom.Text = "Desde";
+            // 
             // ManagerInformsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.labelNumericTo);
+            this.Controls.Add(this.labelNumericFrom);
+            this.Controls.Add(this.numericUpDownYear1);
+            this.Controls.Add(this.numericUpDownYear2);
             this.Controls.Add(this.buttonAll);
             this.Controls.Add(this.buttonFilter);
             this.Controls.Add(this.chartInforms);
             this.Controls.Add(this.comboBoxInforms);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelTo);
+            this.Controls.Add(this.labelFrom);
             this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.dateTimePickerFrom);
             this.Controls.Add(this.dataGridInforms);
@@ -316,11 +403,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.Label labelTo;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxInforms;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartInforms;
         private ReaLTaiizor.Controls.CyberButton buttonFilter;
         private ReaLTaiizor.Controls.CyberButton buttonAll;
+        private ReaLTaiizor.Controls.HopeNumeric numericUpDownYear2;
+        private ReaLTaiizor.Controls.HopeNumeric numericUpDownYear1;
+        private System.Windows.Forms.Label labelNumericTo;
+        private System.Windows.Forms.Label labelNumericFrom;
     }
 }

@@ -851,5 +851,35 @@ namespace NexoStock.Services
 
             return data;
         }
+
+        public DataTable GetSalesYearComparison(int year1, int year2)
+        {
+            string query = @"
+        SELECT
+            YEAR(SaleDate) AS Anio,
+            MONTH(SaleDate) AS Mes,
+            SUM(Total) AS TotalFacturado
+        FROM sales
+        WHERE State = 1
+          AND YEAR(SaleDate) IN (@Year1, @Year2)
+        GROUP BY YEAR(SaleDate), MONTH(SaleDate)
+        ORDER BY Anio, Mes;";
+
+            using (MySqlConnection connection = connectionDB.GetConnection())
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Year1", year1);
+                    command.Parameters.AddWithValue("@Year2", year2);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        return data;
+                    }
+                }
+            }
+        }
     }
 }
