@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxInforms = new ReaLTaiizor.Controls.HopeComboBox();
             this.chartInforms = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.buttonFilter = new ReaLTaiizor.Controls.CyberButton();
+            this.buttonAll = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInforms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInforms)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +118,7 @@
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(561, 132);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(483, 143);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(160, 20);
             this.dateTimePickerFrom.TabIndex = 32;
@@ -124,7 +126,7 @@
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(886, 132);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(649, 143);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(160, 20);
             this.dateTimePickerTo.TabIndex = 33;
@@ -135,7 +137,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(557, 109);
+            this.label4.Location = new System.Drawing.Point(479, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 34;
@@ -146,7 +148,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(882, 109);
+            this.label5.Location = new System.Drawing.Point(645, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 35;
@@ -197,11 +199,99 @@
             this.chartInforms.TabIndex = 38;
             this.chartInforms.Text = "chart1";
             // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Alpha = 30;
+            this.buttonFilter.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFilter.Background = true;
+            this.buttonFilter.Background_WidthPen = 2F;
+            this.buttonFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonFilter.BackgroundPen = true;
+            this.buttonFilter.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonFilter.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.buttonFilter.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonFilter.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonFilter.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonFilter.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonFilter.ColorPen_2 = System.Drawing.Color.Violet;
+            this.buttonFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilter.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonFilter.Effect_1 = true;
+            this.buttonFilter.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonFilter.Effect_1_Transparency = 25;
+            this.buttonFilter.Effect_2 = false;
+            this.buttonFilter.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonFilter.Effect_2_Transparency = 20;
+            this.buttonFilter.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonFilter.Lighting = true;
+            this.buttonFilter.LinearGradient_Background = true;
+            this.buttonFilter.LinearGradientPen = true;
+            this.buttonFilter.Location = new System.Drawing.Point(815, 132);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.PenWidth = 15;
+            this.buttonFilter.Rounding = true;
+            this.buttonFilter.RoundingInt = 25;
+            this.buttonFilter.Size = new System.Drawing.Size(135, 38);
+            this.buttonFilter.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonFilter.TabIndex = 39;
+            this.buttonFilter.Tag = "Cyber";
+            this.buttonFilter.TextButton = "FILTRAR";
+            this.buttonFilter.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonFilter.Timer_Effect_1 = 1;
+            this.buttonFilter.Timer_RGB = 1;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
+            // buttonAll
+            // 
+            this.buttonAll.Alpha = 30;
+            this.buttonAll.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAll.Background = true;
+            this.buttonAll.Background_WidthPen = 2F;
+            this.buttonAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAll.BackgroundPen = true;
+            this.buttonAll.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonAll.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.buttonAll.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonAll.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonAll.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonAll.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonAll.ColorPen_2 = System.Drawing.Color.Violet;
+            this.buttonAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAll.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonAll.Effect_1 = true;
+            this.buttonAll.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonAll.Effect_1_Transparency = 25;
+            this.buttonAll.Effect_2 = false;
+            this.buttonAll.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonAll.Effect_2_Transparency = 20;
+            this.buttonAll.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonAll.Lighting = true;
+            this.buttonAll.LinearGradient_Background = true;
+            this.buttonAll.LinearGradientPen = true;
+            this.buttonAll.Location = new System.Drawing.Point(956, 132);
+            this.buttonAll.Name = "buttonAll";
+            this.buttonAll.PenWidth = 15;
+            this.buttonAll.Rounding = true;
+            this.buttonAll.RoundingInt = 25;
+            this.buttonAll.Size = new System.Drawing.Size(135, 38);
+            this.buttonAll.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonAll.TabIndex = 40;
+            this.buttonAll.Tag = "Cyber";
+            this.buttonAll.TextButton = "VER TODOS";
+            this.buttonAll.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonAll.Timer_Effect_1 = 1;
+            this.buttonAll.Timer_RGB = 1;
+            this.buttonAll.Click += new System.EventHandler(this.buttonAll_Click);
+            // 
             // ManagerInformsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.buttonAll);
+            this.Controls.Add(this.buttonFilter);
             this.Controls.Add(this.chartInforms);
             this.Controls.Add(this.comboBoxInforms);
             this.Controls.Add(this.label5);
@@ -230,5 +320,7 @@
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.HopeComboBox comboBoxInforms;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartInforms;
+        private ReaLTaiizor.Controls.CyberButton buttonFilter;
+        private ReaLTaiizor.Controls.CyberButton buttonAll;
     }
 }

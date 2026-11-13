@@ -14,15 +14,11 @@ namespace NexoStock.Forms.Manager
 {
     public partial class ManagerInformsPanel : UserControl
     {
+        private bool filterByDate = true;
         public ManagerInformsPanel()
         {
             InitializeComponent();
             comboBoxInforms.SelectedIndex = 0;
-        }
-
-        private void buttonDetails_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBoxInforms_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,7 +61,7 @@ namespace NexoStock.Forms.Manager
 
         private void LoadTopSellingProducts()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
@@ -74,8 +70,8 @@ namespace NexoStock.Forms.Manager
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetTopSellingProducts(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             dataGridInforms.DataSource = data;
@@ -93,7 +89,7 @@ namespace NexoStock.Forms.Manager
 
         private void LoadTopSellingCategories()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
@@ -102,8 +98,8 @@ namespace NexoStock.Forms.Manager
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetTopSellingCategories(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             dataGridInforms.DataSource = data;
@@ -181,7 +177,7 @@ namespace NexoStock.Forms.Manager
 
         private void LoadBestSellers()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
@@ -190,8 +186,8 @@ namespace NexoStock.Forms.Manager
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetBestSellers(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             // Agregar columna de puesto
@@ -250,7 +246,7 @@ namespace NexoStock.Forms.Manager
 
         private void LoadTopSellingBrands()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
@@ -259,8 +255,8 @@ namespace NexoStock.Forms.Manager
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetTopSellingBrands(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             data.Columns.Add("Puesto", typeof(int)).SetOrdinal(0);
@@ -317,7 +313,7 @@ namespace NexoStock.Forms.Manager
 
         private void LoadBestClients()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
                 MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
@@ -326,8 +322,8 @@ namespace NexoStock.Forms.Manager
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetBestClients(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             data.Columns.Add("Puesto", typeof(int)).SetOrdinal(0);
@@ -385,17 +381,17 @@ namespace NexoStock.Forms.Manager
 
         private void LoadSalesByPeriod()
         {
-            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            if (filterByDate && dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
             {
-                MessageBox.Show("La fecha inicial no puede ser posterior a la fecha final.");
+                MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
                 return;
             }
 
             SaleRepository repository = new SaleRepository();
 
             DataTable data = repository.GetSalesByPeriod(
-                dateTimePickerFrom.Value,
-                dateTimePickerTo.Value
+                GetFromDate(),
+                GetToDate()
             );
 
             dataGridInforms.DataSource = null;
@@ -453,36 +449,76 @@ namespace NexoStock.Forms.Manager
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxInforms.SelectedIndex == 0)
-                LoadTopSellingProducts();
-            else if (comboBoxInforms.SelectedIndex == 1)
-                LoadTopSellingCategories();
-            else if (comboBoxInforms.SelectedIndex == 2)
-                LoadBestSellers();
-            else if (comboBoxInforms.SelectedIndex == 3)
-                LoadTopSellingBrands();
-            else if (comboBoxInforms.SelectedIndex == 4)
-                LoadBestClients();
-            else if (comboBoxInforms.SelectedIndex == 5)
-                LoadSalesByPeriod();
+
         }
 
         private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxInforms.SelectedIndex == 0)
-                LoadTopSellingProducts();
-            else if (comboBoxInforms.SelectedIndex == 1)
-                LoadTopSellingCategories();
-            else if (comboBoxInforms.SelectedIndex == 2)
-                LoadBestSellers();
-            else if (comboBoxInforms.SelectedIndex == 3)
-                LoadTopSellingBrands();
-            else if (comboBoxInforms.SelectedIndex == 4)
-                LoadBestClients();
-            else if (comboBoxInforms.SelectedIndex == 5)
-                LoadSalesByPeriod();
+
         }
 
+        private DateTime GetFromDate()
+        {
+            return filterByDate
+                ? dateTimePickerFrom.Value.Date
+                : new DateTime(1000, 1, 1);
+        }
 
+        private DateTime GetToDate()
+        {
+            return filterByDate
+                ? dateTimePickerTo.Value.Date.AddDays(1).AddTicks(-1)
+                : new DateTime(9998, 12, 31);
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            filterByDate = true;
+
+            if (dateTimePickerFrom.Value.Date > dateTimePickerTo.Value.Date)
+            {
+                MessageBox.Show("La fecha desde no puede ser posterior a la fecha hasta.");
+                return;
+            }
+
+            LoadSelectedInform();
+        }
+
+        private void buttonAll_Click(object sender, EventArgs e)
+        {
+            filterByDate = false;
+
+            LoadSelectedInform();
+        }
+
+        private void LoadSelectedInform()
+        {
+            switch (comboBoxInforms.SelectedIndex)
+            {
+                case 0:
+                    LoadTopSellingProducts();
+                    break;
+
+                case 1:
+                    LoadTopSellingCategories();
+                    break;
+
+                case 2:
+                    LoadBestSellers();
+                    break;
+
+                case 3:
+                    LoadTopSellingBrands();
+                    break;
+
+                case 4:
+                    LoadBestClients();
+                    break;
+
+                case 5:
+                    LoadSalesByPeriod();
+                    break;
+            }
+        }
     }
 }
