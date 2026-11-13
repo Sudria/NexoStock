@@ -30,6 +30,7 @@
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelDashboard = new System.Windows.Forms.Panel();
+            this.buttonCategoryAndBrand = new ReaLTaiizor.Controls.CyberButton();
             this.buttonExit = new ReaLTaiizor.Controls.CyberButton();
             this.buttonCloseSession = new ReaLTaiizor.Controls.CyberButton();
             this.buttonMovements = new ReaLTaiizor.Controls.CyberButton();
@@ -37,7 +38,7 @@
             this.buttonProduct = new ReaLTaiizor.Controls.CyberButton();
             this.buttonUser = new ReaLTaiizor.Controls.CyberButton();
             this.buttonHome = new ReaLTaiizor.Controls.CyberButton();
-            this.buttonCategoryAndBrand = new ReaLTaiizor.Controls.CyberButton();
+            this.buttonInforms = new ReaLTaiizor.Controls.CyberButton();
             this.panelDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // 
             this.panelDashboard.BackgroundImage = global::NexoStock.Properties.Resources.dashboard_2;
             this.panelDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDashboard.Controls.Add(this.buttonInforms);
             this.panelDashboard.Controls.Add(this.buttonCategoryAndBrand);
             this.panelDashboard.Controls.Add(this.buttonExit);
             this.panelDashboard.Controls.Add(this.buttonCloseSession);
@@ -64,6 +66,49 @@
             this.panelDashboard.Name = "panelDashboard";
             this.panelDashboard.Size = new System.Drawing.Size(333, 662);
             this.panelDashboard.TabIndex = 2;
+            // 
+            // buttonCategoryAndBrand
+            // 
+            this.buttonCategoryAndBrand.Alpha = 30;
+            this.buttonCategoryAndBrand.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCategoryAndBrand.Background = true;
+            this.buttonCategoryAndBrand.Background_WidthPen = 2F;
+            this.buttonCategoryAndBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonCategoryAndBrand.BackgroundPen = true;
+            this.buttonCategoryAndBrand.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonCategoryAndBrand.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.buttonCategoryAndBrand.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonCategoryAndBrand.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonCategoryAndBrand.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonCategoryAndBrand.ColorPen_1 = System.Drawing.Color.Transparent;
+            this.buttonCategoryAndBrand.ColorPen_2 = System.Drawing.Color.Transparent;
+            this.buttonCategoryAndBrand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCategoryAndBrand.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonCategoryAndBrand.Effect_1 = true;
+            this.buttonCategoryAndBrand.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonCategoryAndBrand.Effect_1_Transparency = 25;
+            this.buttonCategoryAndBrand.Effect_2 = false;
+            this.buttonCategoryAndBrand.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonCategoryAndBrand.Effect_2_Transparency = 20;
+            this.buttonCategoryAndBrand.Font = new System.Drawing.Font("Arial", 11F);
+            this.buttonCategoryAndBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonCategoryAndBrand.Lighting = false;
+            this.buttonCategoryAndBrand.LinearGradient_Background = false;
+            this.buttonCategoryAndBrand.LinearGradientPen = true;
+            this.buttonCategoryAndBrand.Location = new System.Drawing.Point(48, 460);
+            this.buttonCategoryAndBrand.Name = "buttonCategoryAndBrand";
+            this.buttonCategoryAndBrand.PenWidth = 15;
+            this.buttonCategoryAndBrand.Rounding = true;
+            this.buttonCategoryAndBrand.RoundingInt = 25;
+            this.buttonCategoryAndBrand.Size = new System.Drawing.Size(235, 50);
+            this.buttonCategoryAndBrand.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonCategoryAndBrand.TabIndex = 22;
+            this.buttonCategoryAndBrand.Tag = "Cyber";
+            this.buttonCategoryAndBrand.TextButton = "CATEGORIAS Y MARCAS";
+            this.buttonCategoryAndBrand.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonCategoryAndBrand.Timer_Effect_1 = 1;
+            this.buttonCategoryAndBrand.Timer_RGB = 1;
+            this.buttonCategoryAndBrand.Click += new System.EventHandler(this.buttonCategoryAndBrand_Click);
             // 
             // buttonExit
             // 
@@ -366,48 +411,48 @@
             this.buttonHome.Timer_RGB = 1;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
-            // buttonCategoryAndBrand
+            // buttonInforms
             // 
-            this.buttonCategoryAndBrand.Alpha = 30;
-            this.buttonCategoryAndBrand.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCategoryAndBrand.Background = true;
-            this.buttonCategoryAndBrand.Background_WidthPen = 2F;
-            this.buttonCategoryAndBrand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonCategoryAndBrand.BackgroundPen = true;
-            this.buttonCategoryAndBrand.ColorBackground = System.Drawing.Color.Empty;
-            this.buttonCategoryAndBrand.ColorBackground_1 = System.Drawing.Color.Fuchsia;
-            this.buttonCategoryAndBrand.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
-            this.buttonCategoryAndBrand.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.buttonCategoryAndBrand.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
-            this.buttonCategoryAndBrand.ColorPen_1 = System.Drawing.Color.Transparent;
-            this.buttonCategoryAndBrand.ColorPen_2 = System.Drawing.Color.Transparent;
-            this.buttonCategoryAndBrand.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCategoryAndBrand.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.buttonCategoryAndBrand.Effect_1 = true;
-            this.buttonCategoryAndBrand.Effect_1_ColorBackground = System.Drawing.Color.Violet;
-            this.buttonCategoryAndBrand.Effect_1_Transparency = 25;
-            this.buttonCategoryAndBrand.Effect_2 = false;
-            this.buttonCategoryAndBrand.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
-            this.buttonCategoryAndBrand.Effect_2_Transparency = 20;
-            this.buttonCategoryAndBrand.Font = new System.Drawing.Font("Arial", 11F);
-            this.buttonCategoryAndBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.buttonCategoryAndBrand.Lighting = false;
-            this.buttonCategoryAndBrand.LinearGradient_Background = false;
-            this.buttonCategoryAndBrand.LinearGradientPen = true;
-            this.buttonCategoryAndBrand.Location = new System.Drawing.Point(48, 460);
-            this.buttonCategoryAndBrand.Name = "buttonCategoryAndBrand";
-            this.buttonCategoryAndBrand.PenWidth = 15;
-            this.buttonCategoryAndBrand.Rounding = true;
-            this.buttonCategoryAndBrand.RoundingInt = 25;
-            this.buttonCategoryAndBrand.Size = new System.Drawing.Size(235, 50);
-            this.buttonCategoryAndBrand.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.buttonCategoryAndBrand.TabIndex = 22;
-            this.buttonCategoryAndBrand.Tag = "Cyber";
-            this.buttonCategoryAndBrand.TextButton = "CATEGORIAS Y MARCAS";
-            this.buttonCategoryAndBrand.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.buttonCategoryAndBrand.Timer_Effect_1 = 1;
-            this.buttonCategoryAndBrand.Timer_RGB = 1;
-            this.buttonCategoryAndBrand.Click += new System.EventHandler(this.buttonCategoryAndBrand_Click);
+            this.buttonInforms.Alpha = 30;
+            this.buttonInforms.BackColor = System.Drawing.Color.Transparent;
+            this.buttonInforms.Background = true;
+            this.buttonInforms.Background_WidthPen = 2F;
+            this.buttonInforms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonInforms.BackgroundPen = true;
+            this.buttonInforms.ColorBackground = System.Drawing.Color.Empty;
+            this.buttonInforms.ColorBackground_1 = System.Drawing.Color.Fuchsia;
+            this.buttonInforms.ColorBackground_2 = System.Drawing.Color.MediumSlateBlue;
+            this.buttonInforms.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.buttonInforms.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(50)))), ((int)(((byte)(190)))));
+            this.buttonInforms.ColorPen_1 = System.Drawing.Color.Transparent;
+            this.buttonInforms.ColorPen_2 = System.Drawing.Color.Transparent;
+            this.buttonInforms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonInforms.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.buttonInforms.Effect_1 = true;
+            this.buttonInforms.Effect_1_ColorBackground = System.Drawing.Color.Violet;
+            this.buttonInforms.Effect_1_Transparency = 25;
+            this.buttonInforms.Effect_2 = false;
+            this.buttonInforms.Effect_2_ColorBackground = System.Drawing.Color.LimeGreen;
+            this.buttonInforms.Effect_2_Transparency = 20;
+            this.buttonInforms.Font = new System.Drawing.Font("Arial", 11F);
+            this.buttonInforms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.buttonInforms.Lighting = false;
+            this.buttonInforms.LinearGradient_Background = false;
+            this.buttonInforms.LinearGradientPen = true;
+            this.buttonInforms.Location = new System.Drawing.Point(48, 503);
+            this.buttonInforms.Name = "buttonInforms";
+            this.buttonInforms.PenWidth = 15;
+            this.buttonInforms.Rounding = true;
+            this.buttonInforms.RoundingInt = 25;
+            this.buttonInforms.Size = new System.Drawing.Size(235, 50);
+            this.buttonInforms.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.buttonInforms.TabIndex = 23;
+            this.buttonInforms.Tag = "Cyber";
+            this.buttonInforms.TextButton = "INFORMES";
+            this.buttonInforms.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.buttonInforms.Timer_Effect_1 = 1;
+            this.buttonInforms.Timer_RGB = 1;
+            this.buttonInforms.Click += new System.EventHandler(this.buttonInforms_Click);
             // 
             // AdminForm
             // 
@@ -438,5 +483,6 @@
         private ReaLTaiizor.Controls.CyberButton buttonExit;
         private ReaLTaiizor.Controls.CyberButton buttonCloseSession;
         private ReaLTaiizor.Controls.CyberButton buttonCategoryAndBrand;
+        private ReaLTaiizor.Controls.CyberButton buttonInforms;
     }
 }
