@@ -41,7 +41,6 @@ namespace NexoStock.Forms.Admin
             numericUpDownYear1.Visible = compararAnios;
             numericUpDownYear2.Visible = compararAnios;
             labelNumericFrom.Visible = compararAnios;
-            labelNumericTo.Visible = compararAnios;
             buttonAll.Visible = !compararAnios;
 
             // Cargar el informe seleccionado
@@ -476,9 +475,9 @@ namespace NexoStock.Forms.Admin
                 return;
             }
 
-            if (numericUpDownYear1.ValueNumber > numericUpDownYear2.ValueNumber)
+            if (numericUpDownYear1.ValueNumber == numericUpDownYear2.ValueNumber)
             {
-                MessageBox.Show("El año desde no puede ser posterior al año hasta.");
+                MessageBox.Show("Los años seleccionados no pueden ser iguales.");
                 return;
             }
 

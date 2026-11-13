@@ -477,9 +477,9 @@ namespace NexoStock.Forms.Manager
                 return;
             }
 
-            if (numericUpDownYear1.ValueNumber > numericUpDownYear2.ValueNumber)
+            if (numericUpDownYear1.ValueNumber == numericUpDownYear2.ValueNumber)
             {
-                MessageBox.Show("El año desde no puede ser posterior al año hasta.");
+                MessageBox.Show("Los años seleccionados no pueden ser iguales.");
                 return;
             }
 

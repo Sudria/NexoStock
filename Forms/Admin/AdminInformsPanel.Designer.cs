@@ -47,7 +47,6 @@
             this.buttonAll = new ReaLTaiizor.Controls.CyberButton();
             this.numericUpDownYear2 = new ReaLTaiizor.Controls.HopeNumeric();
             this.numericUpDownYear1 = new ReaLTaiizor.Controls.HopeNumeric();
-            this.labelNumericTo = new System.Windows.Forms.Label();
             this.labelNumericFrom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInforms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInforms)).BeginInit();
@@ -346,17 +345,6 @@
             this.numericUpDownYear1.ValueNumber = 10F;
             this.numericUpDownYear1.Click += new System.EventHandler(this.numericUpDownYear1_TextChanged);
             // 
-            // labelNumericTo
-            // 
-            this.labelNumericTo.AutoSize = true;
-            this.labelNumericTo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.labelNumericTo.ForeColor = System.Drawing.Color.White;
-            this.labelNumericTo.Location = new System.Drawing.Point(952, 38);
-            this.labelNumericTo.Name = "labelNumericTo";
-            this.labelNumericTo.Size = new System.Drawing.Size(49, 20);
-            this.labelNumericTo.TabIndex = 48;
-            this.labelNumericTo.Text = "Hasta";
-            // 
             // labelNumericFrom
             // 
             this.labelNumericFrom.AutoSize = true;
@@ -364,16 +352,15 @@
             this.labelNumericFrom.ForeColor = System.Drawing.Color.White;
             this.labelNumericFrom.Location = new System.Drawing.Point(811, 38);
             this.labelNumericFrom.Name = "labelNumericFrom";
-            this.labelNumericFrom.Size = new System.Drawing.Size(52, 20);
+            this.labelNumericFrom.Size = new System.Drawing.Size(115, 20);
             this.labelNumericFrom.TabIndex = 47;
-            this.labelNumericFrom.Text = "Desde";
+            this.labelNumericFrom.Text = "Comparar años";
             // 
-            // ManagerInformsPanel
+            // AdminInformsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(11)))), ((int)(((byte)(31)))));
-            this.Controls.Add(this.labelNumericTo);
             this.Controls.Add(this.labelNumericFrom);
             this.Controls.Add(this.numericUpDownYear1);
             this.Controls.Add(this.numericUpDownYear2);
@@ -388,7 +375,7 @@
             this.Controls.Add(this.dataGridInforms);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ManagerInformsPanel";
+            this.Name = "AdminInformsPanel";
             this.Size = new System.Drawing.Size(1120, 662);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInforms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartInforms)).EndInit();
@@ -411,7 +398,6 @@
         private ReaLTaiizor.Controls.CyberButton buttonAll;
         private ReaLTaiizor.Controls.HopeNumeric numericUpDownYear2;
         private ReaLTaiizor.Controls.HopeNumeric numericUpDownYear1;
-        private System.Windows.Forms.Label labelNumericTo;
         private System.Windows.Forms.Label labelNumericFrom;
     }
 }
