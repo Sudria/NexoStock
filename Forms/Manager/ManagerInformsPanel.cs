@@ -41,7 +41,6 @@ namespace NexoStock.Forms.Manager
             numericUpDownYear1.Visible = compararAnios;
             numericUpDownYear2.Visible = compararAnios;
             labelNumericFrom.Visible = compararAnios;
-            labelNumericTo.Visible = compararAnios;
             buttonAll.Visible = !compararAnios;
 
 
