@@ -128,11 +128,7 @@ namespace NexoStock.Forms.Admin
 
         private void formatTel(object sender, KeyPressEventArgs e)
         {
-            if (textBoxTel.Text.Length == 4)
-            {
-                textBoxTel.Text += " ";
-                textBoxTel.SelectionStart = textBoxTel.Text.Length;
-            }
+
         }
 
         private void Initialize()

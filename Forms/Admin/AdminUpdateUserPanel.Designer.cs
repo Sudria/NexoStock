@@ -380,9 +380,8 @@
             this.textBoxTel.Size = new System.Drawing.Size(324, 38);
             this.textBoxTel.TabIndex = 45;
             this.textBoxTel.TabStop = false;
-            this.textBoxTel.Text = "54 9 ";
+            this.textBoxTel.Text = "549";
             this.textBoxTel.UseSystemPasswordChar = false;
-            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.formatTel);
             // 
             // textBoxEmail
             // 
